@@ -30,7 +30,7 @@
 				<!-- /wp:paragraph -->
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"72px","fontStyle":"normal","fontWeight":"400","lineHeight":"1.15","letterSpacing":"-2px"}},"fontFamily":"inter"} -->
-				<p class="has-inter-font-family" style="font-size:72px;font-style:normal;font-weight:400;letter-spacing:-2px;line-height:1.15">A Variaty Of</p>
+				<p class="has-inter-font-family" style="font-size:72px;font-style:normal;font-weight:400;letter-spacing:-2px;line-height:1.15">A Variety Of</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"72px","fontStyle":"normal","fontWeight":"400","lineHeight":"1.15","letterSpacing":"-2px"}},"fontFamily":"inter"} -->
@@ -66,7 +66,7 @@
 				<div class="wp-block-group has-black-background-color has-background" style="border-radius:100px;padding-top:16px;padding-right:32px;padding-bottom:16px;padding-left:32px">
 
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"textColor":"white","fontSize":"medium","fontFamily":"inter"} -->
-					<p class="has-white-color has-text-color has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#" style="color:inherit;text-decoration:none">SOLUTIONS</a></p>
+					<p class="has-white-color has-text-color has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">SOLUTIONS</a></p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-white","width":"20px","height":"20px"} -->

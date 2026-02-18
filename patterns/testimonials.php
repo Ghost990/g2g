@@ -64,8 +64,8 @@
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"className":"g2f-testimonial","style":{"display":"none"},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-testimonial" style="display:none">
+		<!-- wp:group {"className":"g2f-testimonial","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+		<div class="wp-block-group g2f-testimonial">
 
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontSize":"24px","fontStyle":"normal","fontWeight":"600","lineHeight":"1"}},"textColor":"black","fontFamily":"roboto"} -->
 			<h3 class="wp-block-heading has-text-align-center has-black-color has-text-color has-roboto-font-family" style="font-size:24px;font-style:normal;font-weight:600;line-height:1">"Exceptional design quality"</h3>
@@ -92,8 +92,8 @@
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"className":"g2f-testimonial","style":{"display":"none"},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-testimonial" style="display:none">
+		<!-- wp:group {"className":"g2f-testimonial","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+		<div class="wp-block-group g2f-testimonial">
 
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontSize":"24px","fontStyle":"normal","fontWeight":"600","lineHeight":"1"}},"textColor":"black","fontFamily":"roboto"} -->
 			<h3 class="wp-block-heading has-text-align-center has-black-color has-text-color has-roboto-font-family" style="font-size:24px;font-style:normal;font-weight:600;line-height:1">"Professional and creative team"</h3>
@@ -124,9 +124,9 @@
 		<div class="wp-block-group g2f-testimonial-dots" style="margin-top:32px">
 
 			<!-- wp:html -->
-			<span class="g2f-testimonial-dot" data-slide="0"></span>
+			<span class="g2f-testimonial-dot active" data-slide="0"></span>
 			<span class="g2f-testimonial-dot" data-slide="1"></span>
-			<span class="g2f-testimonial-dot active" data-slide="2"></span>
+			<span class="g2f-testimonial-dot" data-slide="2"></span>
 			<!-- /wp:html -->
 
 		</div>

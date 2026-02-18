@@ -77,7 +77,7 @@ foreach ( $projects as $project ) {
 $cards_html .= '</div>';
 ?>
 
-<!-- wp:group {"tagName":"section","className":"g2f-projects-grid-section","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"section","anchor":"gallery","className":"g2f-projects-grid-section","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
 <section id="gallery" class="wp-block-group g2f-projects-grid-section has-white-background-color has-background" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px">
 
 	<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"60px","fontStyle":"normal","fontWeight":"400","lineHeight":"1.1"},"spacing":{"margin":{"bottom":"48px"}}},"fontFamily":"inter"} -->

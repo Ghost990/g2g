@@ -67,19 +67,11 @@ function g2f_theme_enqueue_assets() {
 	// Theme version for cache busting
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Main stylesheet (already enqueued by block theme)
-	wp_enqueue_style(
-		'g2f-theme-style',
-		get_stylesheet_uri(),
-		array(),
-		$theme_version
-	);
-
-	// Custom styles
+	// Custom styles (style.css is auto-enqueued by WordPress FSE system — do not re-enqueue)
 	wp_enqueue_style(
 		'g2f-theme-custom',
 		get_template_directory_uri() . '/assets/css/custom.css',
-		array( 'g2f-theme-style' ),
+		array(),
 		$theme_version
 	);
 
@@ -214,24 +206,6 @@ function g2f_theme_disable_emojis() {
 add_action( 'init', 'g2f_theme_disable_emojis' );
 
 /**
- * Add preconnect for Google Fonts fallback
- */
-function g2f_theme_resource_hints( $urls, $relation_type ) {
-	if ( 'preconnect' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://fonts.googleapis.com',
-			'crossorigin',
-		);
-		$urls[] = array(
-			'href' => 'https://fonts.gstatic.com',
-			'crossorigin',
-		);
-	}
-	return $urls;
-}
-add_filter( 'wp_resource_hints', 'g2f_theme_resource_hints', 10, 2 );
-
-/**
  * Add theme color to head
  */
 function g2f_theme_add_theme_color() {
@@ -262,3 +236,45 @@ function g2f_theme_register_icon_library( $libraries ) {
 	return $libraries;
 }
 add_filter( 'icon_block_libraries', 'g2f_theme_register_icon_library' );
+
+/**
+ * Check if Icon Block plugin is active and show admin notice if not
+ */
+function g2f_check_icon_block_plugin() {
+	if ( is_admin() && ! is_plugin_active( 'icon-block/icon-block.php' ) ) {
+		add_action( 'admin_notices', function() {
+			echo '<div class="notice notice-warning is-dismissible"><p><strong>G2F Theme:</strong> Install the <a href="' . admin_url('plugin-install.php?s=icon+block&tab=search&type=term') . '">Icon Block plugin</a> for the best editor experience with arrow buttons.</p></div>';
+		});
+	}
+}
+add_action( 'admin_init', 'g2f_check_icon_block_plugin' );
+
+/**
+ * Register Project custom post type and taxonomy
+ */
+function g2f_register_project_cpt() {
+	register_post_type( 'project', array(
+		'labels' => array(
+			'name'          => __( 'Projects', 'g2f-theme' ),
+			'singular_name' => __( 'Project', 'g2f-theme' ),
+		),
+		'public'       => true,
+		'has_archive'  => true,
+		'show_in_rest' => true,
+		'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'menu_icon'    => 'dashicons-portfolio',
+		'rewrite'      => array( 'slug' => 'projects' ),
+	) );
+
+	register_taxonomy( 'project_category', 'project', array(
+		'labels' => array(
+			'name'          => __( 'Project Categories', 'g2f-theme' ),
+			'singular_name' => __( 'Project Category', 'g2f-theme' ),
+		),
+		'public'       => true,
+		'show_in_rest' => true,
+		'hierarchical' => true,
+		'rewrite'      => array( 'slug' => 'project-category' ),
+	) );
+}
+add_action( 'init', 'g2f_register_project_cpt' );

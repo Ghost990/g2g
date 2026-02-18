@@ -95,7 +95,7 @@
 							"fontFamily": "Roboto",
 							"fontWeight": "600",
 							"fontStyle": "normal",
-							"src": ["file:./assets/fonts/roboto/Roboto-Medium.woff2"]
+							"src": ["file:./assets/fonts/roboto/Roboto-Bold.woff2"]
 						},
 						{
 							"fontFamily": "Roboto",

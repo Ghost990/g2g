@@ -213,8 +213,13 @@
 
 			function showSlide(index) {
 				slides.forEach((slide, i) => {
-					slide.style.display = i === index ? 'block' : 'none';
-					slide.style.opacity = i === index ? '1' : '0';
+					if (i === index) {
+						slide.classList.add('is-active');
+						slide.style.opacity = '1';
+					} else {
+						slide.classList.remove('is-active');
+						slide.style.opacity = '0';
+					}
 				});
 
 				dots.forEach((dot, i) => {

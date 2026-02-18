@@ -8,7 +8,7 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"g2f-about-section","style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"section","anchor":"about","className":"g2f-about-section","style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
 <section id="about" class="wp-block-group g2f-about-section has-white-background-color has-background" style="padding-top:100px;padding-bottom:100px">
 
 	<!-- wp:group {"style":{"position":{"type":"relative"}},"layout":{"type":"default"}} -->
@@ -35,8 +35,8 @@
 				<!-- wp:group {"style":{"spacing":{"blockGap":"32px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 				<div class="wp-block-group">
 
-					<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"60px","lineHeight":"1.1","fontWeight":"400"}},"fontFamily":"roboto"} -->
-					<h2 class="wp-block-heading has-roboto-font-family" style="font-size:60px;font-weight:400;line-height:1.1">We Bring <strong>Creative Ideas</strong> To Life.</h2>
+					<!-- wp:heading {"level":2,"className":"g2f-fade-in","style":{"typography":{"fontSize":"60px","lineHeight":"1.1","fontWeight":"400"}},"fontFamily":"roboto"} -->
+					<h2 class="wp-block-heading g2f-fade-in has-roboto-font-family" style="font-size:60px;font-weight:400;line-height:1.1">We Bring <strong>Creative Ideas</strong> To Life.</h2>
 					<!-- /wp:heading -->
 
 					<!-- wp:group {"style":{"spacing":{"blockGap":"24px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
