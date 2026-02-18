@@ -45,14 +45,13 @@
 	}
 
 	/**
-	 * Sticky Header
+	 * Sticky Header with Shrink Animation
 	 */
 	function initStickyHeader() {
 		const header = document.querySelector('.site-header');
 
 		if (!header) return;
 
-		let lastScrollTop = 0;
 		const scrollThreshold = 100;
 
 		window.addEventListener('scroll', function() {
@@ -60,11 +59,11 @@
 
 			if (scrollTop > scrollThreshold) {
 				header.classList.add('is-sticky');
+				document.body.classList.add('header-is-sticky');
 			} else {
 				header.classList.remove('is-sticky');
+				document.body.classList.remove('header-is-sticky');
 			}
-
-			lastScrollTop = scrollTop;
 		}, { passive: true });
 	}
 
@@ -97,6 +96,7 @@
 
 	/**
 	 * Project Filter
+	 * WordPress strips data-* attributes from block markup, so we assign them dynamically
 	 */
 	function initProjectFilter() {
 		const tabs = document.querySelectorAll('.g2f-project-tab');
@@ -104,7 +104,52 @@
 
 		if (!tabs.length || !projects.length) return;
 
+		// Category mapping for tabs (text content → category slug)
+		const tabCategoryMap = {
+			'all': 'all',
+			'ux/ui': 'ux-ui',
+			'art direction': 'art-direction',
+			'photography': 'photography'
+		};
+
+		// Assign data-category to tabs based on text content
 		tabs.forEach((tab) => {
+			const text = tab.textContent.trim().toLowerCase();
+			const category = tabCategoryMap[text] || 'all';
+			tab.dataset.category = category;
+
+			// Remove inline opacity style so CSS can control it
+			tab.style.removeProperty('opacity');
+		});
+
+		// Assign data-category to project cards based on description text
+		// Also inject placeholder images if missing
+		projects.forEach((project) => {
+			const description = project.querySelector('.g2f-project-info p')?.textContent?.toLowerCase() || '';
+
+			if (description.includes('ux/ui') || description.includes('ux-ui') || description.includes('website')) {
+				project.dataset.category = 'ux-ui';
+			} else if (description.includes('branding') || description.includes('visual identity') || description.includes('brochure') || description.includes('graphic design')) {
+				project.dataset.category = 'art-direction';
+			} else if (description.includes('photography')) {
+				project.dataset.category = 'photography';
+			} else {
+				project.dataset.category = 'ux-ui'; // Default category
+			}
+
+			// Inject placeholder if no image exists
+			const hasImage = project.querySelector('.g2f-project-image, .g2f-project-image-placeholder, figure img');
+			if (!hasImage) {
+				const placeholder = document.createElement('div');
+				placeholder.className = 'g2f-project-image-placeholder';
+				project.insertBefore(placeholder, project.firstChild);
+			}
+		});
+
+		// Set up click handlers with cursor pointer
+		tabs.forEach((tab) => {
+			tab.style.cursor = 'pointer';
+
 			tab.addEventListener('click', function() {
 				const category = this.dataset.category;
 

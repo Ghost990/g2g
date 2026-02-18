@@ -29,6 +29,12 @@ body {
 	overflow-x: hidden;
 }
 
+/* Remove gap between header and main content */
+header + main,
+.site-header + main {
+	margin-top: 0 !important;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -47,6 +53,35 @@ h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
 /* Ensure paragraphs with strong tags render properly */
 p strong {
 	font-weight: 700;
+}
+
+/* ===================================
+   Container Constraints for Large Screens
+   =================================== */
+/* All main sections - full width background with centered content */
+@media (min-width: 1300px) {
+	.g2f-about-section,
+	.g2f-services-zigzag,
+	.g2f-portfolio-split,
+	.g2f-projects-grid-section,
+	.g2f-testimonials,
+	main > section.wp-block-group:not(.g2f-hero) {
+		padding-left: calc((100vw - 1218px) / 2) !important;
+		padding-right: calc((100vw - 1218px) / 2) !important;
+	}
+}
+
+/* Fallback padding on medium screens */
+@media (min-width: 1024px) and (max-width: 1299px) {
+	.g2f-about-section,
+	.g2f-services-zigzag,
+	.g2f-portfolio-split,
+	.g2f-projects-grid-section,
+	.g2f-testimonials,
+	main > section.wp-block-group:not(.g2f-hero) {
+		padding-left: 40px !important;
+		padding-right: 40px !important;
+	}
 }
 
 /* ===================================
@@ -134,6 +169,44 @@ p strong {
 	stroke: var(--wp--preset--color--white);
 }
 
+/* Arrow button icon sizing - flexible defaults */
+.g2f-button-arrow .wp-block-outermost-icon-block {
+	flex-shrink: 0;
+}
+
+/* Default icon size - can be overridden by block settings */
+.g2f-button-arrow .wp-block-outermost-icon-block svg {
+	width: 20px;
+	height: 20px;
+}
+
+/* Light variant for dark backgrounds */
+.g2f-button-arrow-light {
+	border-color: var(--wp--preset--color--white) !important;
+	color: var(--wp--preset--color--white);
+}
+
+.g2f-button-arrow-light a {
+	color: inherit;
+}
+
+.g2f-button-arrow-light svg path {
+	stroke: var(--wp--preset--color--white);
+}
+
+.g2f-button-arrow-light:hover {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--black);
+}
+
+.g2f-button-arrow-light:hover a {
+	color: var(--wp--preset--color--black);
+}
+
+.g2f-button-arrow-light:hover svg path {
+	stroke: var(--wp--preset--color--black);
+}
+
 /* ===================================
    Navigation Styles
    =================================== */
@@ -162,8 +235,42 @@ p strong {
 .site-header {
 	position: relative;
 	z-index: 100;
+	transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/* Header inner container - the flex wrapper */
+.site-header > .wp-block-group {
+	transition: padding 0.3s ease;
+	align-items: center;
+}
+
+/* Header element transitions for smooth shrinking */
+.site-header .wp-block-site-logo {
+	transition: transform 0.3s ease;
+}
+
+.site-header .wp-block-site-logo img {
+	transition: width 0.3s ease, height 0.3s ease;
+}
+
+.site-header .wp-block-navigation-item__content {
+	transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+/* CTA button in header */
+.site-header .has-black-border-color {
+	transition: padding 0.3s ease;
+}
+
+.site-header .has-black-border-color p {
+	transition: font-size 0.3s ease;
+}
+
+.site-header .has-black-border-color svg {
+	transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Shrunk/Sticky state */
 .site-header.is-sticky {
 	position: fixed;
 	top: 0;
@@ -173,23 +280,129 @@ p strong {
 	box-shadow: var(--g2f-shadow);
 }
 
+/* Admin bar offset when logged in */
+.admin-bar .site-header.is-sticky {
+	top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+	.admin-bar .site-header.is-sticky {
+		top: 46px;
+	}
+}
+
+/* Shrunk inner padding */
+.site-header.is-sticky > .wp-block-group {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+
+/* Shrunk logo */
+.site-header.is-sticky .wp-block-site-logo {
+	width: 80px;
+}
+
+.site-header.is-sticky .wp-block-site-logo img {
+	width: 80px !important;
+	height: auto !important;
+}
+
+/* Shrunk navigation */
+.site-header.is-sticky .wp-block-navigation-item__content {
+	font-size: 16px !important;
+}
+
+/* Shrunk CTA button */
+.site-header.is-sticky .has-black-border-color {
+	padding: 10px 18px !important;
+}
+
+.site-header.is-sticky .has-black-border-color p {
+	font-size: 14px !important;
+}
+
+.site-header.is-sticky .has-black-border-color svg {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+/* Prevent content jump when header becomes fixed */
+body.header-is-sticky main {
+	padding-top: 100px;
+}
+
 /* ===================================
    Hero Section Styles
    =================================== */
+/* ===================================
+   Hero Section - Full Width
+   =================================== */
 .g2f-hero {
 	position: relative;
-	min-height: 100vh;
+	width: 100vw;
+	margin-left: calc(-50vw + 50%);
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
 }
 
-.g2f-hero::after {
-	content: '';
+/* Vertical text strip on left - positioned absolutely */
+.g2f-hero > .g2f-vertical-text,
+.g2f-hero > .wp-block-group.g2f-vertical-text {
 	position: absolute;
-	top: 0;
 	left: 0;
-	right: 0;
+	top: 0;
 	bottom: 0;
-	background: rgba(0, 0, 0, 0.3);
-	pointer-events: none;
+	width: 60px;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	padding: 0 !important;
+}
+
+.g2f-vertical-text {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	transform: rotate(180deg);
+	white-space: nowrap;
+}
+
+.g2f-vertical-text p {
+	margin: 0;
+}
+
+/* Hero cover - add white strips on both sides */
+.g2f-hero .wp-block-cover {
+	flex: 1;
+	min-height: 868px;
+	padding-left: 60px !important;
+	padding-right: 60px !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	background-color: #fff !important;
+}
+
+.g2f-hero .wp-block-cover__inner-container {
+	width: 100%;
+	max-width: 100%;
+	padding: 250px 80px 100px 80px !important;
+}
+
+/* Make the cover image and overlay not extend into the white padding areas */
+.g2f-hero .wp-block-cover__image-background,
+.g2f-hero .wp-block-cover__background {
+	left: 60px !important;
+	right: 60px !important;
+	width: calc(100% - 120px) !important;
+}
+
+/* Hero separator line */
+.g2f-hero-separator,
+.g2f-hero .wp-block-separator {
+	max-width: 489px;
+	opacity: 0.5;
 }
 
 .g2f-hero-content {
@@ -204,12 +417,6 @@ p strong {
 	line-height: 0.94;
 	letter-spacing: -4px;
 	color: var(--wp--preset--color--white);
-}
-
-.g2f-vertical-text {
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
-	transform: rotate(180deg);
 }
 
 /* ===================================
@@ -260,14 +467,41 @@ p strong {
 .g2f-project-card {
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
+/* Project image placeholder (shown until real images are added) */
+.g2f-project-image-placeholder {
+	width: 100%;
+	aspect-ratio: 386 / 316;
+	border-radius: 8px;
+	background-color: #e5e5e5;
+	transition: transform 0.5s ease;
+}
+
+.g2f-project-card:hover .g2f-project-image-placeholder {
+	transform: scale(1.02);
+}
+
+/* Project image container (for when real images are used) */
 .g2f-project-image {
 	width: 100%;
 	aspect-ratio: 386 / 316;
-	object-fit: cover;
 	border-radius: 8px;
 	transition: transform 0.5s ease;
+	background-color: #e5e5e5;
+	overflow: hidden;
+	position: relative;
+	margin: 0;
+}
+
+/* Style for images */
+.g2f-project-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
 }
 
 .g2f-project-card:hover .g2f-project-image {
@@ -275,8 +509,21 @@ p strong {
 }
 
 .g2f-project-info {
-	margin-top: 16px;
 	text-align: center;
+	margin-top: 12px;
+}
+
+.g2f-project-info h5 {
+	margin-bottom: 2px !important;
+}
+
+.g2f-project-info p {
+	margin-top: 0 !important;
+}
+
+/* Ensure card content is centered */
+.g2f-project-card {
+	align-items: center;
 }
 
 .g2f-project-title {
@@ -314,14 +561,19 @@ p strong {
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 18px;
 	font-weight: 400;
-	color: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--black) !important;
 	opacity: 0.5;
 	cursor: pointer;
 	border: none;
-	background: none;
-	padding: 12px 0;
+	background: transparent !important;
+	padding: 8px 0;
 	position: relative;
 	transition: var(--g2f-transition);
+}
+
+.g2f-project-tab p {
+	margin: 0;
+	padding: 0;
 }
 
 .g2f-project-tab::after {
@@ -338,11 +590,17 @@ p strong {
 
 .g2f-project-tab.active,
 .g2f-project-tab:hover {
-	opacity: 1;
+	opacity: 1 !important;
+	background: transparent !important;
 }
 
 .g2f-project-tab.active::after {
 	transform: scaleX(1);
+}
+
+/* Project card filter animation */
+.g2f-project-card {
+	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ===================================
@@ -848,30 +1106,88 @@ p strong {
 	position: relative;
 }
 
-/* Typography - Bold/Light weight mixing */
+/* Remove all gaps between service rows */
+.g2f-services-zigzag > * {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+/* Keep gap only for header section */
+.g2f-services-zigzag > .wp-block-group:first-child {
+	margin-bottom: 60px !important;
+}
+
+/* Typography - Bold/Light weight mixing (matching About Us section) */
 .g2f-services-zigzag h2 {
-	font-weight: 400;
+	font-weight: 400 !important;
 }
 
 .g2f-services-zigzag h2 strong {
-	font-weight: 700;
+	font-weight: 700 !important;
+	font-style: italic;
+}
+
+/* Service titles - lighter weight like About Us */
+.g2f-services-zigzag h3 {
+	font-weight: 400 !important;
+	font-family: var(--wp--preset--font-family--inter);
+}
+
+/* Service description paragraphs */
+.g2f-services-zigzag .g2f-service-row p {
+	font-weight: 400;
+	font-family: var(--wp--preset--font-family--roboto);
 }
 
 .g2f-services-zigzag .g2f-service-row p strong {
-	font-weight: 700;
+	font-weight: 700 !important;
+}
+
+/* Hide service numbers (01, 02, 03) */
+.g2f-services-zigzag .g2f-service-row .wp-block-group > p:first-child {
+	display: none !important;
+}
+
+.g2f-service-number {
+	display: none !important;
 }
 
 .g2f-service-row {
 	align-items: center;
+	margin-bottom: 0 !important;
+}
+
+/* Remove gaps between service rows - images touching vertically */
+.g2f-services-zigzag .wp-block-columns.g2f-service-row {
+	gap: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.g2f-services-zigzag .wp-block-columns + .wp-block-columns {
+	margin-top: 0 !important;
+}
+
+/* Force both columns to exactly 50% width for diagonal corner alignment */
+.g2f-services-zigzag .g2f-service-row > .wp-block-column {
+	flex-basis: 50% !important;
+	width: 50% !important;
+	padding: 0 !important;
+}
+
+/* Padding on inner wrapper instead to preserve column width */
+.g2f-services-zigzag .g2f-service-row > .wp-block-column.is-vertically-aligned-center > .wp-block-group {
+	padding: 40px 60px;
 }
 
 .g2f-service-image-large {
 	width: 100%;
 	min-height: 400px;
 	overflow: hidden;
+	margin: 0 !important;
 }
 
 .g2f-service-image-large img {
+	border-radius: 0 !important;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -904,6 +1220,12 @@ p strong {
 	flex-direction: column;
 }
 
+/* Bold text in portfolio content paragraphs */
+.g2f-portfolio-content p strong {
+	font-weight: 700;
+	color: var(--wp--preset--color--black);
+}
+
 /* Solid button style for Solutions */
 .g2f-portfolio-content .wp-block-group.has-black-background-color {
 	transition: var(--g2f-transition);
@@ -926,30 +1248,46 @@ p strong {
    =================================== */
 .g2f-about-section {
 	position: relative;
+	overflow: visible;
 }
 
 .g2f-about-section > .wp-block-group {
 	position: relative;
+	overflow: visible;
 }
 
 .g2f-vertical-text-right {
 	position: absolute;
-	right: -60px;
+	right: -120px;
 	top: 50%;
-	transform: translateY(-50%) rotate(90deg);
-	transform-origin: center center;
+	transform: translateX(100%) translateY(-50%) rotate(-180deg);
+	transform-origin: left center;
 	white-space: nowrap;
 	margin: 0;
 	color: var(--wp--preset--color--black);
-}
-
-/* Typography fix for About heading - "Creative" bold */
-.g2f-about-section h2 strong {
-	font-weight: 700;
-}
-
-.g2f-about-section h2 {
+	opacity: 0.4;
+	font-size: 50px;
 	font-weight: 400;
+	letter-spacing: 0.1em;
+	z-index: 10;
+}
+
+/* Typography fix for About section - mixed weights */
+.g2f-about-section h2 {
+	font-weight: 400 !important;
+}
+
+.g2f-about-section h2 strong {
+	font-weight: 700 !important;
+}
+
+/* About section paragraphs - light weight with bold on strong */
+.g2f-about-section p {
+	font-weight: 400 !important;
+}
+
+.g2f-about-section p strong {
+	font-weight: 700 !important;
 }
 
 /* ===================================

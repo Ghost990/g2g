@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "Bash(find:*)",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "mcp__plugin_playwright_playwright__browser_press_key",
+      "mcp__plugin_playwright_playwright__browser_wait_for",
+      "Bash(curl:*)",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_close",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "WebSearch",
+      "mcp__plugin_context7_context7__get-library-docs",
+      "mcp__firecrawl-mcp__firecrawl_scrape",
+      "mcp__plugin_playwright_playwright__browser_console_messages"
+    ]
+  }
+}

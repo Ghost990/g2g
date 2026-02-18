@@ -6,6 +6,75 @@
  * Keywords: projects, portfolio, gallery, grid
  * Description: Filterable projects grid with tabs
  */
+
+// Project data array - edit this to add/modify projects
+$projects = array(
+	array(
+		'title'    => 'AsicMinerz',
+		'category' => 'ux-ui',
+		'type'     => 'Website - UX/UI',
+		'image'    => '', // Add image URL when available
+	),
+	array(
+		'title'    => 'Aeroprodukt',
+		'category' => 'art-direction',
+		'type'     => 'Visual identity - Branding',
+		'image'    => '',
+	),
+	array(
+		'title'    => 'Project Name',
+		'category' => 'ux-ui',
+		'type'     => 'Project type',
+		'image'    => '',
+	),
+	array(
+		'title'    => 'Medtrend',
+		'category' => 'art-direction',
+		'type'     => 'Brochure - Graphic Design',
+		'image'    => '',
+	),
+	array(
+		'title'    => 'Ipari Marketing',
+		'category' => 'ux-ui',
+		'type'     => 'Website - UX/UI',
+		'image'    => '',
+	),
+	array(
+		'title'    => 'Captured in Tones',
+		'category' => 'photography',
+		'type'     => 'Photography',
+		'image'    => '',
+	),
+);
+
+// Build tabs HTML
+$tabs_html = '<div class="g2f-project-tabs">';
+$tabs_html .= '<div class="g2f-project-tab active" data-category="all"><p>All</p></div>';
+$tabs_html .= '<div class="g2f-project-tab" data-category="ux-ui"><p>UX/UI</p></div>';
+$tabs_html .= '<div class="g2f-project-tab" data-category="art-direction"><p>Art Direction</p></div>';
+$tabs_html .= '<div class="g2f-project-tab" data-category="photography"><p>Photography</p></div>';
+$tabs_html .= '</div>';
+
+// Build project cards HTML
+$cards_html = '<div class="g2f-project-grid">';
+foreach ( $projects as $project ) {
+	$cards_html .= '<div class="g2f-project-card" data-category="' . esc_attr( $project['category'] ) . '">';
+
+	if ( ! empty( $project['image'] ) ) {
+		$cards_html .= '<figure class="g2f-project-image">';
+		$cards_html .= '<img src="' . esc_url( $project['image'] ) . '" alt="' . esc_attr( $project['title'] ) . '">';
+		$cards_html .= '</figure>';
+	} else {
+		$cards_html .= '<div class="g2f-project-image-placeholder"></div>';
+	}
+
+	$cards_html .= '<div class="g2f-project-info">';
+	$cards_html .= '<h5>' . esc_html( $project['title'] ) . '</h5>';
+	$cards_html .= '<p>' . esc_html( $project['type'] ) . '</p>';
+	$cards_html .= '</div>';
+	$cards_html .= '</div>';
+}
+$cards_html .= '</div>';
 ?>
 
 <!-- wp:group {"tagName":"section","className":"g2f-projects-grid-section","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
@@ -15,169 +84,13 @@
 	<h2 class="wp-block-heading has-text-align-center has-inter-font-family" style="margin-bottom:48px;font-size:60px;font-style:normal;font-weight:400;line-height:1.1"><strong>Explore</strong> Our Latest Projects.</h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:group {"className":"g2f-project-tabs","style":{"spacing":{"blockGap":"40px","margin":{"bottom":"48px"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-	<div class="wp-block-group g2f-project-tabs" style="margin-bottom:48px">
+	<!-- wp:html -->
+	<?php echo $tabs_html; ?>
+	<!-- /wp:html -->
 
-		<!-- wp:group {"className":"g2f-project-tab active","style":{"spacing":{"blockGap":"12px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-project-tab active" data-category="all">
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"400","textTransform":"uppercase"}},"fontFamily":"inter"} -->
-			<p class="has-inter-font-family" style="font-size:18px;font-style:normal;font-weight:400;text-transform:uppercase">All</p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-tab","style":{"spacing":{"blockGap":"12px"},"opacity":"0.5"},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-project-tab" data-category="ux-ui">
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"400","textTransform":"uppercase"}},"fontFamily":"inter"} -->
-			<p class="has-inter-font-family" style="font-size:18px;font-style:normal;font-weight:400;text-transform:uppercase">UX/UI</p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-tab","style":{"spacing":{"blockGap":"12px"},"opacity":"0.5"},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-project-tab" data-category="art-direction">
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"400","textTransform":"uppercase"}},"fontFamily":"inter"} -->
-			<p class="has-inter-font-family" style="font-size:18px;font-style:normal;font-weight:400;text-transform:uppercase">Art Direction</p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-tab","style":{"spacing":{"blockGap":"12px"},"opacity":"0.5"},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-project-tab" data-category="photography">
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"400","textTransform":"uppercase"}},"fontFamily":"inter"} -->
-			<p class="has-inter-font-family" style="font-size:18px;font-style:normal;font-weight:400;text-transform:uppercase">Photography</p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:group {"className":"g2f-project-grid","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
-	<div class="wp-block-group g2f-project-grid">
-
-		<!-- wp:group {"className":"g2f-project-card","layout":{"type":"flex","orientation":"vertical"}} -->
-		<div class="wp-block-group g2f-project-card" data-category="ux-ui">
-			<!-- wp:image {"sizeSlug":"g2f-project","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-			<figure class="wp-block-image size-g2f-project g2f-project-image" style="border-radius:8px">
-				<img src="" alt="AsicMinerz"/>
-			</figure>
-			<!-- /wp:image -->
-			<!-- wp:group {"className":"g2f-project-info","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group g2f-project-info">
-				<!-- wp:heading {"textAlign":"center","level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"}},"fontFamily":"inter"} -->
-				<h5 class="wp-block-heading has-text-align-center has-inter-font-family" style="font-size:20px;font-style:normal;font-weight:700">AsicMinerz</h5>
-				<!-- /wp:heading -->
-				<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"700"}},"textColor":"text-secondary","fontFamily":"inter"} -->
-				<p class="has-text-align-center has-text-secondary-color has-text-color has-inter-font-family" style="font-size:16px;font-style:normal;font-weight:700">Website - UX/UI</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-card","layout":{"type":"flex","orientation":"vertical"}} -->
-		<div class="wp-block-group g2f-project-card" data-category="art-direction">
-			<!-- wp:image {"sizeSlug":"g2f-project","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-			<figure class="wp-block-image size-g2f-project g2f-project-image" style="border-radius:8px">
-				<img src="" alt="Aeroprodukt"/>
-			</figure>
-			<!-- /wp:image -->
-			<!-- wp:group {"className":"g2f-project-info","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group g2f-project-info">
-				<!-- wp:heading {"textAlign":"center","level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"}},"fontFamily":"inter"} -->
-				<h5 class="wp-block-heading has-text-align-center has-inter-font-family" style="font-size:20px;font-style:normal;font-weight:700">Aeroprodukt</h5>
-				<!-- /wp:heading -->
-				<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"700"}},"textColor":"text-secondary","fontFamily":"inter"} -->
-				<p class="has-text-align-center has-text-secondary-color has-text-color has-inter-font-family" style="font-size:16px;font-style:normal;font-weight:700">Visual identity - Branding</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-card","layout":{"type":"flex","orientation":"vertical"}} -->
-		<div class="wp-block-group g2f-project-card" data-category="ux-ui">
-			<!-- wp:image {"sizeSlug":"g2f-project","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-			<figure class="wp-block-image size-g2f-project g2f-project-image" style="border-radius:8px">
-				<img src="" alt="Project Name"/>
-			</figure>
-			<!-- /wp:image -->
-			<!-- wp:group {"className":"g2f-project-info","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group g2f-project-info">
-				<!-- wp:heading {"textAlign":"center","level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"}},"fontFamily":"inter"} -->
-				<h5 class="wp-block-heading has-text-align-center has-inter-font-family" style="font-size:20px;font-style:normal;font-weight:700">Project Name</h5>
-				<!-- /wp:heading -->
-				<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"700"}},"textColor":"text-secondary","fontFamily":"inter"} -->
-				<p class="has-text-align-center has-text-secondary-color has-text-color has-inter-font-family" style="font-size:16px;font-style:normal;font-weight:700">Project type</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-card","layout":{"type":"flex","orientation":"vertical"}} -->
-		<div class="wp-block-group g2f-project-card" data-category="art-direction">
-			<!-- wp:image {"sizeSlug":"g2f-project","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-			<figure class="wp-block-image size-g2f-project g2f-project-image" style="border-radius:8px">
-				<img src="" alt="Medtrend"/>
-			</figure>
-			<!-- /wp:image -->
-			<!-- wp:group {"className":"g2f-project-info","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group g2f-project-info">
-				<!-- wp:heading {"textAlign":"center","level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"}},"fontFamily":"inter"} -->
-				<h5 class="wp-block-heading has-text-align-center has-inter-font-family" style="font-size:20px;font-style:normal;font-weight:700">Medtrend</h5>
-				<!-- /wp:heading -->
-				<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"700"}},"textColor":"text-secondary","fontFamily":"inter"} -->
-				<p class="has-text-align-center has-text-secondary-color has-text-color has-inter-font-family" style="font-size:16px;font-style:normal;font-weight:700">Brochure - Graphic Design</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-card","layout":{"type":"flex","orientation":"vertical"}} -->
-		<div class="wp-block-group g2f-project-card" data-category="ux-ui">
-			<!-- wp:image {"sizeSlug":"g2f-project","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-			<figure class="wp-block-image size-g2f-project g2f-project-image" style="border-radius:8px">
-				<img src="" alt="Ipari Marketing"/>
-			</figure>
-			<!-- /wp:image -->
-			<!-- wp:group {"className":"g2f-project-info","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group g2f-project-info">
-				<!-- wp:heading {"textAlign":"center","level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"}},"fontFamily":"inter"} -->
-				<h5 class="wp-block-heading has-text-align-center has-inter-font-family" style="font-size:20px;font-style:normal;font-weight:700">Ipari Marketing</h5>
-				<!-- /wp:heading -->
-				<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"700"}},"textColor":"text-secondary","fontFamily":"inter"} -->
-				<p class="has-text-align-center has-text-secondary-color has-text-color has-inter-font-family" style="font-size:16px;font-style:normal;font-weight:700">Website - UX/UI</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"g2f-project-card","layout":{"type":"flex","orientation":"vertical"}} -->
-		<div class="wp-block-group g2f-project-card" data-category="photography">
-			<!-- wp:image {"sizeSlug":"g2f-project","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-			<figure class="wp-block-image size-g2f-project g2f-project-image" style="border-radius:8px">
-				<img src="" alt="Captured in Tones"/>
-			</figure>
-			<!-- /wp:image -->
-			<!-- wp:group {"className":"g2f-project-info","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group g2f-project-info">
-				<!-- wp:heading {"textAlign":"center","level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"}},"fontFamily":"inter"} -->
-				<h5 class="wp-block-heading has-text-align-center has-inter-font-family" style="font-size:20px;font-style:normal;font-weight:700">Captured in Tones</h5>
-				<!-- /wp:heading -->
-				<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"700"}},"textColor":"text-secondary","fontFamily":"inter"} -->
-				<p class="has-text-align-center has-text-secondary-color has-text-color has-inter-font-family" style="font-size:16px;font-style:normal;font-weight:700">Photography</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-
-	</div>
-	<!-- /wp:group -->
+	<!-- wp:html -->
+	<?php echo $cards_html; ?>
+	<!-- /wp:html -->
 
 	<!-- wp:group {"style":{"spacing":{"margin":{"top":"48px"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 	<div class="wp-block-group" style="margin-top:48px">
@@ -189,12 +102,9 @@
 			<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">SEE MORE WORK</a></p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:html -->
-			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-				<path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-			</svg>
-			<!-- /wp:html -->
+			<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
+			<div class="wp-block-outermost-icon-block"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+			<!-- /wp:outermost/icon-block -->
 
 		</div>
 		<!-- /wp:group -->

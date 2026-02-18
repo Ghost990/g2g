@@ -26,11 +26,11 @@
 	<!-- /wp:group -->
 
 	<!-- Service Row 1: Image Left, Text Right - Product Design -->
-	<!-- wp:columns {"className":"g2f-service-row","style":{"spacing":{"blockGap":{"left":"60px"},"margin":{"bottom":"80px"}}}} -->
-	<div class="wp-block-columns g2f-service-row" style="margin-bottom:80px">
+	<!-- wp:columns {"className":"g2f-service-row","style":{"spacing":{"blockGap":{"left":"0"},"margin":{"bottom":"0"}}}} -->
+	<div class="wp-block-columns g2f-service-row" style="margin-bottom:0">
 
-		<!-- wp:column {"width":"55%"} -->
-		<div class="wp-block-column" style="flex-basis:55%">
+		<!-- wp:column {"width":"50%"} -->
+		<div class="wp-block-column" style="flex-basis:50%">
 
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"g2f-service-image-large","style":{"border":{"radius":"8px"}}} -->
 			<figure class="wp-block-image size-full g2f-service-image-large" style="border-radius:8px">
@@ -41,8 +41,8 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
-		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
+		<!-- wp:column {"width":"50%","verticalAlignment":"center"} -->
+		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"24px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 			<div class="wp-block-group">
@@ -59,19 +59,16 @@
 				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Design products that feel inevitable.</strong> Simple, intuitive, and impossible to ignore. From concept to launch, we transform complex ideas into experiences people love.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:group {"style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-				<div class="wp-block-group has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
+				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
+				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
 					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">EXPLORE</a></p>
 					<!-- /wp:paragraph -->
 
-					<!-- wp:html -->
-					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-					<!-- /wp:html -->
+					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
+					<div class="wp-block-outermost-icon-block"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+					<!-- /wp:outermost/icon-block -->
 
 				</div>
 				<!-- /wp:group -->
@@ -86,11 +83,11 @@
 	<!-- /wp:columns -->
 
 	<!-- Service Row 2: Text Left, Image Right - Art Direction -->
-	<!-- wp:columns {"className":"g2f-service-row g2f-service-row-reverse","style":{"spacing":{"blockGap":{"left":"60px"},"margin":{"bottom":"80px"}}}} -->
-	<div class="wp-block-columns g2f-service-row g2f-service-row-reverse" style="margin-bottom:80px">
+	<!-- wp:columns {"className":"g2f-service-row g2f-service-row-reverse","style":{"spacing":{"blockGap":{"left":"0"},"margin":{"bottom":"0"}}}} -->
+	<div class="wp-block-columns g2f-service-row g2f-service-row-reverse" style="margin-bottom:0">
 
-		<!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
-		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
+		<!-- wp:column {"width":"50%","verticalAlignment":"center"} -->
+		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"24px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 			<div class="wp-block-group">
@@ -107,19 +104,16 @@
 				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Design that speaks before you do.</strong> We craft visual languages that capture attention, build trust, and create emotional connections that last.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:group {"style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-				<div class="wp-block-group has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
+				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
+				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
 					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">EXPLORE</a></p>
 					<!-- /wp:paragraph -->
 
-					<!-- wp:html -->
-					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-					<!-- /wp:html -->
+					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
+					<div class="wp-block-outermost-icon-block"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+					<!-- /wp:outermost/icon-block -->
 
 				</div>
 				<!-- /wp:group -->
@@ -130,8 +124,8 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"width":"55%"} -->
-		<div class="wp-block-column" style="flex-basis:55%">
+		<!-- wp:column {"width":"50%"} -->
+		<div class="wp-block-column" style="flex-basis:50%">
 
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"g2f-service-image-large","style":{"border":{"radius":"8px"}}} -->
 			<figure class="wp-block-image size-full g2f-service-image-large" style="border-radius:8px">
@@ -146,11 +140,11 @@
 	<!-- /wp:columns -->
 
 	<!-- Service Row 3: Image Left, Text Right - Photography -->
-	<!-- wp:columns {"className":"g2f-service-row","style":{"spacing":{"blockGap":{"left":"60px"}}}} -->
+	<!-- wp:columns {"className":"g2f-service-row","style":{"spacing":{"blockGap":{"left":"0"}}}} -->
 	<div class="wp-block-columns g2f-service-row">
 
-		<!-- wp:column {"width":"55%"} -->
-		<div class="wp-block-column" style="flex-basis:55%">
+		<!-- wp:column {"width":"50%"} -->
+		<div class="wp-block-column" style="flex-basis:50%">
 
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"g2f-service-image-large","style":{"border":{"radius":"8px"}}} -->
 			<figure class="wp-block-image size-full g2f-service-image-large" style="border-radius:8px">
@@ -161,8 +155,8 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
-		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
+		<!-- wp:column {"width":"50%","verticalAlignment":"center"} -->
+		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"24px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 			<div class="wp-block-group">
@@ -179,19 +173,16 @@
 				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Moments that move, frames that speak.</strong> We capture the essence of your brand through powerful imagery that tells stories and creates lasting impressions.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:group {"style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"}}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-				<div class="wp-block-group has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
+				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
+				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
 					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">EXPLORE</a></p>
 					<!-- /wp:paragraph -->
 
-					<!-- wp:html -->
-					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-					<!-- /wp:html -->
+					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
+					<div class="wp-block-outermost-icon-block"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+					<!-- /wp:outermost/icon-block -->
 
 				</div>
 				<!-- /wp:group -->

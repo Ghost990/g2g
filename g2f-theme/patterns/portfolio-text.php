@@ -51,11 +51,15 @@
 			<div class="wp-block-group g2f-portfolio-content">
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">In the ever-evolving landscape of digital experiences, <strong>UX/UI design</strong> and <strong>art direction</strong> play a pivotal role in shaping how users interact with products and services. Effective design not only enhances usability but also communicates brand identity and values.</p>
+				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">In the ever-evolving landscape of digital experiences, <strong>UX/UI design</strong> and <strong>art direction</strong> play a pivotal role in shaping how users interact with products and services.</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">Feel free to take a look at the various projects I completed throughout my career. From branding and web design to art direction and photography, each project showcases my commitment to <strong>user-centric design</strong>.</p>
+				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">This section highlights the seamless blend of functionality and aesthetics that drives meaningful engagement. From intuitive interfaces to visually compelling narratives, our approach prioritizes <strong>user-centric design</strong> principles while maintaining a cohesive brand identity.</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
+				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">Whether crafting innovative wireframes or directing impactful visual compositions, we focus on delivering experiences that are both accessible and memorable.</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:group {"style":{"border":{"radius":"100px"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"32px","right":"32px"}}},"backgroundColor":"black","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
@@ -65,12 +69,9 @@
 					<p class="has-white-color has-text-color has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#" style="color:inherit;text-decoration:none">SOLUTIONS</a></p>
 					<!-- /wp:paragraph -->
 
-					<!-- wp:html -->
-					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M3.125 10H16.875" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-					<!-- /wp:html -->
+					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-white","width":"20px","height":"20px"} -->
+					<div class="wp-block-outermost-icon-block"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+					<!-- /wp:outermost/icon-block -->
 
 				</div>
 				<!-- /wp:group -->
