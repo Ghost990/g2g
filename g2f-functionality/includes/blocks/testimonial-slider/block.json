@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "g2f/testimonial-slider",
+	"version": "1.0.0",
+	"title": "Testimonial Slider",
+	"category": "widgets",
+	"icon": "format-quote",
+	"description": "Display testimonials in a slider format.",
+	"keywords": ["testimonials", "reviews", "quotes", "slider"],
+	"textdomain": "g2f-functionality",
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"postsPerPage": {
+			"type": "number",
+			"default": 5
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": true
+		},
+		"autoplaySpeed": {
+			"type": "number",
+			"default": 5000
+		},
+		"showDots": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

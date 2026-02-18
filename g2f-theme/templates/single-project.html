@@ -1,0 +1,53 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained","contentSize":"1218px"}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+
+	<!-- wp:post-featured-image {"style":{"border":{"radius":"8px"},"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} /-->
+
+	<!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
+	<div class="wp-block-group">
+
+		<!-- wp:post-title {"level":1,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} /-->
+
+		<!-- wp:post-terms {"term":"project_category","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}},"textColor":"text-secondary"} /-->
+
+		<!-- wp:post-content {"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} /-->
+
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"className":"is-style-wide"} -->
+	<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide" style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"/>
+	<!-- /wp:separator -->
+
+	<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} -->
+	<h3 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--40)">More Projects</h3>
+	<!-- /wp:heading -->
+
+	<!-- wp:query {"queryId":2,"query":{"perPage":3,"pages":0,"offset":0,"postType":"project","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+	<div class="wp-block-query">
+
+		<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+
+			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+			<div class="wp-block-group">
+
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"386/316","style":{"border":{"radius":"8px"}}} /-->
+
+				<!-- wp:post-title {"isLink":true,"level":5,"textAlign":"center","style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} /-->
+
+				<!-- wp:post-terms {"term":"project_category","textAlign":"center","style":{"typography":{"fontWeight":"700"}},"textColor":"text-secondary","fontSize":"medium","fontFamily":"inter"} /-->
+
+			</div>
+			<!-- /wp:group -->
+
+		<!-- /wp:post-template -->
+
+	</div>
+	<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

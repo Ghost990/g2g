@@ -1,0 +1,100 @@
+/**
+ * G2F Functionality - Block Editor Styles
+ *
+ * @package G2F_Functionality
+ */
+
+/* ==========================================================================
+   General Editor Styles
+   ========================================================================== */
+
+/* Block placeholders */
+.wp-block-g2f-project-grid,
+.wp-block-g2f-testimonial-slider,
+.wp-block-g2f-client-marquee {
+	background: #f9f9f9;
+	border-radius: 4px;
+}
+
+/* Loading spinner */
+.wp-block-g2f-project-grid .components-spinner,
+.wp-block-g2f-testimonial-slider .components-spinner,
+.wp-block-g2f-client-marquee .components-spinner {
+	display: block;
+	margin: 3rem auto;
+}
+
+/* ==========================================================================
+   Project Grid Block - Editor
+   ========================================================================== */
+
+.editor-styles-wrapper .g2f-project-grid-block {
+	padding: 1rem;
+}
+
+.editor-styles-wrapper .g2f-project-tabs {
+	margin-bottom: 1.5rem;
+}
+
+.editor-styles-wrapper .g2f-project-tab {
+	pointer-events: none;
+	opacity: 0.7;
+}
+
+.editor-styles-wrapper .g2f-project-tab.active {
+	opacity: 1;
+}
+
+.editor-styles-wrapper .g2f-project-card {
+	transition: none;
+}
+
+.editor-styles-wrapper .g2f-project-overlay {
+	display: none;
+}
+
+/* ==========================================================================
+   Testimonial Slider Block - Editor
+   ========================================================================== */
+
+.editor-styles-wrapper .g2f-testimonial-slider {
+	padding: 1rem;
+}
+
+.editor-styles-wrapper .g2f-testimonial-dots {
+	pointer-events: none;
+}
+
+/* ==========================================================================
+   Client Marquee Block - Editor
+   ========================================================================== */
+
+.editor-styles-wrapper .g2f-clients-marquee {
+	padding: 1rem;
+}
+
+.editor-styles-wrapper .g2f-clients-marquee::before,
+.editor-styles-wrapper .g2f-clients-marquee::after {
+	display: none;
+}
+
+/* ==========================================================================
+   Inspector Panel Styles
+   ========================================================================== */
+
+.g2f-inspector-help {
+	font-size: 12px;
+	color: #757575;
+	margin-top: 8px;
+}
+
+/* ==========================================================================
+   Block Inserter Preview
+   ========================================================================== */
+
+.block-editor-block-preview__content .wp-block-g2f-project-grid,
+.block-editor-block-preview__content .wp-block-g2f-testimonial-slider,
+.block-editor-block-preview__content .wp-block-g2f-client-marquee {
+	transform: scale(0.5);
+	transform-origin: top left;
+}

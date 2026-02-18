@@ -1,0 +1,38 @@
+/**
+ * G2F Design Theme - Editor Styles
+ * Styles for Gutenberg editor
+ */
+
+/* Import custom styles */
+@import url('./custom.css');
+
+/* Editor-specific adjustments */
+.editor-styles-wrapper {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.5;
+	color: var(--wp--preset--color--black);
+}
+
+/* Ensure proper font rendering in editor */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	font-family: var(--wp--preset--font-family--inter);
+}
+
+/* Button preview in editor */
+.editor-styles-wrapper .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Fix pattern previews */
+.editor-styles-wrapper .block-editor-block-patterns-list__item {
+	border-radius: 4px;
+	overflow: hidden;
+}

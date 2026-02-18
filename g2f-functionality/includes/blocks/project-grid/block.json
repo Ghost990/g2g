@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "g2f/project-grid",
+	"version": "1.0.0",
+	"title": "Project Grid",
+	"category": "widgets",
+	"icon": "portfolio",
+	"description": "Display a filterable grid of projects.",
+	"keywords": ["projects", "portfolio", "gallery", "grid"],
+	"textdomain": "g2f-functionality",
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"postsPerPage": {
+			"type": "number",
+			"default": 6
+		},
+		"showFilters": {
+			"type": "boolean",
+			"default": true
+		},
+		"showButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "SEE MORE WORK"
+		},
+		"buttonLink": {
+			"type": "string",
+			"default": "#"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

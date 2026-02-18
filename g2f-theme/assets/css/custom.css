@@ -1,0 +1,1116 @@
+/**
+ * G2F Design Theme - Custom Styles
+ * Supplementary CSS for block theme styling
+ */
+
+/* ===================================
+   CSS Custom Properties
+   =================================== */
+:root {
+	--g2f-transition: all 0.3s ease;
+	--g2f-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	--g2f-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   Global Resets & Base Styles
+   =================================== */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* ===================================
+   Typography - Bold/Light Weight Mixing
+   =================================== */
+/* Ensure strong tags within headings render as bold */
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
+.wp-block-heading strong {
+	font-weight: 700;
+}
+
+/* Ensure paragraphs with strong tags render properly */
+p strong {
+	font-weight: 700;
+}
+
+/* ===================================
+   Button Styles
+   =================================== */
+.wp-block-button__link,
+.wp-element-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	transition: var(--g2f-transition);
+}
+
+.wp-block-button__link:hover,
+.wp-element-button:hover {
+	transform: translateY(-2px);
+}
+
+/* G2F Outline Button */
+.is-style-g2f-outline .wp-block-button__link {
+	background: transparent;
+	color: var(--wp--preset--color--black);
+	border: 1px solid var(--wp--preset--color--black);
+	border-radius: 100px;
+	padding: 16px 24px;
+	font-family: var(--wp--preset--font-family--inter);
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.is-style-g2f-outline .wp-block-button__link:hover {
+	background: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--white);
+}
+
+/* G2F Solid Button */
+.is-style-g2f-solid .wp-block-button__link {
+	background: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--black);
+	border-radius: 100px;
+	padding: 16px 24px;
+	font-family: var(--wp--preset--font-family--inter);
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.is-style-g2f-solid .wp-block-button__link:hover {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--black);
+}
+
+/* Button with Arrow Icon */
+.g2f-button-arrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 24px;
+	border: 1px solid var(--wp--preset--color--black);
+	border-radius: 100px;
+	font-family: var(--wp--preset--font-family--inter);
+	font-weight: 600;
+	font-size: 16px;
+	color: var(--wp--preset--color--black);
+	text-decoration: none;
+	transition: var(--g2f-transition);
+}
+
+.g2f-button-arrow:hover {
+	background: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--white);
+}
+
+.g2f-button-arrow svg {
+	width: 20px;
+	height: 20px;
+	transition: transform 0.3s ease;
+}
+
+.g2f-button-arrow:hover svg {
+	transform: translateX(4px);
+}
+
+.g2f-button-arrow:hover svg path {
+	stroke: var(--wp--preset--color--white);
+}
+
+/* ===================================
+   Navigation Styles
+   =================================== */
+.wp-block-navigation {
+	gap: 32px;
+}
+
+.wp-block-navigation-item__content {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	transition: var(--g2f-transition);
+}
+
+.wp-block-navigation-item__content:hover,
+.current-menu-item .wp-block-navigation-item__content {
+	font-weight: 800;
+}
+
+/* ===================================
+   Header Styles
+   =================================== */
+.site-header {
+	position: relative;
+	z-index: 100;
+}
+
+.site-header.is-sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: var(--wp--preset--color--white);
+	box-shadow: var(--g2f-shadow);
+}
+
+/* ===================================
+   Hero Section Styles
+   =================================== */
+.g2f-hero {
+	position: relative;
+	min-height: 100vh;
+}
+
+.g2f-hero::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.3);
+	pointer-events: none;
+}
+
+.g2f-hero-content {
+	position: relative;
+	z-index: 1;
+}
+
+.g2f-hero-title {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 100px;
+	font-weight: 400;
+	line-height: 0.94;
+	letter-spacing: -4px;
+	color: var(--wp--preset--color--white);
+}
+
+.g2f-vertical-text {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	transform: rotate(180deg);
+}
+
+/* ===================================
+   Section Styles
+   =================================== */
+.g2f-section {
+	padding: 100px 0;
+}
+
+.g2f-section-light {
+	background: var(--wp--preset--color--gray-light);
+}
+
+.g2f-section-dark {
+	background: var(--wp--preset--color--gray-dark);
+	color: var(--wp--preset--color--white);
+}
+
+/* G2F Section Block Style */
+.is-style-g2f-section {
+	padding: 100px 351px;
+}
+
+/* ===================================
+   Card Styles
+   =================================== */
+.is-style-g2f-card {
+	background: var(--wp--preset--color--white);
+	border-radius: 8px;
+	overflow: hidden;
+	transition: var(--g2f-transition);
+}
+
+.is-style-g2f-card:hover {
+	box-shadow: var(--g2f-shadow-lg);
+	transform: translateY(-4px);
+}
+
+/* ===================================
+   Project Grid Styles
+   =================================== */
+.g2f-project-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+
+.g2f-project-card {
+	position: relative;
+	overflow: hidden;
+}
+
+.g2f-project-image {
+	width: 100%;
+	aspect-ratio: 386 / 316;
+	object-fit: cover;
+	border-radius: 8px;
+	transition: transform 0.5s ease;
+}
+
+.g2f-project-card:hover .g2f-project-image {
+	transform: scale(1.05);
+}
+
+.g2f-project-info {
+	margin-top: 16px;
+	text-align: center;
+}
+
+.g2f-project-title {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.g2f-project-category {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--wp--preset--color--text-secondary);
+}
+
+/* Projects Grid Section */
+.g2f-projects-grid-section h2 {
+	font-weight: 400;
+}
+
+.g2f-projects-grid-section h2 strong {
+	font-weight: 700;
+}
+
+/* Project Filter Tabs */
+.g2f-project-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+	margin-bottom: 48px;
+}
+
+.g2f-project-tab {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 18px;
+	font-weight: 400;
+	color: var(--wp--preset--color--black);
+	opacity: 0.5;
+	cursor: pointer;
+	border: none;
+	background: none;
+	padding: 12px 0;
+	position: relative;
+	transition: var(--g2f-transition);
+}
+
+.g2f-project-tab::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: var(--wp--preset--color--black);
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
+}
+
+.g2f-project-tab.active,
+.g2f-project-tab:hover {
+	opacity: 1;
+}
+
+.g2f-project-tab.active::after {
+	transform: scaleX(1);
+}
+
+/* ===================================
+   Service Card Styles
+   =================================== */
+.g2f-service-card {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.g2f-service-image {
+	width: 100%;
+	aspect-ratio: 609 / 500;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.g2f-service-title {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--wp--preset--color--black);
+}
+
+.g2f-service-number {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--wp--preset--color--black);
+	opacity: 0.2;
+}
+
+/* ===================================
+   Testimonial Styles
+   =================================== */
+.g2f-testimonial {
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.g2f-testimonial-quote {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1;
+	margin-bottom: 24px;
+}
+
+.g2f-testimonial-text {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--wp--preset--color--black);
+	margin-bottom: 32px;
+}
+
+.g2f-testimonial-avatar {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin: 0 auto 16px;
+}
+
+.g2f-testimonial-name {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.1;
+}
+
+.g2f-testimonial-role {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 16px;
+	color: var(--wp--preset--color--text-secondary);
+}
+
+/* Testimonial Dots */
+.g2f-testimonial-dots {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	margin-top: 32px;
+}
+
+.g2f-testimonial-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--wp--preset--color--border-light);
+	cursor: pointer;
+	transition: var(--g2f-transition);
+}
+
+.g2f-testimonial-dot.active {
+	width: 16px;
+	height: 16px;
+	background: var(--wp--preset--color--black);
+}
+
+/* ===================================
+   Client Logo Marquee
+   =================================== */
+.g2f-clients-marquee {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.g2f-clients-track {
+	display: inline-flex;
+	gap: 80px;
+	animation: marquee 30s linear infinite;
+}
+
+.g2f-clients-marquee:hover .g2f-clients-track {
+	animation-play-state: paused;
+}
+
+.g2f-client-logo {
+	height: 32px;
+	width: auto;
+	opacity: 0.6;
+	transition: opacity 0.3s ease;
+}
+
+.g2f-client-logo:hover {
+	opacity: 1;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+/* ===================================
+   Footer Styles
+   =================================== */
+.g2f-footer {
+	background: var(--wp--preset--color--gray-dark);
+	color: var(--wp--preset--color--white);
+	padding: 100px 351px 16px;
+}
+
+.g2f-footer a {
+	color: var(--wp--preset--color--white);
+	text-decoration: none;
+	transition: opacity 0.3s ease;
+}
+
+.g2f-footer a:hover {
+	opacity: 0.7;
+}
+
+.g2f-footer-title {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 100px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: -4px;
+}
+
+.g2f-footer-nav {
+	display: flex;
+	gap: 32px;
+}
+
+.g2f-footer-nav a {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 24px;
+	letter-spacing: -0.24px;
+}
+
+.g2f-footer-social {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	text-align: right;
+}
+
+.g2f-footer-social a {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 24px;
+	letter-spacing: -0.24px;
+}
+
+.g2f-footer-contact {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 20px;
+	letter-spacing: -0.2px;
+}
+
+.g2f-footer-bottom {
+	background: var(--wp--preset--color--gray-dark);
+	padding: 24px 0;
+	text-align: center;
+}
+
+.g2f-footer-copyright {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 16px;
+	color: var(--wp--preset--color--text-footer);
+}
+
+/* ===================================
+   Image Styles
+   =================================== */
+.is-style-g2f-rounded img {
+	border-radius: 8px;
+}
+
+/* About Section Image */
+.g2f-about-image {
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.g2f-about-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+.g2f-text-center {
+	text-align: center;
+}
+
+.g2f-text-right {
+	text-align: right;
+}
+
+.g2f-flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.g2f-gap-8 { gap: 8px; }
+.g2f-gap-16 { gap: 16px; }
+.g2f-gap-24 { gap: 24px; }
+.g2f-gap-32 { gap: 32px; }
+.g2f-gap-48 { gap: 48px; }
+
+/* ===================================
+   Responsive Styles
+   =================================== */
+@media (max-width: 1440px) {
+	.is-style-g2f-section {
+		padding: 80px 100px;
+	}
+
+	.g2f-footer {
+		padding: 80px 100px 16px;
+	}
+
+	.g2f-hero-title {
+		font-size: 80px;
+	}
+
+	.g2f-footer-title {
+		font-size: 80px;
+	}
+
+	.g2f-services-zigzag {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+
+	.g2f-projects-grid-section {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+
+	.g2f-portfolio-split {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+
+	.g2f-testimonials {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+}
+
+@media (max-width: 1024px) {
+	.g2f-project-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.g2f-hero-title {
+		font-size: 60px;
+	}
+
+	.g2f-footer-title {
+		font-size: 60px;
+	}
+
+	.is-style-g2f-section {
+		padding: 60px 40px;
+	}
+
+	.g2f-footer {
+		padding: 60px 40px 16px;
+	}
+
+	.g2f-footer-nav {
+		flex-wrap: wrap;
+	}
+
+	.g2f-services-zigzag {
+		padding-left: 60px !important;
+		padding-right: 60px !important;
+	}
+
+	.g2f-projects-grid-section {
+		padding-left: 60px !important;
+		padding-right: 60px !important;
+	}
+
+	.g2f-portfolio-split {
+		padding-left: 60px !important;
+		padding-right: 60px !important;
+	}
+
+	.g2f-testimonials {
+		padding-left: 60px !important;
+		padding-right: 60px !important;
+	}
+
+	/* Services section responsive */
+	.g2f-service-row .wp-block-column {
+		flex-basis: 50% !important;
+	}
+
+	/* Portfolio split responsive */
+	.g2f-portfolio-heading p {
+		font-size: 52px !important;
+	}
+
+	/* About section responsive */
+	.g2f-vertical-text-right {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-project-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.g2f-project-tabs {
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	.g2f-hero-title {
+		font-size: 40px;
+		letter-spacing: -2px;
+	}
+
+	.g2f-footer-title {
+		font-size: 40px;
+		letter-spacing: -2px;
+	}
+
+	.is-style-g2f-section {
+		padding: 40px 20px;
+	}
+
+	.g2f-footer {
+		padding: 40px 20px 16px;
+	}
+
+	.g2f-section {
+		padding: 60px 0;
+	}
+
+	.g2f-services-zigzag {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-projects-grid-section {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-projects-grid-section h2 {
+		font-size: 40px !important;
+	}
+
+	.g2f-portfolio-split {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-testimonials {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-footer-social {
+		text-align: left;
+	}
+
+	.g2f-footer-contact {
+		flex-wrap: wrap;
+	}
+
+	.wp-block-navigation-item__content {
+		font-size: 16px;
+	}
+
+	/* Services section mobile - stack vertically */
+	.g2f-service-row {
+		flex-direction: column !important;
+	}
+
+	.g2f-service-row .wp-block-column {
+		flex-basis: 100% !important;
+		width: 100%;
+	}
+
+	.g2f-service-row h3 {
+		font-size: 36px !important;
+	}
+
+	.g2f-services-zigzag h2 {
+		font-size: 40px !important;
+	}
+
+	/* Portfolio split mobile - stack */
+	.g2f-portfolio-split .wp-block-columns {
+		flex-direction: column !important;
+	}
+
+	.g2f-portfolio-split .wp-block-column {
+		flex-basis: 100% !important;
+		width: 100%;
+	}
+
+	.g2f-portfolio-heading p {
+		font-size: 40px !important;
+	}
+
+	/* About section mobile */
+	.g2f-about-section .wp-block-columns {
+		flex-direction: column !important;
+	}
+
+	.g2f-about-section .wp-block-column {
+		flex-basis: 100% !important;
+		width: 100%;
+	}
+
+	.g2f-about-section h2 {
+		font-size: 40px !important;
+	}
+
+	/* Testimonials mobile */
+	.g2f-testimonials h2,
+	.g2f-testimonials-dark h2 {
+		font-size: 40px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.g2f-hero-title {
+		font-size: 32px;
+	}
+
+	.g2f-footer-title {
+		font-size: 32px;
+	}
+}
+
+/* ===================================
+   Section Container Padding (Desktop Default)
+   =================================== */
+.g2f-services-zigzag,
+.g2f-projects-grid-section,
+.g2f-portfolio-split,
+.g2f-testimonials {
+	padding-left: 151px !important;
+	padding-right: 151px !important;
+}
+
+/* ===================================
+   Services Zig-Zag Layout
+   =================================== */
+.g2f-services-zigzag {
+	position: relative;
+}
+
+/* Typography - Bold/Light weight mixing */
+.g2f-services-zigzag h2 {
+	font-weight: 400;
+}
+
+.g2f-services-zigzag h2 strong {
+	font-weight: 700;
+}
+
+.g2f-services-zigzag .g2f-service-row p strong {
+	font-weight: 700;
+}
+
+.g2f-service-row {
+	align-items: center;
+}
+
+.g2f-service-image-large {
+	width: 100%;
+	min-height: 400px;
+	overflow: hidden;
+}
+
+.g2f-service-image-large img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	min-height: 400px;
+}
+
+/* ===================================
+   Portfolio Split Layout
+   =================================== */
+.g2f-portfolio-split {
+	position: relative;
+}
+
+.g2f-portfolio-heading {
+	display: flex;
+	flex-direction: column;
+}
+
+.g2f-portfolio-heading p {
+	margin: 0;
+	padding: 0;
+}
+
+.g2f-portfolio-heading strong {
+	font-weight: 700;
+}
+
+.g2f-portfolio-content {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Solid button style for Solutions */
+.g2f-portfolio-content .wp-block-group.has-black-background-color {
+	transition: var(--g2f-transition);
+}
+
+.g2f-portfolio-content .wp-block-group.has-black-background-color:hover {
+	background: var(--wp--preset--color--white) !important;
+}
+
+.g2f-portfolio-content .wp-block-group.has-black-background-color:hover p {
+	color: var(--wp--preset--color--black) !important;
+}
+
+.g2f-portfolio-content .wp-block-group.has-black-background-color:hover svg path {
+	stroke: var(--wp--preset--color--black);
+}
+
+/* ===================================
+   About Section - Vertical Text Right
+   =================================== */
+.g2f-about-section {
+	position: relative;
+}
+
+.g2f-about-section > .wp-block-group {
+	position: relative;
+}
+
+.g2f-vertical-text-right {
+	position: absolute;
+	right: -60px;
+	top: 50%;
+	transform: translateY(-50%) rotate(90deg);
+	transform-origin: center center;
+	white-space: nowrap;
+	margin: 0;
+	color: var(--wp--preset--color--black);
+}
+
+/* Typography fix for About heading - "Creative" bold */
+.g2f-about-section h2 strong {
+	font-weight: 700;
+}
+
+.g2f-about-section h2 {
+	font-weight: 400;
+}
+
+/* ===================================
+   Testimonials Light Theme
+   =================================== */
+.g2f-testimonials {
+	background: var(--wp--preset--color--gray-light);
+}
+
+.g2f-testimonials .g2f-testimonial-text {
+	color: var(--wp--preset--color--text-muted);
+}
+
+/* Light theme testimonial dots */
+.g2f-testimonials .g2f-testimonial-dot {
+	background: var(--wp--preset--color--border-light);
+}
+
+.g2f-testimonials .g2f-testimonial-dot.active {
+	background: var(--wp--preset--color--black);
+}
+
+/* ===================================
+   Testimonials Dark Theme (legacy support)
+   =================================== */
+.g2f-testimonials-dark {
+	background: var(--wp--preset--color--gray-dark);
+}
+
+.g2f-testimonials-dark .g2f-testimonial-text {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark theme testimonial dots */
+.g2f-testimonial-dot-dark {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.g2f-testimonial-dot-dark.active {
+	background: var(--wp--preset--color--white);
+}
+
+/* Text color helper for dark backgrounds */
+.has-text-light-color {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===================================
+   Animation Classes
+   =================================== */
+.g2f-fade-in {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.g2f-fade-in.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.g2f-slide-left {
+	opacity: 0;
+	transform: translateX(-40px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.g2f-slide-left.is-visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.g2f-slide-right {
+	opacity: 0;
+	transform: translateX(40px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.g2f-slide-right.is-visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Stagger animation delay */
+.g2f-stagger-1 { transition-delay: 0.1s; }
+.g2f-stagger-2 { transition-delay: 0.2s; }
+.g2f-stagger-3 { transition-delay: 0.3s; }
+.g2f-stagger-4 { transition-delay: 0.4s; }
+.g2f-stagger-5 { transition-delay: 0.5s; }
+.g2f-stagger-6 { transition-delay: 0.6s; }
+
+/* ===================================
+   Responsive Content Container
+   =================================== */
+.g2f-content-container {
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	padding-left: clamp(20px, 5vw, 151px);
+	padding-right: clamp(20px, 5vw, 151px);
+}
+
+/* Full-width background sections need negative margins to break out */
+.g2f-content-container .g2f-testimonials,
+.g2f-content-container .g2f-testimonials-dark,
+.g2f-content-container .g2f-portfolio-split {
+	margin-left: calc(-1 * clamp(20px, 5vw, 151px));
+	margin-right: calc(-1 * clamp(20px, 5vw, 151px));
+	padding-left: clamp(20px, 5vw, 151px) !important;
+	padding-right: clamp(20px, 5vw, 151px) !important;
+	width: calc(100% + 2 * clamp(20px, 5vw, 151px));
+}
+
+/* Responsive adjustments for content container */
+@media (max-width: 1440px) {
+	.g2f-content-container {
+		padding-left: clamp(20px, 5vw, 100px);
+		padding-right: clamp(20px, 5vw, 100px);
+	}
+
+	.g2f-content-container .g2f-testimonials,
+	.g2f-content-container .g2f-testimonials-dark,
+	.g2f-content-container .g2f-portfolio-split {
+		margin-left: calc(-1 * clamp(20px, 5vw, 100px));
+		margin-right: calc(-1 * clamp(20px, 5vw, 100px));
+		padding-left: clamp(20px, 5vw, 100px) !important;
+		padding-right: clamp(20px, 5vw, 100px) !important;
+		width: calc(100% + 2 * clamp(20px, 5vw, 100px));
+	}
+}
+
+@media (max-width: 1024px) {
+	.g2f-content-container {
+		padding-left: clamp(20px, 4vw, 60px);
+		padding-right: clamp(20px, 4vw, 60px);
+	}
+
+	.g2f-content-container .g2f-testimonials,
+	.g2f-content-container .g2f-testimonials-dark,
+	.g2f-content-container .g2f-portfolio-split {
+		margin-left: calc(-1 * clamp(20px, 4vw, 60px));
+		margin-right: calc(-1 * clamp(20px, 4vw, 60px));
+		padding-left: clamp(20px, 4vw, 60px) !important;
+		padding-right: clamp(20px, 4vw, 60px) !important;
+		width: calc(100% + 2 * clamp(20px, 4vw, 60px));
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-content-container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.g2f-content-container .g2f-testimonials,
+	.g2f-content-container .g2f-testimonials-dark,
+	.g2f-content-container .g2f-portfolio-split {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+		width: calc(100% + 40px);
+	}
+}
