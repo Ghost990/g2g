@@ -1478,3 +1478,281 @@ body.header-is-sticky main {
 		width: calc(100% + 40px);
 	}
 }
+
+
+/* ==========================================================================
+   Back to Top Button
+   ========================================================================== */
+
+.g2f-back-to-top {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	z-index: 999;
+	width: 48px;
+	height: 48px;
+	background: #000;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(12px);
+	transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.g2f-back-to-top.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.g2f-back-to-top:hover {
+	background: #333;
+}
+
+/* ==========================================================================
+   Hero Banner — Inner Pages
+   ========================================================================== */
+
+.g2f-hero-banner .g2f-hero-wrapper {
+	width: 100%;
+}
+
+.g2f-hero-banner .g2f-hero-banner-cover {
+	flex: 1 1 auto;
+}
+
+/* ==========================================================================
+   CTA Divider
+   ========================================================================== */
+
+.g2f-cta-divider {
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.g2f-cta-divider--dark {
+	background: #000;
+}
+
+.g2f-cta-divider--light {
+	background: #f9f9f9;
+	border-top: 1px solid #e8e8e8;
+}
+
+.g2f-cta-divider h2 {
+	max-width: 640px;
+}
+
+/* ==========================================================================
+   Project Info Sidebar
+   ========================================================================== */
+
+.g2f-project-info {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.g2f-project-meta-item {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	padding-bottom: 20px;
+}
+
+.g2f-project-meta-item:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.g2f-project-meta-label {
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.g2f-project-meta-value {
+	font-family: 'Inter', sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	color: #fff;
+	line-height: 1.4;
+}
+
+.g2f-project-meta-item--link {
+	border-bottom: none;
+	padding-top: 8px;
+}
+
+.g2f-btn--outline {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 20px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #fff;
+	font-family: 'Inter', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	text-decoration: none;
+	letter-spacing: 0.5px;
+	transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.g2f-btn--outline:hover {
+	border-color: #fff;
+	background: rgba(255, 255, 255, 0.05);
+	color: #fff;
+}
+
+/* ==========================================================================
+   Single Project Layout
+   ========================================================================== */
+
+.g2f-single-project .g2f-project-sidebar__inner {
+	position: sticky;
+	top: calc(var(--wp--preset--spacing--header-height, 80px) + 24px);
+}
+
+/* ==========================================================================
+   Service Hero Variations
+   ========================================================================== */
+
+/* UX/UI — dark navy */
+.g2f-service-hero--ux .g2f-vertical-text-strip {
+	background-color: #fff !important;
+}
+
+/* Art Direction — yellow: vertical strip is black */
+.g2f-service-hero--art .g2f-vertical-text-strip {
+	background-color: #000 !important;
+}
+
+/* Photography — concrete dark */
+.g2f-service-hero--photo .g2f-vertical-text-strip {
+	background-color: #fff !important;
+}
+
+/* ==========================================================================
+   Service Projects Grid (PHP Pattern)
+   ========================================================================== */
+
+.g2f-projects-section .g2f-section-header {
+	margin-bottom: 48px;
+}
+
+.g2f-projects-section .g2f-section-title {
+	font-family: 'Inter', sans-serif;
+	font-size: clamp(28px, 4vw, 48px);
+	font-weight: 400;
+	letter-spacing: -1px;
+	line-height: 1.1;
+	margin: 0;
+}
+
+.g2f-projects-section .g2f-section-title em {
+	font-style: italic;
+}
+
+.g2f-projects-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+}
+
+.g2f-project-card__link {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+.g2f-project-card__image {
+	margin: 0;
+	overflow: hidden;
+	aspect-ratio: 4/3;
+}
+
+.g2f-project-card__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.g2f-project-card:hover .g2f-project-card__image img {
+	transform: scale(1.03);
+}
+
+.g2f-project-card__info {
+	padding-top: 16px;
+}
+
+.g2f-project-card__title {
+	font-family: 'Inter', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0 0 6px;
+	line-height: 1.3;
+}
+
+.g2f-project-card__cat {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #666;
+}
+
+.g2f-load-more-wrap {
+	text-align: center;
+	margin-top: 48px;
+}
+
+.g2f-no-projects {
+	font-family: 'Inter', sans-serif;
+	color: #666;
+	font-size: 16px;
+}
+
+/* ==========================================================================
+   Responsive: Project Grid + Single Project
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+	.g2f-projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-projects-grid {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	.g2f-single-project .g2f-project-sidebar__inner {
+		position: static;
+	}
+
+	.g2f-back-to-top {
+		bottom: 20px;
+		right: 20px;
+		width: 40px;
+		height: 40px;
+	}
+
+	.g2f-cta-divider {
+		flex-direction: column;
+		gap: 32px;
+	}
+}

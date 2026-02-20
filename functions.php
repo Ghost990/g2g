@@ -250,22 +250,28 @@ function g2f_check_icon_block_plugin() {
 add_action( 'admin_init', 'g2f_check_icon_block_plugin' );
 
 /**
- * Register Project custom post type and taxonomy
+ * Register Project custom post type, taxonomies, Testimonial CPT
  */
 function g2f_register_project_cpt() {
+
+	// Project CPT
 	register_post_type( 'project', array(
 		'labels' => array(
 			'name'          => __( 'Projects', 'g2f-theme' ),
 			'singular_name' => __( 'Project', 'g2f-theme' ),
+			'add_new_item'  => __( 'Add New Project', 'g2f-theme' ),
+			'edit_item'     => __( 'Edit Project', 'g2f-theme' ),
 		),
 		'public'       => true,
 		'has_archive'  => true,
 		'show_in_rest' => true,
-		'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
 		'menu_icon'    => 'dashicons-portfolio',
+		'menu_position' => 5,
 		'rewrite'      => array( 'slug' => 'projects' ),
 	) );
 
+	// Project Category Taxonomy (hierarchical)
 	register_taxonomy( 'project_category', 'project', array(
 		'labels' => array(
 			'name'          => __( 'Project Categories', 'g2f-theme' ),
@@ -276,5 +282,128 @@ function g2f_register_project_cpt() {
 		'hierarchical' => true,
 		'rewrite'      => array( 'slug' => 'project-category' ),
 	) );
+
+	// Project Service Taxonomy (flat — for service sub-page filtering)
+	// Terms: ux-design, art-direction, photography
+	register_taxonomy( 'project_service', 'project', array(
+		'labels' => array(
+			'name'          => __( 'Services', 'g2f-theme' ),
+			'singular_name' => __( 'Service', 'g2f-theme' ),
+		),
+		'public'       => true,
+		'show_in_rest' => true,
+		'hierarchical' => false,
+		'rewrite'      => array( 'slug' => 'service' ),
+	) );
+
+	// Testimonial CPT (private, for dynamic testimonials block)
+	register_post_type( 'testimonial', array(
+		'labels' => array(
+			'name'          => __( 'Testimonials', 'g2f-theme' ),
+			'singular_name' => __( 'Testimonial', 'g2f-theme' ),
+			'add_new_item'  => __( 'Add Testimonial', 'g2f-theme' ),
+		),
+		'public'       => false,
+		'show_ui'      => true,
+		'show_in_rest' => true,
+		'supports'     => array( 'title', 'editor', 'custom-fields' ),
+		'menu_icon'    => 'dashicons-format-quote',
+		'menu_position' => 6,
+	) );
 }
 add_action( 'init', 'g2f_register_project_cpt' );
+
+/**
+ * Register project and testimonial custom meta fields
+ */
+function g2f_register_meta_fields() {
+	$project_fields = array(
+		'_g2f_client_name'   => array( 'type' => 'string',  'cb' => 'sanitize_text_field' ),
+		'_g2f_project_year'  => array( 'type' => 'string',  'cb' => 'sanitize_text_field' ),
+		'_g2f_project_role'  => array( 'type' => 'string',  'cb' => 'sanitize_text_field' ),
+		'_g2f_project_url'   => array( 'type' => 'string',  'cb' => 'esc_url_raw' ),
+		'_g2f_show_homepage' => array( 'type' => 'boolean', 'cb' => 'rest_sanitize_boolean' ),
+	);
+	foreach ( $project_fields as $key => $args ) {
+		register_post_meta( 'project', $key, array(
+			'single'            => true,
+			'type'              => $args['type'],
+			'sanitize_callback' => $args['cb'],
+			'show_in_rest'      => true,
+			'default'           => $args['type'] === 'boolean' ? true : '',
+		) );
+	}
+	register_post_meta( 'testimonial', '_g2f_testimonial_author', array( 'single' => true, 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'show_in_rest' => true ) );
+	register_post_meta( 'testimonial', '_g2f_testimonial_role',   array( 'single' => true, 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field', 'show_in_rest' => true ) );
+}
+add_action( 'init', 'g2f_register_meta_fields' );
+
+/**
+ * Meta boxes for project info and testimonial author
+ */
+function g2f_add_meta_boxes() {
+	add_meta_box( 'g2f_project_info',      __( 'Project Info', 'g2f-theme' ), 'g2f_project_info_meta_box',      'project',     'side', 'high' );
+	add_meta_box( 'g2f_testimonial_info',  __( 'Author Info', 'g2f-theme' ),  'g2f_testimonial_info_meta_box',  'testimonial', 'side', 'high' );
+}
+add_action( 'add_meta_boxes', 'g2f_add_meta_boxes' );
+
+function g2f_project_info_meta_box( $post ) {
+	wp_nonce_field( 'g2f_project_meta', 'g2f_project_nonce' );
+	$fields = array( '_g2f_client_name' => 'Client', '_g2f_project_year' => 'Year', '_g2f_project_role' => 'Role / Deliverable', '_g2f_project_url' => 'Live URL' );
+	foreach ( $fields as $key => $label ) {
+		$val = get_post_meta( $post->ID, $key, true );
+		$type = $key === '_g2f_project_url' ? 'url' : 'text';
+		echo "<p><label>{$label}<br><input type='{$type}' name='{$key}' value='" . esc_attr( $val ) . "' style='width:100%'></label></p>";
+	}
+	$show = get_post_meta( $post->ID, '_g2f_show_homepage', true );
+	$show = $show === '' ? true : (bool) $show;
+	echo '<p><label><input type="checkbox" name="_g2f_show_homepage" value="1" ' . checked( $show, true, false ) . '> Show on homepage</label></p>';
+}
+
+function g2f_testimonial_info_meta_box( $post ) {
+	wp_nonce_field( 'g2f_testimonial_meta', 'g2f_testimonial_nonce' );
+	$author = get_post_meta( $post->ID, '_g2f_testimonial_author', true );
+	$role   = get_post_meta( $post->ID, '_g2f_testimonial_role', true );
+	echo "<p><label>Author Name<br><input type='text' name='_g2f_testimonial_author' value='" . esc_attr( $author ) . "' style='width:100%'></label></p>";
+	echo "<p><label>Author Role / Company<br><input type='text' name='_g2f_testimonial_role' value='" . esc_attr( $role ) . "' style='width:100%'></label></p>";
+}
+
+function g2f_save_meta_boxes( $post_id ) {
+	if ( isset( $_POST['g2f_project_nonce'] ) && wp_verify_nonce( $_POST['g2f_project_nonce'], 'g2f_project_meta' ) ) {
+		$string_fields = array( '_g2f_client_name', '_g2f_project_year', '_g2f_project_role' );
+		foreach ( $string_fields as $f ) {
+			if ( isset( $_POST[ $f ] ) ) update_post_meta( $post_id, $f, sanitize_text_field( $_POST[ $f ] ) );
+		}
+		if ( isset( $_POST['_g2f_project_url'] ) ) update_post_meta( $post_id, '_g2f_project_url', esc_url_raw( $_POST['_g2f_project_url'] ) );
+		update_post_meta( $post_id, '_g2f_show_homepage', isset( $_POST['_g2f_show_homepage'] ) ? true : false );
+	}
+	if ( isset( $_POST['g2f_testimonial_nonce'] ) && wp_verify_nonce( $_POST['g2f_testimonial_nonce'], 'g2f_testimonial_meta' ) ) {
+		if ( isset( $_POST['_g2f_testimonial_author'] ) ) update_post_meta( $post_id, '_g2f_testimonial_author', sanitize_text_field( $_POST['_g2f_testimonial_author'] ) );
+		if ( isset( $_POST['_g2f_testimonial_role'] ) ) update_post_meta( $post_id, '_g2f_testimonial_role', sanitize_text_field( $_POST['_g2f_testimonial_role'] ) );
+	}
+}
+add_action( 'save_post', 'g2f_save_meta_boxes' );
+
+/**
+ * Back to top button (injected via wp_footer)
+ */
+function g2f_back_to_top_button() {
+	?>
+	<button class="g2f-back-to-top" aria-label="<?php esc_attr_e( 'Back to top', 'g2f-theme' ); ?>">
+		<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</button>
+	<?php
+}
+add_action( 'wp_footer', 'g2f_back_to_top_button' );
+
+/**
+ * Polylang: register translatable theme strings
+ */
+add_action( 'pll_init', function() {
+	if ( function_exists( 'pll_register_string' ) ) {
+		pll_register_string( 'cta_button',   'Get In Touch',                      'G2F Theme' );
+		pll_register_string( 'cta_headline', "Have a project in mind? Let's talk.", 'G2F Theme' );
+	}
+} );
