@@ -43,11 +43,11 @@
 					<div class="wp-block-group">
 
 						<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7","fontWeight":"400"}},"fontFamily":"roboto"} -->
-						<p class="has-roboto-font-family" style="font-size:20px;font-weight:400;line-height:1.7">Welcome to <strong>G2F Design</strong>—a culmination of two decades of experience, relentless curiosity, and a passion for shaping extraordinary visual narratives.</p>
+						<p class="has-roboto-font-family" style="font-size:20px;font-weight:400;line-height:1.7">Welcome to <strong>G2F Design</strong> — a culmination of two decades of experience, relentless creativity, and a passion for shaping extraordinary visual experiences.</p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7","fontWeight":"400"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-						<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:20px;font-weight:400;line-height:1.7">At <strong>G2F Design</strong>, we bring creativity to life through UX/UI design, art direction, graphic design, and photography. Our mission is to craft visually striking and user-focused solutions that inspire, engage, and leave a lasting impact.</p>
+						<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:20px;font-weight:400;line-height:1.7">At the heart of <strong>G2F Design</strong> is a commitment to fusing creative design and web technology into seamless visual experiences and functionality. We specialize in creating beautiful digital experiences that not only look stunning but also work flawlessly.</p>
 						<!-- /wp:paragraph -->
 
 					</div>

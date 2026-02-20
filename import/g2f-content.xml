@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+
+<channel>
+	<title>G2F Design</title>
+	<link>https://g2fdesign.com</link>
+	<description>Creative Design Studio</description>
+	<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+	<language>en-US</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://g2fdesign.com</wp:base_site_url>
+	<wp:base_blog_url>https://g2fdesign.com</wp:base_blog_url>
+
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[g2fdesign@gmail.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[G2F Design]]></wp:author_display_name>
+	</wp:author>
+
+	<!-- Taxonomy: project_service -->
+	<wp:term>
+		<wp:term_id>1</wp:term_id>
+		<wp:term_taxonomy>project_service</wp:term_taxonomy>
+		<wp:term_slug><![CDATA[ux-design]]></wp:term_slug>
+		<wp:term_name><![CDATA[UX/UI Design]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>2</wp:term_id>
+		<wp:term_taxonomy>project_service</wp:term_taxonomy>
+		<wp:term_slug><![CDATA[art-direction]]></wp:term_slug>
+		<wp:term_name><![CDATA[Art Direction]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>3</wp:term_id>
+		<wp:term_taxonomy>project_service</wp:term_taxonomy>
+		<wp:term_slug><![CDATA[photography]]></wp:term_slug>
+		<wp:term_name><![CDATA[Photography]]></wp:term_name>
+	</wp:term>
+
+	<!-- Taxonomy: project_category -->
+	<wp:term>
+		<wp:term_id>4</wp:term_id>
+		<wp:term_taxonomy>project_category</wp:term_taxonomy>
+		<wp:term_slug><![CDATA[website]]></wp:term_slug>
+		<wp:term_name><![CDATA[Website]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>5</wp:term_id>
+		<wp:term_taxonomy>project_category</wp:term_taxonomy>
+		<wp:term_slug><![CDATA[branding]]></wp:term_slug>
+		<wp:term_name><![CDATA[Branding]]></wp:term_name>
+	</wp:term>
+
+	<!-- Navigation menus -->
+	<wp:term>
+		<wp:term_id>10</wp:term_id>
+		<wp:term_taxonomy>nav_menu</wp:term_taxonomy>
+		<wp:term_slug><![CDATA[primary-menu]]></wp:term_slug>
+		<wp:term_name><![CDATA[Primary Menu]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>11</wp:term_id>
+		<wp:term_taxonomy>nav_menu</wp:term_taxonomy>
+		<wp:term_slug><![CDATA[footer-menu]]></wp:term_slug>
+		<wp:term_name><![CDATA[Footer Menu]]></wp:term_name>
+	</wp:term>
+
+	<!-- ==================== PAGES ==================== -->
+
+	<!-- Page: Home -->
+	<item>
+		<title>Home</title>
+		<link>https://g2fdesign.com/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>10</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[home]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Page: About Us -->
+	<item>
+		<title>About Us</title>
+		<link>https://g2fdesign.com/about/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"className":"g2f-about-text","style":{"spacing":{"blockGap":"32px"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<div class="wp-block-group g2f-about-text">
+
+<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"48px","fontWeight":"400","lineHeight":"1.1"}},"fontFamily":"inter"} -->
+<h2 class="wp-block-heading has-inter-font-family" style="font-size:48px;font-weight:400;line-height:1.1">Welcome to <strong>G2F Design.</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">Welcome to G2F Design — a culmination of two decades of experience, relentless creativity, and a passion for shaping extraordinary visual experiences.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">At the heart of G2F Design is a commitment to fusing creative design and web technology into seamless visual experiences, and functionality. We specialize in creating beautiful digital experiences that not only look stunning but also work flawlessly. From corporate to small personal projects, our design is aimed to create extraordinary visuals and exceptional design projects.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">Our approach to the Creative goes beyond aesthetics. Every campaign, social storytelling. The work starts with a deep dive to define and research the target audience while analyzing all brand dynamics from competitive and creative landscape. Whether developing a product, creating an identity or building a digital experience from the ground up — the design solutions address the specific challenges and opportunities.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">With a background spanning several decades in photography, and identity formation at national and international level, G2F Design brings a multidisciplinary approach to every project. This allows us to see the big picture while meticulously caring for the details that bring the vision to life.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">Creative excellence begins with understanding your business. We'll set up a 1-on-1 meeting to discuss all of what's next.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button {"className":"g2f-cta-button"} -->
+<div class="wp-block-button g2f-cta-button"><a class="wp-block-button__link wp-element-button" href="/contact/">Let's Work Together</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+
+</div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>11</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[about]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page-about.html]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Page: Services -->
+	<item>
+		<title>Services</title>
+		<link>https://g2fdesign.com/services/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"className":"g2f-services-text","style":{"spacing":{"blockGap":"32px"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<div class="wp-block-group g2f-services-text">
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">At G2F Design, we bring together strategy through design, communication, creativity, and technology to build experiences that resonate. Our goal is to empower your business through a thoughtful and cohesive creative process — from ideation to execution — backed by over 20 years of professional experience in digital, design, production, and visual communication.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">In today's fast moving digital world, every platform touchpoint (UI, ad, post, layout) represents your brand to the world. That's why we don't just make things look good — we make them work. From user experience design to impactful photography, every aspect of our process is grounded in strategy, clarity and results.</p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>12</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[services]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page-services.html]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Page: UX/UI Design (child of Services) -->
+	<item>
+		<title>UX/UI Design</title>
+		<link>https://g2fdesign.com/services/ux-design/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"className":"g2f-service-page-content","style":{"spacing":{"blockGap":"32px"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<div class="wp-block-group g2f-service-page-content">
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">At G2F Design, we craft digital experiences that perform. Our UX/UI design services focus on creating intuitive, visually compelling interfaces that drive engagement and deliver measurable results.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"28px"}},"fontFamily":"inter"} -->
+<h3 class="wp-block-heading has-inter-font-family" style="font-size:28px">What We Offer</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<ul class="has-roboto-font-family" style="font-size:18px;line-height:1.7">
+<li><strong>Website Design</strong> — Custom, responsive websites built for performance and conversion.</li>
+<li><strong>UI Applications</strong> — Clean, functional interfaces for web and mobile applications.</li>
+<li><strong>Web Platforms</strong> — Scalable platform design for complex digital ecosystems.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"28px"}},"fontFamily":"inter"} -->
+<h3 class="wp-block-heading has-inter-font-family" style="font-size:28px">Our Process</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">Every project begins with thorough research and discovery. We move through wireframes and prototyping into visual design, and finally provide a complete development handoff — ensuring pixel-perfect implementation every time.</p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>13</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[ux-design]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>12</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page-ux-design.html]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Page: Art Direction (child of Services) -->
+	<item>
+		<title>Art Direction</title>
+		<link>https://g2fdesign.com/services/art-direction/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"className":"g2f-service-page-content","style":{"spacing":{"blockGap":"32px"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<div class="wp-block-group g2f-service-page-content">
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">Art direction at G2F Design is about shaping visual worlds with meaning. We create cohesive visual narratives that elevate your brand and communicate your message with clarity and impact.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"28px"}},"fontFamily":"inter"} -->
+<h3 class="wp-block-heading has-inter-font-family" style="font-size:28px">What We Offer</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<ul class="has-roboto-font-family" style="font-size:18px;line-height:1.7">
+<li><strong>Branding</strong> — Complete brand identity systems that resonate with your audience.</li>
+<li><strong>Visual Identity</strong> — Logos, color systems, and typography that define your brand.</li>
+<li><strong>Graphic Design</strong> — Print and digital design that communicates with purpose.</li>
+<li><strong>Campaign Design</strong> — Visual campaigns that capture attention and drive action.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7","fontStyle":"italic"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:20px;font-style:italic;line-height:1.7">Design that speaks before a word is said.</p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>14</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[art-direction]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>12</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page-art-direction.html]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Page: Photography (child of Services) -->
+	<item>
+		<title>Photography</title>
+		<link>https://g2fdesign.com/services/photography/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"className":"g2f-service-page-content","style":{"spacing":{"blockGap":"32px"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<div class="wp-block-group g2f-service-page-content">
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">At G2F Design, photography is more than capturing images — it's about crafting visual stories that connect with your audience and elevate your brand presence.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"28px"}},"fontFamily":"inter"} -->
+<h3 class="wp-block-heading has-inter-font-family" style="font-size:28px">What We Offer</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<ul class="has-roboto-font-family" style="font-size:18px;line-height:1.7">
+<li><strong>Commercial Photography</strong> — Professional imagery for advertising, campaigns, and marketing materials.</li>
+<li><strong>Brand Photography</strong> — Authentic visual content that tells your brand's story.</li>
+<li><strong>Product Photography</strong> — Clean, compelling product shots that drive conversion.</li>
+</ul>
+<!-- /wp:list -->
+
+</div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>15</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[photography]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>12</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page-photography.html]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Page: Gallery -->
+	<item>
+		<title>Gallery</title>
+		<link>https://g2fdesign.com/gallery/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>16</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- ==================== PROJECT ==================== -->
+
+	<!-- Project: AsicMinerz Website -->
+	<item>
+		<title>AsicMinerz Website</title>
+		<link>https://g2fdesign.com/project/asicminerz-website/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"className":"g2f-project-content","style":{"spacing":{"blockGap":"48px"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<div class="wp-block-group g2f-project-content">
+
+<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"36px"}},"fontFamily":"inter"} -->
+<h2 class="wp-block-heading has-inter-font-family" style="font-size:36px">About The Project.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">The AsicMinerz project was a fully custom-built website solution created for AsicMinerz, a Hungary-based company specializing in cryptocurrency ASIC miners for use in Dubai, Texas, and various markets. The website combines a comprehensive design strategy with robust web capabilities to demonstrate value, drive brand awareness, authority, and build trust.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"36px"}},"fontFamily":"inter"} -->
+<h2 class="wp-block-heading has-inter-font-family" style="font-size:36px">1. Product Strategy</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">The objective was to create a clean, visually engaging platform that caters to a broad audience of miners and investors — merging accessibility with sophistication through clear visual and interactive structure. The design features duotoned, parallaxed products through clean layouts, content architecture, color and editorial best practices.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"36px"}},"fontFamily":"inter"} -->
+<h2 class="wp-block-heading has-inter-font-family" style="font-size:36px">2. Target Audience</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">The primary audience includes individuals and businesses interested in cryptocurrency mining globally. The demographic covers all levels — from intermediate to advanced — and the design and content was crafted to appeal to a wider audience in a digital environment.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"36px"}},"fontFamily":"inter"} -->
+<h2 class="wp-block-heading has-inter-font-family" style="font-size:36px">3. Approach</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.7"}},"fontFamily":"roboto"} -->
+<p class="has-roboto-font-family" style="font-size:18px;line-height:1.7">The project began with research into the crypto mining market and user expectations. We developed the information architecture, wireframes, and visual designs using a modular component-based system for sustainable web performance. Emphasis was placed on professional aesthetics, technical accuracy, accessibility and user-focused data orientation.</p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[Custom website solution for a Hungary-based cryptocurrency mining company.]]></excerpt:encoded>
+		<wp:post_id>20</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[asicminerz-website]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[project]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="project_service" nicename="ux-design"><![CDATA[UX/UI Design]]></category>
+		<category domain="project_category" nicename="website"><![CDATA[Website]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_g2f_client_name]]></wp:meta_key>
+			<wp:meta_value><![CDATA[AsicMinerz / Koltsény Marketing Kft.]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_g2f_project_year]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2024]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_g2f_project_role]]></wp:meta_key>
+			<wp:meta_value><![CDATA[Web Design / UX / Marketing / Branding]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_g2f_project_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_g2f_show_homepage]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- ==================== NAV MENU ITEMS: PRIMARY ==================== -->
+
+	<item>
+		<title>Home</title>
+		<link>https://g2fdesign.com/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>100</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[home-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[10]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<item>
+		<title>About Us</title>
+		<link>https://g2fdesign.com/about/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>101</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[about-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<item>
+		<title>Services</title>
+		<link>https://g2fdesign.com/services/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>102</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[services-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Sub-menu: UX/UI Design (child of Services) -->
+	<item>
+		<title>UX/UI Design</title>
+		<link>https://g2fdesign.com/services/ux-design/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>103</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[ux-design-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[102]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[13]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Sub-menu: Art Direction (child of Services) -->
+	<item>
+		<title>Art Direction</title>
+		<link>https://g2fdesign.com/services/art-direction/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>104</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[art-direction-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>5</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[102]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[14]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Sub-menu: Photography (child of Services) -->
+	<item>
+		<title>Photography</title>
+		<link>https://g2fdesign.com/services/photography/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>105</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[photography-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>6</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[102]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[15]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Primary: Gallery -->
+	<item>
+		<title>Gallery</title>
+		<link>https://g2fdesign.com/gallery/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>106</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>7</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[16]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- ==================== NAV MENU ITEMS: FOOTER ==================== -->
+
+	<item>
+		<title>Home</title>
+		<link>https://g2fdesign.com/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>200</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-home]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="footer-menu"><![CDATA[Footer Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[10]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<item>
+		<title>About</title>
+		<link>https://g2fdesign.com/about/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>201</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-about]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="footer-menu"><![CDATA[Footer Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<item>
+		<title>Services</title>
+		<link>https://g2fdesign.com/services/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>202</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-services]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="footer-menu"><![CDATA[Footer Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<item>
+		<title>Contact</title>
+		<link>https://g2fdesign.com/contact/</link>
+		<pubDate>Thu, 20 Feb 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>203</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-20 12:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-20 11:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-contact]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="footer-menu"><![CDATA[Footer Menu]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[203]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[/contact/]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- ==================== WP OPTIONS ==================== -->
+	<!-- Note: WXR doesn't natively support wp_options. After import, set:
+	     - show_on_front: page
+	     - page_on_front: [ID of Home page]
+	     via WP-CLI: wp option update show_on_front page && wp option update page_on_front [HOME_ID]
+	-->
+
+</channel>
+</rss>

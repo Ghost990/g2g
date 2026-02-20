@@ -19,7 +19,7 @@
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"24px","lineHeight":"1.5","letterSpacing":"-0.24px"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-		<p class="has-text-align-center has-text-muted-color has-text-color has-roboto-font-family" style="font-size:24px;letter-spacing:-0.24px;line-height:1.5">Our services are more than just solutions, they're opportunities to transform your digital presence and achieve your business objectives.</p>
+		<p class="has-text-align-center has-text-muted-color has-text-color has-roboto-font-family" style="font-size:24px;letter-spacing:-0.24px;line-height:1.5">We provide numerous web services, UI applications as turnkey/end-to-end digital and interactive solutions, giving you a competitive digital business or identity.</p>
 		<!-- /wp:paragraph -->
 
 	</div>
@@ -52,18 +52,18 @@
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"48px","fontStyle":"normal","fontWeight":"700","lineHeight":"1.1"}},"fontFamily":"inter"} -->
-				<h3 class="wp-block-heading has-inter-font-family" style="font-size:48px;font-style:normal;font-weight:700;line-height:1.1">Product Design</h3>
+				<h3 class="wp-block-heading has-inter-font-family" style="font-size:48px;font-style:normal;font-weight:700;line-height:1.1">UX/UI Design</h3>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Design products that feel inevitable.</strong> Simple, intuitive, and impossible to ignore. From concept to launch, we transform complex ideas into experiences people love.</p>
+				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Product that enables platform service.</strong> We design digital experiences — websites, UI applications, and web platforms — that are intuitive, beautiful, and built to perform.</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
 				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
-					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">EXPLORE</a></p>
+					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="/services/ux-design/">VIEW MORE →</a></p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
@@ -101,14 +101,14 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Design that speaks before you do.</strong> We craft visual languages that capture attention, build trust, and create emotional connections that last.</p>
+				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Design that speaks before a word is said.</strong> We craft visual languages that capture attention, build trust, and create emotional connections that last.</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
 				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
-					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">EXPLORE</a></p>
+					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="/services/art-direction/">VIEW MORE →</a></p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
@@ -170,14 +170,14 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Moments that move, frames that speak.</strong> We capture the essence of your brand through powerful imagery that tells stories and creates lasting impressions.</p>
+				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7"><strong>Moments that move, frames that speak.</strong> We capture the essence of your brand through powerful imagery — commercial, brand, and product photography that tells stories and creates lasting impressions.</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
 				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
-					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#">EXPLORE</a></p>
+					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="/services/photography/">VIEW MORE →</a></p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->

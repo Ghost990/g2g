@@ -18,7 +18,7 @@
 		<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
 			<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
-			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">WELCOME TO G2F DESIGN</p>
+			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">WEBSITE + UI/UX DESIGN</p>
 			<!-- /wp:paragraph -->
 
 		</div>

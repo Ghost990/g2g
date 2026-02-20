@@ -51,15 +51,7 @@
 			<div class="wp-block-group g2f-portfolio-content">
 
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">In the ever-evolving landscape of digital experiences, <strong>UX/UI design</strong> and <strong>art direction</strong> play a pivotal role in shaping how users interact with products and services.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">This section highlights the seamless blend of functionality and aesthetics that drives meaningful engagement. From intuitive interfaces to visually compelling narratives, our approach prioritizes <strong>user-centric design</strong> principles while maintaining a cohesive brand identity.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.7"}},"textColor":"text-muted"} -->
-				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">Whether crafting innovative wireframes or directing impactful visual compositions, we focus on delivering experiences that are both accessible and memorable.</p>
+				<p class="has-text-muted-color has-text-color" style="font-size:20px;line-height:1.7">G2F is a culmination from 20+ years of digital experience. Here at <strong>G2F Design</strong> we pride ourselves in providing exceptional customer-friendly service that combines our expertise in creative design, technology, and branding to transform your vision into something extraordinary.</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:group {"style":{"border":{"radius":"100px"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"32px","right":"32px"}}},"backgroundColor":"black","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
