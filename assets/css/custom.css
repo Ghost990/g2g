@@ -186,6 +186,26 @@ p strong {
 	height: 20px;
 }
 
+/* ===== BUTTON LINK COLOR FIX =====
+   Ensure <a> tags inside g2f-button-arrow always inherit color.
+   Without this, browser default link color (blue) shows through. */
+.g2f-button-arrow a,
+.g2f-button-arrow p a {
+	color: inherit !important;
+	text-decoration: none !important;
+	transition: color 0.3s ease;
+}
+
+.g2f-button-arrow:hover a,
+.g2f-button-arrow:hover p a {
+	color: var(--wp--preset--color--white) !important;
+}
+
+/* Fix SVG arrow stroke on hover (for inline icon blocks) */
+.g2f-button-arrow:hover .wp-block-outermost-icon-block svg path {
+	stroke: var(--wp--preset--color--white);
+}
+
 /* Light variant for dark backgrounds */
 .g2f-button-arrow-light {
 	border-color: var(--wp--preset--color--white) !important;
@@ -1754,5 +1774,181 @@ body.header-is-sticky main {
 	.g2f-cta-divider {
 		flex-direction: column;
 		gap: 32px;
+	}
+}
+
+/* ==========================================================================
+   Services Page — Detailed Service Blocks
+   ========================================================================== */
+
+/* Service heading typography: "UX/UI Design." — light + bold mix */
+.g2f-service-heading {
+	font-weight: 400 !important;
+	margin-bottom: 20px !important;
+}
+
+.g2f-service-heading strong {
+	font-weight: 700 !important;
+}
+
+.g2f-service-heading em {
+	font-style: italic;
+}
+
+/* Subheading */
+.g2f-service-subheading {
+	margin-bottom: 20px !important;
+}
+
+/* Detail row columns */
+.g2f-service-detail-row {
+	align-items: stretch;
+}
+
+/* Service detail image — fills column height */
+.g2f-service-detail-img {
+	margin: 0 !important;
+	height: 100%;
+}
+
+.g2f-service-detail-img img {
+	width: 100%;
+	height: 100%;
+	min-height: 380px;
+	object-fit: cover;
+	border-radius: 4px;
+	display: block;
+}
+
+/* Arrow list — replaces default disc bullets with › */
+.g2f-arrow-list {
+	list-style: none !important;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+}
+
+.g2f-arrow-list li {
+	padding-left: 22px !important;
+	position: relative;
+}
+
+.g2f-arrow-list li::before {
+	content: '›';
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 1.2em;
+	font-weight: 700;
+	line-height: inherit;
+	color: var(--wp--preset--color--black);
+}
+
+/* Services intro section */
+.g2f-intro-divider {
+	opacity: 0.15 !important;
+}
+
+.g2f-intro-service-list {
+	list-style: none !important;
+	padding-left: 0 !important;
+	margin: 12px 0 24px 0 !important;
+}
+
+.g2f-intro-service-list li {
+	padding-left: 20px;
+	position: relative;
+	font-weight: 500;
+}
+
+.g2f-intro-service-list li::before {
+	content: '›';
+	position: absolute;
+	left: 0;
+	font-weight: 700;
+	font-size: 1.1em;
+}
+
+/* Services intro image */
+.g2f-services-intro-img {
+	margin: 0 !important;
+}
+
+.g2f-services-intro-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	min-height: 400px;
+	display: block;
+}
+
+/* Services hero title — italic variants */
+.g2f-services-hero-title em {
+	font-style: italic;
+}
+
+.g2f-services-hero-title strong {
+	font-weight: 800 !important;
+}
+
+/* Responsive: service blocks */
+@media (max-width: 1440px) {
+	.g2f-service-block {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+
+	.g2f-services-intro-section {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+
+	.g2f-cta-divider {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+}
+
+@media (max-width: 1024px) {
+	.g2f-service-block {
+		padding-left: 60px !important;
+		padding-right: 60px !important;
+	}
+
+	.g2f-services-intro-section {
+		padding-left: 60px !important;
+		padding-right: 60px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-service-block {
+		padding-top: 60px !important;
+		padding-bottom: 60px !important;
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
+
+	.g2f-services-intro-section {
+		padding-top: 60px !important;
+		padding-bottom: 60px !important;
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
+
+	.g2f-service-detail-row {
+		flex-direction: column !important;
+	}
+
+	.g2f-service-detail-row .wp-block-column {
+		flex-basis: 100% !important;
+		width: 100% !important;
+	}
+
+	.g2f-service-detail-img img {
+		min-height: 280px;
+	}
+
+	.g2f-services-intro-img img {
+		min-height: 280px;
 	}
 }

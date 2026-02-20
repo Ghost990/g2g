@@ -3,28 +3,147 @@
 <!-- wp:group {"tagName":"main","className":"site-main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
 <main class="wp-block-group site-main" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
-	<!-- wp:pattern {"slug":"g2f-theme/hero-banner"} /-->
+	<!-- ===========================================================
+	     HERO — Services specific
+	     =========================================================== -->
+	<!-- wp:group {"tagName":"section","anchor":"hero","className":"g2f-hero-banner g2f-hero-banner--services","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+	<section id="hero" class="wp-block-group g2f-hero-banner g2f-hero-banner--services" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
 
-	<!-- wp:group {"tagName":"section","className":"g2f-services-intro","style":{"spacing":{"padding":{"top":"80px","bottom":"60px","left":"80px","right":"80px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
-	<section class="wp-block-group g2f-services-intro" style="padding-top:80px;padding-bottom:60px;padding-left:80px;padding-right:80px;margin-top:0;margin-bottom:0">
-		<!-- wp:post-content {"layout":{"type":"default"}} /-->
+		<!-- wp:group {"className":"g2f-hero-wrapper","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+		<div class="wp-block-group g2f-hero-wrapper" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+
+			<!-- Vertical text strip -->
+			<!-- wp:group {"className":"g2f-vertical-text-strip","backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+			<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background">
+				<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
+				<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">#SERVICES</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- Cover block with services headline -->
+			<!-- wp:cover {"url":"","dimRatio":55,"overlayColor":"black","isUserOverlayColor":true,"minHeight":520,"minHeightUnit":"px","className":"g2f-hero-banner-cover","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
+			<div class="wp-block-cover g2f-hero-banner-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:520px">
+				<span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-55 has-background-dim"></span>
+				<div class="wp-block-cover__inner-container">
+
+					<!-- wp:group {"style":{"spacing":{"padding":{"top":"140px","bottom":"80px","left":"80px","right":"80px"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->
+					<div class="wp-block-group" style="padding-top:140px;padding-bottom:80px;padding-left:80px;padding-right:80px">
+
+						<!-- wp:heading {"level":1,"className":"g2f-services-hero-title","style":{"typography":{"fontSize":"clamp(44px,6vw,88px)","fontStyle":"normal","fontWeight":"400","lineHeight":"1.05","letterSpacing":"-2.5px"}},"textColor":"white","fontFamily":"inter"} -->
+						<h1 class="wp-block-heading g2f-services-hero-title has-white-color has-text-color has-inter-font-family" style="font-size:clamp(44px,6vw,88px);font-style:normal;font-weight:400;letter-spacing:-2.5px;line-height:1.05">Design That <em>Connects.</em><br>Strategy That <strong>Performs.</strong><br>Visuals That <em>Inspire.</em></h1>
+						<!-- /wp:heading -->
+
+					</div>
+					<!-- /wp:group -->
+
+				</div>
+			</div>
+			<!-- /wp:cover -->
+
+		</div>
+		<!-- /wp:group -->
+
 	</section>
 	<!-- /wp:group -->
 
+
+	<!-- ===========================================================
+	     INTRO — Two-column: text left, image right
+	     =========================================================== -->
+	<!-- wp:group {"tagName":"section","className":"g2f-services-intro-section","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
+	<section class="wp-block-group g2f-services-intro-section has-white-background-color has-background" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
+
+		<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"80px"}}}} -->
+		<div class="wp-block-columns">
+
+			<!-- Left: text content -->
+			<!-- wp:column {"width":"55%","verticalAlignment":"top"} -->
+			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:55%">
+
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"clamp(18px,1.8vw,24px)","lineHeight":"1.75"}},"textColor":"text-muted","fontFamily":"roboto"} -->
+				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:clamp(18px,1.8vw,24px);line-height:1.75">The process starts with understanding your story — their brands, behaviors, and expectations. We map out detailed user journeys, develop personas, and align closely with your goals. From the first sketch to final screen, our work is guided by a deep commitment to quality, accessibility, and consistency.</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.75"}},"textColor":"text-muted","fontFamily":"roboto"} -->
+				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:18px;line-height:1.75">Whether you're launching a website, designing a mobile app, or sharing a digital platform, we bring a collaborative approach that integrates UX design with Art Direction. Every element — layout, typography, interactions, and motion — is carefully considered to support both form and function.</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:separator {"style":{"spacing":{"margin":{"top":"32px","bottom":"32px"}}},"backgroundColor":"black","className":"is-style-wide g2f-intro-divider"} -->
+				<hr class="wp-block-separator has-text-color has-black-color has-alpha-channel-opacity has-black-background-color has-background is-style-wide g2f-intro-divider" style="margin-top:32px;margin-bottom:32px"/>
+				<!-- /wp:separator -->
+
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontWeight":"700","letterSpacing":"2px","textTransform":"uppercase"}},"fontFamily":"inter"} -->
+				<p class="has-inter-font-family" style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase">Our services include:</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:list {"className":"g2f-intro-service-list","style":{"typography":{"fontSize":"18px","lineHeight":"1.7"},"spacing":{"blockGap":"8px"}}} -->
+				<ul class="wp-block-list g2f-intro-service-list" style="font-size:18px;line-height:1.7">
+					<!-- wp:list-item --><li>Product (UI/UX) Design</li><!-- /wp:list-item -->
+					<!-- wp:list-item --><li>Art Direction &amp; Visual Consulting</li><!-- /wp:list-item -->
+					<!-- wp:list-item --><li>Editorial and Offline Campaigns</li><!-- /wp:list-item -->
+				</ul>
+				<!-- /wp:list -->
+
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px","lineHeight":"1.65"}},"textColor":"text-muted","fontFamily":"roboto"} -->
+				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.65">By blending design thinking with creative direction, we help you deliver experiences that not only beautifully serve — but also easy to use, emotionally engaging, and built to last.</p>
+				<!-- /wp:paragraph -->
+
+			</div>
+			<!-- /wp:column -->
+
+			<!-- Right: image -->
+			<!-- wp:column {"width":"45%"} -->
+			<div class="wp-block-column" style="flex-basis:45%">
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"g2f-services-intro-img","style":{"border":{"radius":"4px"}}} -->
+				<figure class="wp-block-image size-large g2f-services-intro-img" style="border-radius:4px">
+					<img src="" alt="G2F Design — Creative Process" />
+				</figure>
+				<!-- /wp:image -->
+			</div>
+			<!-- /wp:column -->
+
+		</div>
+		<!-- /wp:columns -->
+
+	</section>
+	<!-- /wp:group -->
+
+
+	<!-- ===========================================================
+	     SERVICE SECTIONS: UX/UI, Art Direction, Photography
+	     =========================================================== -->
 	<!-- wp:pattern {"slug":"g2f-theme/services-section"} /-->
 
-	<!-- wp:group {"className":"g2f-cta-divider g2f-cta-divider--light","style":{"spacing":{"padding":{"top":"80px","bottom":"80px","left":"80px","right":"80px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-	<div class="wp-block-group g2f-cta-divider g2f-cta-divider--light has-white-background-color has-background" style="padding-top:80px;padding-bottom:80px;padding-left:80px;padding-right:80px;margin-top:0;margin-bottom:0">
 
-		<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"clamp(28px,4vw,48px)","fontWeight":"400","lineHeight":"1.1","letterSpacing":"-1px"}},"textColor":"black","fontFamily":"inter"} -->
-		<h2 class="wp-block-heading has-black-color has-text-color has-inter-font-family" style="font-size:clamp(28px,4vw,48px);font-weight:400;letter-spacing:-1px;line-height:1.1">Let's <strong>shape something meaningful</strong> together.</h2>
+	<!-- ===========================================================
+	     CTA — "Let's shape something meaningful together."
+	     =========================================================== -->
+	<!-- wp:group {"className":"g2f-cta-divider g2f-cta-divider--light","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group g2f-cta-divider g2f-cta-divider--light has-white-background-color has-background" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
+
+		<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"clamp(28px,4vw,52px)","fontWeight":"400","lineHeight":"1.1","letterSpacing":"-1px"}},"textColor":"black","fontFamily":"inter"} -->
+		<h2 class="wp-block-heading has-black-color has-text-color has-inter-font-family" style="font-size:clamp(28px,4vw,52px);font-weight:400;letter-spacing:-1px;line-height:1.1">Let's <strong>shape something meaningful</strong> together.</h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:pattern {"slug":"g2f-theme/button-arrow"} /-->
+		<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
+		<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
+			<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
+			<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#contact">GET IN TOUCH</a></p>
+			<!-- /wp:paragraph -->
+			<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
+			<div class="wp-block-outermost-icon-block"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+			<!-- /wp:outermost/icon-block -->
+		</div>
+		<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:group -->
 
+
+	<!-- ===========================================================
+	     CLIENTS
+	     =========================================================== -->
 	<!-- wp:pattern {"slug":"g2f-theme/clients-section"} /-->
 
 </main>
