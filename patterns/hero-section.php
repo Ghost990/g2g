@@ -14,16 +14,16 @@
 	<!-- wp:group {"className":"g2f-hero-wrapper","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 	<div class="wp-block-group g2f-hero-wrapper" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
+		<!-- LEFT STRIP -->
 		<!-- wp:group {"className":"g2f-vertical-text-strip","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 		<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
-
 			<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
-			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">WEBSITE + UI/UX DESIGN</p>
+			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">WELCOME TO G2F DESIGN</p>
 			<!-- /wp:paragraph -->
-
 		</div>
 		<!-- /wp:group -->
 
+		<!-- HERO COVER -->
 		<!-- wp:cover {"url":"http://localhost:8080/wp-content/uploads/2026/03/hero.jpg","id":40,"dimRatio":50,"overlayColor":"black","isUserOverlayColor":true,"minHeight":868,"minHeightUnit":"px","className":"g2f-hero-cover","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
 		<div class="wp-block-cover g2f-hero-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:868px">
 			<span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-50 has-background-dim"></span>
@@ -61,6 +61,12 @@
 			</div>
 		</div>
 		<!-- /wp:cover -->
+
+		<!-- RIGHT STRIP -->
+		<!-- wp:group {"className":"g2f-vertical-text-strip g2f-vertical-text-strip--right","backgroundColor":"white","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+		<div class="wp-block-group g2f-vertical-text-strip g2f-vertical-text-strip--right has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+		</div>
+		<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:group -->
