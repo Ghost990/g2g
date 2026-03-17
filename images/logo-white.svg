@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 32" fill="none" role="img" aria-label="G2F Design">
+  <!-- G -->
+  <path d="M0 16C0 7.163 7.163 0 16 0C20.418 0 24.418 1.79 27.314 4.686L24.485 7.515C22.343 5.373 19.343 4 16 4C9.373 4 4 9.373 4 16C4 22.627 9.373 28 16 28C19.343 28 22.343 26.627 24.485 24.485L24.485 18H16V14H28V24.485C25.104 27.381 21.104 29.171 16 29.171C7.163 29.171 0 22.008 0 16Z" fill="white"/>
+  <!-- 2 -->
+  <path d="M34 6H50V10H38.5C37.12 10 36 11.12 36 12.5C36 13.88 37.12 15 38.5 15H46.5C49.538 15 52 17.462 52 20.5V22C52 25.314 49.314 28 46 28H34V24H46C47.105 24 48 23.105 48 22V20.5C48 19.672 47.328 19 46.5 19H38.5C34.91 19 32 16.09 32 12.5C32 8.91 34.91 6 38.5 6H50" fill="white"/>
+  <!-- Divider -->
+  <rect x="57" y="4" width="1" height="24" fill="rgba(255,255,255,0.3)"/>
+  <!-- F -->
+  <path d="M64 6H82V10H68V15H80V19H68V28H64V6Z" fill="white"/>
+  <!-- Design wordmark -->
+  <text x="86" y="20" font-family="Inter, Roboto, sans-serif" font-size="9" font-weight="400" letter-spacing="2" fill="rgba(255,255,255,0.5)" text-anchor="start">DESIGN</text>
+</svg>

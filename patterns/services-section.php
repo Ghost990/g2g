@@ -34,7 +34,7 @@
 		<div class="wp-block-column" style="flex-basis:50%">
 			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"g2f-service-detail-img"} -->
 			<figure class="wp-block-image size-large g2f-service-detail-img">
-				<img src="" alt="UX/UI Design" />
+				<img src="http://localhost:8080/wp-content/uploads/2026/03/service-ux.jpg" alt="UX/UI Design" />
 			</figure>
 			<!-- /wp:image -->
 		</div>
@@ -159,7 +159,7 @@
 		<div class="wp-block-column" style="flex-basis:50%">
 			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"g2f-service-detail-img"} -->
 			<figure class="wp-block-image size-large g2f-service-detail-img">
-				<img src="" alt="Art Direction" />
+				<img src="http://localhost:8080/wp-content/uploads/2026/03/service-art.jpg" alt="Art Direction" />
 			</figure>
 			<!-- /wp:image -->
 		</div>
@@ -198,7 +198,7 @@
 		<div class="wp-block-column" style="flex-basis:50%">
 			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"g2f-service-detail-img"} -->
 			<figure class="wp-block-image size-large g2f-service-detail-img">
-				<img src="" alt="Photography" />
+				<img src="http://localhost:8080/wp-content/uploads/2026/03/service-photo.jpg" alt="Photography" />
 			</figure>
 			<!-- /wp:image -->
 		</div>

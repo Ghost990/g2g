@@ -8,42 +8,43 @@
  */
 
 // Project data array - edit this to add/modify projects
+$base_url = 'http://localhost:8080/wp-content/uploads/2026/03';
 $projects = array(
 	array(
 		'title'    => 'AsicMinerz',
 		'category' => 'ux-ui',
 		'type'     => 'Website - UX/UI',
-		'image'    => '', // Add image URL when available
+		'image'    => $base_url . '/project-1.jpg',
 	),
 	array(
 		'title'    => 'Aeroprodukt',
 		'category' => 'art-direction',
 		'type'     => 'Visual identity - Branding',
-		'image'    => '',
-	),
-	array(
-		'title'    => 'Project Name',
-		'category' => 'ux-ui',
-		'type'     => 'Project type',
-		'image'    => '',
+		'image'    => $base_url . '/project-2.jpg',
 	),
 	array(
 		'title'    => 'Medtrend',
 		'category' => 'art-direction',
 		'type'     => 'Brochure - Graphic Design',
-		'image'    => '',
+		'image'    => $base_url . '/project-3.jpg',
 	),
 	array(
 		'title'    => 'Ipari Marketing',
 		'category' => 'ux-ui',
 		'type'     => 'Website - UX/UI',
-		'image'    => '',
+		'image'    => $base_url . '/project-4.jpg',
 	),
 	array(
 		'title'    => 'Captured in Tones',
 		'category' => 'photography',
 		'type'     => 'Photography',
-		'image'    => '',
+		'image'    => $base_url . '/project-5.jpg',
+	),
+	array(
+		'title'    => 'Brand Identity',
+		'category' => 'art-direction',
+		'type'     => 'Photography - Editorial',
+		'image'    => $base_url . '/project-6.jpg',
 	),
 );
 

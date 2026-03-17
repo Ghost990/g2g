@@ -24,9 +24,10 @@
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:cover {"url":"","dimRatio":30,"overlayColor":"black","isUserOverlayColor":true,"minHeight":868,"minHeightUnit":"px","className":"g2f-hero-cover","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
+		<!-- wp:cover {"url":"http://localhost:8080/wp-content/uploads/2026/03/hero.jpg","id":40,"dimRatio":50,"overlayColor":"black","isUserOverlayColor":true,"minHeight":868,"minHeightUnit":"px","className":"g2f-hero-cover","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
 		<div class="wp-block-cover g2f-hero-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:868px">
-			<span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-30 has-background-dim"></span>
+			<span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-50 has-background-dim"></span>
+			<img alt="" class="wp-block-cover__image-background wp-image-40" src="http://localhost:8080/wp-content/uploads/2026/03/hero.jpg" style="object-position:50% 50%;" data-object-fit="cover"/>
 			<div class="wp-block-cover__inner-container">
 
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"250px","bottom":"100px","left":"80px","right":"80px"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->

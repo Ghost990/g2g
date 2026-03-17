@@ -365,11 +365,52 @@ body.header-is-sticky main {
    =================================== */
 .g2f-hero {
 	position: relative;
-	width: 100vw;
-	margin-left: calc(-50vw + 50%);
+	width: 100%;
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;
+}
+
+/* Full-width hero breakout — works with or without admin bar */
+@supports (width: 100dvw) {
+	.g2f-hero {
+		width: 100%;
+	}
+}
+
+/* Break out of constrained container if hero is nested */
+.g2f-content-container .g2f-hero,
+main .g2f-hero {
+	width: 100vw;
+	margin-left: calc(-50vw + 50%);
+	max-width: none;
+}
+
+/* Hero — full viewport width, break out of ALL WP layout constraints */
+.g2f-hero,
+.g2f-hero.wp-block-group {
+	position: relative;
+	left: 50%;
+	right: 50%;
+	width: 100vw !important;
+	max-width: 100vw !important;
+	margin-left: -50vw !important;
+	margin-right: -50vw !important;
+}
+
+/* Hero wrapper fills the hero */
+.g2f-hero .g2f-hero-wrapper,
+.g2f-hero > .wp-block-group {
+	width: 100% !important;
+	max-width: 100% !important;
+	min-width: 100%;
+	flex: 1 1 auto !important;
+}
+
+/* Cover inside wrapper takes remaining space */
+.g2f-hero .wp-block-cover {
+	flex: 1 1 auto !important;
+	min-width: 0;
 }
 
 /* Vertical text strip — explicit width to match design spec */
@@ -1950,5 +1991,164 @@ body.header-is-sticky main {
 
 	.g2f-services-intro-img img {
 		min-height: 280px;
+	}
+}
+
+
+/* ===================================================================
+   CONTACT PAGE
+   =================================================================== */
+
+/* Hero — contact variant */
+.g2f-service-hero--contact .wp-block-cover {
+	background-color: #111 !important;
+}
+
+/* Contact section layout */
+.g2f-contact-section {
+	max-width: 1440px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+/* Info labels */
+.g2f-contact-section a {
+	color: inherit;
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+.g2f-contact-section a:hover {
+	opacity: 0.6;
+}
+
+/* Form wrapper */
+.g2f-contact-form-wrap {
+	background: #fff;
+}
+
+/* CF7 form styling */
+.g2f-contact-form-wrap .wpcf7-form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.g2f-contact-form-wrap .wpcf7-form p {
+	margin: 0;
+}
+
+.g2f-contact-form-wrap .wpcf7-form label {
+	display: block;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	color: #000;
+	margin-bottom: 8px;
+	font-family: var(--wp--preset--font-family--roboto, 'Roboto', sans-serif);
+}
+
+.g2f-contact-form-wrap .wpcf7-form input[type="text"],
+.g2f-contact-form-wrap .wpcf7-form input[type="email"],
+.g2f-contact-form-wrap .wpcf7-form input[type="tel"],
+.g2f-contact-form-wrap .wpcf7-form textarea {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	padding: 14px 16px;
+	font-size: 15px;
+	font-family: var(--wp--preset--font-family--inter, 'Inter', sans-serif);
+	color: #000;
+	background: #fafafa;
+	transition: border-color 0.2s ease, background 0.2s ease;
+	outline: none;
+}
+
+.g2f-contact-form-wrap .wpcf7-form input:focus,
+.g2f-contact-form-wrap .wpcf7-form textarea:focus {
+	border-color: #000;
+	background: #fff;
+}
+
+.g2f-contact-form-wrap .wpcf7-form textarea {
+	min-height: 140px;
+	resize: vertical;
+}
+
+.g2f-contact-form-wrap .wpcf7-form input[type="submit"] {
+	background: #000;
+	color: #fff;
+	border: 1px solid #000;
+	border-radius: 100px;
+	padding: 16px 32px;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: var(--wp--preset--font-family--inter, 'Inter', sans-serif);
+	letter-spacing: 0.5px;
+	cursor: pointer;
+	transition: background 0.2s ease, color 0.2s ease;
+	width: auto;
+	align-self: flex-start;
+}
+
+.g2f-contact-form-wrap .wpcf7-form input[type="submit"]:hover {
+	background: #fff;
+	color: #000;
+}
+
+/* Validation */
+.wpcf7-not-valid-tip {
+	font-size: 12px;
+	color: #c00;
+	margin-top: 4px;
+	display: block;
+}
+
+.wpcf7-response-output {
+	margin-top: 16px !important;
+	padding: 12px 16px !important;
+	border-radius: 2px !important;
+	font-size: 14px !important;
+	border: 1px solid !important;
+}
+
+/* Logo wordmark styling */
+.wp-block-site-logo img,
+.wp-block-site-logo svg {
+	height: 32px;
+	width: auto;
+}
+
+/* ===================================================================
+   RESPONSIVE — Contact & inner pages
+   =================================================================== */
+
+@media (max-width: 1200px) {
+	.g2f-contact-section {
+		padding-left: 80px !important;
+		padding-right: 80px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-contact-section {
+		padding-top: 60px !important;
+		padding-bottom: 60px !important;
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
+
+	.g2f-contact-form-wrap {
+		padding: 24px !important;
+	}
+
+	.g2f-contact-section .wp-block-columns {
+		flex-direction: column;
+	}
+
+	.g2f-contact-section .wp-block-column {
+		flex-basis: 100% !important;
 	}
 }
