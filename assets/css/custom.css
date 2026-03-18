@@ -1336,49 +1336,45 @@ main .g2f-hero {
 .g2f-about-section {
 	position: relative;
 	overflow: visible;
-	padding: 100px 116px !important;
+	padding: 80px 116px !important;
+	background: #fff;
 }
 
 .g2f-about-inner {
 	display: flex;
 	flex-direction: row;
-	gap: 60px;
+	gap: 48px;
 	align-items: center;
 	width: 100%;
 	position: relative;
 }
 
 .g2f-about-image-col {
-	flex: 0 0 42%;
-	max-width: 42%;
+	flex: 0 0 34%;
+	max-width: 34%;
 }
 
 .g2f-about-img {
 	width: 100%;
-	height: auto;
+	height: 360px;
 	display: block;
-	border-radius: 8px;
+	border-radius: 4px;
 	object-fit: cover;
-}
-
-/* placeholder when no image */
-.g2f-about-img[src*="about.jpg"]:not([naturalWidth]) {
-	min-height: 480px;
-	background: #f0f0f0;
+	object-position: center top;
 }
 
 .g2f-about-text-col {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	gap: 32px;
+	gap: 20px;
 }
 
 .g2f-about-heading {
 	font-family: var(--wp--preset--font-family--roboto), sans-serif;
-	font-size: clamp(40px, 4vw, 60px);
+	font-size: 36px;
 	font-weight: 400;
-	line-height: 1.1;
+	line-height: 1.15;
 	margin: 0;
 	color: #000;
 }
@@ -1390,15 +1386,15 @@ main .g2f-hero {
 .g2f-about-body {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 14px;
 }
 
 .g2f-about-body p {
 	font-family: var(--wp--preset--font-family--roboto), sans-serif;
-	font-size: 18px;
+	font-size: 14px;
 	line-height: 1.7;
 	font-weight: 400;
-	color: #000;
+	color: #222;
 	margin: 0;
 }
 
@@ -1406,57 +1402,66 @@ main .g2f-hero {
 	color: #666;
 }
 
-.g2f-about-cta {
+.g2f-btn-arrow {
 	display: inline-flex;
 	align-items: center;
-	gap: 12px;
+	gap: 10px;
 	align-self: flex-start;
 	border: 1px solid #000;
 	border-radius: 100px;
-	padding: 8px 24px;
+	padding: 7px 20px;
 	font-family: var(--wp--preset--font-family--inter), sans-serif;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 600;
+	letter-spacing: 0.05em;
 	color: #000;
 	text-decoration: none;
+	transition: background 0.2s, color 0.2s;
 }
 
-.g2f-about-cta:hover {
+.g2f-btn-arrow:hover {
 	background: #000;
 	color: #fff;
 }
 
-.g2f-about-cta:hover svg path {
+.g2f-btn-arrow:hover svg path {
 	stroke: #fff;
 }
 
 .g2f-about-label {
 	position: absolute;
-	right: -80px;
+	right: -36px;
 	top: 50%;
 	transform: translateY(-50%) rotate(90deg);
 	transform-origin: center center;
 	white-space: nowrap;
 	color: #000;
-	opacity: 0.15;
-	font-size: 40px;
+	opacity: 0.12;
+	font-size: 32px;
 	font-weight: 400;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.12em;
 	pointer-events: none;
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+}
+
+@media (max-width: 1200px) {
+	.g2f-about-section {
+		padding: 60px 60px !important;
+	}
 }
 
 @media (max-width: 1024px) {
 	.g2f-about-section {
-		padding: 80px 40px !important;
+		padding: 60px 40px !important;
 	}
 	.g2f-about-inner {
-		gap: 40px;
+		gap: 32px;
 	}
 }
 
 @media (max-width: 768px) {
 	.g2f-about-section {
-		padding: 60px 24px !important;
+		padding: 48px 24px !important;
 	}
 	.g2f-about-inner {
 		flex-direction: column;
@@ -1465,6 +1470,9 @@ main .g2f-hero {
 		flex: none;
 		max-width: 100%;
 		width: 100%;
+	}
+	.g2f-about-img {
+		height: 260px;
 	}
 	.g2f-about-label {
 		display: none;
