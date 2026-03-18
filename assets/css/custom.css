@@ -1622,7 +1622,7 @@ main .g2f-hero {
    =================================== */
 .g2f-content-container {
 	width: 100%;
-	max-width: 1920px;
+	max-width: 1440px;
 	margin: 0 auto;
 	padding-left: clamp(20px, 5vw, 151px);
 	padding-right: clamp(20px, 5vw, 151px);
