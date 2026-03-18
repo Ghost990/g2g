@@ -133,7 +133,31 @@ function g2f_theme_register_block_styles() {
 		'core/button',
 		array(
 			'name'  => 'g2f-solid',
-			'label' => __( 'G2F Solid', 'g2f-theme' ),
+			'label' => __( 'G2F Solid (fekete)', 'g2f-theme' ),
+		)
+	);
+
+	register_block_style(
+		'core/button',
+		array(
+			'name'  => 'g2f-outline-white',
+			'label' => __( 'G2F Outline White', 'g2f-theme' ),
+		)
+	);
+
+	register_block_style(
+		'core/button',
+		array(
+			'name'  => 'g2f-solid-white',
+			'label' => __( 'G2F Solid White', 'g2f-theme' ),
+		)
+	);
+
+	register_block_style(
+		'core/button',
+		array(
+			'name'  => 'g2f-ghost',
+			'label' => __( 'G2F Ghost', 'g2f-theme' ),
 		)
 	);
 

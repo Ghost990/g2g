@@ -100,38 +100,108 @@ p strong {
 	transform: translateY(-2px);
 }
 
-/* G2F Outline Button */
+/* =========================================
+   BUTTON VARIÁCIÓK — szögletes, site editorban választható
+   ========================================= */
+
+/* Alap WP gomb — szögletes */
+.wp-block-button__link {
+	border-radius: 0 !important;
+}
+
+/* G2F Outline — fekete keret, fekete szöveg → hover: teli fekete */
 .is-style-g2f-outline .wp-block-button__link {
-	background: transparent;
-	color: var(--wp--preset--color--black);
-	border: 1px solid var(--wp--preset--color--black);
-	border-radius: 100px;
-	padding: 16px 24px;
+	background: transparent !important;
+	color: #000 !important;
+	border: 1.5px solid #000 !important;
+	border-radius: 0 !important;
+	padding: 13px 26px !important;
 	font-family: var(--wp--preset--font-family--inter);
-	font-weight: 600;
-	font-size: 16px;
+	font-size: 11px !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.10em !important;
+	text-transform: uppercase !important;
+	transition: background 0.2s, color 0.2s;
 }
-
 .is-style-g2f-outline .wp-block-button__link:hover {
-	background: var(--wp--preset--color--black);
-	color: var(--wp--preset--color--white);
+	background: #000 !important;
+	color: #fff !important;
 }
 
-/* G2F Solid Button */
+/* G2F Solid — teli fekete → hover: outline */
 .is-style-g2f-solid .wp-block-button__link {
-	background: var(--wp--preset--color--black);
-	color: var(--wp--preset--color--white);
-	border: 1px solid var(--wp--preset--color--black);
-	border-radius: 100px;
-	padding: 16px 24px;
+	background: #000 !important;
+	color: #fff !important;
+	border: 1.5px solid #000 !important;
+	border-radius: 0 !important;
+	padding: 13px 26px !important;
 	font-family: var(--wp--preset--font-family--inter);
-	font-weight: 600;
-	font-size: 16px;
+	font-size: 11px !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.10em !important;
+	text-transform: uppercase !important;
+	transition: background 0.2s, color 0.2s;
+}
+.is-style-g2f-solid .wp-block-button__link:hover {
+	background: transparent !important;
+	color: #000 !important;
 }
 
-.is-style-g2f-solid .wp-block-button__link:hover {
-	background: var(--wp--preset--color--white);
-	color: var(--wp--preset--color--black);
+/* G2F Outline White — fehér keret+szöveg (sötét bg-re) */
+.is-style-g2f-outline-white .wp-block-button__link {
+	background: transparent !important;
+	color: #fff !important;
+	border: 1.5px solid #fff !important;
+	border-radius: 0 !important;
+	padding: 13px 26px !important;
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 11px !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.10em !important;
+	text-transform: uppercase !important;
+	transition: background 0.2s, color 0.2s;
+}
+.is-style-g2f-outline-white .wp-block-button__link:hover {
+	background: #fff !important;
+	color: #000 !important;
+}
+
+/* G2F Solid White — teli fehér (sötét bg-re) */
+.is-style-g2f-solid-white .wp-block-button__link {
+	background: #fff !important;
+	color: #000 !important;
+	border: 1.5px solid #fff !important;
+	border-radius: 0 !important;
+	padding: 13px 26px !important;
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 11px !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.10em !important;
+	text-transform: uppercase !important;
+	transition: background 0.2s, color 0.2s;
+}
+.is-style-g2f-solid-white .wp-block-button__link:hover {
+	background: transparent !important;
+	color: #fff !important;
+}
+
+/* G2F Ghost — keret nélkül, csak szöveg + border-bottom hover */
+.is-style-g2f-ghost .wp-block-button__link {
+	background: transparent !important;
+	color: #000 !important;
+	border: none !important;
+	border-bottom: 1px solid #000 !important;
+	border-radius: 0 !important;
+	padding: 4px 0 !important;
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	letter-spacing: 0.06em !important;
+	text-transform: uppercase !important;
+	transition: opacity 0.2s;
+}
+.is-style-g2f-ghost .wp-block-button__link:hover {
+	opacity: 0.5 !important;
 }
 
 /* Button with Arrow Icon */
