@@ -63,10 +63,11 @@ foreach ( $projects as $project ) {
 
 	if ( ! empty( $project['image'] ) ) {
 		$cards_html .= '<figure class="g2f-project-image">';
-		$cards_html .= '<img src="' . esc_url( $project['image'] ) . '" alt="' . esc_attr( $project['title'] ) . '">';
+		$cards_html .= '<img src="' . esc_url( $project['image'] ) . '" alt="' . esc_attr( $project['title'] ) . '" onerror="this.parentElement.classList.add(\'g2f-img-missing\'); this.remove();">';
+		$cards_html .= '<div class="g2f-project-placeholder-label">' . esc_html( $project['title'] ) . '</div>';
 		$cards_html .= '</figure>';
 	} else {
-		$cards_html .= '<div class="g2f-project-image-placeholder"></div>';
+		$cards_html .= '<div class="g2f-project-image-placeholder"><span>' . esc_html( $project['title'] ) . '</span></div>';
 	}
 
 	$cards_html .= '<div class="g2f-project-info">';

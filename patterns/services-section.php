@@ -14,6 +14,14 @@
 <!-- wp:group {"tagName":"section","anchor":"services","className":"g2f-services-rows","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
 <section id="services" class="wp-block-group g2f-services-rows has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
 
+<!-- wp:html -->
+<div class="g2f-services-header">
+	<span class="g2f-section-label">What We Do</span>
+	<h2 class="g2f-services-title">Services <strong>Tailored</strong> For Your Business.</h2>
+	<p class="g2f-services-subtitle">We combine strategic thinking with creative execution to deliver results that matter.</p>
+</div>
+<!-- /wp:html -->
+
 
 <!-- ============================================================
      ROW 1: Product Design — Image LEFT, Content RIGHT
