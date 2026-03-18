@@ -104,9 +104,9 @@ p strong {
    BUTTON VARIÁCIÓK — szögletes, site editorban választható
    ========================================= */
 
-/* Alap WP gomb — szögletes */
+/* Alap WP gomb — lekerekített (pill) */
 .wp-block-button__link {
-	border-radius: 0 !important;
+	border-radius: 100px !important;
 }
 
 /* G2F Outline — fekete keret, fekete szöveg → hover: teli fekete */
@@ -114,7 +114,7 @@ p strong {
 	background: transparent !important;
 	color: #000 !important;
 	border: 1.5px solid #000 !important;
-	border-radius: 0 !important;
+	border-radius: 100px !important;
 	padding: 13px 26px !important;
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 11px !important;
@@ -133,7 +133,7 @@ p strong {
 	background: #000 !important;
 	color: #fff !important;
 	border: 1.5px solid #000 !important;
-	border-radius: 0 !important;
+	border-radius: 100px !important;
 	padding: 13px 26px !important;
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 11px !important;
@@ -152,7 +152,7 @@ p strong {
 	background: transparent !important;
 	color: #fff !important;
 	border: 1.5px solid #fff !important;
-	border-radius: 0 !important;
+	border-radius: 100px !important;
 	padding: 13px 26px !important;
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 11px !important;
@@ -171,7 +171,7 @@ p strong {
 	background: #fff !important;
 	color: #000 !important;
 	border: 1.5px solid #fff !important;
-	border-radius: 0 !important;
+	border-radius: 100px !important;
 	padding: 13px 26px !important;
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 11px !important;
@@ -1525,7 +1525,7 @@ main .g2f-hero {
 	gap: 10px;
 	align-self: flex-start;
 	border: 1px solid #000;
-	border-radius: 0 !important;
+	border-radius: 100px !important;
 	padding: 12px 22px;
 	font-family: var(--wp--preset--font-family--inter), sans-serif;
 	font-size: 11px;
@@ -2662,7 +2662,7 @@ main .g2f-hero {
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
 	padding: 14px 24px;
-	border-radius: 0;
+	border-radius: 100px;
 	border: 1.5px solid #000;
 	margin-top: 12px;
 	transition: background 0.2s, color 0.2s;
@@ -2731,10 +2731,7 @@ main .g2f-hero {
 	border-bottom: 2px solid #000;
 }
 
-/* "See More Work" button — outline rectangular */
-.g2f-projects-grid-section .wp-block-group > .wp-block-group {
-	border-radius: 0 !important;
-}
+/* "See More Work" button — pill */
 
 /* =========================================
    CLIENTS SECTION
@@ -2847,7 +2844,7 @@ main .g2f-hero {
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
 	padding: 14px 24px;
-	border-radius: 0;
+	border-radius: 100px;
 	border: 1.5px solid #fff;
 	white-space: nowrap;
 	transition: background 0.2s, color 0.2s;
