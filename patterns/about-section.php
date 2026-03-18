@@ -22,7 +22,7 @@
 
 				<!-- wp:image {"sizeSlug":"g2f-about","linkDestination":"none","className":"g2f-about-image","style":{"border":{"radius":"8px"}}} -->
 				<figure class="wp-block-image size-g2f-about g2f-about-image" style="border-radius:8px">
-					<img src="http://localhost:8080/wp-content/uploads/2026/03/about.jpg" alt="About G2F Design"/>
+					<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/about.jpg" alt="About G2F Design"/>
 				</figure>
 				<!-- /wp:image -->
 

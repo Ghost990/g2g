@@ -8,7 +8,7 @@
  */
 
 // Project data array - edit this to add/modify projects
-$base_url = 'http://localhost:8080/wp-content/uploads/2026/03';
+$base_url = get_site_url() . '/wp-content/uploads/2026/03';
 $projects = array(
 	array(
 		'title'    => 'AsicMinerz',

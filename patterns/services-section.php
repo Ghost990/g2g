@@ -26,7 +26,7 @@
 	<div class="wp-block-group g2f-service-row__image" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
-			<img src="http://localhost:8080/wp-content/uploads/2026/03/service-ux.jpg" alt="Product Design" />
+			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-ux.jpg" alt="Product Design" />
 		</figure>
 		<!-- /wp:image -->
 	</div>
@@ -107,7 +107,7 @@
 	<div class="wp-block-group g2f-service-row__image" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
-			<img src="http://localhost:8080/wp-content/uploads/2026/03/service-art.jpg" alt="Art Direction" />
+			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-art.jpg" alt="Art Direction" />
 		</figure>
 		<!-- /wp:image -->
 	</div>
@@ -128,7 +128,7 @@
 	<div class="wp-block-group g2f-service-row__image" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
-			<img src="http://localhost:8080/wp-content/uploads/2026/03/service-photo.jpg" alt="Photography" />
+			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-photo.jpg" alt="Photography" />
 		</figure>
 		<!-- /wp:image -->
 	</div>
