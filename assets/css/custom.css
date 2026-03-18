@@ -2529,3 +2529,341 @@ main .g2f-hero {
 		padding-right: 24px !important;
 	}
 }
+
+/* =========================================
+   PORTFOLIO SPLIT SECTION
+   ========================================= */
+.g2f-portfolio-split {
+	background: #f5f5f5;
+	padding: 100px 151px;
+}
+
+.g2f-portfolio-inner {
+	display: flex;
+	flex-direction: row;
+	gap: 80px;
+	align-items: center;
+	max-width: 1200px;
+}
+
+.g2f-portfolio-left {
+	flex: 0 0 45%;
+}
+
+.g2f-portfolio-heading {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: clamp(40px, 4.5vw, 68px);
+	font-weight: 400;
+	line-height: 1.1;
+	letter-spacing: -1.5px;
+	margin: 0;
+	color: #000;
+}
+
+.g2f-portfolio-heading strong {
+	font-weight: 700;
+}
+
+.g2f-portfolio-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.g2f-portfolio-right p {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #444;
+	margin: 0;
+}
+
+.g2f-btn-solid {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	padding: 14px 24px;
+	border-radius: 0;
+	border: 1.5px solid #000;
+	margin-top: 12px;
+	transition: background 0.2s, color 0.2s;
+}
+
+.g2f-btn-solid:hover {
+	background: #fff;
+	color: #000;
+}
+
+@media (max-width: 1024px) {
+	.g2f-portfolio-split {
+		padding: 80px 40px;
+	}
+	.g2f-portfolio-inner {
+		gap: 48px;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-portfolio-inner {
+		flex-direction: column;
+	}
+	.g2f-portfolio-left {
+		flex: none;
+	}
+}
+
+/* =========================================
+   PROJECTS GRID SECTION — heading size fix
+   ========================================= */
+.g2f-projects-grid-section h2.wp-block-heading {
+	font-size: clamp(32px, 3.5vw, 52px) !important;
+}
+
+.g2f-project-tabs {
+	display: flex;
+	gap: 32px;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.g2f-project-tab {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #888;
+	cursor: pointer;
+	padding-bottom: 4px;
+	border-bottom: 2px solid transparent;
+	transition: color 0.2s, border-color 0.2s;
+}
+
+.g2f-project-tab p {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+.g2f-project-tab.active {
+	color: #000;
+	border-bottom: 2px solid #000;
+}
+
+/* "See More Work" button — outline rectangular */
+.g2f-projects-grid-section .wp-block-group > .wp-block-group {
+	border-radius: 0 !important;
+}
+
+/* =========================================
+   CLIENTS SECTION
+   ========================================= */
+.g2f-clients-section {
+	background: #fff;
+	padding: 100px 151px;
+	text-align: center;
+}
+
+.g2f-clients-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.g2f-clients-heading {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: clamp(40px, 4vw, 60px);
+	font-weight: 700;
+	color: #000;
+	margin: 0 0 24px 0;
+	line-height: 1.1;
+}
+
+.g2f-dot {
+	color: #3355ff;
+}
+
+.g2f-clients-sub {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #555;
+	margin: 0 0 56px 0;
+}
+
+.g2f-clients-logos {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px 56px;
+	justify-content: center;
+	align-items: center;
+}
+
+.g2f-client-name {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	color: #000;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+	.g2f-clients-section {
+		padding: 60px 24px;
+	}
+	.g2f-clients-logos {
+		gap: 24px 32px;
+	}
+}
+
+/* =========================================
+   CTA BAR + FOOTER
+   ========================================= */
+.g2f-cta-footer {
+	background: #0d0d0d;
+	padding: 80px 151px 56px;
+}
+
+.g2f-cta-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+	margin-bottom: 56px;
+}
+
+.g2f-cta-bar__heading {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: clamp(36px, 4.5vw, 64px);
+	font-weight: 400;
+	color: #fff;
+	line-height: 1.05;
+	margin: 0 0 12px 0;
+}
+
+.g2f-cta-bar__heading strong {
+	font-weight: 700;
+}
+
+.g2f-cta-bar__sub {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #aaa;
+	margin: 0;
+}
+
+.g2f-btn-outline-white {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: #fff;
+	text-decoration: none;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	padding: 14px 24px;
+	border-radius: 0;
+	border: 1.5px solid #fff;
+	white-space: nowrap;
+	transition: background 0.2s, color 0.2s;
+	flex-shrink: 0;
+}
+
+.g2f-btn-outline-white:hover {
+	background: #fff;
+	color: #000;
+}
+
+.g2f-cta-divider-line {
+	border-top: 1px solid #333;
+	margin-bottom: 40px;
+}
+
+.g2f-footer-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 32px;
+}
+
+.g2f-footer-nav,
+.g2f-footer-social {
+	display: flex;
+	gap: 28px;
+}
+
+.g2f-footer-nav a,
+.g2f-footer-social a {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	color: #ccc;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.g2f-footer-nav a:hover,
+.g2f-footer-social a:hover {
+	color: #fff;
+}
+
+.g2f-footer-center {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 13px;
+	color: #aaa;
+	flex-direction: column;
+}
+
+.g2f-footer-center a {
+	color: #aaa;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.g2f-footer-center a:hover {
+	color: #fff;
+}
+
+.g2f-footer-sep {
+	color: #555;
+}
+
+@media (max-width: 1024px) {
+	.g2f-cta-footer {
+		padding: 60px 40px 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-cta-bar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.g2f-footer-row {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+	}
+	.g2f-cta-footer {
+		padding: 48px 24px 32px;
+	}
+}

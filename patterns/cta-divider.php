@@ -4,18 +4,51 @@
  * Slug: g2f-theme/cta-divider
  * Categories: g2f-theme
  * Keywords: cta, contact, divider, call-to-action
- * Description: Full-width dark CTA section. "Have a project in mind? Let's talk."
+ * Description: Full-width dark CTA + footer
  */
 ?>
+<!-- wp:html -->
+<section class="g2f-cta-footer">
 
-<!-- wp:group {"tagName":"section","className":"g2f-cta-divider g2f-cta-divider--dark","backgroundColor":"black","style":{"spacing":{"padding":{"top":"80px","bottom":"80px","left":"80px","right":"80px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<section class="wp-block-group g2f-cta-divider g2f-cta-divider--dark has-black-background-color has-background" style="padding-top:80px;padding-bottom:80px;padding-left:80px;padding-right:80px;margin-top:0;margin-bottom:0">
+	<!-- CTA bar -->
+	<div class="g2f-cta-bar">
+		<div class="g2f-cta-bar__left">
+			<h2 class="g2f-cta-bar__heading">Let's <strong>talk.</strong></h2>
+			<p class="g2f-cta-bar__sub">Unleashing brand potential through<br>creative design and innovation.</p>
+		</div>
+		<a href="/contact/" class="g2f-btn-outline-white">
+			<span>GET IN TOUCH</span>
+			<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
+	</div>
 
-	<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"clamp(28px,4vw,48px)","fontWeight":"400","lineHeight":"1.1","letterSpacing":"-1px"}},"textColor":"white","fontFamily":"inter"} -->
-	<h2 class="wp-block-heading has-white-color has-text-color has-inter-font-family" style="font-size:clamp(28px,4vw,48px);font-weight:400;letter-spacing:-1px;line-height:1.1">Have a project in mind? <strong>Let's talk.</strong></h2>
-	<!-- /wp:heading -->
+	<!-- Divider line -->
+	<div class="g2f-cta-divider-line"></div>
 
-	<!-- wp:pattern {"slug":"g2f-theme/button-arrow-light"} /-->
+	<!-- Footer row -->
+	<div class="g2f-footer-row">
+		<nav class="g2f-footer-nav">
+			<a href="/">Home</a>
+			<a href="/about/">About</a>
+			<a href="/services/">Solutions</a>
+			<a href="/contact/">Contact</a>
+		</nav>
+
+		<div class="g2f-footer-center">
+			<a href="mailto:g2f.design@gmail.com">g2f.design@gmail.com</a>
+			<span class="g2f-footer-sep">|</span>
+			<a href="tel:+36703561870">+36 70 356 1870</a>
+		</div>
+
+		<nav class="g2f-footer-social">
+			<a href="#">LinkedIn</a>
+			<a href="#">Behance</a>
+			<a href="#">Instagram</a>
+		</nav>
+	</div>
 
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->
