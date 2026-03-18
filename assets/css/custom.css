@@ -360,8 +360,10 @@ p strong {
 	justify-self: center;
 }
 
-.g2f-header-inner > .wp-block-group:last-child {
+.g2f-header-inner > .wp-block-group:last-child,
+.g2f-header-cta {
 	justify-self: end;
+	margin-left: auto;
 }
 
 /* Header element transitions for smooth shrinking */

@@ -4,15 +4,16 @@
 	<!-- wp:group {"className":"g2f-header-inner","style":{"spacing":{"padding":{"top":"18px","bottom":"18px"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 	<div class="wp-block-group g2f-header-inner" style="padding-top:18px;padding-bottom:18px">
 
+		<!-- col 1: logo -->
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 		<div class="wp-block-group">
 			<!-- wp:site-logo {"width":106,"shouldSyncIcon":false} /-->
 		</div>
 		<!-- /wp:group -->
 
+		<!-- col 2: nav (center) -->
 		<!-- wp:group {"className":"g2f-header-nav","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"center"}} -->
 		<div class="wp-block-group g2f-header-nav">
-
 			<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"32px"},"typography":{"fontStyle":"normal","fontWeight":"400","textTransform":"uppercase","letterSpacing":"0.5px"}},"fontSize":"regular","fontFamily":"roboto"} -->
 				<!-- wp:navigation-link {"label":"HOME","url":"/","kind":"custom","isTopLevelLink":true,"style":{"typography":{"fontWeight":"800"}}} /-->
 				<!-- wp:navigation-link {"label":"ABOUT US","url":"/about/","kind":"custom","isTopLevelLink":true} /-->
@@ -20,16 +21,22 @@
 				<!-- wp:navigation-link {"label":"GALLERY","url":"/gallery/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"CONTACT","url":"/contact/","kind":"custom","isTopLevelLink":true} /-->
 			<!-- /wp:navigation -->
+		</div>
+		<!-- /wp:group -->
 
-			<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-			<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:16px;padding-right:24px;padding-bottom:16px;padding-left:24px">
+		<!-- col 3: CTA button (jobb szél) -->
+		<!-- wp:group {"className":"g2f-header-cta","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"right"}} -->
+		<div class="wp-block-group g2f-header-cta">
 
-				<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"regular","fontFamily":"inter"} -->
-				<p class="has-inter-font-family has-regular-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="#contact">GET IN TOUCH</a></p>
+			<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"22px","right":"22px"},"blockGap":"10px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
+			<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:22px;padding-bottom:12px;padding-left:22px">
+
+				<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2","fontSize":"14px"}}} -->
+				<p style="font-style:normal;font-weight:600;line-height:1.2;font-size:14px"><a href="/contact/">GET IN TOUCH</a></p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"20px","height":"20px"} -->
-				<div class="wp-block-outermost-icon-block"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+				<!-- wp:outermost/icon-block {"iconName":"g2f-arrows/arrow-right-black","width":"16px","height":"16px"} -->
+				<div class="wp-block-outermost-icon-block"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 				<!-- /wp:outermost/icon-block -->
 
 			</div>
