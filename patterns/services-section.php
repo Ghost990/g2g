@@ -16,9 +16,8 @@
 
 <!-- wp:html -->
 <div class="g2f-services-header">
-	<span class="g2f-section-label">What We Do</span>
-	<h2 class="g2f-services-title">Services <strong>Tailored</strong> For Your Business.</h2>
-	<p class="g2f-services-subtitle">We combine strategic thinking with creative execution to deliver results that matter.</p>
+	<h2 class="g2f-services-title">Services <strong>Tailored For Your</strong> Business.</h2>
+	<p class="g2f-services-subtitle">Our services are more than just solutions, they're opportunities to transform your digital presence and achieve your business objectives. We're here to make your digital dreams a reality.</p>
 </div>
 <!-- /wp:html -->
 
