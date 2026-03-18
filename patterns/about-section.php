@@ -14,11 +14,11 @@
 	<!-- wp:group {"style":{"position":{"type":"relative"}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group">
 
-		<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"70px"}}}} -->
+		<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"3%"}}}} -->
 		<div class="wp-block-columns">
 
-			<!-- wp:column {"width":"490px"} -->
-			<div class="wp-block-column" style="flex-basis:490px">
+			<!-- wp:column {"width":"42%"} -->
+			<div class="wp-block-column" style="flex-basis:42%">
 
 				<!-- wp:image {"sizeSlug":"g2f-about","linkDestination":"none","className":"g2f-about-image","style":{"border":{"radius":"8px"}}} -->
 				<figure class="wp-block-image size-g2f-about g2f-about-image" style="border-radius:8px">
@@ -29,8 +29,8 @@
 			</div>
 			<!-- /wp:column -->
 
-			<!-- wp:column {"width":"658px"} -->
-			<div class="wp-block-column" style="flex-basis:658px">
+			<!-- wp:column {"width":"55%"} -->
+			<div class="wp-block-column" style="flex-basis:55%">
 
 				<!-- wp:group {"style":{"spacing":{"blockGap":"32px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 				<div class="wp-block-group">
