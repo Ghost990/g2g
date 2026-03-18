@@ -53,17 +53,43 @@
 
 		if (!header) return;
 
-		const scrollThreshold = 100;
+		// Set header height as CSS var for content offset
+		function updateHeaderHeight() {
+			document.documentElement.style.setProperty(
+				'--g2f-header-height',
+				header.offsetHeight + 'px'
+			);
+		}
+		updateHeaderHeight();
+		window.addEventListener('resize', updateHeaderHeight, { passive: true });
 
-		window.addEventListener('scroll', function() {
+		const scrollThreshold = 40;
+		let lastScrollY = window.pageYOffset;
+		let ticking = false;
+
+		function onScroll() {
 			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 			if (scrollTop > scrollThreshold) {
-				header.classList.add('is-sticky');
-				document.body.classList.add('header-is-sticky');
+				if (!header.classList.contains('is-sticky')) {
+					header.classList.add('is-sticky');
+					document.body.classList.add('header-is-sticky');
+				}
 			} else {
-				header.classList.remove('is-sticky');
-				document.body.classList.remove('header-is-sticky');
+				if (header.classList.contains('is-sticky')) {
+					header.classList.remove('is-sticky');
+					document.body.classList.remove('header-is-sticky');
+				}
+			}
+
+			lastScrollY = scrollTop;
+			ticking = false;
+		}
+
+		window.addEventListener('scroll', function() {
+			if (!ticking) {
+				requestAnimationFrame(onScroll);
+				ticking = true;
 			}
 		}, { passive: true });
 	}

@@ -31,7 +31,10 @@ body {
 
 /* Remove gap between header and main content */
 header + main,
-.site-header + main {
+.site-header + main,
+body > .wp-site-blocks > main,
+.wp-site-blocks > main {
+	padding-top: var(--g2f-header-height, 74px) !important;
 	margin-top: 0 !important;
 }
 
@@ -329,9 +332,15 @@ p strong {
    Header Styles
    =================================== */
 .site-header {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 100;
-	transition: box-shadow 0.3s ease, background-color 0.3s ease;
+	will-change: box-shadow, padding;
+	transition: box-shadow 0.35s ease, padding 0.35s ease, background-color 0.35s ease;
+	transform: translateZ(0); /* GPU compositing — no flash */
+	backface-visibility: hidden;
 }
 
 /* Header inner container - 3 col grid: logo | nav (center) | cta */
@@ -381,14 +390,12 @@ p strong {
 	transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* Shrunk/Sticky state */
+/* Sticky state — csak vizuális változás, position már fixed */
 .site-header.is-sticky {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	background: var(--wp--preset--color--white);
-	box-shadow: var(--g2f-shadow);
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 }
 
 /* Admin bar offset when logged in */
