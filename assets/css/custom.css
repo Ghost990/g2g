@@ -3032,7 +3032,8 @@ main .g2f-hero {
 	padding: 24px 116px 80px;
 }
 .g2f-about-page-founder__inner {
-	max-width: 860px;
+	max-width: 520px;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
