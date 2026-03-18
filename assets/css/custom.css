@@ -334,10 +334,25 @@ p strong {
 	transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Header inner container - the flex wrapper */
-.site-header > .wp-block-group {
-	transition: padding 0.3s ease;
+/* Header inner container - 3 col grid: logo | nav (center) | cta */
+.site-header > .wp-block-group,
+.g2f-header-inner {
+	display: grid !important;
+	grid-template-columns: 1fr auto 1fr;
 	align-items: center;
+	transition: padding 0.3s ease;
+}
+
+.g2f-header-inner > .wp-block-group:first-child {
+	justify-self: start;
+}
+
+.g2f-header-nav {
+	justify-self: center;
+}
+
+.g2f-header-inner > .wp-block-group:last-child {
+	justify-self: end;
 }
 
 /* Header element transitions for smooth shrinking */
@@ -389,6 +404,9 @@ p strong {
 
 /* Shrunk inner padding */
 .site-header.is-sticky > .wp-block-group {
+	display: grid !important;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
 	padding-top: 10px !important;
 	padding-bottom: 10px !important;
 }
