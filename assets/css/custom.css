@@ -1370,22 +1370,22 @@ main .g2f-hero {
 .g2f-about-section {
 	position: relative;
 	overflow: visible;
-	padding: 80px 116px !important;
+	padding: 60px 116px 60px 116px !important;
 	background: #fff;
 }
 
 .g2f-about-inner {
 	display: flex;
 	flex-direction: row;
-	gap: 60px;
+	gap: 72px;
 	align-items: center;
-	width: calc(100% - 80px); /* prevent overlap with vertical label */
+	width: 100%;
 	position: relative;
 }
 
 .g2f-about-image-col {
-	flex: 0 0 38%;
-	max-width: 38%;
+	flex: 0 0 36%;
+	max-width: 36%;
 }
 
 .g2f-about-img {
@@ -1418,7 +1418,7 @@ main .g2f-hero {
 
 .g2f-about-heading {
 	font-family: var(--wp--preset--font-family--roboto), sans-serif;
-	font-size: 42px;
+	font-size: clamp(28px, 2.8vw, 38px);
 	font-weight: 400;
 	line-height: 1.15;
 	margin: 0;
@@ -1477,18 +1477,19 @@ main .g2f-hero {
 
 .g2f-about-label {
 	position: absolute;
-	right: -36px;
+	right: -100px;
 	top: 50%;
 	transform: translateY(-50%) rotate(90deg);
 	transform-origin: center center;
 	white-space: nowrap;
 	color: #000;
-	opacity: 0.12;
-	font-size: 32px;
-	font-weight: 400;
-	letter-spacing: 0.12em;
+	opacity: 0.10;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
 	pointer-events: none;
-	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
 }
 
 @media (max-width: 1200px) {
