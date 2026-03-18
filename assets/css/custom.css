@@ -3092,3 +3092,96 @@ main .g2f-hero {
 		width: 100%;
 	}
 }
+
+/* =========================================================
+   SERVICES PAGE — intro section
+   ========================================================= */
+
+.g2f-services-intro {
+	background: #fff;
+	padding: 100px 116px;
+}
+.g2f-services-intro__inner {
+	display: flex;
+	gap: 64px;
+	align-items: flex-start;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.g2f-services-intro__text {
+	flex: 0 0 55%;
+}
+.g2f-services-intro__image {
+	flex: 1;
+	padding-top: 8px;
+}
+.g2f-services-intro__image img {
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	display: block;
+}
+.g2f-services-intro__lead {
+	font-size: clamp(15px, 1.4vw, 18px);
+	line-height: 1.75;
+	color: #333;
+	margin-bottom: 16px;
+}
+.g2f-services-intro__text p {
+	font-size: 13px;
+	line-height: 1.85;
+	color: #666;
+	margin-bottom: 14px;
+}
+.g2f-services-intro__divider {
+	border: none;
+	border-top: 1px solid #e0e0e0;
+	margin: 28px 0;
+}
+.g2f-services-intro__list-label {
+	font-size: 11px !important;
+	font-weight: 700 !important;
+	letter-spacing: 2px !important;
+	text-transform: uppercase !important;
+	color: #000 !important;
+	margin-bottom: 10px !important;
+}
+.g2f-services-intro__list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px;
+}
+.g2f-services-intro__list li {
+	font-size: 14px;
+	line-height: 2;
+	color: #333;
+	padding-left: 16px;
+	position: relative;
+}
+.g2f-services-intro__list li::before {
+	content: "—";
+	position: absolute;
+	left: 0;
+	color: #999;
+}
+.g2f-services-intro__footer {
+	font-size: 13px !important;
+	line-height: 1.75 !important;
+	color: #666 !important;
+}
+
+@media (max-width: 900px) {
+	.g2f-services-intro {
+		padding: 60px 32px;
+	}
+	.g2f-services-intro__inner {
+		flex-direction: column;
+		gap: 40px;
+	}
+	.g2f-services-intro__text {
+		flex: none;
+	}
+	.g2f-services-intro__image {
+		width: 100%;
+	}
+}
