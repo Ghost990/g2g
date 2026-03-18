@@ -20,7 +20,6 @@ $site_url = get_site_url();
 		</div>
 
 		<div class="g2f-about-text-col">
-			<span class="g2f-section-label">About Us</span>
 			<h2 class="g2f-about-heading">We Bring <strong>Creative Ideas</strong> To Life.</h2>
 
 			<div class="g2f-about-body">

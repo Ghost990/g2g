@@ -1483,10 +1483,10 @@ main .g2f-hero {
 	transform-origin: center center;
 	white-space: nowrap;
 	color: #000;
-	opacity: 0.10;
-	font-size: 13px;
+	opacity: 0.12;
+	font-size: 18px;
 	font-weight: 500;
-	letter-spacing: 0.22em;
+	letter-spacing: 0.28em;
 	text-transform: uppercase;
 	pointer-events: none;
 	font-family: var(--wp--preset--font-family--inter), sans-serif;
