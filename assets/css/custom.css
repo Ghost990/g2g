@@ -1331,50 +1331,144 @@ main .g2f-hero {
 }
 
 /* ===================================
-   About Section - Vertical Text Right
+   About Section - Raw HTML layout (no WP columns)
    =================================== */
 .g2f-about-section {
 	position: relative;
 	overflow: visible;
+	padding: 100px 116px !important;
 }
 
-.g2f-about-section > .wp-block-group {
+.g2f-about-inner {
+	display: flex;
+	flex-direction: row;
+	gap: 60px;
+	align-items: center;
+	width: 100%;
 	position: relative;
-	overflow: visible;
 }
 
-.g2f-vertical-text-right {
-	position: absolute;
-	right: -120px;
-	top: 50%;
-	transform: translateX(100%) translateY(-50%) rotate(-180deg);
-	transform-origin: left center;
-	white-space: nowrap;
+.g2f-about-image-col {
+	flex: 0 0 42%;
+	max-width: 42%;
+}
+
+.g2f-about-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+/* placeholder when no image */
+.g2f-about-img[src*="about.jpg"]:not([naturalWidth]) {
+	min-height: 480px;
+	background: #f0f0f0;
+}
+
+.g2f-about-text-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.g2f-about-heading {
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-size: clamp(40px, 4vw, 60px);
+	font-weight: 400;
+	line-height: 1.1;
 	margin: 0;
-	color: var(--wp--preset--color--black);
-	opacity: 0.4;
-	font-size: 50px;
+	color: #000;
+}
+
+.g2f-about-heading strong {
+	font-weight: 700;
+}
+
+.g2f-about-body {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.g2f-about-body p {
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-size: 18px;
+	line-height: 1.7;
+	font-weight: 400;
+	color: #000;
+	margin: 0;
+}
+
+.g2f-about-body .g2f-about-muted {
+	color: #666;
+}
+
+.g2f-about-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	align-self: flex-start;
+	border: 1px solid #000;
+	border-radius: 100px;
+	padding: 8px 24px;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+}
+
+.g2f-about-cta:hover {
+	background: #000;
+	color: #fff;
+}
+
+.g2f-about-cta:hover svg path {
+	stroke: #fff;
+}
+
+.g2f-about-label {
+	position: absolute;
+	right: -80px;
+	top: 50%;
+	transform: translateY(-50%) rotate(90deg);
+	transform-origin: center center;
+	white-space: nowrap;
+	color: #000;
+	opacity: 0.15;
+	font-size: 40px;
 	font-weight: 400;
 	letter-spacing: 0.1em;
-	z-index: 10;
+	pointer-events: none;
 }
 
-/* Typography fix for About section - mixed weights */
-.g2f-about-section h2 {
-	font-weight: 400 !important;
+@media (max-width: 1024px) {
+	.g2f-about-section {
+		padding: 80px 40px !important;
+	}
+	.g2f-about-inner {
+		gap: 40px;
+	}
 }
 
-.g2f-about-section h2 strong {
-	font-weight: 700 !important;
-}
-
-/* About section paragraphs - light weight with bold on strong */
-.g2f-about-section p {
-	font-weight: 400 !important;
-}
-
-.g2f-about-section p strong {
-	font-weight: 700 !important;
+@media (max-width: 768px) {
+	.g2f-about-section {
+		padding: 60px 24px !important;
+	}
+	.g2f-about-inner {
+		flex-direction: column;
+	}
+	.g2f-about-image-col {
+		flex: none;
+		max-width: 100%;
+		width: 100%;
+	}
+	.g2f-about-label {
+		display: none;
+	}
 }
 
 /* ===================================
