@@ -1571,14 +1571,13 @@ main .g2f-hero {
 	padding-right: clamp(20px, 5vw, 151px);
 }
 
-/* Full-width background sections need negative margins to break out */
+/* Full-width sections break out of content container */
 .g2f-content-container .g2f-testimonials,
 .g2f-content-container .g2f-testimonials-dark,
-.g2f-content-container .g2f-portfolio-split {
+.g2f-content-container .g2f-portfolio-split,
+.g2f-content-container .g2f-about-section {
 	margin-left: calc(-1 * clamp(20px, 5vw, 151px));
 	margin-right: calc(-1 * clamp(20px, 5vw, 151px));
-	padding-left: clamp(20px, 5vw, 151px) !important;
-	padding-right: clamp(20px, 5vw, 151px) !important;
 	width: calc(100% + 2 * clamp(20px, 5vw, 151px));
 }
 
@@ -1591,11 +1590,10 @@ main .g2f-hero {
 
 	.g2f-content-container .g2f-testimonials,
 	.g2f-content-container .g2f-testimonials-dark,
-	.g2f-content-container .g2f-portfolio-split {
+	.g2f-content-container .g2f-portfolio-split,
+	.g2f-content-container .g2f-about-section {
 		margin-left: calc(-1 * clamp(20px, 5vw, 100px));
 		margin-right: calc(-1 * clamp(20px, 5vw, 100px));
-		padding-left: clamp(20px, 5vw, 100px) !important;
-		padding-right: clamp(20px, 5vw, 100px) !important;
 		width: calc(100% + 2 * clamp(20px, 5vw, 100px));
 	}
 }
@@ -1625,11 +1623,10 @@ main .g2f-hero {
 
 	.g2f-content-container .g2f-testimonials,
 	.g2f-content-container .g2f-testimonials-dark,
-	.g2f-content-container .g2f-portfolio-split {
+	.g2f-content-container .g2f-portfolio-split,
+	.g2f-content-container .g2f-about-section {
 		margin-left: -20px;
 		margin-right: -20px;
-		padding-left: 20px !important;
-		padding-right: 20px !important;
 		width: calc(100% + 40px);
 	}
 }
