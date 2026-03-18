@@ -4,7 +4,7 @@
 <main class="wp-block-group site-main" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
 	<!-- ============================================================
-	     HERO — About
+	     HERO
 	     ============================================================ -->
 	<!-- wp:group {"tagName":"section","anchor":"hero","className":"g2f-hero-banner g2f-hero-banner--about","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
 	<section id="hero" class="wp-block-group g2f-hero-banner g2f-hero-banner--about" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
@@ -22,22 +22,18 @@
 			<!-- /wp:group -->
 
 			<!-- Cover with image -->
-			<!-- wp:cover {"url":"http://localhost:8080/wp-content/uploads/2026/03/about-hero.jpg","dimRatio":55,"overlayColor":"black","isUserOverlayColor":true,"minHeight":480,"minHeightUnit":"px","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
+			<!-- wp:cover {"url":"<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/about-hero.jpg","dimRatio":55,"overlayColor":"black","isUserOverlayColor":true,"minHeight":480,"minHeightUnit":"px","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
 			<div class="wp-block-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:480px">
 				<span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-55 has-background-dim"></span>
-				<img alt="About G2F Design" class="wp-block-cover__image-background" src="http://localhost:8080/wp-content/uploads/2026/03/about-hero.jpg" data-object-fit="cover"/>
+				<img alt="About G2F Design" class="wp-block-cover__image-background" src="/wp-content/uploads/2026/03/about-hero.jpg" data-object-fit="cover"/>
 				<div class="wp-block-cover__inner-container">
-
 					<!-- wp:group {"style":{"spacing":{"padding":{"top":"140px","bottom":"80px","left":"80px","right":"80px"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->
 					<div class="wp-block-group" style="padding-top:140px;padding-bottom:80px;padding-left:80px;padding-right:80px">
-
-						<!-- wp:heading {"level":1,"className":"g2f-about-hero-title","style":{"typography":{"fontSize":"clamp(40px,6vw,80px)","fontStyle":"normal","fontWeight":"400","lineHeight":"1.05","letterSpacing":"-2.5px"}},"textColor":"white","fontFamily":"inter"} -->
-						<h1 class="wp-block-heading g2f-about-hero-title has-white-color has-text-color has-inter-font-family" style="font-size:clamp(40px,6vw,80px);font-style:normal;font-weight:400;letter-spacing:-2.5px;line-height:1.05">Welcome To The <strong>Creative World</strong><br>Of G2F Design.</h1>
+						<!-- wp:heading {"level":1,"className":"g2f-about-hero-title","style":{"typography":{"fontSize":"clamp(36px,5vw,72px)","fontStyle":"normal","fontWeight":"400","lineHeight":"1.05","letterSpacing":"-2px"}},"textColor":"white","fontFamily":"inter"} -->
+						<h1 class="wp-block-heading g2f-about-hero-title has-white-color has-text-color has-inter-font-family" style="font-size:clamp(36px,5vw,72px);font-style:normal;font-weight:400;letter-spacing:-2px;line-height:1.05">Welcome To The <strong>Creative World</strong><br>Of G2F Design.</h1>
 						<!-- /wp:heading -->
-
 					</div>
 					<!-- /wp:group -->
-
 				</div>
 			</div>
 			<!-- /wp:cover -->
@@ -50,127 +46,71 @@
 
 
 	<!-- ============================================================
-	     INTRO SECTION — Image LEFT + text RIGHT
+	     INTRO — raw HTML (image left + text right)
 	     ============================================================ -->
-	<!-- wp:group {"tagName":"section","anchor":"about","className":"g2f-about-intro","style":{"spacing":{"padding":{"top":"100px","bottom":"80px","left":"80px","right":"80px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"constrained","contentSize":"1200px"}} -->
-	<section id="about" class="wp-block-group g2f-about-intro has-white-background-color has-background" style="padding-top:100px;padding-bottom:80px;padding-left:80px;padding-right:80px;margin-top:0;margin-bottom:0">
-
-		<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"80px"}}}} -->
-		<div class="wp-block-columns">
-
-			<!-- Image -->
-			<!-- wp:column {"width":"38%"} -->
-			<div class="wp-block-column" style="flex-basis:38%">
-				<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"g2f-about-portrait","style":{"border":{"radius":"4px"}}} -->
-				<figure class="wp-block-image size-large g2f-about-portrait" style="border-radius:4px">
-					<img src="http://localhost:8080/wp-content/uploads/2026/03/about-portrait.jpg" alt="G2F Design founder" />
-				</figure>
-				<!-- /wp:image -->
+	<!-- wp:html -->
+	<section class="g2f-about-page-intro">
+		<div class="g2f-about-page-intro__inner">
+			<div class="g2f-about-page-intro__image">
+				<img src="/wp-content/uploads/2026/03/about-portrait.jpg" alt="G2F Design" />
 			</div>
-			<!-- /wp:column -->
-
-			<!-- Text -->
-			<!-- wp:column {"width":"62%","verticalAlignment":"top"} -->
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:62%">
-
-				<!-- wp:paragraph {"className":"g2f-about-lead","style":{"typography":{"fontSize":"clamp(18px,2vw,26px)","lineHeight":"1.55","fontWeight":"400"}},"textColor":"black","fontFamily":"inter"} -->
-				<p class="g2f-about-lead has-black-color has-text-color has-inter-font-family" style="font-size:clamp(18px,2vw,26px);line-height:1.55;font-weight:400">Welcome to <strong>G2F Design</strong>—a culmination of two decades of experience, relentless curiosity, and a passion for shaping extraordinary visual narratives.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px","lineHeight":"1.75"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.75">At the heart of <strong>G2F Design</strong> is a commitment to Product (UI/UX) Design and Art Direction that balances aesthetics with functionality. We specialize in creating thoughtful digital experiences that are not only visually compelling but also intuitive, accessible, and deeply aligned with user needs. Every interface we design is rooted in human-centered principles, aiming to simplify complexity and enhance interaction across platforms and devices.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px","lineHeight":"1.75"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.75">Our approach to Art Direction goes beyond style—it's about strategic visual storytelling. We work closely with clients to define and evolve their brand voice, crafting cohesive visual systems that resonate with audiences and amplify meaning. Whether launching a product, reimagining a brand, or building a digital presence from the ground up, we bring clarity, cohesion, and creativity to every step of the process.</p>
-				<!-- /wp:paragraph -->
-
+			<div class="g2f-about-page-intro__text">
+				<p class="g2f-about-page-intro__lead">Welcome to <strong>G2F Design</strong>—a culmination of two decades of experience, relentless curiosity, and a passion for shaping extraordinary visual narratives.</p>
+				<p>At the heart of <strong>G2F Design</strong> is a commitment to Product (UI/UX) Design and Art Direction that balances aesthetics with functionality. We specialize in creating thoughtful digital experiences that are not only visually compelling but also intuitive, accessible, and deeply aligned with user needs. Every interface we design is rooted in human-centered principles, aiming to simplify complexity and enhance interaction across platforms and devices.</p>
 			</div>
-			<!-- /wp:column -->
-
 		</div>
-		<!-- /wp:columns -->
-
 	</section>
-	<!-- /wp:group -->
+	<!-- /wp:html -->
 
 
 	<!-- ============================================================
-	     FULL-WIDTH COPY SECTION
+	     COPY SECTION — full width paragraphs
 	     ============================================================ -->
-	<!-- wp:group {"tagName":"section","className":"g2f-about-body","style":{"spacing":{"padding":{"top":"0","bottom":"80px","left":"80px","right":"80px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"constrained","contentSize":"880px"}} -->
-	<section class="wp-block-group g2f-about-body has-white-background-color has-background" style="padding-top:0;padding-bottom:80px;padding-left:80px;padding-right:80px;margin-top:0;margin-bottom:0">
-
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px","lineHeight":"1.8"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-		<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.8">With a background spanning graphic design, photography, and a strong foundation in editorial and visual communication, G2F Design brings a multidisciplinary perspective to every project. This allows us to see the big picture while refining every pixel, ensuring that form and function go hand in hand.</p>
-		<!-- /wp:paragraph -->
-
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px","lineHeight":"1.8"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-		<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.8">Our work is driven by curiosity, collaboration, and a deep respect for design as a tool for connection. From early-stage startups to cultural institutions and global brands, we help clients shape experiences that not only look beautiful—but make people feel something.</p>
-		<!-- /wp:paragraph -->
-
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"17px","fontWeight":"700","lineHeight":"1.6"}},"textColor":"black","fontFamily":"inter"} -->
-		<p class="has-black-color has-text-color has-inter-font-family" style="font-size:17px;font-weight:700;line-height:1.6">Let's turn your vision into something extraordinary.</p>
-		<!-- /wp:paragraph -->
-
+	<!-- wp:html -->
+	<section class="g2f-about-page-body">
+		<div class="g2f-about-page-body__inner">
+			<p>Our approach to Art Direction goes beyond style—it's about strategic visual storytelling. We work closely with clients to define and evolve their brand voice, crafting cohesive visual systems that resonate with audiences and amplify meaning. Whether launching a product, reimagining a brand, or building a digital presence from the ground up, we bring clarity, cohesion, and creativity to every step of the process.</p>
+			<p>With a background spanning graphic design, photography, and a strong foundation in editorial and visual communication, G2F Design brings a multidisciplinary perspective to every project. This allows us to see the big picture while refining every pixel, ensuring that form and function go hand in hand.</p>
+			<p>Our work is driven by curiosity, collaboration, and a deep respect for design as a tool for connection. From early-stage startups to cultural institutions and global brands, we help clients shape experiences that not only look beautiful—but make people feel something.</p>
+			<p class="g2f-about-page-body__cta-text">Let's turn your vision into something extraordinary.</p>
+		</div>
 	</section>
-	<!-- /wp:group -->
+	<!-- /wp:html -->
 
 
 	<!-- ============================================================
 	     FOUNDER CARD
 	     ============================================================ -->
-	<!-- wp:group {"tagName":"section","className":"g2f-founder-section","style":{"spacing":{"padding":{"top":"60px","bottom":"80px","left":"80px","right":"80px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"constrained","contentSize":"880px"}} -->
-	<section class="wp-block-group g2f-founder-section has-white-background-color has-background" style="padding-top:60px;padding-bottom:80px;padding-left:80px;padding-right:80px;margin-top:0;margin-bottom:0">
-
-		<!-- Divider -->
-		<!-- wp:separator {"style":{"spacing":{"margin":{"top":"0","bottom":"40px"}}},"backgroundColor":"black","className":"is-style-wide"} -->
-		<hr class="wp-block-separator has-text-color has-black-color has-alpha-channel-opacity has-black-background-color has-background is-style-wide" style="margin-top:0;margin-bottom:40px"/>
-		<!-- /wp:separator -->
-
-		<!-- wp:group {"className":"g2f-founder-card","style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-		<div class="wp-block-group g2f-founder-card" style="gap:16px">
-
-			<!-- Avatar -->
-			<!-- wp:image {"width":"72px","height":"72px","sizeSlug":"thumbnail","linkDestination":"none","className":"g2f-founder-avatar","style":{"border":{"radius":"100px"}}} -->
-			<figure class="wp-block-image size-thumbnail is-resized g2f-founder-avatar" style="border-radius:100px;width:72px;height:72px">
-				<img src="http://localhost:8080/wp-content/uploads/2026/03/founder-avatar.jpg" alt="Gabriel Radatovics" style="width:72px;height:72px;object-fit:cover;" />
-			</figure>
-			<!-- /wp:image -->
-
-			<!-- Name + title -->
-			<!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-			<div class="wp-block-group">
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontWeight":"600","lineHeight":"1.3"}},"textColor":"black","fontFamily":"inter"} -->
-				<p class="has-black-color has-text-color has-inter-font-family" style="font-size:18px;font-weight:600;line-height:1.3">Gabriel Radatovics</p>
-				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"13px","fontWeight":"400","letterSpacing":"1.5px","lineHeight":"1.4"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:13px;font-weight:400;letter-spacing:1.5px;line-height:1.4">Founder of G2F Design</p>
-				<!-- /wp:paragraph -->
+	<!-- wp:html -->
+	<section class="g2f-about-page-founder">
+		<div class="g2f-about-page-founder__inner">
+			<div class="g2f-about-page-founder__avatar">
+				<img src="/wp-content/uploads/2026/03/founder-avatar.jpg" alt="Gabriel Radatovics" />
 			</div>
-			<!-- /wp:group -->
-
+			<div class="g2f-about-page-founder__name">Gabriel Radatovics</div>
+			<div class="g2f-about-page-founder__role">Founder of G2F Design</div>
+			<hr class="g2f-about-page-founder__divider" />
+			<p class="g2f-about-page-founder__quote">We never give up! Challenges make us stronger and more professional. Keep in mind. Beware ;)</p>
 		</div>
-		<!-- /wp:group -->
-
-		<!-- Divider -->
-		<!-- wp:separator {"style":{"spacing":{"margin":{"top":"40px","bottom":"40px"}}},"backgroundColor":"black","className":"is-style-wide"} -->
-		<hr class="wp-block-separator has-text-color has-black-color has-alpha-channel-opacity has-black-background-color has-background is-style-wide" style="margin-top:40px;margin-bottom:40px"/>
-		<!-- /wp:separator -->
-
-		<!-- Quote -->
-		<!-- wp:paragraph {"className":"g2f-founder-quote","style":{"typography":{"fontSize":"clamp(15px,1.5vw,18px)","fontStyle":"italic","lineHeight":"1.7"}},"textColor":"text-muted","fontFamily":"roboto"} -->
-		<p class="g2f-founder-quote has-text-muted-color has-text-color has-roboto-font-family" style="font-size:clamp(15px,1.5vw,18px);font-style:italic;line-height:1.7">"We never give up. Challenges make us stronger and smarter — they push us to grow."</p>
-		<!-- /wp:paragraph -->
-
 	</section>
-	<!-- /wp:group -->
+	<!-- /wp:html -->
 
 
 	<!-- ============================================================
-	     CTA + CLIENTS
+	     CTA DIVIDER (fekete háttér)
 	     ============================================================ -->
 	<!-- wp:pattern {"slug":"g2f-theme/cta-divider"} /-->
+
+
+	<!-- ============================================================
+	     TESTIMONIALS
+	     ============================================================ -->
+	<!-- wp:pattern {"slug":"g2f-theme/testimonials"} /-->
+
+
+	<!-- ============================================================
+	     CLIENTS
+	     ============================================================ -->
 	<!-- wp:pattern {"slug":"g2f-theme/clients-section"} /-->
 
 </main>

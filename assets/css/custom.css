@@ -2959,3 +2959,136 @@ main .g2f-hero {
 		padding: 48px 24px 32px;
 	}
 }
+
+/* =========================================================
+   ABOUT PAGE — new sections (page-about.html)
+   ========================================================= */
+
+/* INTRO — image left + text right */
+.g2f-about-page-intro {
+	background: #fff;
+	padding: 100px 116px 80px;
+}
+.g2f-about-page-intro__inner {
+	display: flex;
+	gap: 64px;
+	align-items: flex-start;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.g2f-about-page-intro__image {
+	flex: 0 0 38%;
+}
+.g2f-about-page-intro__image img {
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	display: block;
+}
+.g2f-about-page-intro__text {
+	flex: 1;
+	padding-top: 8px;
+}
+.g2f-about-page-intro__lead {
+	font-size: clamp(18px, 1.8vw, 24px);
+	line-height: 1.55;
+	font-weight: 400;
+	color: #000;
+	margin-bottom: 24px;
+}
+.g2f-about-page-intro__text p {
+	font-size: 15px;
+	line-height: 1.8;
+	color: #555;
+	margin-bottom: 16px;
+}
+
+/* COPY SECTION */
+.g2f-about-page-body {
+	background: #fff;
+	padding: 0 116px 80px;
+}
+.g2f-about-page-body__inner {
+	max-width: 860px;
+}
+.g2f-about-page-body p {
+	font-size: 14px;
+	line-height: 1.85;
+	color: #555;
+	margin-bottom: 18px;
+}
+.g2f-about-page-body__cta-text {
+	font-weight: 700 !important;
+	font-size: 15px !important;
+	color: #000 !important;
+	margin-top: 8px;
+}
+
+/* FOUNDER CARD */
+.g2f-about-page-founder {
+	background: #fff;
+	padding: 24px 116px 80px;
+}
+.g2f-about-page-founder__inner {
+	max-width: 860px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+}
+.g2f-about-page-founder__avatar {
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 6px;
+}
+.g2f-about-page-founder__avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.g2f-about-page-founder__name {
+	font-size: 16px;
+	font-weight: 600;
+	color: #000;
+}
+.g2f-about-page-founder__role {
+	font-size: 12px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: #999;
+}
+.g2f-about-page-founder__divider {
+	width: 100%;
+	border: none;
+	border-top: 1px solid #e0e0e0;
+	margin: 16px 0;
+}
+.g2f-about-page-founder__quote {
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666;
+	font-style: normal;
+	text-align: center;
+	max-width: 400px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.g2f-about-page-intro,
+	.g2f-about-page-body,
+	.g2f-about-page-founder {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	.g2f-about-page-intro__inner {
+		flex-direction: column;
+		gap: 32px;
+	}
+	.g2f-about-page-intro__image {
+		flex: none;
+		width: 100%;
+	}
+}
