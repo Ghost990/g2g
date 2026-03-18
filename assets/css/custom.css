@@ -1380,6 +1380,7 @@ main .g2f-hero {
 	gap: 72px;
 	align-items: center;
 	width: 100%;
+	max-width: 960px;
 	position: relative;
 }
 
