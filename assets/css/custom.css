@@ -2539,15 +2539,29 @@ main .g2f-hero {
 	gap: 20px !important;
 }
 
-/* Right-image rows: content then image */
+/* Szöveg mindig az oldal közepe felé igazítva */
+/* img-right → szöveg bal oldalon → jobbra igazítva (közepe felé) */
 .g2f-service-row--img-right .g2f-service-row__content {
 	padding-left: 80px !important;
-	padding-right: 40px !important;
+	padding-right: 80px !important;
+	align-items: flex-end !important;
+	text-align: right !important;
 }
 
+/* img-left → szöveg jobb oldalon → balra igazítva (közepe felé) */
 .g2f-service-row--img-left .g2f-service-row__content {
-	padding-left: 60px !important;
+	padding-left: 80px !important;
 	padding-right: 80px !important;
+	align-items: flex-start !important;
+	text-align: left !important;
+}
+
+/* Button igazítás soronként */
+.g2f-service-row--img-right .g2f-button-arrow--sm {
+	align-self: flex-end !important;
+}
+.g2f-service-row--img-left .g2f-button-arrow--sm {
+	align-self: flex-start !important;
 }
 
 /* Button size variant */
