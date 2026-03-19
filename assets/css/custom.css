@@ -3210,7 +3210,7 @@ main .g2f-hero {
    HERO — ABOUT US PAGE
    ========================================= */
 .g2f-hero-about-wrap {
-	padding-top: 80px; /* header offset */
+	padding-top: 80px;
 	background: #fff;
 }
 
@@ -3221,7 +3221,6 @@ main .g2f-hero {
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
-	gap: 0;
 }
 
 .g2f-hero-about__label {
@@ -3238,37 +3237,41 @@ main .g2f-hero {
 	text-transform: uppercase;
 	color: #000;
 	white-space: nowrap;
-	padding: 0;
-	margin-right: 0;
 }
 
 .g2f-hero-about__image {
 	flex: 1;
-	min-height: 300px;
+	min-height: 320px;
 	position: relative;
-	background: #1a1a1a url('/wp-content/uploads/2026/03/about-hero.jpg') center center / cover no-repeat;
+	background-color: #1a1a1a;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .g2f-hero-about__overlay {
 	position: absolute;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.45);
+	background: rgba(0, 0, 0, 0.55);
 }
 
 .g2f-hero-about__content {
 	position: relative;
 	z-index: 2;
-	padding: 60px 48px 52px;
+	text-align: center;
+	padding: 60px 48px;
 }
 
 .g2f-hero-about__heading {
 	font-family: var(--wp--preset--font-family--inter), sans-serif;
-	font-size: clamp(24px, 3.5vw, 48px);
+	font-size: clamp(28px, 4vw, 56px);
 	font-weight: 400;
 	line-height: 1.1;
 	letter-spacing: -1px;
 	color: #fff;
-	margin: 0 0 16px 0;
+	margin: 0 0 20px 0;
 }
 
 .g2f-hero-about__heading strong {
@@ -3281,7 +3284,7 @@ main .g2f-hero {
 	font-weight: 400;
 	letter-spacing: 3px;
 	text-transform: uppercase;
-	color: rgba(255,255,255,0.65);
+	color: rgba(255, 255, 255, 0.65);
 	margin: 0;
 }
 
@@ -3300,7 +3303,7 @@ main .g2f-hero {
 		font-size: 9px;
 	}
 	.g2f-hero-about__content {
-		padding: 40px 28px 36px;
+		padding: 40px 24px;
 	}
 }
 
