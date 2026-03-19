@@ -3250,8 +3250,14 @@ main .g2f-hero {
    HERO — ABOUT US PAGE
    ========================================= */
 .g2f-hero-about-wrap {
-	padding-top: 80px;
+	padding-top: var(--g2f-header-height, 74px);
+	margin-top: calc(-1 * var(--g2f-header-height, 74px));
 	background: #fff;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 }
 
 .g2f-hero-about-container {
@@ -3603,3 +3609,47 @@ main .g2f-hero {
 .g2f-svc-projects__more { text-align: center; }
 @media (max-width: 900px) { .g2f-svc-projects__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .g2f-svc-projects__grid { grid-template-columns: 1fr; } .g2f-svc-projects { padding: 48px 20px; } }
+
+/* ============================================================
+   CTA — Service pages (dark bg)
+   ============================================================ */
+.g2f-cta-service {
+	background: #111;
+	padding: 80px 40px;
+	text-align: center;
+}
+.g2f-cta-service__inner {
+	max-width: 700px;
+	margin: 0 auto;
+}
+.g2f-cta-service__heading {
+	font-size: clamp(24px, 3vw, 42px);
+	font-weight: 300;
+	color: #fff;
+	margin: 0 0 16px;
+	line-height: 1.25;
+	letter-spacing: -0.5px;
+}
+.g2f-cta-service__heading strong { font-weight: 700; color: #fff; }
+.g2f-cta-service__sub {
+	font-size: 15px;
+	color: rgba(255,255,255,0.55);
+	margin: 0 0 36px;
+}
+.g2f-cta-service__btn {
+	display: inline-block;
+	padding: 14px 32px;
+	border: 1px solid rgba(255,255,255,0.6);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background 0.2s, border-color 0.2s;
+}
+.g2f-cta-service__btn:hover {
+	background: #fff;
+	color: #111;
+	border-color: #fff;
+}

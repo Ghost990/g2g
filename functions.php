@@ -132,6 +132,7 @@ function g2f_theme_register_block_patterns() {
 		'clients-section'       => array( 'title' => 'Clients Section' ),
 		'cta-divider'           => array( 'title' => 'CTA Divider' ),
 		'cta-divider-compact'   => array( 'title' => 'CTA Divider — Compact' ),
+		'cta-service'           => array( 'title' => 'CTA — Service Pages' ),
 		'button-arrow'          => array( 'title' => 'Button Arrow' ),
 		'button-arrow-light'    => array( 'title' => 'Button Arrow (Light)' ),
 		'project-info'          => array( 'title' => 'Project Info' ),
