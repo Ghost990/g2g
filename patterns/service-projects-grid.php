@@ -71,11 +71,9 @@ $projects = new WP_Query( $query_args );
 		<?php endwhile; wp_reset_postdata(); ?>
 	</div>
 
-	<?php if ( $projects->max_num_pages > 1 ) : ?>
-	<div class="g2f-load-more-wrap">
-		<button class="g2f-load-more g2f-btn"><?php esc_html_e( 'Load More', 'g2f-theme' ); ?></button>
+	<div class="g2f-see-more-wrap">
+		<a href="/gallery/" class="g2f-see-more-btn">SEE MORE WORK →</a>
 	</div>
-	<?php endif; ?>
 
 	<?php else : ?>
 	<p class="g2f-no-projects"><?php esc_html_e( 'No projects found.', 'g2f-theme' ); ?></p>

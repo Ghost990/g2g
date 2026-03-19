@@ -3,56 +3,63 @@
 <!-- wp:group {"tagName":"main","className":"site-main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
 <main class="wp-block-group site-main" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
-	<!-- wp:group {"tagName":"section","className":"g2f-service-hero g2f-service-hero--ux","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-	<section class="wp-block-group g2f-service-hero g2f-service-hero--ux" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
-
-		<!-- wp:group {"className":"g2f-hero-wrapper","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-		<div class="wp-block-group g2f-hero-wrapper" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
-
-			<!-- wp:group {"className":"g2f-vertical-text-strip","backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-			<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background">
-				<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
-				<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-weight:700;letter-spacing:3px;line-height:1.2">UX/UI DESIGN</p>
-				<!-- /wp:paragraph -->
+	<!-- HERO — UX/UI Design -->
+	<!-- wp:html -->
+	<style>
+	.g2f-svc-hero { margin-top: calc(-1 * var(--g2f-header-height, 74px)); padding-top: var(--g2f-header-height, 74px); background: #fff; width: 100vw; position: relative; left: 50%; margin-left: -50vw; margin-right: -50vw; }
+	.g2f-svc-hero__container { display: flex; flex-direction: row; align-items: stretch; padding: 0 40px; }
+	.g2f-svc-hero__breadcrumb { flex: 0 0 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px 0; background: #fff; }
+	.g2f-svc-hero__breadcrumb span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; white-space: nowrap; }
+	.g2f-svc-hero__breadcrumb span.active { color: #000; }
+	.g2f-svc-hero__breadcrumb .sep { font-size: 10px; color: #ccc; writing-mode: vertical-rl; transform: rotate(180deg); }
+	.g2f-svc-hero__body { flex: 1; display: flex; flex-direction: row; min-height: 380px; }
+	.g2f-svc-hero__text { flex: 0 0 55%; display: flex; flex-direction: column; justify-content: center; padding: 60px 60px 60px 40px; background: #1a1a2e; }
+	.g2f-svc-hero__label { font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin: 0 0 20px 0; }
+	.g2f-svc-hero__heading { font-size: clamp(28px, 3.5vw, 52px); font-weight: 300; line-height: 1.15; color: #fff; margin: 0 0 20px 0; letter-spacing: -0.5px; }
+	.g2f-svc-hero__heading strong { font-weight: 700; }
+	.g2f-svc-hero__heading em { font-style: italic; }
+	.g2f-svc-hero__sub { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; max-width: 420px; }
+	.g2f-svc-hero__image { flex: 1; background-size: cover; background-position: center; background-color: #2a2a40; }
+	.g2f-svc-hero__image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+	@media (max-width: 900px) { .g2f-svc-hero__body { flex-direction: column; } .g2f-svc-hero__text { flex: none; padding: 40px 24px; } .g2f-svc-hero__image { min-height: 220px; } }
+	@media (max-width: 600px) { .g2f-svc-hero__container { padding: 0 12px; } .g2f-svc-hero__breadcrumb { flex: 0 0 24px; } }
+	</style>
+	<div class="g2f-svc-hero">
+		<div class="g2f-svc-hero__container">
+			<div class="g2f-svc-hero__breadcrumb">
+				<span>SERVICES</span>
+				<span class="sep">/</span>
+				<span class="active">UX/UI DESIGN</span>
 			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:cover {"dimRatio":60,"customOverlayColor":"#1a1a2e","isUserOverlayColor":true,"minHeight":450,"minHeightUnit":"px","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
-			<div class="wp-block-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:450px">
-				<span aria-hidden="true" class="wp-block-cover__background has-background-dim-60 has-background-dim" style="background-color:#1a1a2e"></span>
-				<div class="wp-block-cover__inner-container">
-					<!-- wp:group {"style":{"spacing":{"padding":{"top":"120px","bottom":"80px","left":"80px","right":"80px"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->
-					<div class="wp-block-group" style="padding-top:120px;padding-bottom:80px;padding-left:80px;padding-right:80px">
-						<!-- wp:group {"style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-						<div class="wp-block-group">
-							<!-- wp:paragraph {"style":{"typography":{"fontSize":"13px","fontWeight":"600","letterSpacing":"3px"}},"textColor":"white","fontFamily":"roboto"} -->
-							<p class="has-white-color has-text-color has-roboto-font-family" style="font-size:13px;font-weight:600;letter-spacing:3px">OUR SERVICES</p>
-							<!-- /wp:paragraph -->
-							<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(40px,6vw,72px)","fontWeight":"400","lineHeight":"1","letterSpacing":"-2px"}},"textColor":"white","fontFamily":"inter"} -->
-							<h1 class="wp-block-heading has-white-color has-text-color has-inter-font-family" style="font-size:clamp(40px,6vw,72px);font-weight:400;letter-spacing:-2px;line-height:1">Designing Digital<br><em>Experiences.</em></h1>
-							<!-- /wp:heading -->
-						</div>
-						<!-- /wp:group -->
-					</div>
-					<!-- /wp:group -->
+			<div class="g2f-svc-hero__body">
+				<div class="g2f-svc-hero__text">
+					<p class="g2f-svc-hero__label">OUR SERVICES</p>
+					<h1 class="g2f-svc-hero__heading">Designing Digital<br><em>Experiences.</em></h1>
+					<p class="g2f-svc-hero__sub">Crafting intuitive, human-centered interfaces that balance beauty with function. We design digital products that make people feel something.</p>
+				</div>
+				<div class="g2f-svc-hero__image">
+					<img src="/wp-content/uploads/2026/03/service-ux.jpg" alt="UX/UI Design" onerror="this.parentElement.style.background='#2a2a40'" />
 				</div>
 			</div>
-			<!-- /wp:cover -->
-
 		</div>
-		<!-- /wp:group -->
+	</div>
+	<!-- /wp:html -->
 
-	</section>
-	<!-- /wp:group -->
-
-	<!-- wp:group {"tagName":"section","className":"g2f-service-intro","style":{"spacing":{"padding":{"top":"80px","bottom":"60px","left":"80px","right":"80px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
-	<section class="wp-block-group g2f-service-intro" style="padding-top:80px;padding-bottom:60px;padding-left:80px;padding-right:80px;margin-top:0;margin-bottom:0">
-		<!-- wp:post-content {"layout":{"type":"default"}} /-->
-	</section>
-	<!-- /wp:group -->
-
+	<!-- PROJECTS GRID -->
 	<!-- wp:pattern {"slug":"g2f-theme/service-projects-grid"} /-->
-	<!-- wp:pattern {"slug":"g2f-theme/cta-divider"} /-->
+
+	<!-- CTA BANNER -->
+	<!-- wp:html -->
+	<section class="g2f-cta-banner">
+		<div class="g2f-cta-banner__inner">
+			<h2 class="g2f-cta-banner__heading">Let's <strong>shape something meaningful</strong> together.</h2>
+			<p class="g2f-cta-banner__sub">Have a project that needs thoughtful UX/UI design? We're ready to collaborate.</p>
+			<a href="/contact/" class="g2f-cta-banner__btn">GET IN TOUCH →</a>
+		</div>
+	</section>
+	<!-- /wp:html -->
+
+	<!-- CLIENTS -->
 	<!-- wp:pattern {"slug":"g2f-theme/clients-section"} /-->
 
 </main>
