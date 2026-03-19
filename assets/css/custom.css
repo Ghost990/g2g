@@ -606,7 +606,7 @@ main .g2f-hero {
 }
 
 .g2f-hero-title {
-	font-family: var(--wp--preset--font-family--inter);
+	font-family: var(--wp--preset--font-family--roboto);
 	font-size: 100px;
 	font-weight: 400;
 	line-height: 0.94;
@@ -756,7 +756,7 @@ main .g2f-hero {
 }
 
 .g2f-project-title {
-	font-family: var(--wp--preset--font-family--inter);
+	font-family: var(--wp--preset--font-family--roboto);
 	font-size: 20px;
 	font-weight: 700;
 	margin-bottom: 8px;
@@ -849,7 +849,7 @@ main .g2f-hero {
 }
 
 .g2f-service-title {
-	font-family: var(--wp--preset--font-family--inter);
+	font-family: var(--wp--preset--font-family--roboto);
 	font-size: 32px;
 	font-weight: 700;
 	color: var(--wp--preset--color--black);
@@ -890,7 +890,7 @@ main .g2f-hero {
 }
 
 .g2f-testimonial-text {
-	font-family: var(--wp--preset--font-family--roboto);
+	font-family: var(--wp--preset--font-family--inter);
 	font-size: 16px;
 	line-height: 1.5;
 	color: var(--wp--preset--color--black);
@@ -999,7 +999,7 @@ main .g2f-hero {
 }
 
 .g2f-footer-title {
-	font-family: var(--wp--preset--font-family--inter);
+	font-family: var(--wp--preset--font-family--roboto);
 	font-size: 100px;
 	font-weight: 400;
 	line-height: 1;
@@ -2467,7 +2467,7 @@ main .g2f-hero {
 }
 
 .g2f-services-subtitle {
-	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
 	font-size: 15px;
 	line-height: 1.7;
 	color: #444;
@@ -2692,7 +2692,7 @@ main .g2f-hero {
 }
 
 .g2f-portfolio-heading {
-	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
 	font-size: clamp(40px, 4.5vw, 68px);
 	font-weight: 400;
 	line-height: 1.1;
@@ -2820,7 +2820,7 @@ main .g2f-hero {
 }
 
 .g2f-clients-heading {
-	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
 	font-size: clamp(40px, 4vw, 60px);
 	font-weight: 700;
 	color: #000;
