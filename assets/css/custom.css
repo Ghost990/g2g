@@ -3209,64 +3209,52 @@ main .g2f-hero {
 /* =========================================
    HERO — ABOUT US PAGE
    ========================================= */
-.g2f-hero-about {
+.g2f-hero-about-wrap {
 	display: flex;
 	flex-direction: row;
-	width: 100%;
-	position: relative;
-	margin-top: 80px; /* header height offset */
-}
-
-.g2f-hero-about__label-wrap {
-	flex: 0 0 40px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #fff;
-	z-index: 2;
+	align-items: stretch;
+	margin-top: 80px;
+	padding: 0 24px 0 0;
 }
 
 .g2f-hero-about__label {
-	font-family: var(--wp--preset--font-family--roboto), sans-serif;
-	font-size: 11px;
-	font-weight: 700;
-	letter-spacing: 3px;
-	text-transform: uppercase;
-	color: #000;
+	flex: 0 0 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: #000;
 	white-space: nowrap;
+	background: #fff;
+	padding: 0 6px;
 }
 
-.g2f-hero-about__cover {
+.g2f-hero-about {
 	flex: 1;
-	min-height: 360px;
-	position: relative;
-	background: url('/wp-content/uploads/2026/03/about-hero.jpg') center center / cover no-repeat;
-	background-color: #2a2a2a;
-}
-
-.g2f-hero-about__overlay {
-	position: absolute;
-	inset: 0;
-	background: rgba(0, 0, 0, 0.45);
+	min-height: 320px !important;
 }
 
 .g2f-hero-about__content {
 	position: relative;
 	z-index: 2;
-	padding: 100px 80px 80px;
-	max-width: 660px;
+	padding: 80px 60px 60px;
+	max-width: 600px;
 }
 
 .g2f-hero-about__heading {
 	font-family: var(--wp--preset--font-family--inter), sans-serif;
-	font-size: clamp(32px, 5vw, 64px);
+	font-size: clamp(28px, 4vw, 54px);
 	font-weight: 400;
 	line-height: 1.1;
-	letter-spacing: -1.5px;
+	letter-spacing: -1px;
 	color: #fff;
-	margin: 0 0 16px 0;
+	margin: 0 0 20px 0;
 }
 
 .g2f-hero-about__heading strong {
@@ -3279,16 +3267,19 @@ main .g2f-hero {
 	font-weight: 400;
 	letter-spacing: 3px;
 	text-transform: uppercase;
-	color: rgba(255,255,255,0.7);
+	color: rgba(255,255,255,0.65);
 	margin: 0;
 }
 
 @media (max-width: 768px) {
-	.g2f-hero-about__content {
-		padding: 80px 32px 60px;
+	.g2f-hero-about-wrap {
+		padding-right: 0;
 	}
-	.g2f-hero-about__cover {
-		min-height: 280px;
+	.g2f-hero-about__label {
+		flex: 0 0 28px;
+	}
+	.g2f-hero-about__content {
+		padding: 60px 32px 48px;
 	}
 }
 
