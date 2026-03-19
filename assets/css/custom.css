@@ -359,10 +359,13 @@ p strong {
 	left: 50% !important;
 	transform: translateX(-50%) !important;
 	pointer-events: auto;
+	z-index: 1;
 }
 
 .g2f-header-cta {
 	margin-left: auto;
+	position: relative;
+	z-index: 2;
 }
 
 /* Header element transitions for smooth shrinking */
@@ -412,9 +415,11 @@ p strong {
 
 /* Shrunk inner padding */
 .site-header.is-sticky > .wp-block-group {
-	display: grid !important;
-	grid-template-columns: 1fr auto 1fr;
-	align-items: center;
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	position: relative !important;
 	padding-top: 10px !important;
 	padding-bottom: 10px !important;
 }
