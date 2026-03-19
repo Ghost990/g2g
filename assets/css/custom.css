@@ -351,21 +351,32 @@ p strong {
 	align-items: center !important;
 	justify-content: space-between !important;
 	position: relative !important;
+	width: 100% !important;
+	box-sizing: border-box !important;
 	transition: padding 0.3s ease;
 }
 
 .g2f-header-nav {
 	position: absolute !important;
-	left: 50% !important;
-	transform: translateX(-50%) !important;
-	pointer-events: auto;
+	left: 0 !important;
+	right: 0 !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	pointer-events: none;
 	z-index: 1;
 }
 
+.g2f-header-nav > * {
+	pointer-events: auto;
+}
+
 .g2f-header-cta {
-	margin-left: auto;
 	position: relative;
 	z-index: 2;
+	flex-shrink: 0;
 }
 
 /* Header element transitions for smooth shrinking */
@@ -415,11 +426,6 @@ p strong {
 
 /* Shrunk inner padding */
 .site-header.is-sticky > .wp-block-group {
-	display: flex !important;
-	flex-direction: row !important;
-	align-items: center !important;
-	justify-content: space-between !important;
-	position: relative !important;
 	padding-top: 10px !important;
 	padding-bottom: 10px !important;
 }
