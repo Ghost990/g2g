@@ -5,6 +5,19 @@
 
 	<!-- HERO — About Us -->
 	<!-- wp:html -->
+	<style>
+	.g2f-hero-about-wrap { padding-top: 80px; background: #fff; }
+	.g2f-hero-about-container { max-width: 1440px; margin: 0 auto; padding: 0 116px; display: flex; flex-direction: row; align-items: stretch; }
+	.g2f-hero-about__label { flex: 0 0 28px; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; transform: rotate(180deg); font-family: sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #000; white-space: nowrap; }
+	.g2f-hero-about__image { flex: 1; min-height: 260px; position: relative; background-color: #1c1c1c; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+	.g2f-hero-about__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+	.g2f-hero-about__content { position: relative; z-index: 2; text-align: center; padding: 48px 60px; }
+	.g2f-hero-about__heading { font-size: clamp(20px, 2.8vw, 36px) !important; font-weight: 400 !important; line-height: 1.2 !important; color: #ffffff !important; margin: 0 0 14px 0 !important; }
+	.g2f-hero-about__heading strong { font-weight: 700 !important; color: #fff !important; }
+	.g2f-hero-about__sub { font-size: 11px !important; font-weight: 400 !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: rgba(255,255,255,0.6) !important; margin: 0 !important; }
+	@media (max-width: 1024px) { .g2f-hero-about-container { padding: 0 40px; } }
+	@media (max-width: 768px) { .g2f-hero-about-container { padding: 0 20px; } .g2f-hero-about__label { flex: 0 0 22px; } .g2f-hero-about__content { padding: 36px 20px; } }
+	</style>
 	<div class="g2f-hero-about-wrap">
 		<div class="g2f-hero-about-container">
 			<span class="g2f-hero-about__label">ABOUT US</span>
