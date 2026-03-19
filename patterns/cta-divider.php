@@ -9,6 +9,7 @@
 ?>
 <!-- wp:html -->
 <section class="g2f-cta-footer">
+<div class="g2f-cta-inner">
 
 	<!-- CTA bar -->
 	<div class="g2f-cta-bar">
@@ -50,5 +51,6 @@
 		</nav>
 	</div>
 
+</div><!-- /.g2f-cta-inner -->
 </section>
 <!-- /wp:html -->
