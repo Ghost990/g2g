@@ -3419,3 +3419,187 @@ main .g2f-hero {
 		gap: 20px;
 	}
 }
+
+/* ============================================================
+   Service Sub-pages — Split Hero (.g2f-svc-hero)
+   ============================================================ */
+.g2f-svc-hero {
+	margin-top: calc(-1 * var(--g2f-header-height, 74px));
+	padding-top: var(--g2f-header-height, 74px);
+	background: #fff;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+.g2f-svc-hero__container {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	padding: 0 40px;
+}
+.g2f-svc-hero__breadcrumb {
+	flex: 0 0 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 24px 0;
+	background: #fff;
+}
+.g2f-svc-hero__breadcrumb span {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: #999;
+	white-space: nowrap;
+}
+.g2f-svc-hero__breadcrumb span.active { color: #000; }
+.g2f-svc-hero__breadcrumb .sep {
+	font-size: 10px;
+	color: #ccc;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+}
+.g2f-svc-hero__body {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	min-height: 420px;
+}
+.g2f-svc-hero__text {
+	flex: 0 0 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 60px 60px 60px 40px;
+	background: #1a1a2e;
+}
+.g2f-svc-hero__label {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.5);
+	margin: 0 0 20px 0;
+}
+.g2f-svc-hero__heading {
+	font-size: clamp(28px, 3.5vw, 52px) !important;
+	font-weight: 300 !important;
+	line-height: 1.15 !important;
+	color: #fff !important;
+	margin: 0 0 20px 0 !important;
+	letter-spacing: -0.5px !important;
+}
+.g2f-svc-hero__heading strong { font-weight: 700 !important; }
+.g2f-svc-hero__heading em { font-style: italic !important; }
+.g2f-svc-hero__sub {
+	font-size: 14px;
+	color: rgba(255,255,255,0.65);
+	line-height: 1.7;
+	margin: 0;
+	max-width: 420px;
+}
+.g2f-svc-hero__image {
+	flex: 1;
+	background-size: cover;
+	background-position: center;
+	background-color: #2a2a40;
+	overflow: hidden;
+}
+.g2f-svc-hero__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+@media (max-width: 900px) {
+	.g2f-svc-hero__body { flex-direction: column; }
+	.g2f-svc-hero__text { flex: none; padding: 40px 24px; }
+	.g2f-svc-hero__image { min-height: 260px; }
+}
+@media (max-width: 600px) {
+	.g2f-svc-hero__container { padding: 0 12px; }
+	.g2f-svc-hero__breadcrumb { flex: 0 0 24px; }
+}
+
+/* ============================================================
+   Service Sub-pages — Projects Grid
+   ============================================================ */
+.g2f-svc-projects {
+	padding: 80px 40px;
+	background: #fff;
+}
+.g2f-svc-projects__inner {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.g2f-svc-projects__header {
+	margin-bottom: 48px;
+}
+.g2f-svc-projects__title {
+	font-size: clamp(24px, 3vw, 40px);
+	font-weight: 300;
+	color: #000;
+	margin: 0;
+}
+.g2f-svc-projects__title em { font-style: italic; font-weight: 300; }
+.g2f-svc-projects__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+	margin-bottom: 48px;
+}
+.g2f-svc-card__link {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+.g2f-svc-card__image {
+	margin: 0;
+	overflow: hidden;
+	aspect-ratio: 4/3;
+	background: #f0f0f0;
+}
+.g2f-svc-card__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease;
+}
+.g2f-svc-card:hover .g2f-svc-card__image img { transform: scale(1.04); }
+.g2f-svc-card__placeholder {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #e8e8e8;
+	font-size: 14px;
+	color: #999;
+	padding: 20px;
+	text-align: center;
+}
+.g2f-svc-card__info { padding-top: 16px; }
+.g2f-svc-card__title {
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0 0 6px;
+	color: #000;
+}
+.g2f-svc-card__cat {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #888;
+}
+.g2f-svc-projects__more { text-align: center; }
+@media (max-width: 900px) { .g2f-svc-projects__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .g2f-svc-projects__grid { grid-template-columns: 1fr; } .g2f-svc-projects { padding: 48px 20px; } }
