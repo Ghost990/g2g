@@ -5,14 +5,26 @@
 
 	<!-- HERO — Gallery -->
 	<!-- wp:html -->
-	<div class="g2f-hero-about-wrap">
-		<div class="g2f-hero-about-container">
-			<span class="g2f-hero-about__label">GALLERY</span>
-			<div class="g2f-hero-about__image" style="background-image:url('/wp-content/uploads/2026/03/gallery-hero.jpg')">
-				<div class="g2f-hero-about__overlay"></div>
-				<div class="g2f-hero-about__content">
-					<h1 class="g2f-hero-about__heading">Our <strong>Creative</strong><br>Portfolio.</h1>
-					<p class="g2f-hero-about__sub">SELECTED WORKS</p>
+	<style>
+	.g2f-hero-gallery-wrap { margin-top: calc(-1 * var(--g2f-header-height, 74px)); padding-top: var(--g2f-header-height, 74px); background: #fff; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+	.g2f-hero-gallery-container { max-width: 100%; margin: 0; padding: 0 40px; display: flex; flex-direction: row; align-items: stretch; background: #fff; }
+	.g2f-hero-gallery__label { flex: 0 0 40px; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; transform: rotate(180deg); font-family: sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: #000; white-space: nowrap; background: #fff; }
+	.g2f-hero-gallery__image { flex: 1; min-height: 420px; position: relative; background-color: #1c1c1c; background-image: url('/wp-content/uploads/2026/03/gallery-hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: flex-start; }
+	.g2f-hero-gallery__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
+	.g2f-hero-gallery__content { position: relative; z-index: 2; padding: 80px 60px; }
+	.g2f-hero-gallery__heading { font-size: clamp(32px, 4.5vw, 68px) !important; font-weight: 300 !important; line-height: 1.1 !important; color: #ffffff !important; margin: 0 0 16px 0 !important; letter-spacing: -1px !important; }
+	.g2f-hero-gallery__heading strong { font-weight: 700 !important; }
+	.g2f-hero-gallery__sub { font-family: sans-serif; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 4px !important; text-transform: uppercase !important; color: rgba(255,255,255,0.6) !important; margin: 0 !important; }
+	@media (max-width: 768px) { .g2f-hero-gallery-container { padding: 0 16px; } .g2f-hero-gallery__label { flex: 0 0 22px; } .g2f-hero-gallery__content { padding: 48px 24px; } .g2f-hero-gallery__image { min-height: 300px; } }
+	</style>
+	<div class="g2f-hero-gallery-wrap">
+		<div class="g2f-hero-gallery-container">
+			<span class="g2f-hero-gallery__label">GALLERY</span>
+			<div class="g2f-hero-gallery__image">
+				<div class="g2f-hero-gallery__overlay"></div>
+				<div class="g2f-hero-gallery__content">
+					<h1 class="g2f-hero-gallery__heading">Our <strong>Creative</strong><br>Portfolio.</h1>
+					<p class="g2f-hero-gallery__sub">SELECTED WORKS</p>
 				</div>
 			</div>
 		</div>
