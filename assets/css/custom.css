@@ -348,6 +348,7 @@ p strong {
 .g2f-header-inner {
 	display: flex !important;
 	flex-direction: row !important;
+	flex-wrap: nowrap !important;
 	align-items: center !important;
 	justify-content: space-between !important;
 	position: relative !important;
@@ -356,11 +357,12 @@ p strong {
 	transition: padding 0.3s ease;
 }
 
-/* Minden közvetlen WP wrapper is flex+center */
+/* Minden közvetlen WP wrapper is flex+center+nowrap */
 .g2f-header-inner > .wp-block-group,
 .g2f-header-inner > div {
 	display: flex !important;
 	align-items: center !important;
+	flex-wrap: nowrap !important;
 }
 
 .g2f-header-nav {
