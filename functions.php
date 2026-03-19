@@ -113,6 +113,47 @@ function g2f_theme_register_block_patterns() {
 			'description' => __( 'Custom patterns for G2F Design theme', 'g2f-theme' ),
 		)
 	);
+
+	// Helper: register a PHP pattern by executing it and capturing output
+	$php_patterns = array(
+		'hero-section'          => array( 'title' => 'Hero Section' ),
+		'hero-about'            => array( 'title' => 'Hero — About Us' ),
+		'hero-service'          => array( 'title' => 'Hero — Service Page' ),
+		'hero-banner'           => array( 'title' => 'Hero Banner' ),
+		'about-section'         => array( 'title' => 'About Section (Homepage)' ),
+		'about-page-intro'      => array( 'title' => 'About Page — Intro' ),
+		'about-page-founder'    => array( 'title' => 'About Page — Founder' ),
+		'services-section'      => array( 'title' => 'Services Section (Homepage)' ),
+		'services-detail-blocks'=> array( 'title' => 'Services Detail Blocks' ),
+		'service-projects-grid' => array( 'title' => 'Service Projects Grid (filtered)' ),
+		'projects-grid'         => array( 'title' => 'Projects Grid' ),
+		'portfolio-text'        => array( 'title' => 'Portfolio Text' ),
+		'testimonials'          => array( 'title' => 'Testimonials' ),
+		'clients-section'       => array( 'title' => 'Clients Section' ),
+		'cta-divider'           => array( 'title' => 'CTA Divider' ),
+		'cta-divider-compact'   => array( 'title' => 'CTA Divider — Compact' ),
+		'button-arrow'          => array( 'title' => 'Button Arrow' ),
+		'button-arrow-light'    => array( 'title' => 'Button Arrow (Light)' ),
+		'project-info'          => array( 'title' => 'Project Info' ),
+	);
+
+	foreach ( $php_patterns as $slug => $args ) {
+		$file = get_theme_file_path( "patterns/{$slug}.php" );
+		if ( ! file_exists( $file ) ) continue;
+
+		ob_start();
+		include $file;
+		$content = ob_get_clean();
+
+		register_block_pattern(
+			"g2f-theme/{$slug}",
+			array(
+				'title'      => $args['title'],
+				'categories' => array( 'g2f-theme' ),
+				'content'    => $content,
+			)
+		);
+	}
 }
 add_action( 'init', 'g2f_theme_register_block_patterns' );
 
