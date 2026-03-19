@@ -66,9 +66,26 @@
 
 
 	<!-- ===========================================================
-	     CTA — dark background
+	     CTA BANNER — "Let's shape something meaningful together."
 	     =========================================================== -->
-	<!-- wp:pattern {"slug":"g2f-theme/cta-divider"} /-->
+	<!-- wp:html -->
+	<section class="g2f-cta-banner">
+		<div class="g2f-cta-banner__inner">
+			<h2 class="g2f-cta-banner__heading">Let's <strong>shape something meaningful</strong> together.</h2>
+			<p class="g2f-cta-banner__sub">Whether you need a complete digital product, a refined visual direction,<br>or imagery that brings your story to life, we're here to collaborate and create with purpose.</p>
+			<a href="/contact/" class="g2f-cta-banner__btn">GET IN TOUCH →</a>
+		</div>
+	</section>
+	<style>
+	.g2f-cta-banner { background: #3a3a3a; padding: 80px 40px; text-align: center; }
+	.g2f-cta-banner__inner { max-width: 860px; margin: 0 auto; }
+	.g2f-cta-banner__heading { font-size: clamp(28px, 3.5vw, 48px); font-weight: 300; color: #fff; line-height: 1.2; margin: 0 0 24px 0; }
+	.g2f-cta-banner__heading strong { font-weight: 700; }
+	.g2f-cta-banner__sub { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; margin: 0 0 36px 0; }
+	.g2f-cta-banner__btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.6); border-radius: 100px; padding: 14px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; color: #fff; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+	.g2f-cta-banner__btn:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+	</style>
+	<!-- /wp:html -->
 
 
 	<!-- ===========================================================
