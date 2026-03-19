@@ -3205,3 +3205,161 @@ main .g2f-hero {
 		width: 100%;
 	}
 }
+
+/* =========================================
+   HERO — ABOUT US PAGE
+   ========================================= */
+.g2f-hero-about {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	position: relative;
+	margin-top: 80px; /* header height offset */
+}
+
+.g2f-hero-about__label-wrap {
+	flex: 0 0 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	z-index: 2;
+}
+
+.g2f-hero-about__label {
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #000;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	white-space: nowrap;
+}
+
+.g2f-hero-about__cover {
+	flex: 1;
+	min-height: 360px;
+	position: relative;
+	background: url('/wp-content/uploads/2026/03/about-hero.jpg') center center / cover no-repeat;
+	background-color: #2a2a2a;
+}
+
+.g2f-hero-about__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.45);
+}
+
+.g2f-hero-about__content {
+	position: relative;
+	z-index: 2;
+	padding: 100px 80px 80px;
+	max-width: 660px;
+}
+
+.g2f-hero-about__heading {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: clamp(32px, 5vw, 64px);
+	font-weight: 400;
+	line-height: 1.1;
+	letter-spacing: -1.5px;
+	color: #fff;
+	margin: 0 0 16px 0;
+}
+
+.g2f-hero-about__heading strong {
+	font-weight: 700;
+}
+
+.g2f-hero-about__sub {
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.7);
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	.g2f-hero-about__content {
+		padding: 80px 32px 60px;
+	}
+	.g2f-hero-about__cover {
+		min-height: 280px;
+	}
+}
+
+/* =========================================
+   CTA DIVIDER — COMPACT (Inner Pages)
+   ========================================= */
+.g2f-cta-compact {
+	background: #2d2d2d;
+	padding: 48px 0;
+}
+
+.g2f-cta-compact__inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 151px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.g2f-cta-compact__text {
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: clamp(18px, 2.2vw, 28px);
+	font-weight: 300;
+	color: #fff;
+	margin: 0;
+	letter-spacing: -0.3px;
+	line-height: 1.3;
+}
+
+.g2f-cta-compact__text strong {
+	font-weight: 700;
+}
+
+.g2f-cta-compact__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: #fff;
+	text-decoration: none;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	padding: 12px 22px;
+	border-radius: 100px;
+	border: 1.5px solid #fff;
+	white-space: nowrap;
+	flex-shrink: 0;
+	transition: background 0.2s, color 0.2s;
+}
+
+.g2f-cta-compact__btn:hover {
+	background: #fff;
+	color: #000;
+}
+
+@media (max-width: 1024px) {
+	.g2f-cta-compact__inner {
+		padding: 0 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-cta-compact__inner {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0 24px;
+		gap: 20px;
+	}
+}
