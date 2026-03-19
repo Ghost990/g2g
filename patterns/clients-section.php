@@ -7,7 +7,6 @@
  * Description: Client logos section — static row
  */
 ?>
-<!-- wp:html -->
 <section class="g2f-clients-section">
 	<div class="g2f-clients-inner">
 
@@ -26,4 +25,3 @@
 
 	</div>
 </section>
-<!-- /wp:html -->

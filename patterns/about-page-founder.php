@@ -8,7 +8,6 @@
 
 $site_url = get_site_url();
 ?>
-<!-- wp:html -->
 <section class="g2f-about-page-founder">
 	<div class="g2f-about-page-founder__inner">
 		<div class="g2f-about-page-founder__avatar">
@@ -22,4 +21,3 @@ $site_url = get_site_url();
 		<p class="g2f-about-page-founder__quote">We never give up! Challenges make us stronger and more professional. Keep in mind. Beware ;)</p>
 	</div>
 </section>
-<!-- /wp:html -->

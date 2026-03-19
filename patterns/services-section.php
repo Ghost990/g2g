@@ -14,12 +14,10 @@
 <!-- wp:group {"tagName":"section","anchor":"services","className":"g2f-services-rows","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
 <section id="services" class="wp-block-group g2f-services-rows has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
 
-<!-- wp:html -->
 <div class="g2f-services-header">
 	<h2 class="g2f-services-title">Services <strong>Tailored For Your</strong> Business.</h2>
 	<p class="g2f-services-subtitle">Our services are more than just solutions, they're opportunities to transform your digital presence and achieve your business objectives. We're here to make your digital dreams a reality.</p>
 </div>
-<!-- /wp:html -->
 
 
 <!-- ============================================================

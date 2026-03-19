@@ -8,7 +8,6 @@
 
 $site_url = get_site_url();
 ?>
-<!-- wp:html -->
 <section class="g2f-about-page-intro">
 	<div class="g2f-about-page-intro__inner">
 		<div class="g2f-about-page-intro__image">
@@ -26,4 +25,3 @@ $site_url = get_site_url();
 		</div>
 	</div>
 </section>
-<!-- /wp:html -->

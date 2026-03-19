@@ -3287,7 +3287,7 @@ main .g2f-hero {
 
 .g2f-hero-about__image {
 	flex: 1;
-	min-height: 260px;
+	min-height: 480px;
 	position: relative;
 	background-color: #1c1c1c;
 	background-size: cover;

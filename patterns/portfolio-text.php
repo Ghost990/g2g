@@ -7,7 +7,6 @@
  * Description: Two-column text section with large stacked typography and CTA
  */
 ?>
-<!-- wp:html -->
 <section class="g2f-portfolio-split">
 	<div class="g2f-portfolio-inner">
 
@@ -31,4 +30,3 @@
 
 	</div>
 </section>
-<!-- /wp:html -->

@@ -7,7 +7,6 @@
  * Description: Full-width dark CTA + footer
  */
 ?>
-<!-- wp:html -->
 <section class="g2f-cta-footer">
 <div class="g2f-cta-inner">
 
@@ -53,4 +52,3 @@
 
 </div><!-- /.g2f-cta-inner -->
 </section>
-<!-- /wp:html -->

@@ -7,7 +7,6 @@
  * Description: Compact single-line CTA for inner pages (About, Services, etc.)
  */
 ?>
-<!-- wp:html -->
 <section class="g2f-cta-compact">
 	<div class="g2f-cta-compact__inner">
 		<p class="g2f-cta-compact__text">Have a project in mind? <strong>Let's talk.</strong></p>
@@ -20,4 +19,3 @@
 		</a>
 	</div>
 </section>
-<!-- /wp:html -->
