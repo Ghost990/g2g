@@ -3,46 +3,32 @@
 <!-- wp:group {"tagName":"main","className":"site-main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
 <main class="wp-block-group site-main" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
-	<!-- ===========================================================
-	     HERO
-	     =========================================================== -->
-	<!-- wp:group {"tagName":"section","anchor":"hero","className":"g2f-hero-banner g2f-hero-banner--services","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-	<section id="hero" class="wp-block-group g2f-hero-banner g2f-hero-banner--services" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
-
-		<!-- wp:group {"className":"g2f-hero-wrapper","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-		<div class="wp-block-group g2f-hero-wrapper" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
-
-			<!-- Vertical text strip -->
-			<!-- wp:group {"className":"g2f-vertical-text-strip","backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-			<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background">
-				<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
-				<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">#SERVICES</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- Cover with headline -->
-			<!-- wp:cover {"url":"/wp-content/uploads/2026/03/services-hero.jpg","dimRatio":55,"overlayColor":"black","isUserOverlayColor":true,"minHeight":480,"minHeightUnit":"px","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
-			<div class="wp-block-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:480px">
-				<span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-55 has-background-dim"></span>
-				<img alt="G2F Design Services" class="wp-block-cover__image-background" src="/wp-content/uploads/2026/03/services-hero.jpg" data-object-fit="cover"/>
-				<div class="wp-block-cover__inner-container">
-					<!-- wp:group {"style":{"spacing":{"padding":{"top":"140px","bottom":"80px","left":"80px","right":"80px"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->
-					<div class="wp-block-group" style="padding-top:140px;padding-bottom:80px;padding-left:80px;padding-right:80px">
-						<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(36px,5.5vw,80px)","fontStyle":"normal","fontWeight":"400","lineHeight":"1.08","letterSpacing":"-2px"}},"textColor":"white","fontFamily":"inter"} -->
-						<h1 class="wp-block-heading has-white-color has-text-color has-inter-font-family" style="font-size:clamp(36px,5.5vw,80px);font-style:normal;font-weight:400;letter-spacing:-2px;line-height:1.08">Design That <em>Connects.</em><br>Strategy That <strong>Performs.</strong><br>Visuals That <em>Inspire.</em></h1>
-						<!-- /wp:heading -->
-					</div>
-					<!-- /wp:group -->
+	<!-- HERO — Services -->
+	<!-- wp:html -->
+	<style>
+	.g2f-hero-services-wrap { margin-top: calc(-1 * var(--g2f-header-height, 74px)); padding-top: var(--g2f-header-height, 74px); background: #1c1c1c; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+	.g2f-hero-services-container { max-width: 100%; margin: 0; padding: 0 40px; display: flex; flex-direction: row; align-items: stretch; }
+	.g2f-hero-services__label { flex: 0 0 40px; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; transform: rotate(180deg); font-family: sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: #fff; white-space: nowrap; }
+	.g2f-hero-services__image { flex: 1; min-height: 420px; position: relative; background-color: #1c1c1c; background-image: url('/wp-content/uploads/2026/03/services-hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: flex-start; }
+	.g2f-hero-services__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
+	.g2f-hero-services__content { position: relative; z-index: 2; padding: 80px 60px; }
+	.g2f-hero-services__heading { font-size: clamp(32px, 4.5vw, 68px) !important; font-weight: 400 !important; line-height: 1.1 !important; color: #ffffff !important; margin: 0 !important; letter-spacing: -1px !important; }
+	.g2f-hero-services__heading strong { font-weight: 700 !important; }
+	.g2f-hero-services__heading em { font-style: italic !important; font-weight: 300 !important; }
+	@media (max-width: 768px) { .g2f-hero-services-container { padding: 0 16px; } .g2f-hero-services__label { flex: 0 0 22px; } .g2f-hero-services__content { padding: 48px 24px; } .g2f-hero-services__image { min-height: 300px; } }
+	</style>
+	<div class="g2f-hero-services-wrap">
+		<div class="g2f-hero-services-container">
+			<span class="g2f-hero-services__label">SERVICES</span>
+			<div class="g2f-hero-services__image">
+				<div class="g2f-hero-services__overlay"></div>
+				<div class="g2f-hero-services__content">
+					<h1 class="g2f-hero-services__heading">Design That <em>Connects.</em><br>Strategy That <strong>Performs.</strong><br>Visuals That <em>Inspire.</em></h1>
 				</div>
 			</div>
-			<!-- /wp:cover -->
-
 		</div>
-		<!-- /wp:group -->
-
-	</section>
-	<!-- /wp:group -->
+	</div>
+	<!-- /wp:html -->
 
 
 	<!-- ===========================================================
