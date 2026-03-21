@@ -428,6 +428,23 @@ p strong {
 	top: 32px;
 }
 
+/* Main content needs extra padding when admin bar is present */
+.admin-bar header + main,
+.admin-bar .site-header + main,
+.admin-bar body > .wp-site-blocks > main,
+.admin-bar .wp-site-blocks > main {
+	padding-top: calc(var(--g2f-header-height, 74px) + 32px) !important;
+}
+
+@media screen and (max-width: 782px) {
+	.admin-bar header + main,
+	.admin-bar .site-header + main,
+	.admin-bar body > .wp-site-blocks > main,
+	.admin-bar .wp-site-blocks > main {
+		padding-top: calc(var(--g2f-header-height, 74px) + 46px) !important;
+	}
+}
+
 /* Hero wraps need extra offset when admin bar is present */
 .admin-bar .g2f-hero-about-wrap,
 .admin-bar .g2f-hero-services-wrap {
