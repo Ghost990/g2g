@@ -34,7 +34,7 @@ header + main,
 .site-header + main,
 body > .wp-site-blocks > main,
 .wp-site-blocks > main {
-	padding-top: var(--g2f-header-height, 74px) !important;
+	padding-top: var(--g2f-header-height, 60px) !important;
 	margin-top: 0 !important;
 }
 
@@ -430,14 +430,14 @@ p strong {
 
 /* Admin bar: header is pushed down by 32px, so hero wrap needs extra compensation */
 .admin-bar .g2f-hero-about-wrap {
-	padding-top: calc(var(--g2f-header-height, 74px) + 32px) !important;
-	margin-top: calc(-1 * (var(--g2f-header-height, 74px) + 32px)) !important;
+	padding-top: calc(var(--g2f-header-height, 60px) + 32px) !important;
+	margin-top: calc(-1 * (var(--g2f-header-height, 60px) + 32px)) !important;
 }
 
 @media screen and (max-width: 782px) {
 	.admin-bar .g2f-hero-about-wrap {
-		padding-top: calc(var(--g2f-header-height, 74px) + 46px) !important;
-		margin-top: calc(-1 * (var(--g2f-header-height, 74px) + 46px)) !important;
+		padding-top: calc(var(--g2f-header-height, 60px) + 46px) !important;
+		margin-top: calc(-1 * (var(--g2f-header-height, 60px) + 46px)) !important;
 	}
 }
 
@@ -3306,8 +3306,8 @@ main .g2f-hero {
    HERO — ABOUT US PAGE
    ========================================= */
 .g2f-hero-about-wrap {
-	padding-top: var(--g2f-header-height, 74px);
-	margin-top: calc(-1 * var(--g2f-header-height, 74px));
+	padding-top: var(--g2f-header-height, 60px);
+	margin-top: calc(-1 * var(--g2f-header-height, 60px));
 	background: #fff;
 	/* Full-width breakout — force past WP layout constraints */
 	width: 100vw !important;
@@ -3498,8 +3498,8 @@ body {
    Service Sub-pages — Split Hero (.g2f-svc-hero)
    ============================================================ */
 .g2f-svc-hero {
-	margin-top: calc(-1 * var(--g2f-header-height, 74px));
-	padding-top: var(--g2f-header-height, 74px);
+	margin-top: calc(-1 * var(--g2f-header-height, 60px));
+	padding-top: var(--g2f-header-height, 60px);
 	background: #fff;
 	width: 100vw;
 	position: relative;
@@ -3783,12 +3783,12 @@ body {
 
 /* Padding-top for fixed header offset */
 .g2f-cover-hero .wp-block-cover__inner-container {
-	padding-top: var(--g2f-header-height, 74px);
+	padding-top: var(--g2f-header-height, 60px);
 }
 
 @media (max-width: 768px) {
 	.g2f-cover-hero .wp-block-cover__inner-container {
-		padding: var(--g2f-header-height, 74px) 24px 0;
+		padding: var(--g2f-header-height, 60px) 24px 0;
 	}
 	.g2f-cover-hero__label { display: none; }
 	.g2f-cover-hero__heading { font-size: clamp(28px, 8vw, 48px); }
