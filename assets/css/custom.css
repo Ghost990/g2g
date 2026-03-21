@@ -424,11 +424,33 @@ p strong {
 }
 
 /* Admin bar offset when logged in */
+.admin-bar .site-header {
+	top: 32px;
+}
+
+/* Hero wraps need extra offset when admin bar is present */
+.admin-bar .g2f-hero-about-wrap,
+.admin-bar .g2f-hero-services-wrap {
+	margin-top: calc(-1 * (var(--g2f-header-height) + 32px));
+	padding-top: calc(var(--g2f-header-height) + 32px);
+}
+
+@media screen and (max-width: 782px) {
+	.admin-bar .g2f-hero-about-wrap,
+	.admin-bar .g2f-hero-services-wrap {
+		margin-top: calc(-1 * (var(--g2f-header-height) + 46px));
+		padding-top: calc(var(--g2f-header-height) + 46px);
+	}
+}
+
 .admin-bar .site-header.is-sticky {
 	top: 32px;
 }
 
 @media screen and (max-width: 782px) {
+	.admin-bar .site-header {
+		top: 46px;
+	}
 	.admin-bar .site-header.is-sticky {
 		top: 46px;
 	}
