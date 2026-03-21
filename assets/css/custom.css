@@ -3720,3 +3720,75 @@ body {
 	color: #111;
 	border-color: #fff;
 }
+
+/* ============================================================
+   Service Page Cover Heroes (wp:cover alignfull)
+   ============================================================ */
+
+.g2f-cover-hero .wp-block-cover__inner-container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 116px;
+}
+
+.g2f-cover-hero__inner {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	min-height: 520px;
+	gap: 0;
+}
+
+.g2f-cover-hero__label {
+	flex: 0 0 28px;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	font-family: var(--wp--preset--font-family--roboto), sans-serif;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.5);
+	margin-right: 40px;
+}
+
+.g2f-cover-hero__content {
+	flex: 1;
+	padding: 80px 0;
+}
+
+.g2f-cover-hero__heading {
+	font-size: clamp(32px, 4.5vw, 68px);
+	font-weight: 300;
+	color: #fff;
+	line-height: 1.1;
+	letter-spacing: -1px;
+	margin: 0 0 16px;
+}
+
+.g2f-cover-hero__heading strong {
+	font-weight: 700;
+}
+
+.g2f-cover-hero__sub {
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.6);
+	margin: 0;
+}
+
+/* Padding-top for fixed header offset */
+.g2f-cover-hero .wp-block-cover__inner-container {
+	padding-top: var(--g2f-header-height, 74px);
+}
+
+@media (max-width: 768px) {
+	.g2f-cover-hero .wp-block-cover__inner-container {
+		padding: var(--g2f-header-height, 74px) 24px 0;
+	}
+	.g2f-cover-hero__label { display: none; }
+	.g2f-cover-hero__heading { font-size: clamp(28px, 8vw, 48px); }
+}
