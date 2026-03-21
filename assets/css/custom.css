@@ -2724,6 +2724,7 @@ main .g2f-hero {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	align-items: flex-start;
 }
 
 .g2f-portfolio-right p {

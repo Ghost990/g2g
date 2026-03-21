@@ -94,7 +94,7 @@
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"className":"g2f-service-subheading","style":{"typography":{"fontSize":"clamp(17px,1.5vw,22px)","fontWeight":"600","lineHeight":"1.4","letterSpacing":"-0.4px"}},"fontFamily":"inter"} -->
-	<p class="g2f-service-subheading has-inter-font-family" style="font-size:clamp(17px,1.5vw,22px);font-weight:600;line-height:1.4;letter-spacing:-0.4px">Visual strategy that defines, elevates, and refines your brand.</p>
+	<p class="g2f-service-subheading has-inter-font-family" style="font-size:clamp(17px,1.5vw,22px);font-weight:600;line-height:1.4;letter-spacing:-0.4px">Visual strategy that defines, elevates, and unifies your brand.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.75"}},"textColor":"text-muted","fontFamily":"roboto"} -->
