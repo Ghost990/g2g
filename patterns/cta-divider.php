@@ -4,14 +4,11 @@
  * Slug: g2f-theme/cta-divider
  * Categories: g2f-theme
  * Keywords: cta, contact, divider, call-to-action
- * Description: Full-width dark CTA + footer
+ * Description: Full-width dark CTA bar (no footer — footer is in footer.html template part)
  */
 ?>
-<section class="g2f-cta-footer">
-<div class="g2f-cta-inner">
-
-	<!-- CTA bar -->
-	<div class="g2f-cta-bar">
+<section class="g2f-cta-bar-section">
+	<div class="g2f-cta-bar-inner">
 		<div class="g2f-cta-bar__left">
 			<h2 class="g2f-cta-bar__heading">Have a project in mind? Let's <strong>talk.</strong></h2>
 			<p class="g2f-cta-bar__sub">Unleashing brand potential through<br>creative design and innovation.</p>
@@ -24,31 +21,4 @@
 			</svg>
 		</a>
 	</div>
-
-	<!-- Divider line -->
-	<div class="g2f-cta-divider-line"></div>
-
-	<!-- Footer row -->
-	<div class="g2f-footer-row">
-		<nav class="g2f-footer-nav">
-			<a href="/">Home</a>
-			<a href="/about/">About</a>
-			<a href="/services/">Solutions</a>
-			<a href="/contact/">Contact</a>
-		</nav>
-
-		<div class="g2f-footer-center">
-			<a href="mailto:g2f.design@gmail.com">g2f.design@gmail.com</a>
-			<span class="g2f-footer-sep">|</span>
-			<a href="tel:+36703561870">+36 70 356 1870</a>
-		</div>
-
-		<nav class="g2f-footer-social">
-			<a href="#">LinkedIn</a>
-			<a href="#">Behance</a>
-			<a href="#">Instagram</a>
-		</nav>
-	</div>
-
-</div><!-- /.g2f-cta-inner -->
 </section>

@@ -2884,6 +2884,24 @@ main .g2f-hero {
 /* =========================================
    CTA BAR + FOOTER
    ========================================= */
+/* CTA Bar Section (standalone, no footer) */
+.g2f-cta-bar-section {
+	background: #0d0d0d;
+	padding: 80px 0;
+}
+
+.g2f-cta-bar-inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 151px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+}
+
+/* Legacy CTA footer (cta-divider.php old version) */
 .g2f-cta-footer {
 	background: #0d0d0d;
 	padding: 80px 0 56px;

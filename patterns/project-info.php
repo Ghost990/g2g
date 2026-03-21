@@ -10,7 +10,7 @@
 if ( ! is_singular( 'project' ) ) return;
 
 $client   = get_post_meta( get_the_ID(), '_g2f_client_name', true );
-$year     = get_post_meta( get_the_ID(), '_g2f_project_year', true );
+$year     = get_post_meta( get_the_ID(), '_g2f_project_year', true ) ?: get_the_date( 'Y' );
 $services = get_the_terms( get_the_ID(), 'project_service' );
 $cats     = get_the_terms( get_the_ID(), 'project_category' );
 $post_url = get_permalink();
