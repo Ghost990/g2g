@@ -426,18 +426,8 @@ p strong {
 /* Admin bar offset when logged in */
 .admin-bar .site-header {
 	top: 32px;
-}
-/* Pseudo-element fills the gap between viewport top and admin bar */
-.admin-bar .site-header::before {
-	content: '';
-	display: block;
-	position: fixed;
-	top: -32px;
-	left: 0;
-	right: 0;
-	height: 32px;
-	background: #fff;
-	z-index: 999;
+	/* Extend white background up to cover the gap between viewport and admin bar */
+	box-shadow: 0 -32px 0 0 #fff;
 }
 
 /* Admin bar: header is pushed down by 32px, so hero wrap needs extra compensation */
