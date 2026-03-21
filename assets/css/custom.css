@@ -3082,7 +3082,7 @@ main .g2f-hero {
 /* INTRO — image left + text right */
 .g2f-about-page-intro {
 	background: #fff;
-	padding: 100px 116px 80px;
+	padding: 48px 116px 80px;
 }
 .g2f-about-page-intro__inner {
 	display: flex;
