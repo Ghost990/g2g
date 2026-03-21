@@ -13,7 +13,7 @@
 	<!-- CTA bar -->
 	<div class="g2f-cta-bar">
 		<div class="g2f-cta-bar__left">
-			<h2 class="g2f-cta-bar__heading">Let's <strong>talk.</strong></h2>
+			<h2 class="g2f-cta-bar__heading">Have a project in mind? Let's <strong>talk.</strong></h2>
 			<p class="g2f-cta-bar__sub">Unleashing brand potential through<br>creative design and innovation.</p>
 		</div>
 		<a href="/contact/" class="g2f-btn-outline-white">

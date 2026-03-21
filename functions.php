@@ -136,6 +136,8 @@ function g2f_theme_register_block_patterns() {
 		'button-arrow'          => array( 'title' => 'Button Arrow' ),
 		'button-arrow-light'    => array( 'title' => 'Button Arrow (Light)' ),
 		'project-info'          => array( 'title' => 'Project Info' ),
+		'hero-project'          => array( 'title' => 'Project Hero' ),
+		'project-view-live'     => array( 'title' => 'Project — View Live Button' ),
 	);
 
 	foreach ( $php_patterns as $slug => $args ) {
