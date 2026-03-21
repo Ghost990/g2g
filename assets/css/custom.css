@@ -428,7 +428,18 @@ p strong {
 	top: 32px;
 }
 
-/* Admin bar: WP shifts html by 32px automatically, so main padding stays the same */
+/* Admin bar: header is pushed down by 32px, so hero wrap needs extra compensation */
+.admin-bar .g2f-hero-about-wrap {
+	padding-top: calc(var(--g2f-header-height, 74px) + 32px) !important;
+	margin-top: calc(-1 * (var(--g2f-header-height, 74px) + 32px)) !important;
+}
+
+@media screen and (max-width: 782px) {
+	.admin-bar .g2f-hero-about-wrap {
+		padding-top: calc(var(--g2f-header-height, 74px) + 46px) !important;
+		margin-top: calc(-1 * (var(--g2f-header-height, 74px) + 46px)) !important;
+	}
+}
 
 /* --g2f-header-height is set by JS and already includes admin bar height,
    so no separate admin-bar CSS override is needed for hero wraps */

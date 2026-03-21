@@ -55,11 +55,9 @@
 
 		// Set header height as CSS var for content offset
 		function updateHeaderHeight() {
-			const adminBar = document.getElementById('wpadminbar');
-			const adminBarHeight = adminBar ? adminBar.offsetHeight : 0;
 			document.documentElement.style.setProperty(
 				'--g2f-header-height',
-				(header.offsetHeight + adminBarHeight) + 'px'
+				header.offsetHeight + 'px'
 			);
 		}
 		updateHeaderHeight();
