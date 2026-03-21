@@ -445,22 +445,8 @@ p strong {
 	}
 }
 
-/* Hero wraps need extra offset when admin bar is present */
-/* margin-top cancels main's extra padding, but padding-top stays at header-height only
-   because WP already moves html down 32px via html { margin-top: 32px } */
-.admin-bar .g2f-hero-about-wrap,
-.admin-bar .g2f-hero-services-wrap {
-	margin-top: calc(-1 * (var(--g2f-header-height) + 32px)) !important;
-	padding-top: var(--g2f-header-height) !important;
-}
-
-@media screen and (max-width: 782px) {
-	.admin-bar .g2f-hero-about-wrap,
-	.admin-bar .g2f-hero-services-wrap {
-		margin-top: calc(-1 * (var(--g2f-header-height) + 46px)) !important;
-		padding-top: var(--g2f-header-height) !important;
-	}
-}
+/* --g2f-header-height is set by JS and already includes admin bar height,
+   so no separate admin-bar CSS override is needed for hero wraps */
 
 .admin-bar .site-header.is-sticky {
 	top: 32px;
