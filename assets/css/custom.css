@@ -353,6 +353,7 @@ p strong {
 	justify-content: space-between !important;
 	position: relative !important;
 	width: 100% !important;
+	height: var(--g2f-header-height, 60px) !important;
 	box-sizing: border-box !important;
 	transition: padding 0.3s ease;
 }
@@ -431,8 +432,17 @@ p strong {
 }
 
 /* Admin bar: header is pushed down by 32px, so hero wrap needs extra compensation */
-/* --g2f-header-height is set by JS (main.js) and already includes admin bar height,
-   so no separate admin-bar CSS override is needed for hero wraps */
+/* Admin bar pushes header down 32px — hero wrap needs extra compensation */
+.admin-bar .g2f-hero-about-wrap {
+	margin-top: calc(-1 * (var(--g2f-header-height, 60px) + 32px)) !important;
+	padding-top: calc(var(--g2f-header-height, 60px) + 32px) !important;
+}
+@media screen and (max-width: 782px) {
+	.admin-bar .g2f-hero-about-wrap {
+		margin-top: calc(-1 * (var(--g2f-header-height, 60px) + 46px)) !important;
+		padding-top: calc(var(--g2f-header-height, 60px) + 46px) !important;
+	}
+}
 
 .admin-bar .site-header.is-sticky {
 	top: 32px;
