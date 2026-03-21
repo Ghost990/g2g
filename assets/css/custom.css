@@ -448,15 +448,15 @@ p strong {
 /* Hero wraps need extra offset when admin bar is present */
 .admin-bar .g2f-hero-about-wrap,
 .admin-bar .g2f-hero-services-wrap {
-	margin-top: calc(-1 * (var(--g2f-header-height) + 32px));
-	padding-top: calc(var(--g2f-header-height) + 32px);
+	margin-top: calc(-1 * (var(--g2f-header-height) + 32px)) !important;
+	padding-top: calc(var(--g2f-header-height) + 32px) !important;
 }
 
 @media screen and (max-width: 782px) {
 	.admin-bar .g2f-hero-about-wrap,
 	.admin-bar .g2f-hero-services-wrap {
-		margin-top: calc(-1 * (var(--g2f-header-height) + 46px));
-		padding-top: calc(var(--g2f-header-height) + 46px);
+		margin-top: calc(-1 * (var(--g2f-header-height) + 46px)) !important;
+		padding-top: calc(var(--g2f-header-height) + 46px) !important;
 	}
 }
 
