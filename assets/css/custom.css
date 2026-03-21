@@ -3308,11 +3308,23 @@ main .g2f-hero {
 	padding-top: var(--g2f-header-height, 74px);
 	margin-top: calc(-1 * var(--g2f-header-height, 74px));
 	background: #fff;
-	width: 100vw;
+	/* Full-width breakout — force past WP layout constraints */
+	width: 100vw !important;
+	max-width: 100vw !important;
 	position: relative;
-	left: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
+	left: 50% !important;
+	right: auto;
+	margin-left: -50vw !important;
+	margin-right: -50vw !important;
+	box-sizing: border-box;
+}
+
+/* Ensure parent containers don't clip the hero breakout */
+.site-main,
+.wp-block-group.site-main,
+.wp-site-blocks,
+body {
+	overflow-x: clip;
 }
 
 .g2f-hero-about-container {
