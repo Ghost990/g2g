@@ -446,17 +446,19 @@ p strong {
 }
 
 /* Hero wraps need extra offset when admin bar is present */
+/* margin-top cancels main's extra padding, but padding-top stays at header-height only
+   because WP already moves html down 32px via html { margin-top: 32px } */
 .admin-bar .g2f-hero-about-wrap,
 .admin-bar .g2f-hero-services-wrap {
 	margin-top: calc(-1 * (var(--g2f-header-height) + 32px)) !important;
-	padding-top: calc(var(--g2f-header-height) + 32px) !important;
+	padding-top: var(--g2f-header-height) !important;
 }
 
 @media screen and (max-width: 782px) {
 	.admin-bar .g2f-hero-about-wrap,
 	.admin-bar .g2f-hero-services-wrap {
 		margin-top: calc(-1 * (var(--g2f-header-height) + 46px)) !important;
-		padding-top: calc(var(--g2f-header-height) + 46px) !important;
+		padding-top: var(--g2f-header-height) !important;
 	}
 }
 
