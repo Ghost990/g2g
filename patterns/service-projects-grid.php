@@ -13,7 +13,15 @@ $slug_map = array(
 	'photography'   => 'photography',
 );
 
-$page_slug    = get_post_field( 'post_name', get_queried_object_id() );
+$queried = get_queried_object();
+$page_slug = '';
+if ( $queried instanceof WP_Post ) {
+	$page_slug = $queried->post_name;
+} elseif ( $queried instanceof WP_Term ) {
+	$page_slug = $queried->slug;
+} else {
+	$page_slug = get_post_field( 'post_name', get_the_ID() );
+}
 $service_slug = $slug_map[ $page_slug ] ?? null;
 
 $query_args = array(
