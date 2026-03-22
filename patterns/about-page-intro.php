@@ -11,8 +11,12 @@ $site_url = get_site_url();
 <section class="g2f-about-page-intro">
 	<div class="g2f-about-page-intro__inner">
 		<div class="g2f-about-page-intro__image">
-			<img src="<?php echo esc_url( $site_url ); ?>/wp-content/uploads/2026/03/about-portrait.jpg"
-				 alt="G2F Design"
+			<?php
+			$img_src = wp_get_attachment_image_url( 107, 'large' );
+			if ( ! $img_src ) $img_src = esc_url( $site_url ) . '/wp-content/uploads/2026/03/about-intro.png';
+			?>
+			<img src="<?php echo esc_url( $img_src ); ?>"
+				 alt="G2F Design — About"
 				 onerror="this.parentElement.style.background='#e8e8e8'" />
 		</div>
 		<div class="g2f-about-page-intro__text">
