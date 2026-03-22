@@ -163,6 +163,9 @@ function g2f_theme_register_block_patterns() {
 		$file = get_theme_file_path( "patterns/{$slug}.php" );
 		if ( ! file_exists( $file ) ) continue;
 
+		// WP 6.x auto-registers file-header patterns — unregister before re-registering
+		unregister_block_pattern( "g2f-theme/{$slug}" );
+
 		ob_start();
 		include $file;
 		$content = ob_get_clean();
@@ -177,7 +180,9 @@ function g2f_theme_register_block_patterns() {
 		);
 	}
 }
-add_action( 'init', 'g2f_theme_register_block_patterns' );
+// Priority 20 — WP auto-registers file-header patterns at priority 9.
+// We unregister those first, then re-register with ob_start() so PHP executes.
+add_action( 'init', 'g2f_theme_register_block_patterns', 20 );
 
 /**
  * Register block styles
