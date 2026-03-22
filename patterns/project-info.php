@@ -7,12 +7,13 @@
  * Description: Dynamic project meta sidebar (Date, Share, Tags, Categories, Client). PHP rendered.
  */
 
-if ( ! is_singular( 'project' ) ) return;
+global $post;
+if ( ! $post ) return;
 
-$client   = get_post_meta( get_the_ID(), '_g2f_client_name', true );
-$year     = get_post_meta( get_the_ID(), '_g2f_project_year', true ) ?: get_the_date( 'Y' );
-$services = get_the_terms( get_the_ID(), 'project_service' );
-$cats     = get_the_terms( get_the_ID(), 'project_category' );
+$client   = get_post_meta( $post->ID, '_g2f_client_name', true );
+$year     = get_post_meta( $post->ID, '_g2f_project_year', true ) ?: get_the_date( 'Y' );
+$services = get_the_terms( $post->ID, 'project_service' );
+$cats     = get_the_terms( $post->ID, 'project_category' );
 $post_url = get_permalink();
 ?>
 
