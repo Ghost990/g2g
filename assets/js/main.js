@@ -567,11 +567,12 @@
 	// TESTIMONIAL SLIDER
 	// =========================================================
 	function initTestimonialSlider() {
-		const sliders = document.querySelectorAll('.g2f-testimonial-slider');
+		// Support both old (.g2f-testimonial-slider) and new (.g2f-testimonial-carousel) markup
+		const sliders = document.querySelectorAll('.g2f-testimonial-slider, .g2f-testimonial-carousel');
 
 		sliders.forEach((slider) => {
 			const slides = slider.querySelectorAll('.g2f-testimonial');
-			const dots = slider.querySelectorAll('.g2f-testimonial-dot');
+			const dots   = slider.querySelectorAll('.g2f-testimonial-dot');
 			if (!slides.length) return;
 
 			let currentSlide = 0;
@@ -579,17 +580,8 @@
 
 			function showSlide(index) {
 				slides.forEach((slide, i) => {
-					if (i === index) {
-						slide.classList.add('is-active');
-						if (!reducedMotion && typeof gsap !== 'undefined') {
-							gsap.fromTo(slide, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
-						} else {
-							slide.style.opacity = '1';
-						}
-					} else {
-						slide.classList.remove('is-active');
-						slide.style.opacity = '0';
-					}
+					slide.classList.toggle('active', i === index);
+					slide.classList.toggle('is-active', i === index);
 				});
 				dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 				currentSlide = index;
@@ -599,6 +591,7 @@
 				showSlide((currentSlide + 1) % slides.length);
 			}
 
+			// Init first slide
 			showSlide(0);
 
 			dots.forEach((dot, index) => {

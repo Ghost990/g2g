@@ -890,78 +890,137 @@ main .g2f-hero {
    Testimonial Styles
    =================================== */
 /* Hide non-active slides via class (JS toggles is-active) */
-.g2f-testimonial {
-	display: none;
-}
-
-.g2f-testimonial.is-active {
-	display: block;
-}
-
-.g2f-testimonial {
+/* ===================================
+   Testimonials Section — Carousel
+   =================================== */
+.g2f-testimonials {
+	background: #f5f5f5;
+	padding: 100px 151px;
 	text-align: center;
-	max-width: 800px;
+}
+
+.g2f-testimonials__header {
+	margin-bottom: 56px;
+}
+
+.g2f-testimonials__title {
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: clamp(36px, 5vw, 60px);
+	font-weight: 400;
+	line-height: 1;
+	color: #000;
+	margin: 0 0 20px;
+}
+
+.g2f-testimonials__subtitle {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 16px;
+	line-height: 1.5;
+	color: #777;
+	max-width: 600px;
 	margin: 0 auto;
 }
 
-.g2f-testimonial-quote {
+.g2f-testimonial-carousel {
+	max-width: 680px;
+	margin: 0 auto;
+}
+
+.g2f-testimonial-track {
+	position: relative;
+	min-height: 280px;
+}
+
+.g2f-testimonial {
+	display: none;
+	text-align: center;
+	animation: g2f-fade-in 0.4s ease;
+}
+
+.g2f-testimonial.active {
+	display: block;
+}
+
+@keyframes g2f-fade-in {
+	from { opacity: 0; transform: translateY(10px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+.g2f-testimonial__quote {
 	font-family: var(--wp--preset--font-family--roboto);
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: 600;
-	line-height: 1;
-	margin-bottom: 24px;
+	line-height: 1.2;
+	color: #000;
+	margin: 0 0 20px;
 }
 
-.g2f-testimonial-text {
-	font-family: var(--wp--preset--font-family--inter);
-	font-size: 16px;
-	line-height: 1.5;
-	color: var(--wp--preset--color--black);
-	margin-bottom: 32px;
+.g2f-testimonial__body {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 15px;
+	line-height: 1.65;
+	color: #666;
+	max-width: 520px;
+	margin: 0 auto 32px;
 }
 
-.g2f-testimonial-avatar {
+.g2f-testimonial__avatar {
 	width: 64px;
 	height: 64px;
 	border-radius: 50%;
-	object-fit: cover;
+	background: #1a1a1a;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin: 0 auto 16px;
 }
 
-.g2f-testimonial-name {
-	font-family: var(--wp--preset--font-family--roboto);
-	font-size: 20px;
+.g2f-avatar-initials {
+	color: #fff;
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 18px;
 	font-weight: 600;
-	line-height: 1.1;
+	letter-spacing: 0.05em;
 }
 
-.g2f-testimonial-role {
+.g2f-testimonial__name {
 	font-family: var(--wp--preset--font-family--roboto);
-	font-size: 16px;
-	color: var(--wp--preset--color--text-secondary);
+	font-size: 18px;
+	font-weight: 700;
+	color: #000;
+	margin: 0 0 4px;
 }
 
-/* Testimonial Dots */
+.g2f-testimonial__role {
+	font-family: var(--wp--preset--font-family--roboto);
+	font-size: 14px;
+	color: #888;
+	margin: 0;
+}
+
+/* Dots */
 .g2f-testimonial-dots {
 	display: flex;
 	justify-content: center;
-	gap: 16px;
-	margin-top: 32px;
+	align-items: center;
+	gap: 10px;
+	margin-top: 36px;
 }
 
 .g2f-testimonial-dot {
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background: var(--wp--preset--color--border-light);
+	background: #ccc;
+	border: none;
 	cursor: pointer;
-	transition: var(--g2f-transition);
+	padding: 0;
+	transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .g2f-testimonial-dot.active {
-	width: 16px;
-	height: 16px;
-	background: var(--wp--preset--color--black);
+	background: #000;
+	transform: scale(1.4);
 }
 
 /* ===================================
