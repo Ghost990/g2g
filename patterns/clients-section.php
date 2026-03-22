@@ -4,8 +4,18 @@
  * Slug: g2f-theme/clients-section
  * Categories: g2f-theme
  * Keywords: clients, logos, partners
- * Description: Client logos section — static row
+ * Description: Client logos section — WP media library images
  */
+
+$clients = [
+	[ 'id' => 112, 'name' => 'Vodafone Business' ],
+	[ 'id' => 111, 'name' => 'dm' ],
+	[ 'id' => 110, 'name' => 'AsicMinerz' ],
+	[ 'id' => 109, 'name' => 'Alteo' ],
+	[ 'id' => 108, 'name' => 'Richmond' ],
+	[ 'id' => 114, 'name' => 'Macmillan' ],
+	[ 'id' => 113, 'name' => 'Shopper Park+' ],
+];
 ?>
 <section class="g2f-clients-section">
 	<div class="g2f-clients-inner">
@@ -14,13 +24,15 @@
 		<p class="g2f-clients-sub">Over the years I have worked for and cooperated with various companies from various industries.<br>Some of them can be found here:</p>
 
 		<div class="g2f-clients-logos">
-			<span class="g2f-client-name">Vodafone Business</span>
-			<span class="g2f-client-name">dm</span>
-			<span class="g2f-client-name">AsicMinerz</span>
-			<span class="g2f-client-name">Alteo</span>
-			<span class="g2f-client-name">Richmond</span>
-			<span class="g2f-client-name">Macmillan</span>
-			<span class="g2f-client-name">Shopper Park+</span>
+			<?php foreach ( $clients as $client ) :
+				$src = wp_get_attachment_image_url( $client['id'], 'medium' );
+				if ( $src ) : ?>
+				<div class="g2f-client-logo">
+					<img src="<?php echo esc_url( $src ); ?>"
+						 alt="<?php echo esc_attr( $client['name'] ); ?>"
+						 loading="lazy" />
+				</div>
+			<?php endif; endforeach; ?>
 		</div>
 
 	</div>
