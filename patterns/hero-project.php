@@ -11,7 +11,15 @@ global $post;
 if ( ! $post ) return;
 
 $services = get_the_terms( $post->ID, 'project_service' );
-$cat_name = ( ! empty( $services ) && ! is_wp_error( $services ) ) ? $services[0]->name : 'Projects';
+$service_term = ( ! empty( $services ) && ! is_wp_error( $services ) ) ? $services[0] : null;
+$cat_name = $service_term ? $service_term->name : 'Projects';
+// Map slug → display name for breadcrumb
+$service_labels = array(
+	'ux-design'     => 'UX/UI Design',
+	'art-direction' => 'Art Direction',
+	'photography'   => 'Photography',
+);
+$breadcrumb_label = $service_term ? ( $service_labels[ $service_term->slug ] ?? $cat_name ) : 'Projects';
 $thumb    = get_the_post_thumbnail_url( $post->ID, 'full' );
 $bg_style = $thumb ? 'background-image:url(' . esc_url( $thumb ) . ')' : '';
 ?>
@@ -36,7 +44,7 @@ $bg_style = $thumb ? 'background-image:url(' . esc_url( $thumb ) . ')' : '';
 		<div class="g2f-hero-project__image"<?php if ( $bg_style ) echo ' style="' . $bg_style . '"'; ?>>
 			<div class="g2f-hero-project__overlay"></div>
 			<div class="g2f-hero-project__content">
-				<p class="g2f-hero-project__breadcrumb">SERVICES / <?php echo esc_html( strtoupper( $cat_name ) ); ?></p>
+				<p class="g2f-hero-project__breadcrumb">SERVICES / <?php echo esc_html( strtoupper( $breadcrumb_label ) ); ?></p>
 				<h1 class="g2f-hero-project__heading"><?php echo esc_html( get_the_title( $post->ID ) ); ?></h1>
 			</div>
 		</div>

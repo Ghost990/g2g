@@ -137,6 +137,7 @@ function g2f_theme_register_block_patterns() {
 		'button-arrow-light'    => array( 'title' => 'Button Arrow (Light)' ),
 		'project-info'          => array( 'title' => 'Project Info' ),
 		'hero-project'          => array( 'title' => 'Project Hero' ),
+		'project-gallery'       => array( 'title' => 'Project Gallery Slider' ),
 		'project-view-live'     => array( 'title' => 'Project — View Live Button' ),
 	);
 
