@@ -17,6 +17,7 @@
 	document.addEventListener('DOMContentLoaded', function () {
 		initPageLoad();
 		initStickyHeader();
+		initMobileMenu();
 		initSmoothScroll();
 		initProjectFilter();
 		initClientMarquee();
@@ -398,6 +399,76 @@
 				gsap.to(btn, { letterSpacing: '0em', duration: 0.2, ease: 'power2.in' });
 			});
 		});
+	}
+
+	// =========================================================
+	// MOBILE MENU (HAMBURGER)
+	// =========================================================
+	function initMobileMenu() {
+		const hamburger = document.querySelector('.g2f-hamburger');
+		if (!hamburger) return;
+
+		// Build the full-screen overlay
+		const overlay = document.createElement('div');
+		overlay.className = 'g2f-mobile-overlay';
+		overlay.setAttribute('aria-hidden', 'true');
+		overlay.innerHTML = `
+			<button class="g2f-mobile-close" aria-label="Close menu">
+				<span></span><span></span>
+			</button>
+			<nav class="g2f-mobile-nav" aria-label="Mobile navigation">
+				<a href="/">HOME</a>
+				<a href="/about/">ABOUT US</a>
+				<a href="/services/">SERVICES</a>
+				<a href="/gallery/">GALLERY</a>
+				<a href="/contact/">CONTACT</a>
+			</nav>
+			<div class="g2f-mobile-overlay__cta">
+				<a href="/contact/" class="g2f-mobile-overlay__cta-link">GET IN TOUCH →</a>
+			</div>
+		`;
+		document.body.appendChild(overlay);
+
+		const closeBtn = overlay.querySelector('.g2f-mobile-close');
+
+		function openMenu() {
+			overlay.classList.add('is-open');
+			overlay.setAttribute('aria-hidden', 'false');
+			hamburger.classList.add('is-active');
+			hamburger.setAttribute('aria-expanded', 'true');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeMenu() {
+			overlay.classList.remove('is-open');
+			overlay.setAttribute('aria-hidden', 'true');
+			hamburger.classList.remove('is-active');
+			hamburger.setAttribute('aria-expanded', 'false');
+			document.body.style.overflow = '';
+		}
+
+		hamburger.addEventListener('click', function () {
+			overlay.classList.contains('is-open') ? closeMenu() : openMenu();
+		});
+
+		closeBtn.addEventListener('click', closeMenu);
+
+		overlay.addEventListener('click', function (e) {
+			if (e.target === overlay) closeMenu();
+		});
+
+		overlay.querySelectorAll('a').forEach(function (link) {
+			link.addEventListener('click', closeMenu);
+		});
+
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenu();
+		});
+
+		// Close menu on resize above mobile breakpoint
+		window.addEventListener('resize', function () {
+			if (window.innerWidth > 768 && overlay.classList.contains('is-open')) closeMenu();
+		}, { passive: true });
 	}
 
 	// =========================================================

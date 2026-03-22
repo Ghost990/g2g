@@ -4058,3 +4058,765 @@ a, button, [role="button"],
 .g2f-word {
 	vertical-align: bottom;
 }
+
+
+/* ==========================================================================
+   RESPONSIVE OVERHAUL — Full Mobile-First Breakpoints
+   Generated: 2026-03-22
+   Breakpoints: 1280px | 1024px | 900px | 768px | 480px | 320px
+   ========================================================================== */
+
+/* ============================================================
+   HAMBURGER BUTTON
+   ============================================================ */
+.g2f-hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	width: 40px;
+	height: 40px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+	z-index: 200;
+	position: relative;
+	flex-shrink: 0;
+}
+
+.g2f-hamburger__bar {
+	display: block;
+	width: 24px;
+	height: 1.5px;
+	background: #000;
+	border-radius: 2px;
+	transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+	transform-origin: center;
+}
+
+/* Animated X state */
+.g2f-hamburger.is-active .g2f-hamburger__bar:nth-child(1) {
+	transform: translateY(6.5px) rotate(45deg);
+}
+.g2f-hamburger.is-active .g2f-hamburger__bar:nth-child(2) {
+	opacity: 0;
+	width: 0;
+}
+.g2f-hamburger.is-active .g2f-hamburger__bar:nth-child(3) {
+	transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ============================================================
+   MOBILE MENU OVERLAY
+   ============================================================ */
+.g2f-mobile-overlay {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	inset: 0;
+	background: #fff;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.g2f-mobile-overlay.is-open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.g2f-mobile-close {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	width: 44px;
+	height: 44px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.g2f-mobile-close span {
+	position: absolute;
+	width: 24px;
+	height: 1.5px;
+	background: #000;
+	border-radius: 2px;
+}
+
+.g2f-mobile-close span:first-child {
+	transform: rotate(45deg);
+}
+.g2f-mobile-close span:last-child {
+	transform: rotate(-45deg);
+}
+
+.g2f-mobile-nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+	margin-bottom: 48px;
+}
+
+.g2f-mobile-nav a {
+	font-family: var(--wp--preset--font-family--roboto, 'Roboto', sans-serif);
+	font-size: clamp(28px, 8vw, 42px);
+	font-weight: 400;
+	letter-spacing: -0.5px;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: 1;
+	transition: opacity 0.2s ease;
+}
+
+.g2f-mobile-nav a:hover {
+	opacity: 0.45;
+}
+
+.g2f-mobile-overlay__cta-link {
+	font-family: var(--wp--preset--font-family--inter, 'Inter', sans-serif);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #000;
+	text-decoration: none;
+	padding: 14px 28px;
+	border: 1.5px solid #000;
+	border-radius: 100px;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.g2f-mobile-overlay__cta-link:hover {
+	background: #000;
+	color: #fff;
+}
+
+/* ============================================================
+   HEADER — RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+	/* Show hamburger, hide nav + CTA */
+	.g2f-hamburger {
+		display: flex !important;
+	}
+
+	.g2f-header-nav,
+	.g2f-header-cta {
+		display: none !important;
+	}
+
+	/* Reduce side padding */
+	.site-header,
+	.site-header > .wp-block-group,
+	header.wp-block-group.site-header {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+}
+
+@media (min-width: 769px) {
+	.g2f-hamburger {
+		display: none !important;
+	}
+	.g2f-mobile-overlay {
+		display: none !important;
+	}
+}
+
+/* Tablet — reduce header side padding */
+@media (max-width: 1024px) and (min-width: 769px) {
+	.site-header,
+	header.wp-block-group.site-header {
+		padding-left: 40px !important;
+		padding-right: 40px !important;
+	}
+}
+
+/* ============================================================
+   GLOBAL PADDING SCALE
+   ============================================================ */
+
+/* Tablet (769–1024px) */
+@media (max-width: 1024px) {
+	.g2f-services-zigzag,
+	.g2f-projects-grid-section,
+	.g2f-portfolio-split,
+	.g2f-testimonials,
+	.g2f-clients-section,
+	.g2f-about-section {
+		padding-left: 40px !important;
+		padding-right: 40px !important;
+	}
+
+	.g2f-cta-inner,
+	.g2f-portfolio-inner {
+		padding-left: 40px !important;
+		padding-right: 40px !important;
+	}
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+	.g2f-services-zigzag,
+	.g2f-projects-grid-section,
+	.g2f-portfolio-split,
+	.g2f-testimonials,
+	.g2f-clients-section,
+	.g2f-about-section {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-cta-inner,
+	.g2f-portfolio-inner {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-content-container {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+}
+
+/* ============================================================
+   HERO SECTION — HOMEPAGE
+   ============================================================ */
+
+/* Tablet-landscape (769–1024px) */
+@media (max-width: 1024px) {
+	.g2f-hero .wp-block-cover {
+		min-height: 80vh !important;
+	}
+
+	.g2f-hero .wp-block-cover__inner-container {
+		padding: 160px 60px 80px 60px !important;
+	}
+
+	.g2f-hero-title {
+		font-size: clamp(48px, 7vw, 80px) !important;
+	}
+}
+
+/* Tablet portrait + mobile (≤768px) */
+@media (max-width: 768px) {
+	.g2f-hero .wp-block-cover {
+		min-height: 60vh !important;
+	}
+
+	.g2f-hero .wp-block-cover__inner-container {
+		padding: 120px 24px 60px 24px !important;
+	}
+
+	.g2f-hero-title {
+		font-size: clamp(32px, 10vw, 52px) !important;
+		letter-spacing: -2px !important;
+	}
+
+	/* Hide decorative vertical text strip on mobile */
+	.g2f-vertical-text-strip,
+	.g2f-hero > .g2f-vertical-text,
+	.g2f-hero > .wp-block-group.g2f-vertical-text {
+		display: none !important;
+	}
+
+	/* Adjust image offset */
+	.g2f-hero .wp-block-cover__image-background,
+	.g2f-hero .wp-block-cover__background {
+		left: 0 !important;
+		right: 0 !important;
+		width: 100% !important;
+	}
+
+	.g2f-hero .wp-block-cover {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+	.g2f-hero .wp-block-cover {
+		min-height: 55vh !important;
+	}
+
+	.g2f-hero-title {
+		font-size: clamp(28px, 11vw, 42px) !important;
+		letter-spacing: -1.5px !important;
+	}
+}
+
+/* ============================================================
+   SUBPAGE HERO SECTIONS (.g2f-hero-about-wrap / services)
+   ============================================================ */
+@media (max-width: 1024px) {
+	.g2f-hero-about-wrap,
+	.g2f-hero-services-wrap {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-hero-about-wrap,
+	.g2f-hero-services-wrap {
+		flex-direction: column !important;
+		min-height: auto !important;
+	}
+
+	.g2f-hero-about-wrap > *,
+	.g2f-hero-services-wrap > * {
+		width: 100% !important;
+		flex-basis: auto !important;
+	}
+
+	/* Hide vertical label on mobile subpage heroes */
+	.g2f-hero-about__label,
+	.g2f-hero-services__label {
+		display: none !important;
+	}
+
+	.g2f-hero-about__content,
+	.g2f-hero-services__content {
+		padding: 32px 24px !important;
+		min-height: 0 !important;
+	}
+
+	.g2f-hero-about__image,
+	.g2f-hero-services__image {
+		min-height: 240px !important;
+		max-height: 280px !important;
+	}
+
+	.g2f-hero-about__image img,
+	.g2f-hero-services__image img {
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+/* ============================================================
+   COVER HERO (generic page cover block)
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-cover-hero .wp-block-cover {
+		min-height: 50vh !important;
+	}
+
+	.g2f-cover-hero .wp-block-cover__inner-container {
+		padding: 40px 24px !important;
+	}
+}
+
+/* ============================================================
+   ABOUT SECTION (homepage)
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-about-section .wp-block-columns {
+		flex-direction: column !important;
+		gap: 0 !important;
+	}
+
+	.g2f-about-section .wp-block-column {
+		flex-basis: 100% !important;
+		width: 100% !important;
+		min-width: 0 !important;
+	}
+
+	.g2f-about-image-col,
+	.g2f-about-section .g2f-about-image-col {
+		order: -1;
+	}
+
+	.g2f-about-section h2 {
+		font-size: clamp(28px, 8vw, 42px) !important;
+	}
+}
+
+/* ============================================================
+   SERVICES ZIG-ZAG ROWS
+   ============================================================ */
+
+/* Tablet (769–1024px): keep side-by-side but reduce padding */
+@media (max-width: 1024px) {
+	.g2f-services-zigzag .g2f-service-row > .wp-block-column.is-vertically-aligned-center > .wp-block-group {
+		padding: 32px 40px !important;
+	}
+
+	.g2f-service-image-large,
+	.g2f-service-image-large img {
+		min-height: 320px !important;
+	}
+}
+
+/* Mobile (≤768px): stack vertically */
+@media (max-width: 768px) {
+	.g2f-services-zigzag .g2f-service-row,
+	.g2f-services-zigzag .wp-block-columns.g2f-service-row {
+		flex-direction: column !important;
+	}
+
+	/* Even rows: image first, text second */
+	.g2f-services-zigzag .g2f-service-row:nth-child(even) {
+		flex-direction: column-reverse !important;
+	}
+
+	.g2f-services-zigzag .g2f-service-row > .wp-block-column {
+		flex-basis: 100% !important;
+		width: 100% !important;
+	}
+
+	.g2f-service-image-large,
+	.g2f-service-image-large img {
+		min-height: 240px !important;
+	}
+
+	.g2f-services-zigzag .g2f-service-row > .wp-block-column.is-vertically-aligned-center > .wp-block-group {
+		padding: 32px 20px !important;
+	}
+
+	/* Override img-right / img-left text alignment on mobile */
+	.g2f-service-row--img-right .g2f-service-row__content,
+	.g2f-service-row--img-left .g2f-service-row__content {
+		padding: 32px 20px !important;
+		align-items: flex-start !important;
+		text-align: left !important;
+	}
+
+	.g2f-service-row--img-right .g2f-button-arrow--sm {
+		align-self: flex-start !important;
+	}
+}
+
+/* ============================================================
+   PROJECT TABS — mobile scroll
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-project-tabs {
+		gap: 20px;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+}
+
+/* ============================================================
+   PROJECTS GRID
+   ============================================================ */
+
+/* Already covered in file but reinforce with section padding */
+@media (max-width: 1024px) {
+	.g2f-projects-grid-section {
+		padding-top: 60px !important;
+		padding-bottom: 60px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-projects-grid-section {
+		padding-top: 48px !important;
+		padding-bottom: 48px !important;
+	}
+
+	.g2f-projects-grid {
+		grid-template-columns: 1fr !important;
+		gap: 20px !important;
+	}
+}
+
+/* ============================================================
+   PORTFOLIO TEXT SPLIT
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-portfolio-inner {
+		flex-direction: column !important;
+		gap: 32px !important;
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-portfolio-left {
+		flex: none !important;
+		width: 100% !important;
+	}
+
+	.g2f-portfolio-heading {
+		font-size: clamp(28px, 8vw, 44px) !important;
+	}
+
+	.g2f-portfolio-right {
+		width: 100% !important;
+	}
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-testimonials,
+	.g2f-testimonials-dark {
+		padding-top: 60px !important;
+		padding-bottom: 60px !important;
+	}
+
+	.g2f-testimonial-carousel,
+	.g2f-testimonial-slider {
+		padding: 0 !important;
+	}
+
+	.g2f-testimonial {
+		padding: 24px 20px !important;
+	}
+
+	.g2f-testimonial-dots {
+		gap: 10px !important;
+		margin-top: 20px !important;
+	}
+
+	.g2f-testimonial-dot {
+		width: 10px !important;
+		height: 10px !important;
+	}
+
+	.g2f-testimonials h2,
+	.g2f-testimonials-dark h2 {
+		font-size: clamp(24px, 7vw, 36px) !important;
+	}
+}
+
+/* ============================================================
+   CLIENTS SECTION
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-clients-section {
+		padding: 48px 20px !important;
+	}
+
+	.g2f-clients-logos {
+		gap: 20px 28px !important;
+		/* max 3 per row on mobile */
+	}
+
+	.g2f-client-logo {
+		flex: 0 0 calc(33.333% - 20px);
+		max-width: 100px;
+	}
+
+	.g2f-clients-heading {
+		font-size: clamp(28px, 7vw, 40px) !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.g2f-client-logo {
+		flex: 0 0 calc(33.333% - 16px);
+	}
+}
+
+/* ============================================================
+   CTA BAR + FOOTER
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-cta-bar {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+		gap: 20px !important;
+	}
+
+	.g2f-cta-bar .g2f-button-arrow,
+	.g2f-cta-bar .wp-block-button {
+		width: 100%;
+	}
+
+	.g2f-cta-bar .wp-block-button__link {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.g2f-cta-inner {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-cta-footer {
+		padding: 48px 0 32px !important;
+	}
+
+	/* Footer row: stack on mobile */
+	.g2f-footer-row {
+		flex-direction: column !important;
+		align-items: center !important;
+		text-align: center !important;
+		gap: 16px !important;
+	}
+
+	.g2f-footer-center {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		gap: 8px !important;
+	}
+
+	.g2f-footer-sep {
+		display: none !important;
+	}
+}
+
+/* CTA bar section full-bleed */
+@media (max-width: 1024px) {
+	.g2f-cta-bar-section {
+		padding: 60px 0 !important;
+	}
+}
+
+/* ============================================================
+   ABOUT PAGE INNER SECTIONS
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-about-page-intro,
+	.g2f-about-page-body,
+	.g2f-about-page-founder {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+
+	.g2f-about-page-intro__inner {
+		flex-direction: column !important;
+		gap: 24px !important;
+	}
+
+	.g2f-about-page-intro__image {
+		flex: none !important;
+		width: 100% !important;
+	}
+}
+
+/* ============================================================
+   SERVICES PAGE
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-services-intro {
+		padding: 60px 20px !important;
+	}
+
+	.g2f-services-intro__inner {
+		flex-direction: column !important;
+		gap: 32px !important;
+	}
+
+	.g2f-services-intro__text,
+	.g2f-services-intro__image {
+		flex: none !important;
+		width: 100% !important;
+	}
+}
+
+/* ============================================================
+   COVER HERO PAGE
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-cover-hero .wp-block-cover__inner-container {
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
+}
+
+/* ============================================================
+   GENERAL WP BLOCK COLUMNS — mobile stack fallback
+   ============================================================ */
+@media (max-width: 768px) {
+	/* Stack all block columns that haven't opted out */
+	.wp-block-columns:not(.is-not-stacked-on-mobile) {
+		flex-direction: column !important;
+	}
+
+	.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+		flex-basis: 100% !important;
+		margin-left: 0 !important;
+	}
+}
+
+/* ============================================================
+   TYPOGRAPHY SCALE — mobile
+   ============================================================ */
+@media (max-width: 768px) {
+	.g2f-services-zigzag h2,
+	.g2f-projects-grid-section h2,
+	.g2f-portfolio-split h2 {
+		font-size: clamp(28px, 8vw, 42px) !important;
+	}
+
+	h1 {
+		font-size: clamp(28px, 9vw, 48px);
+	}
+
+	h2 {
+		font-size: clamp(24px, 7vw, 38px);
+	}
+}
+
+@media (max-width: 480px) {
+	.g2f-hero-title {
+		font-size: clamp(26px, 11vw, 38px) !important;
+	}
+
+	.g2f-footer-title {
+		font-size: clamp(28px, 10vw, 40px) !important;
+	}
+}
+
+/* ============================================================
+   SECTION VERTICAL PADDING — tablet/mobile reduction
+   ============================================================ */
+@media (max-width: 1024px) {
+	.g2f-section {
+		padding: 80px 0 !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.g2f-section {
+		padding: 60px 0 !important;
+	}
+
+	/* Reduce section padding across the board */
+	.g2f-about-section,
+	.g2f-services-zigzag,
+	.g2f-testimonials,
+	.g2f-testimonials-dark {
+		padding-top: 60px !important;
+		padding-bottom: 60px !important;
+	}
+}
+
+/* ============================================================
+   STICKY HEADER — white hamburger bar when over dark sections
+   ============================================================ */
+.site-header.is-sticky .g2f-hamburger__bar {
+	background: #000;
+}
+
+/* ============================================================
+   VERY SMALL SCREENS (≤320px)
+   ============================================================ */
+@media (max-width: 320px) {
+	.g2f-hero .wp-block-cover {
+		min-height: 50vh !important;
+	}
+
+	.site-header,
+	header.wp-block-group.site-header {
+		padding-left: 12px !important;
+		padding-right: 12px !important;
+	}
+}
