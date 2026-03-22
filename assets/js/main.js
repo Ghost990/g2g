@@ -1,92 +1,446 @@
 /**
  * G2F Design Theme - Main JavaScript
+ * GSAP + ScrollTrigger powered micro-interactions & animations
  */
 
-(function() {
+(function () {
 	'use strict';
+
+	// Reduced motion preference
+	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	// Touch device detection
+	const isTouch = window.matchMedia('(hover: none)').matches;
 
 	/**
 	 * DOM Ready
 	 */
-	document.addEventListener('DOMContentLoaded', function() {
-		initScrollAnimations();
+	document.addEventListener('DOMContentLoaded', function () {
+		initPageLoad();
 		initStickyHeader();
 		initSmoothScroll();
 		initProjectFilter();
 		initClientMarquee();
 		initTestimonialSlider();
 		initBackToTop();
+
+		if (!reducedMotion) {
+			initCustomCursor();
+			initHeroAnimations();
+			initScrollReveal();
+			initProjectCardHover();
+			initMagneticButton();
+			initButtonArrowHover();
+		}
 	});
 
-	/**
-	 * Scroll Animations
-	 * Uses Intersection Observer for performance
-	 */
-	function initScrollAnimations() {
-		const animatedElements = document.querySelectorAll('.g2f-fade-in, .g2f-slide-left, .g2f-slide-right');
+	// =========================================================
+	// PAGE LOAD FADE-IN
+	// =========================================================
+	function initPageLoad() {
+		if (reducedMotion) return;
 
-		if (!animatedElements.length) return;
+		document.body.style.opacity = '0';
 
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('is-visible');
-						observer.unobserve(entry.target);
-					}
-				});
-			},
-			{
-				threshold: 0.1,
-				rootMargin: '0px 0px -50px 0px'
-			}
-		);
-
-		animatedElements.forEach((el) => observer.observe(el));
+		if (typeof gsap !== 'undefined') {
+			gsap.to(document.body, {
+				opacity: 1,
+				duration: 0.55,
+				ease: 'power1.out',
+			});
+		} else {
+			document.body.style.transition = 'opacity 0.5s ease';
+			requestAnimationFrame(() => {
+				document.body.style.opacity = '1';
+			});
+		}
 	}
 
-	/**
-	 * Sticky Header with Shrink Animation
-	 */
+	// =========================================================
+	// CUSTOM CURSOR
+	// =========================================================
+	function initCustomCursor() {
+		if (isTouch || typeof gsap === 'undefined') return;
+
+		// Create cursor elements
+		const cursor = document.createElement('div');
+		cursor.className = 'g2f-cursor';
+		cursor.innerHTML = `
+			<div class="g2f-cursor__dot"></div>
+			<div class="g2f-cursor__ring"></div>
+			<span class="g2f-cursor__label">VIEW</span>
+		`;
+		document.body.appendChild(cursor);
+
+		const dot = cursor.querySelector('.g2f-cursor__dot');
+		const ring = cursor.querySelector('.g2f-cursor__ring');
+
+		// Quick setters for performance
+		const xDot = gsap.quickTo(dot, 'x', { duration: 0.1, ease: 'power3' });
+		const yDot = gsap.quickTo(dot, 'y', { duration: 0.1, ease: 'power3' });
+		const xRing = gsap.quickTo(ring, 'x', { duration: 0.35, ease: 'power3' });
+		const yRing = gsap.quickTo(ring, 'y', { duration: 0.35, ease: 'power3' });
+		const xLabel = gsap.quickTo(cursor.querySelector('.g2f-cursor__label'), 'x', { duration: 0.35, ease: 'power3' });
+		const yLabel = gsap.quickTo(cursor.querySelector('.g2f-cursor__label'), 'y', { duration: 0.35, ease: 'power3' });
+
+		document.addEventListener('mousemove', (e) => {
+			xDot(e.clientX);
+			yDot(e.clientY);
+			xRing(e.clientX);
+			yRing(e.clientY);
+			xLabel(e.clientX);
+			yLabel(e.clientY);
+		});
+
+		// Hover states
+		const interactiveEls = document.querySelectorAll('a, button, [role="button"], .g2f-btn-arrow, .g2f-header-cta a');
+		interactiveEls.forEach((el) => {
+			el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
+			el.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
+		});
+
+		// Project card state
+		const projectCards = document.querySelectorAll('.g2f-project-card');
+		projectCards.forEach((card) => {
+			card.addEventListener('mouseenter', () => {
+				cursor.classList.add('is-project');
+				cursor.classList.remove('is-hovering');
+			});
+			card.addEventListener('mouseleave', () => {
+				cursor.classList.remove('is-project');
+			});
+		});
+	}
+
+	// =========================================================
+	// HERO TEXT ANIMATIONS
+	// =========================================================
+	function initHeroAnimations() {
+		if (typeof gsap === 'undefined') return;
+
+		const heroHeadings = document.querySelectorAll(
+			'.g2f-hero-about__heading, .g2f-hero-services__heading, .g2f-cover-hero h1, .g2f-cover-hero h2, .g2f-hero h1, .g2f-hero h2, .g2f-hero-project__title'
+		);
+
+		heroHeadings.forEach((heading) => {
+			// Split words into spans
+			const words = heading.innerText.split(' ');
+			heading.innerHTML = words
+				.map((w) => `<span class="g2f-word" style="display:inline-block; overflow:hidden; padding-bottom:0.1em; margin-right:0.25em"><span class="g2f-word-inner" style="display:inline-block">${w}</span></span>`)
+				.join('');
+
+			const wordInners = heading.querySelectorAll('.g2f-word-inner');
+
+			gsap.from(wordInners, {
+				y: '105%',
+				opacity: 0,
+				duration: 0.85,
+				ease: 'power3.out',
+				stagger: 0.07,
+				delay: 0.15,
+			});
+		});
+
+		// Sub-headings / paragraphs in hero areas
+		const heroSubs = document.querySelectorAll(
+			'.g2f-hero-about__content p, .g2f-hero-services__content p, .g2f-cover-hero p, .g2f-hero-project__breadcrumb'
+		);
+		if (heroSubs.length) {
+			gsap.from(heroSubs, {
+				y: 20,
+				opacity: 0,
+				duration: 0.7,
+				ease: 'power2.out',
+				stagger: 0.1,
+				delay: 0.5,
+			});
+		}
+
+		// Hero vertical label
+		const heroLabels = document.querySelectorAll(
+			'.g2f-hero-about__label, .g2f-hero-services__label, .g2f-hero-project__label'
+		);
+		if (heroLabels.length) {
+			gsap.from(heroLabels, {
+				opacity: 0,
+				x: -10,
+				duration: 0.6,
+				ease: 'power2.out',
+				delay: 0.3,
+			});
+		}
+	}
+
+	// =========================================================
+	// SCROLL REVEAL (ScrollTrigger)
+	// =========================================================
+	function initScrollReveal() {
+		if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+		gsap.registerPlugin(ScrollTrigger);
+
+		const triggerPoint = 'top 88%';
+
+		// About section columns
+		const aboutImageCol = document.querySelector('.g2f-about-image-col, .g2f-about-inner .g2f-about-image-col');
+		const aboutTextCol = document.querySelector('.g2f-about-text-col, .g2f-about-inner .g2f-about-text-col');
+
+		if (aboutImageCol) {
+			gsap.from(aboutImageCol, {
+				x: -60,
+				opacity: 0,
+				duration: 0.9,
+				ease: 'power2.out',
+				scrollTrigger: { trigger: aboutImageCol, start: triggerPoint, once: true },
+			});
+		}
+		if (aboutTextCol) {
+			gsap.from(aboutTextCol, {
+				x: 60,
+				opacity: 0,
+				duration: 0.9,
+				ease: 'power2.out',
+				delay: 0.1,
+				scrollTrigger: { trigger: aboutTextCol, start: triggerPoint, once: true },
+			});
+		}
+
+		// Service rows — alternating directions
+		const serviceRows = document.querySelectorAll('.g2f-service-row');
+		serviceRows.forEach((row, i) => {
+			gsap.from(row, {
+				x: i % 2 === 0 ? -50 : 50,
+				opacity: 0,
+				duration: 0.85,
+				ease: 'power2.out',
+				scrollTrigger: { trigger: row, start: triggerPoint, once: true },
+			});
+		});
+
+		// Project cards — stagger reveal
+		const projectCards = document.querySelectorAll('.g2f-project-card');
+		if (projectCards.length) {
+			gsap.from(projectCards, {
+				y: 50,
+				opacity: 0,
+				scale: 0.96,
+				duration: 0.7,
+				ease: 'power2.out',
+				stagger: { amount: 0.4 },
+				scrollTrigger: {
+					trigger: projectCards[0].closest('.g2f-projects-grid, .g2f-latest-projects') || projectCards[0],
+					start: triggerPoint,
+					once: true,
+				},
+			});
+		}
+
+		// Portfolio text section
+		const portfolioSection = document.querySelector('.g2f-portfolio-split');
+		if (portfolioSection) {
+			const heading = portfolioSection.querySelector('h2');
+			const para = portfolioSection.querySelector('p');
+			const btn = portfolioSection.querySelector('.g2f-btn-arrow');
+			const items = [heading, para, btn].filter(Boolean);
+
+			gsap.from(items, {
+				y: 35,
+				opacity: 0,
+				duration: 0.75,
+				ease: 'power2.out',
+				stagger: 0.12,
+				scrollTrigger: { trigger: portfolioSection, start: triggerPoint, once: true },
+			});
+		}
+
+		// Testimonials
+		const testimonialSection = document.querySelector('.g2f-testimonials-section, .g2f-testimonial-slider');
+		if (testimonialSection) {
+			gsap.from(testimonialSection, {
+				y: 30,
+				opacity: 0,
+				duration: 0.7,
+				ease: 'power2.out',
+				scrollTrigger: { trigger: testimonialSection, start: triggerPoint, once: true },
+			});
+		}
+
+		// Clients section
+		const clientsSection = document.querySelector('.g2f-clients-section');
+		if (clientsSection) {
+			gsap.from(clientsSection, {
+				y: 25,
+				opacity: 0,
+				duration: 0.65,
+				ease: 'power2.out',
+				scrollTrigger: { trigger: clientsSection, start: triggerPoint, once: true },
+			});
+		}
+
+		// CTA bar
+		const ctaBar = document.querySelector('.g2f-cta-bar-section, .g2f-cta-footer');
+		if (ctaBar) {
+			gsap.from(ctaBar, {
+				scale: 0.97,
+				opacity: 0,
+				duration: 0.7,
+				ease: 'power2.out',
+				scrollTrigger: { trigger: ctaBar, start: triggerPoint, once: true },
+			});
+		}
+
+		// Services detail blocks (inner pages)
+		const serviceDetailBlocks = document.querySelectorAll('.g2f-service-detail-block');
+		serviceDetailBlocks.forEach((block, i) => {
+			gsap.from(block, {
+				y: 40,
+				opacity: 0,
+				duration: 0.75,
+				ease: 'power2.out',
+				delay: i * 0.05,
+				scrollTrigger: { trigger: block, start: triggerPoint, once: true },
+			});
+		});
+
+		// Generic fade-in for remaining animated elements
+		const fadeEls = document.querySelectorAll('.g2f-fade-in');
+		fadeEls.forEach((el) => {
+			gsap.from(el, {
+				y: 25,
+				opacity: 0,
+				duration: 0.65,
+				ease: 'power2.out',
+				scrollTrigger: { trigger: el, start: triggerPoint, once: true },
+			});
+		});
+	}
+
+	// =========================================================
+	// PROJECT CARD HOVER
+	// =========================================================
+	function initProjectCardHover() {
+		if (typeof gsap === 'undefined') return;
+
+		const cards = document.querySelectorAll('.g2f-project-card');
+
+		cards.forEach((card) => {
+			const img = card.querySelector('img');
+			const exploreBtn = card.querySelector('.g2f-project-explore, a');
+
+			if (img) {
+				card.addEventListener('mouseenter', () => {
+					gsap.to(img, { scale: 1.05, duration: 0.5, ease: 'power2.out' });
+				});
+				card.addEventListener('mouseleave', () => {
+					gsap.to(img, { scale: 1, duration: 0.5, ease: 'power2.out' });
+				});
+			}
+
+			if (exploreBtn) {
+				gsap.set(exploreBtn, { y: 6, opacity: 0.7 });
+				card.addEventListener('mouseenter', () => {
+					gsap.to(exploreBtn, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' });
+				});
+				card.addEventListener('mouseleave', () => {
+					gsap.to(exploreBtn, { y: 6, opacity: 0.7, duration: 0.25, ease: 'power2.in' });
+				});
+			}
+		});
+	}
+
+	// =========================================================
+	// MAGNETIC BUTTON (GET IN TOUCH)
+	// =========================================================
+	function initMagneticButton() {
+		if (isTouch || typeof gsap === 'undefined') return;
+
+		const magnetBtns = document.querySelectorAll('.g2f-header-cta a, .g2f-header-cta .wp-block-button__link');
+
+		magnetBtns.forEach((btn) => {
+			btn.addEventListener('mousemove', (e) => {
+				const rect = btn.getBoundingClientRect();
+				const cx = rect.left + rect.width / 2;
+				const cy = rect.top + rect.height / 2;
+				const dx = (e.clientX - cx) * 0.35;
+				const dy = (e.clientY - cy) * 0.35;
+
+				gsap.to(btn, {
+					x: dx,
+					y: dy,
+					duration: 0.35,
+					ease: 'power2.out',
+				});
+			});
+
+			btn.addEventListener('mouseleave', () => {
+				gsap.to(btn, {
+					x: 0,
+					y: 0,
+					duration: 0.55,
+					ease: 'elastic.out(1, 0.4)',
+				});
+			});
+		});
+	}
+
+	// =========================================================
+	// BUTTON ARROW HOVER
+	// =========================================================
+	function initButtonArrowHover() {
+		if (typeof gsap === 'undefined') return;
+
+		const arrowBtns = document.querySelectorAll('.g2f-btn-arrow, .g2f-btn-arrow-light');
+
+		arrowBtns.forEach((btn) => {
+			// Find the arrow character or last word
+			btn.addEventListener('mouseenter', () => {
+				gsap.to(btn, { letterSpacing: '0.05em', duration: 0.25, ease: 'power2.out' });
+			});
+			btn.addEventListener('mouseleave', () => {
+				gsap.to(btn, { letterSpacing: '0em', duration: 0.2, ease: 'power2.in' });
+			});
+		});
+	}
+
+	// =========================================================
+	// STICKY HEADER
+	// =========================================================
 	function initStickyHeader() {
 		const header = document.querySelector('.site-header');
-
 		if (!header) return;
 
-		// Set header height as CSS var for content offset
 		function updateHeaderHeight() {
+			const adminBar = document.getElementById('wpadminbar');
+			const adminBarH = adminBar ? adminBar.offsetHeight : 0;
 			document.documentElement.style.setProperty(
 				'--g2f-header-height',
 				header.offsetHeight + 'px'
+			);
+			// Also expose for hero offset calc
+			document.documentElement.style.setProperty(
+				'--g2f-adminbar-height',
+				adminBarH + 'px'
 			);
 		}
 		updateHeaderHeight();
 		window.addEventListener('resize', updateHeaderHeight, { passive: true });
 
 		const scrollThreshold = 40;
-		let lastScrollY = window.pageYOffset;
 		let ticking = false;
 
 		function onScroll() {
 			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 			if (scrollTop > scrollThreshold) {
-				if (!header.classList.contains('is-sticky')) {
-					header.classList.add('is-sticky');
-					document.body.classList.add('header-is-sticky');
-				}
+				header.classList.add('is-sticky');
+				document.body.classList.add('header-is-sticky');
 			} else {
-				if (header.classList.contains('is-sticky')) {
-					header.classList.remove('is-sticky');
-					document.body.classList.remove('header-is-sticky');
-				}
+				header.classList.remove('is-sticky');
+				document.body.classList.remove('header-is-sticky');
 			}
-
-			lastScrollY = scrollTop;
 			ticking = false;
 		}
 
-		window.addEventListener('scroll', function() {
+		window.addEventListener('scroll', function () {
 			if (!ticking) {
 				requestAnimationFrame(onScroll);
 				ticking = true;
@@ -94,77 +448,59 @@
 		}, { passive: true });
 	}
 
-	/**
-	 * Smooth Scroll for anchor links
-	 */
+	// =========================================================
+	// SMOOTH SCROLL
+	// =========================================================
 	function initSmoothScroll() {
 		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-			anchor.addEventListener('click', function(e) {
+			anchor.addEventListener('click', function (e) {
 				const targetId = this.getAttribute('href');
-
 				if (targetId === '#') return;
-
 				const target = document.querySelector(targetId);
-
 				if (target) {
 					e.preventDefault();
-
 					const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
 					const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-					window.scrollTo({
-						top: targetPosition,
-						behavior: 'smooth'
-					});
+					window.scrollTo({ top: targetPosition, behavior: 'smooth' });
 				}
 			});
 		});
 	}
 
-	/**
-	 * Project Filter
-	 * WordPress strips data-* attributes from block markup, so we assign them dynamically
-	 */
+	// =========================================================
+	// PROJECT FILTER
+	// =========================================================
 	function initProjectFilter() {
 		const tabs = document.querySelectorAll('.g2f-project-tab');
 		const projects = document.querySelectorAll('.g2f-project-card');
 
 		if (!tabs.length || !projects.length) return;
 
-		// Category mapping for tabs (text content → category slug)
 		const tabCategoryMap = {
 			'all': 'all',
 			'ux/ui': 'ux-ui',
 			'art direction': 'art-direction',
-			'photography': 'photography'
+			'photography': 'photography',
 		};
 
-		// Assign data-category to tabs based on text content
 		tabs.forEach((tab) => {
 			const text = tab.textContent.trim().toLowerCase();
-			const category = tabCategoryMap[text] || 'all';
-			tab.dataset.category = category;
-
-			// Remove inline opacity style so CSS can control it
+			tab.dataset.category = tabCategoryMap[text] || 'all';
 			tab.style.removeProperty('opacity');
 		});
 
-		// Assign data-category to project cards based on description text
-		// Also inject placeholder images if missing
 		projects.forEach((project) => {
-			const description = project.querySelector('.g2f-project-info p')?.textContent?.toLowerCase() || '';
-
-			if (description.includes('ux/ui') || description.includes('ux-ui') || description.includes('website')) {
+			const desc = project.querySelector('.g2f-project-info p')?.textContent?.toLowerCase() || '';
+			if (desc.includes('ux/ui') || desc.includes('ux-ui') || desc.includes('website')) {
 				project.dataset.category = 'ux-ui';
-			} else if (description.includes('branding') || description.includes('visual identity') || description.includes('brochure') || description.includes('graphic design')) {
+			} else if (desc.includes('branding') || desc.includes('visual identity') || desc.includes('brochure') || desc.includes('graphic design')) {
 				project.dataset.category = 'art-direction';
-			} else if (description.includes('photography')) {
+			} else if (desc.includes('photography')) {
 				project.dataset.category = 'photography';
 			} else {
-				project.dataset.category = 'ux-ui'; // Default category
+				project.dataset.category = 'ux-ui';
 			}
 
-			// Inject placeholder if no image exists
 			const hasImage = project.querySelector('.g2f-project-image, .g2f-project-image-placeholder, figure img');
 			if (!hasImage) {
 				const placeholder = document.createElement('div');
@@ -173,66 +509,70 @@
 			}
 		});
 
-		// Set up click handlers with cursor pointer
 		tabs.forEach((tab) => {
 			tab.style.cursor = 'pointer';
 
-			tab.addEventListener('click', function() {
+			tab.addEventListener('click', function () {
 				const category = this.dataset.category;
-
-				// Update active tab
 				tabs.forEach((t) => t.classList.remove('active'));
 				this.classList.add('active');
 
-				// Filter projects
+				// Animate tab indicator
+				if (!reducedMotion && typeof gsap !== 'undefined') {
+					gsap.from(this, { scaleX: 0.9, duration: 0.25, ease: 'back.out(2)', transformOrigin: 'center' });
+				}
+
 				projects.forEach((project) => {
 					const projectCategory = project.dataset.category;
-
 					if (category === 'all' || projectCategory === category) {
 						project.style.display = '';
-						setTimeout(() => {
+						if (!reducedMotion && typeof gsap !== 'undefined') {
+							gsap.fromTo(project, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+						} else {
 							project.style.opacity = '1';
 							project.style.transform = 'translateY(0)';
-						}, 50);
+						}
 					} else {
-						project.style.opacity = '0';
-						project.style.transform = 'translateY(20px)';
-						setTimeout(() => {
-							project.style.display = 'none';
-						}, 300);
+						if (!reducedMotion && typeof gsap !== 'undefined') {
+							gsap.to(project, {
+								opacity: 0,
+								y: 10,
+								duration: 0.25,
+								ease: 'power2.in',
+								onComplete: () => { project.style.display = 'none'; },
+							});
+						} else {
+							project.style.opacity = '0';
+							setTimeout(() => { project.style.display = 'none'; }, 300);
+						}
 					}
 				});
 			});
 		});
 	}
 
-	/**
-	 * Client Logo Marquee
-	 */
+	// =========================================================
+	// CLIENT LOGO MARQUEE
+	// =========================================================
 	function initClientMarquee() {
 		const marquees = document.querySelectorAll('.g2f-clients-marquee');
-
 		marquees.forEach((marquee) => {
 			const track = marquee.querySelector('.g2f-clients-track');
-
 			if (!track) return;
-
-			// Clone items for seamless loop
 			const items = track.innerHTML;
 			track.innerHTML = items + items;
 		});
 	}
 
-	/**
-	 * Testimonial Slider
-	 */
+	// =========================================================
+	// TESTIMONIAL SLIDER
+	// =========================================================
 	function initTestimonialSlider() {
 		const sliders = document.querySelectorAll('.g2f-testimonial-slider');
 
 		sliders.forEach((slider) => {
 			const slides = slider.querySelectorAll('.g2f-testimonial');
 			const dots = slider.querySelectorAll('.g2f-testimonial-dot');
-
 			if (!slides.length) return;
 
 			let currentSlide = 0;
@@ -242,64 +582,47 @@
 				slides.forEach((slide, i) => {
 					if (i === index) {
 						slide.classList.add('is-active');
-						slide.style.opacity = '1';
+						if (!reducedMotion && typeof gsap !== 'undefined') {
+							gsap.fromTo(slide, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+						} else {
+							slide.style.opacity = '1';
+						}
 					} else {
 						slide.classList.remove('is-active');
 						slide.style.opacity = '0';
 					}
 				});
-
-				dots.forEach((dot, i) => {
-					dot.classList.toggle('active', i === index);
-				});
-
+				dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 				currentSlide = index;
 			}
 
 			function nextSlide() {
-				const next = (currentSlide + 1) % slides.length;
-				showSlide(next);
+				showSlide((currentSlide + 1) % slides.length);
 			}
 
-			// Initialize
 			showSlide(0);
 
-			// Dot click handlers
 			dots.forEach((dot, index) => {
-				dot.addEventListener('click', () => {
-					showSlide(index);
-					resetAutoplay();
-				});
+				dot.addEventListener('click', () => { showSlide(index); resetAutoplay(); });
 			});
 
-			// Autoplay
-			function startAutoplay() {
-				autoplayInterval = setInterval(nextSlide, 5000);
-			}
-
-			function resetAutoplay() {
-				clearInterval(autoplayInterval);
-				startAutoplay();
-			}
+			function startAutoplay() { autoplayInterval = setInterval(nextSlide, 5000); }
+			function resetAutoplay() { clearInterval(autoplayInterval); startAutoplay(); }
 
 			startAutoplay();
-
-			// Pause on hover
 			slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
 			slider.addEventListener('mouseleave', startAutoplay);
 		});
 	}
 
-})();
-
-	/**
-	 * Back to Top Button
-	 */
+	// =========================================================
+	// BACK TO TOP
+	// =========================================================
 	function initBackToTop() {
 		const btn = document.querySelector('.g2f-back-to-top');
 		if (!btn) return;
 
-		window.addEventListener('scroll', function() {
+		window.addEventListener('scroll', function () {
 			if (window.pageYOffset > 400) {
 				btn.classList.add('is-visible');
 			} else {
@@ -307,7 +630,9 @@
 			}
 		}, { passive: true });
 
-		btn.addEventListener('click', function() {
+		btn.addEventListener('click', function () {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		});
 	}
+
+})();

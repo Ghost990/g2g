@@ -75,11 +75,29 @@ function g2f_theme_enqueue_assets() {
 		$theme_version
 	);
 
+	// GSAP core
+	wp_enqueue_script(
+		'gsap',
+		'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',
+		array(),
+		'3.12.5',
+		true
+	);
+
+	// GSAP ScrollTrigger
+	wp_enqueue_script(
+		'gsap-scrolltrigger',
+		'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js',
+		array( 'gsap' ),
+		'3.12.5',
+		true
+	);
+
 	// Frontend scripts
 	wp_enqueue_script(
 		'g2f-theme-main',
 		get_template_directory_uri() . '/assets/js/main.js',
-		array(),
+		array( 'gsap', 'gsap-scrolltrigger' ),
 		$theme_version,
 		true
 	);

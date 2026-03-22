@@ -3793,3 +3793,164 @@ body {
 	.g2f-cover-hero__label { display: none; }
 	.g2f-cover-hero__heading { font-size: clamp(28px, 8vw, 48px); }
 }
+
+/* ============================================================
+   Micro-interactions & Animations
+   ============================================================ */
+
+/* ---- Custom Cursor ---- */
+.g2f-cursor {
+	position: fixed;
+	top: 0; left: 0;
+	pointer-events: none;
+	z-index: 9999;
+	mix-blend-mode: multiply;
+}
+.g2f-cursor__dot {
+	position: absolute;
+	width: 8px; height: 8px;
+	background: #000;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: transform 0.15s ease;
+}
+.g2f-cursor__ring {
+	position: absolute;
+	width: 36px; height: 36px;
+	border: 1.5px solid rgba(0,0,0,0.45);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: width 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+	            height 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+	            border-color 0.3s ease,
+	            background 0.3s ease;
+}
+.g2f-cursor.is-hovering .g2f-cursor__ring {
+	width: 54px; height: 54px;
+	border-color: #000;
+}
+.g2f-cursor.is-project .g2f-cursor__ring {
+	width: 72px; height: 72px;
+	background: rgba(0,0,0,0.07);
+	border-color: #000;
+}
+.g2f-cursor__label {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 8px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: 'Inter', sans-serif;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	white-space: nowrap;
+	color: #000;
+}
+.g2f-cursor.is-project .g2f-cursor__label {
+	opacity: 1;
+}
+@media (hover: none) {
+	.g2f-cursor { display: none !important; }
+}
+
+/* ---- Nav link underlines ---- */
+.g2f-header-nav .wp-block-navigation-item__content,
+.g2f-header-nav a:not(.wp-block-button__link) {
+	position: relative;
+}
+.g2f-header-nav .wp-block-navigation-item__content::after,
+.g2f-header-nav a:not(.wp-block-button__link)::after {
+	content: '';
+	position: absolute;
+	bottom: -3px; left: 0;
+	width: 100%; height: 1px;
+	background: currentColor;
+	transform: scaleX(0);
+	transform-origin: left center;
+	transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.g2f-header-nav .wp-block-navigation-item__content:hover::after,
+.g2f-header-nav a:not(.wp-block-button__link):hover::after {
+	transform: scaleX(1);
+}
+
+/* ---- Button arrow hover ---- */
+.g2f-btn-arrow,
+.g2f-btn-arrow-light {
+	cursor: pointer;
+	transition: letter-spacing 0.25s ease, color 0.25s ease,
+	            border-color 0.25s ease, background 0.25s ease,
+	            opacity 0.25s ease;
+}
+
+/* ---- Project card hover ---- */
+.g2f-project-card {
+	cursor: pointer;
+}
+.g2f-project-card .g2f-project-image,
+.g2f-project-card figure,
+.g2f-project-card .g2f-project-image-placeholder {
+	overflow: hidden;
+}
+.g2f-project-card .g2f-project-image img,
+.g2f-project-card figure img {
+	transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+	will-change: transform;
+}
+.g2f-project-card:hover .g2f-project-image img,
+.g2f-project-card:hover figure img {
+	transform: scale(1.05);
+}
+
+/* ---- GET IN TOUCH pill ---- */
+.g2f-header-cta a,
+.g2f-header-cta .wp-block-button__link {
+	transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease !important;
+	will-change: transform;
+}
+
+/* ---- Site logo hover ---- */
+.wp-block-site-logo img,
+.g2f-nav__logo img {
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.wp-block-site-logo:hover img,
+.g2f-nav__logo:hover img {
+	transform: scale(1.04);
+	opacity: 0.82;
+}
+
+/* ---- Testimonial dots ---- */
+.g2f-testimonial-dot {
+	cursor: pointer;
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+.g2f-testimonial-dot:hover {
+	transform: scale(1.35);
+}
+
+/* ---- Back to top ---- */
+.g2f-back-to-top {
+	cursor: pointer;
+	transition: transform 0.25s ease, opacity 0.3s ease;
+}
+.g2f-back-to-top:hover {
+	transform: translateY(-4px) scale(1.08);
+}
+
+/* ---- Links / interactive elements ---- */
+a, button, [role="button"],
+.g2f-project-tab, .g2f-testimonial-dot {
+	cursor: pointer;
+}
+
+/* ---- Service rows smooth transition ---- */
+.g2f-service-row {
+	will-change: transform, opacity;
+}
+
+/* ---- Hero word animation container ---- */
+.g2f-word {
+	vertical-align: bottom;
+}
