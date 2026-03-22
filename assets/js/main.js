@@ -24,7 +24,6 @@
 		initBackToTop();
 
 		if (!reducedMotion) {
-			initCustomCursor();
 			initHeroAnimations();
 			initScrollReveal();
 			initProjectCardHover();
