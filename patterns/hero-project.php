@@ -4,91 +4,128 @@
  * Slug: g2f-theme/hero-project
  * Categories: g2f-theme
  * Keywords: project, hero, breadcrumb
- * Description: Single project hero — breadcrumb + full-width featured image with title overlay
+ * Description: Single project hero — same split layout as About/Services pages
  */
 
 global $post;
 if ( ! $post ) return;
 
 $services = get_the_terms( $post->ID, 'project_service' );
-$cat_name = ( ! empty( $services ) && ! is_wp_error( $services ) ) ? $services[0]->name : '';
-$thumb_id = get_post_thumbnail_id( $post->ID );
-$thumb    = $thumb_id ? wp_get_attachment_image_url( $thumb_id, 'full' ) : '';
+$cat_name = ( ! empty( $services ) && ! is_wp_error( $services ) ) ? $services[0]->name : 'PROJECTS';
+$thumb    = get_the_post_thumbnail_url( $post->ID, 'full' );
+$bg_style = $thumb ? 'background-image:url(' . esc_url( $thumb ) . ')' : '';
 ?>
 <style>
-.g2f-project-hero {
-	position: relative;
+.g2f-hero-project-wrap {
 	margin-top: calc(-1 * var(--g2f-header-height, 60px));
 	padding-top: var(--g2f-header-height, 60px);
 	background: #fff;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 }
-.g2f-project-hero__breadcrumb {
-	padding: 24px 116px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 11px;
+.g2f-hero-project-container {
+	max-width: 100%;
+	margin: 0;
+	padding: 0 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	background: #fff;
+}
+.g2f-hero-project__label {
+	flex: 0 0 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	font-family: sans-serif;
+	font-size: 13px;
 	font-weight: 700;
-	letter-spacing: 3px;
+	letter-spacing: 5px;
 	text-transform: uppercase;
-	color: #999;
+	color: #000;
+	white-space: nowrap;
+	background: #fff;
 }
-.g2f-project-hero__breadcrumb a { color: #999; text-decoration: none; }
-.g2f-project-hero__breadcrumb a:hover { color: #000; }
-.g2f-project-hero__breadcrumb .sep { margin: 0 12px; color: #ccc; }
-.g2f-project-hero__image {
-	width: 100%;
-	height: 560px;
-	background-color: #1a1a1a;
+.g2f-hero-project__image {
+	flex: 1;
+	min-height: 420px;
+	position: relative;
+	background-color: #1c1c1c;
 	background-size: cover;
 	background-position: center;
-	position: relative;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
 }
-.g2f-project-hero__title-bar {
+.g2f-hero-project__overlay {
 	position: absolute;
-	bottom: 0; left: 0; right: 0;
-	padding: 48px 116px;
-	background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+	inset: 0;
+	background: rgba(0,0,0,0.55);
 }
-.g2f-project-hero__title {
-	font-family: 'Inter', sans-serif;
-	font-size: clamp(28px, 4vw, 52px);
-	font-weight: 300;
-	color: #fff;
-	letter-spacing: -1px;
-	line-height: 1.1;
-	margin: 0 0 8px;
+.g2f-hero-project__content {
+	position: relative;
+	z-index: 2;
+	padding: 60px;
 }
-.g2f-project-hero__type {
-	font-family: 'Roboto', sans-serif;
+.g2f-hero-project__breadcrumb {
+	font-family: sans-serif;
 	font-size: 11px;
 	font-weight: 700;
-	letter-spacing: 3px;
+	letter-spacing: 4px;
 	text-transform: uppercase;
-	color: rgba(255,255,255,0.55);
+	color: rgba(255,255,255,0.5);
+	margin: 0 0 16px;
 }
-@media (max-width: 1024px) {
-	.g2f-project-hero__breadcrumb { padding: 20px 40px; }
-	.g2f-project-hero__title-bar { padding: 36px 40px; }
+.g2f-hero-project__breadcrumb a {
+	color: rgba(255,255,255,0.5);
+	text-decoration: none;
+}
+.g2f-hero-project__breadcrumb a:hover { color: #fff; }
+.g2f-hero-project__breadcrumb .sep { margin: 0 10px; }
+.g2f-hero-project__heading {
+	font-size: clamp(28px, 4vw, 60px) !important;
+	font-weight: 300 !important;
+	line-height: 1.1 !important;
+	color: #ffffff !important;
+	margin: 0 !important;
+	letter-spacing: -1px !important;
 }
 @media (max-width: 768px) {
-	.g2f-project-hero__breadcrumb { padding: 16px 24px; }
-	.g2f-project-hero__image { height: 300px; }
-	.g2f-project-hero__title-bar { padding: 24px; }
+	.g2f-hero-project-container { padding: 0 16px; }
+	.g2f-hero-project__label { flex: 0 0 22px; font-size: 11px; }
+	.g2f-hero-project__content { padding: 40px 24px; }
+	.g2f-hero-project__image { min-height: 300px; }
+}
+.admin-bar .g2f-hero-project-wrap {
+	padding-top: calc(var(--g2f-header-height, 60px) + 32px) !important;
+	margin-top: calc(-1 * (var(--g2f-header-height, 60px) + 32px)) !important;
+}
+@media screen and (max-width: 782px) {
+	.admin-bar .g2f-hero-project-wrap {
+		padding-top: calc(var(--g2f-header-height, 60px) + 46px) !important;
+		margin-top: calc(-1 * (var(--g2f-header-height, 60px) + 46px)) !important;
+	}
 }
 </style>
-<div class="g2f-project-hero">
-	<div class="g2f-project-hero__breadcrumb">
-		<a href="/services/"><?php esc_html_e( 'SERVICES', 'g2f-theme' ); ?></a>
-		<?php if ( $cat_name ) : ?>
-			<span class="sep">/</span>
-			<span><?php echo esc_html( strtoupper( $cat_name ) ); ?></span>
-		<?php endif; ?>
-	</div>
-	<div class="g2f-project-hero__image"<?php if ( $thumb ) echo ' style="background-image:url(' . esc_url( $thumb ) . ')"'; ?>>
-		<div class="g2f-project-hero__title-bar">
-			<h1 class="g2f-project-hero__title"><?php echo esc_html( get_the_title( $post->ID ) ); ?></h1>
-			<?php if ( $cat_name ) : ?>
-				<span class="g2f-project-hero__type"><?php echo esc_html( $cat_name ); ?></span>
-			<?php endif; ?>
+<div class="g2f-hero-project-wrap">
+	<div class="g2f-hero-project-container">
+		<span class="g2f-hero-project__label"><?php echo esc_html( strtoupper( $cat_name ) ); ?></span>
+		<div class="g2f-hero-project__image"<?php if ( $bg_style ) echo ' style="' . $bg_style . '"'; ?>>
+			<div class="g2f-hero-project__overlay"></div>
+			<div class="g2f-hero-project__content">
+				<p class="g2f-hero-project__breadcrumb">
+					<a href="/services/">SERVICES</a>
+					<span class="sep">/</span>
+					<span><?php echo esc_html( strtoupper( $cat_name ) ); ?></span>
+				</p>
+				<h1 class="g2f-hero-project__heading"><?php echo esc_html( get_the_title( $post->ID ) ); ?></h1>
+			</div>
 		</div>
 	</div>
 </div>
