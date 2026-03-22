@@ -3,13 +3,8 @@
 <!-- wp:group {"tagName":"main","className":"site-main g2f-single-project","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
 <main class="wp-block-group site-main g2f-single-project" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
-	<!-- Project Hero — inline PHP via wp:html so it renders dynamically -->
-	<!-- wp:html -->
-	<?php
-	$pattern_file = get_template_directory() . '/patterns/hero-project.php';
-	if ( file_exists( $pattern_file ) ) { include $pattern_file; }
-	?>
-	<!-- /wp:html -->
+	<!-- Project Hero -->
+	<!-- wp:pattern {"slug":"g2f-theme/hero-project"} /-->
 
 	<!-- Main content + sidebar -->
 	<!-- wp:group {"tagName":"section","className":"g2f-project-body","style":{"spacing":{"padding":{"top":"80px","bottom":"80px","left":"116px","right":"116px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
