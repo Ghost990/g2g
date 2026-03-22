@@ -16,7 +16,7 @@ $thumb_id = get_post_thumbnail_id( $post->ID );
 $thumb    = $thumb_id ? wp_get_attachment_image_url( $thumb_id, 'full' ) : '';
 ?>
 <style>
-.g2f-project-hero { position: relative; width: 100vw; left: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: calc(-1 * var(--g2f-header-height, 60px)); background: #fff; }
+.g2f-project-hero { position: relative; width: 100vw !important; max-width: 100vw !important; left: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; margin-top: calc(-1 * var(--g2f-header-height, 60px)); padding-top: var(--g2f-header-height, 60px); background: #fff; box-sizing: border-box; }
 .g2f-project-hero__breadcrumb { padding: 28px 116px; font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #999; }
 .g2f-project-hero__breadcrumb a { color: #999; text-decoration: none; }
 .g2f-project-hero__breadcrumb a:hover { color: #000; }
