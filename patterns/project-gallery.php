@@ -10,16 +10,26 @@
 global $post;
 if ( ! $post ) return;
 
-// Get all images attached to this post
-$images = get_attached_media( 'image', $post->ID );
+// 1. Try gallery meta (manually curated via admin meta box)
+$gallery_ids = get_post_meta( $post->ID, '_g2f_gallery_ids', true );
+$images = array();
 
-// Fallback: use featured image if no attachments
-if ( empty( $images ) ) {
-	$thumb = get_the_post_thumbnail_url( $post->ID, 'full' );
-	if ( $thumb ) {
-		// Create fake image objects for display
-		$images = array( (object)[ 'guid' => $thumb, 'post_title' => get_the_title() ] );
+if ( ! empty( $gallery_ids ) && is_array( $gallery_ids ) ) {
+	foreach ( $gallery_ids as $img_id ) {
+		$att = get_post( $img_id );
+		if ( $att ) $images[] = $att;
 	}
+}
+
+// 2. Fallback: all attached images
+if ( empty( $images ) ) {
+	$images = array_values( get_attached_media( 'image', $post->ID ) );
+}
+
+// 3. Final fallback: featured image only
+if ( empty( $images ) ) {
+	$thumb_id = get_post_thumbnail_id( $post->ID );
+	if ( $thumb_id ) $images[] = get_post( $thumb_id );
 }
 
 if ( empty( $images ) ) return;
