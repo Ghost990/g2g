@@ -163,6 +163,10 @@ function g2f_theme_register_block_patterns() {
 		$file = get_theme_file_path( "patterns/{$slug}.php" );
 		if ( ! file_exists( $file ) ) continue;
 
+		// Save title BEFORE include — pattern files may define $args for WP_Query,
+		// which would overwrite the foreach $args variable in shared scope.
+		$pattern_title = $args['title'];
+
 		// WP 6.x auto-registers file-header patterns — unregister before re-registering
 		unregister_block_pattern( "g2f-theme/{$slug}" );
 
@@ -173,7 +177,7 @@ function g2f_theme_register_block_patterns() {
 		register_block_pattern(
 			"g2f-theme/{$slug}",
 			array(
-				'title'      => $args['title'],
+				'title'      => $pattern_title,
 				'categories' => array( 'g2f-theme' ),
 				'content'    => $content,
 			)
