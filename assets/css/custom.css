@@ -2028,6 +2028,7 @@ main .g2f-hero {
 	margin: 0;
 	overflow: hidden;
 	aspect-ratio: 4/3;
+	position: relative;
 }
 
 .g2f-project-card__image img {
@@ -2035,6 +2036,37 @@ main .g2f-hero {
 	height: 100%;
 	object-fit: cover;
 	transition: transform 0.5s ease;
+	display: block;
+}
+
+.g2f-project-card__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.42);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.35s ease;
+}
+
+.g2f-project-card:hover .g2f-project-card__overlay {
+	opacity: 1;
+}
+
+.g2f-explore-link {
+	color: #fff;
+	font-family: var(--wp--preset--font-family--inter), sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	transform: translateY(8px);
+	transition: transform 0.35s ease;
+}
+
+.g2f-project-card:hover .g2f-explore-link {
+	transform: translateY(0);
 }
 
 .g2f-project-card:hover .g2f-project-card__image img {
