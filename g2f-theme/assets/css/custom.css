@@ -957,6 +957,21 @@ body.header-is-sticky main {
 	}
 }
 
+/* Also hide vertical text at 1025-1300px — not enough padding to contain it */
+@media (min-width: 1025px) and (max-width: 1300px) {
+	.g2f-vertical-text-right {
+		display: none;
+	}
+}
+
+/* Ensure WordPress block overflow doesn't clip the about section vertical text */
+main.wp-block-group,
+.g2f-content-container,
+.g2f-about-section,
+.g2f-about-section > .wp-block-group {
+	overflow: visible !important;
+}
+
 @media (max-width: 768px) {
 	.g2f-project-grid {
 		grid-template-columns: 1fr;
@@ -1258,10 +1273,10 @@ body.header-is-sticky main {
 
 .g2f-vertical-text-right {
 	position: absolute;
-	right: -120px;
+	right: -60px;
 	top: 50%;
-	transform: translateX(100%) translateY(-50%) rotate(-180deg);
-	transform-origin: left center;
+	transform: translateY(-50%) rotate(180deg);
+	transform-origin: center center;
 	white-space: nowrap;
 	margin: 0;
 	color: var(--wp--preset--color--black);

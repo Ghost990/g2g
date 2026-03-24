@@ -40,7 +40,7 @@
 		<div class="wp-block-group g2f-testimonial">
 
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontSize":"24px","fontStyle":"normal","fontWeight":"600","lineHeight":"1"}},"textColor":"black","fontFamily":"roboto"} -->
-			<h3 class="wp-block-heading has-text-align-center has-black-color has-text-color has-roboto-font-family" style="font-size:24px;font-style:normal;font-weight:600;line-height:1">"Revitalized my work approach"</h3>
+			<h3 class="wp-block-heading has-text-align-center has-black-color has-text-color has-roboto-font-family" style="font-size:24px;font-style:normal;font-weight:600;line-height:1">"Reinvented my work approach!"</h3>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px","lineHeight":"1.5"},"spacing":{"margin":{"top":"24px","bottom":"32px"}}},"textColor":"text-muted","fontFamily":"roboto"} -->

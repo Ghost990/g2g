@@ -10,21 +10,27 @@
 // Project data array - edit this to add/modify projects
 $projects = array(
 	array(
-		'title'    => 'AsicMinerz',
-		'category' => 'ux-ui',
-		'type'     => 'Website - UX/UI',
+		'title'    => 'Edit Media',
+		'category' => 'art-direction',
+		'type'     => 'Visual identity - Branding',
 		'image'    => '', // Add image URL when available
 	),
 	array(
-		'title'    => 'Aeroprodukt',
-		'category' => 'art-direction',
-		'type'     => 'Visual identity - Branding',
+		'title'    => 'Asicminerz',
+		'category' => 'ux-ui',
+		'type'     => 'Website - UX/UI',
 		'image'    => '',
 	),
 	array(
-		'title'    => 'Project Name',
-		'category' => 'ux-ui',
-		'type'     => 'Project type',
+		'title'    => 'Graf Marketing',
+		'category' => 'art-direction',
+		'type'     => 'Brochure - Graphic Design',
+		'image'    => '',
+	),
+	array(
+		'title'    => 'Enjoyment Veszth.',
+		'category' => 'photography',
+		'type'     => 'Photography',
 		'image'    => '',
 	),
 	array(
@@ -37,12 +43,6 @@ $projects = array(
 		'title'    => 'Ipari Marketing',
 		'category' => 'ux-ui',
 		'type'     => 'Website - UX/UI',
-		'image'    => '',
-	),
-	array(
-		'title'    => 'Captured in Tones',
-		'category' => 'photography',
-		'type'     => 'Photography',
 		'image'    => '',
 	),
 );
