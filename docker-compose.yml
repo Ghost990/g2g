@@ -30,11 +30,11 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DEBUG: 1
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME', 'http://100.127.212.31:8080');
-        define('WP_SITEURL', 'http://100.127.212.31:8080');
+        define('WP_HOME', 'http://localhost:8080');
+        define('WP_SITEURL', 'http://localhost:8080');
     volumes:
       - wp_data:/var/www/html
-      - ../g2g:/var/www/html/wp-content/themes/g2g
+      - ./:/var/www/html/wp-content/themes/g2g
     depends_on:
       - db
 

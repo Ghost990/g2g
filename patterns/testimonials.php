@@ -9,8 +9,8 @@
 
 $testimonials = array(
 	array(
-		'quote'   => '"Revitalized my work approach"',
-		'body'    => 'Lorem ipsum dolor sit amet consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis.',
+		'quote'   => '"Reinvented my work approach!"',
+		'body'    => 'G2F Design completely transformed how I think about visual communication. The results were immediate and the process was seamless from start to finish.',
 		'name'    => 'Brian Clark',
 		'role'    => 'VP of Marketing at Snapchat',
 		'initials'=> 'BC',
@@ -36,7 +36,7 @@ $testimonials = array(
 
 	<div class="g2f-testimonials__header">
 		<h2 class="g2f-testimonials__title">Trusted by <strong>Teams Like Yours.</strong></h2>
-		<p class="g2f-testimonials__subtitle">Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam.</p>
+		<p class="g2f-testimonials__subtitle">Real results from real clients — see what they say about working with G2F Design.</p>
 	</div>
 
 	<div class="g2f-testimonial-carousel">
