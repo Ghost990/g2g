@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="3" fill="#000"/>
+  <!-- G letterform from the G2F logo mark, scaled to fit 24×24 centered in 32×32 -->
+  <g fill="#fff" transform="translate(4,4)">
+    <path d="M4.29126 11.9898C4.29126 16.2258 7.75374 19.6882 11.9898 19.6882H19.6882V15.1023H11.9898V10.8295H23.9795V23.9795H11.9898C5.37789 23.9795 0 18.6016 0 11.9898C0 5.37789 5.37789 0 11.9898 0H23.9795V4.27285H11.9898C7.75374 4.27285 4.29126 7.73532 4.29126 11.9713V11.9898Z"/>
+  </g>
+</svg>

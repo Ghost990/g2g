@@ -535,6 +535,220 @@ function g2f_back_to_top_button() {
 add_action( 'wp_footer', 'g2f_back_to_top_button' );
 
 /**
+ * ============================================================
+ * SEO — custom meta fields · meta box · head tags · JSON-LD
+ * ============================================================
+ */
+
+/**
+ * Register per-page SEO meta fields (page, post, project)
+ */
+function g2f_register_seo_meta_fields() {
+	$fields = array(
+		'_seo_title'       => array( 'type' => 'string',  'cb' => 'sanitize_text_field'     ),
+		'_seo_description' => array( 'type' => 'string',  'cb' => 'sanitize_textarea_field' ),
+		'_seo_og_image'    => array( 'type' => 'string',  'cb' => 'esc_url_raw'             ),
+		'_seo_noindex'     => array( 'type' => 'boolean', 'cb' => 'rest_sanitize_boolean'   ),
+	);
+	foreach ( array( 'page', 'post', 'project' ) as $pt ) {
+		foreach ( $fields as $key => $meta_args ) {
+			register_post_meta( $pt, $key, array(
+				'single'            => true,
+				'type'              => $meta_args['type'],
+				'sanitize_callback' => $meta_args['cb'],
+				'show_in_rest'      => true,
+				'default'           => $meta_args['type'] === 'boolean' ? false : '',
+			) );
+		}
+	}
+}
+add_action( 'init', 'g2f_register_seo_meta_fields' );
+
+/**
+ * Register SEO meta box on page / post / project edit screens
+ */
+function g2f_add_seo_meta_box() {
+	foreach ( array( 'page', 'post', 'project' ) as $pt ) {
+		add_meta_box( 'g2f_seo', 'SEO Settings', 'g2f_seo_meta_box_render', $pt, 'normal', 'high' );
+	}
+}
+add_action( 'add_meta_boxes', 'g2f_add_seo_meta_box' );
+
+function g2f_seo_meta_box_render( $post ) {
+	wp_nonce_field( 'g2f_seo_meta', 'g2f_seo_nonce' );
+	$title   = get_post_meta( $post->ID, '_seo_title', true );
+	$desc    = get_post_meta( $post->ID, '_seo_description', true );
+	$img     = get_post_meta( $post->ID, '_seo_og_image', true );
+	$noindex = get_post_meta( $post->ID, '_seo_noindex', true );
+	?>
+	<style>
+	.g2f-seo-fields{display:grid;gap:14px;padding:6px 0}
+	.g2f-seo-fields label{font-weight:600;font-size:12px;color:#444;display:block;margin-bottom:4px}
+	.g2f-seo-fields input[type=text],.g2f-seo-fields textarea{width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:4px;font-size:13px}
+	.g2f-seo-hint{font-size:11px;color:#888;font-weight:400}
+	.g2f-seo-ct{font-size:11px;color:#888;margin-top:3px}
+	.g2f-seo-ct.warn{color:#b45309}.g2f-seo-ct.over{color:#c33}
+	</style>
+	<div class="g2f-seo-fields">
+		<div>
+			<label>SEO Title <span class="g2f-seo-hint">(leave blank → post title)</span></label>
+			<input type="text" name="_seo_title" id="gsf_t" value="<?php echo esc_attr( $title ); ?>" maxlength="70" placeholder="<?php echo esc_attr( get_the_title( $post ) ); ?>">
+			<div class="g2f-seo-ct" id="gsf_t_ct"></div>
+		</div>
+		<div>
+			<label>Meta Description <span class="g2f-seo-hint">(150–160 chars ideal)</span></label>
+			<textarea name="_seo_description" id="gsf_d" rows="3" maxlength="320" placeholder="Page description shown in search results…"><?php echo esc_textarea( $desc ); ?></textarea>
+			<div class="g2f-seo-ct" id="gsf_d_ct"></div>
+		</div>
+		<div>
+			<label>OG Image URL <span class="g2f-seo-hint">(1200×630 px — overrides featured image for social sharing)</span></label>
+			<input type="text" name="_seo_og_image" value="<?php echo esc_attr( $img ); ?>" placeholder="https://…">
+		</div>
+		<div>
+			<label><input type="checkbox" name="_seo_noindex" value="1" <?php checked( $noindex, '1' ); ?>>
+			Noindex — hide this page from search engines</label>
+		</div>
+	</div>
+	<script>
+	(function(){
+		function watch(id,ctId,ideal){
+			var el=document.getElementById(id),ct=document.getElementById(ctId);
+			if(!el||!ct)return;
+			function up(){var n=el.value.length;ct.textContent=n+' / '+ideal+' chars';ct.className='g2f-seo-ct'+(n>ideal+5?'  over':n>ideal?' warn':'');}
+			el.addEventListener('input',up);up();
+		}
+		watch('gsf_t','gsf_t_ct',60);
+		watch('gsf_d','gsf_d_ct',155);
+	})();
+	</script>
+	<?php
+}
+
+function g2f_save_seo_meta_box( $post_id ) {
+	if ( ! isset( $_POST['g2f_seo_nonce'] ) || ! wp_verify_nonce( $_POST['g2f_seo_nonce'], 'g2f_seo_meta' ) ) return;
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+	if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+	update_post_meta( $post_id, '_seo_title',       sanitize_text_field( wp_unslash( $_POST['_seo_title'] ?? '' ) ) );
+	update_post_meta( $post_id, '_seo_description', sanitize_textarea_field( wp_unslash( $_POST['_seo_description'] ?? '' ) ) );
+	update_post_meta( $post_id, '_seo_og_image',    esc_url_raw( wp_unslash( $_POST['_seo_og_image'] ?? '' ) ) );
+	update_post_meta( $post_id, '_seo_noindex',     isset( $_POST['_seo_noindex'] ) ? '1' : '0' );
+}
+add_action( 'save_post', 'g2f_save_seo_meta_box' );
+
+/**
+ * Override <title> tag with custom SEO title when set
+ */
+function g2f_seo_document_title( $title ) {
+	if ( is_singular() ) {
+		$custom = get_post_meta( get_the_ID(), '_seo_title', true );
+		if ( $custom ) return $custom;
+	}
+	return $title;
+}
+add_filter( 'pre_get_document_title', 'g2f_seo_document_title' );
+
+/**
+ * Output SEO meta, Open Graph, Twitter Card, canonical, and JSON-LD
+ */
+function g2f_seo_head_tags() {
+	global $post, $wp;
+
+	$site_name   = get_bloginfo( 'name' );
+	$site_desc   = get_bloginfo( 'description' );
+	$default_img = get_site_url() . '/wp-content/uploads/2026/03/hero.jpg';
+
+	if ( is_singular() && $post ) {
+		$custom_title = get_post_meta( $post->ID, '_seo_title', true );
+		$custom_desc  = get_post_meta( $post->ID, '_seo_description', true );
+		$custom_img   = get_post_meta( $post->ID, '_seo_og_image', true );
+		$noindex      = get_post_meta( $post->ID, '_seo_noindex', true );
+
+		$seo_title = $custom_title ?: ( get_the_title() . ' — ' . $site_name );
+		$seo_desc  = $custom_desc  ?: wp_trim_words( get_the_excerpt() ?: wp_strip_all_tags( get_the_content() ), 25, '…' );
+		$seo_img   = $custom_img   ?: ( get_the_post_thumbnail_url( $post->ID, 'large' ) ?: $default_img );
+		$seo_url   = get_permalink();
+		$og_type   = is_singular( 'post' ) ? 'article' : 'website';
+
+	} elseif ( is_home() || is_front_page() ) {
+		$seo_title = $site_name . ( $site_desc ? ' — ' . $site_desc : '' );
+		$seo_desc  = $site_desc ?: 'Creative design studio crafting extraordinary visual experiences.';
+		$seo_img   = $default_img;
+		$seo_url   = home_url( '/' );
+		$og_type   = 'website';
+		$noindex   = false;
+
+	} else {
+		$seo_title = wp_get_document_title();
+		$seo_desc  = $site_desc;
+		$seo_img   = $default_img;
+		$seo_url   = home_url( isset( $wp->request ) ? '/' . $wp->request : '/' );
+		$og_type   = 'website';
+		$noindex   = false;
+	}
+
+	?>
+
+	<!-- G2F SEO ================================================ -->
+	<?php if ( ! empty( $noindex ) && $noindex !== '0' ) : ?>
+	<meta name="robots" content="noindex, nofollow">
+	<?php else : ?>
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+	<?php endif; ?>
+	<meta name="description" content="<?php echo esc_attr( wp_strip_all_tags( $seo_desc ) ); ?>">
+
+	<meta property="og:site_name"    content="<?php echo esc_attr( $site_name ); ?>">
+	<meta property="og:type"         content="<?php echo esc_attr( $og_type ); ?>">
+	<meta property="og:title"        content="<?php echo esc_attr( $seo_title ); ?>">
+	<meta property="og:description"  content="<?php echo esc_attr( wp_strip_all_tags( $seo_desc ) ); ?>">
+	<meta property="og:url"          content="<?php echo esc_url( $seo_url ); ?>">
+	<meta property="og:image"        content="<?php echo esc_url( $seo_img ); ?>">
+	<meta property="og:image:width"  content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:locale"       content="<?php echo esc_attr( get_locale() ); ?>">
+
+	<meta name="twitter:card"        content="summary_large_image">
+	<meta name="twitter:title"       content="<?php echo esc_attr( $seo_title ); ?>">
+	<meta name="twitter:description" content="<?php echo esc_attr( wp_strip_all_tags( $seo_desc ) ); ?>">
+	<meta name="twitter:image"       content="<?php echo esc_url( $seo_img ); ?>">
+
+	<link rel="canonical" href="<?php echo esc_url( $seo_url ); ?>">
+
+	<?php if ( is_home() || is_front_page() ) : ?>
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":<?php echo wp_json_encode( $site_name ); ?>,"url":<?php echo wp_json_encode( home_url('/') ); ?>,"description":<?php echo wp_json_encode( wp_strip_all_tags( $seo_desc ) ); ?>,"logo":<?php echo wp_json_encode( get_template_directory_uri() . '/assets/images/logo.svg' ); ?>,"image":<?php echo wp_json_encode( $seo_img ); ?>}</script>
+	<?php elseif ( is_singular( 'project' ) && $post ) : ?>
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":<?php echo wp_json_encode( get_the_title() ); ?>,"url":<?php echo wp_json_encode( get_permalink() ); ?>,"description":<?php echo wp_json_encode( wp_strip_all_tags( $seo_desc ) ); ?>,"image":<?php echo wp_json_encode( $seo_img ); ?>,"creator":{"@type":"Organization","name":<?php echo wp_json_encode( $site_name ); ?>,"url":<?php echo wp_json_encode( home_url('/') ); ?>}}</script>
+	<?php elseif ( is_singular() && $post ) : ?>
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":<?php echo wp_json_encode( get_the_title() ); ?>,"url":<?php echo wp_json_encode( get_permalink() ); ?>,"description":<?php echo wp_json_encode( wp_strip_all_tags( $seo_desc ) ); ?>,"inLanguage":<?php echo wp_json_encode( str_replace('_','-', get_locale()) ); ?>}</script>
+	<?php endif; ?>
+	<!-- /G2F SEO =============================================== -->
+
+	<?php
+}
+add_action( 'wp_head', 'g2f_seo_head_tags', 2 );
+
+/**
+ * Output SVG favicon (only when WP site icon is not set via admin)
+ */
+function g2f_favicon_links() {
+	if ( get_option( 'site_icon' ) ) return; // WP admin site icon takes precedence
+	$uri = get_template_directory_uri() . '/assets/images';
+	echo '<link rel="icon" href="' . esc_url( $uri ) . '/favicon.svg" type="image/svg+xml">' . "\n";
+}
+add_action( 'wp_head', 'g2f_favicon_links', 0 );
+
+/**
+ * Clean up unnecessary WordPress head output
+ */
+function g2f_clean_wp_head() {
+	remove_action( 'wp_head', 'rsd_link' );
+	remove_action( 'wp_head', 'wlwmanifest_link' );
+	remove_action( 'wp_head', 'wp_generator' );
+	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
+}
+add_action( 'init', 'g2f_clean_wp_head' );
+
+/**
  * Polylang: register translatable theme strings
  */
 add_action( 'pll_init', function() {
