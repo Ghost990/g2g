@@ -558,6 +558,10 @@ main .g2f-hero {
 	width: 60px;
 	min-width: 60px;
 	flex-shrink: 0;
+	align-self: stretch !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
 }
 
 /* Vertical text strip on left - positioned absolutely */
@@ -565,8 +569,8 @@ main .g2f-hero {
 .g2f-hero > .wp-block-group.g2f-vertical-text {
 	position: absolute;
 	left: 0;
-	top: 0;
-	bottom: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	width: 60px;
 	background: #fff;
 	display: flex;
@@ -774,9 +778,9 @@ main .g2f-hero {
 }
 
 /* Ensure card content is centered */
-.g2f-project-card {
-	align-items: center;
-}
+/* DISABLED: conflicts with projects-grid pattern
+.g2f-project-card { align-items: center; }
+*/
 
 .g2f-project-title {
 	font-family: var(--wp--preset--font-family--roboto);
@@ -850,10 +854,7 @@ main .g2f-hero {
 	transform: scaleX(1);
 }
 
-/* Project card filter animation */
-.g2f-project-card {
-	transition: opacity 0.3s ease, transform 0.3s ease;
-}
+/* Project card filter animation - handled by projects-grid-section override */
 
 /* ===================================
    Service Card Styles
@@ -4819,4 +4820,197 @@ a, button, [role="button"],
 		padding-left: 12px !important;
 		padding-right: 12px !important;
 	}
+}
+
+/* ==========================================================================
+   Projects Grid — Tabs / Filter
+   ========================================================================== */
+.g2f-projects-tabs {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 40px;
+	flex-wrap: wrap;
+}
+.g2f-tab {
+	padding: 8px 20px;
+	border: 1px solid #222;
+	border-radius: 100px;
+	background: transparent;
+	font-family: 'Inter', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	color: #222;
+	cursor: pointer;
+	transition: background 0.25s, color 0.25s;
+}
+.g2f-tab:hover,
+.g2f-tab.active {
+	background: #222;
+	color: #fff;
+}
+
+/* ==========================================================================
+   Projects Grid — FINAL OVERRIDE (Figma match)
+   ========================================================================== */
+section.g2f-projects-grid-section {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 80px 40px;
+}
+section.g2f-projects-grid-section .g2f-projects-heading {
+	font-family: 'Inter', sans-serif;
+	font-size: 42px;
+	font-weight: 300;
+	color: #111;
+	margin-bottom: 32px;
+	line-height: 1.2;
+	text-align: center;
+}
+section.g2f-projects-grid-section .g2f-projects-heading strong {
+	font-weight: 700;
+}
+
+/* Tabs — centered, pill style */
+section.g2f-projects-grid-section .g2f-projects-tabs {
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	margin-bottom: 48px;
+	flex-wrap: wrap;
+}
+section.g2f-projects-grid-section .g2f-tab {
+	padding: 9px 22px;
+	border: 1.5px solid #222;
+	border-radius: 100px;
+	background: transparent;
+	font-family: 'Inter', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.3px;
+	color: #222;
+	cursor: pointer;
+	transition: background 0.25s, color 0.25s;
+}
+section.g2f-projects-grid-section .g2f-tab:hover,
+section.g2f-projects-grid-section .g2f-tab.active {
+	background: #222;
+	color: #fff;
+}
+
+/* Grid — 3 columns, uniform cards */
+section.g2f-projects-grid-section .g2f-projects-grid {
+	display: grid !important;
+	grid-template-columns: repeat(3, 1fr) !important;
+	gap: 28px !important;
+}
+section.g2f-projects-grid-section .g2f-project-card {
+	display: block !important;
+	width: auto !important;
+}
+section.g2f-projects-grid-section .g2f-project-card__link {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+section.g2f-projects-grid-section .g2f-project-card__image {
+	width: 100%;
+	aspect-ratio: 386 / 316;
+	overflow: hidden;
+	position: relative;
+	border-radius: 0;
+	margin: 0;
+}
+section.g2f-projects-grid-section .g2f-project-card__image img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	display: block;
+	transition: transform 0.5s ease;
+}
+section.g2f-projects-grid-section .g2f-project-card:hover .g2f-project-card__image img {
+	transform: scale(1.04);
+}
+section.g2f-projects-grid-section .g2f-project-card__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.45);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.35s ease;
+}
+section.g2f-projects-grid-section .g2f-project-card:hover .g2f-project-card__overlay {
+	opacity: 1;
+}
+section.g2f-projects-grid-section .g2f-explore-link {
+	color: #fff;
+	font-family: 'Inter', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+section.g2f-projects-grid-section .g2f-project-card__info {
+	padding-top: 14px;
+}
+section.g2f-projects-grid-section .g2f-project-card__title {
+	font-family: 'Inter', sans-serif;
+	font-size: 17px;
+	font-weight: 500;
+	margin: 0 0 4px;
+	line-height: 1.3;
+	color: #111;
+}
+section.g2f-projects-grid-section .g2f-project-card__cat {
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: #888;
+	display: block;
+}
+section.g2f-projects-grid-section .g2f-see-more-wrap {
+	text-align: center;
+	margin-top: 48px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+	section.g2f-projects-grid-section .g2f-projects-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+}
+@media (max-width: 600px) {
+	section.g2f-projects-grid-section .g2f-projects-grid {
+		grid-template-columns: 1fr !important;
+		gap: 24px !important;
+	}
+	section.g2f-projects-grid-section {
+		padding: 48px 20px;
+	}
+	section.g2f-projects-grid-section .g2f-projects-heading {
+		font-size: 28px;
+	}
+}
+
+/* Vertical side text — centered vertically */
+.g2f-hero > .wp-block-group.g2f-vertical-text,
+.g2f-hero > .g2f-vertical-text {
+	position: absolute !important;
+	left: 0 !important;
+	top: 50% !important;
+	bottom: auto !important;
+	transform: translateY(-50%) !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	height: auto !important;
+}
+p.g2f-vertical-text {
+	writing-mode: vertical-rl !important;
+	text-orientation: mixed !important;
+	transform: rotate(180deg) !important;
 }

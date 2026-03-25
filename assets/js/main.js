@@ -699,3 +699,30 @@
 	}
 
 })();
+
+/* ==========================================================================
+   Projects Grid — Tab Filtering
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', function () {
+	const tabs = document.querySelectorAll('.g2f-tab');
+	const cards = document.querySelectorAll('.g2f-project-card');
+
+	if (!tabs.length || !cards.length) return;
+
+	tabs.forEach(function (tab) {
+		tab.addEventListener('click', function () {
+			// Toggle active
+			tabs.forEach(function (t) { t.classList.remove('active'); });
+			tab.classList.add('active');
+
+			var filter = tab.getAttribute('data-filter');
+			cards.forEach(function (card) {
+				if (filter === 'all' || card.getAttribute('data-category') === filter) {
+					card.style.display = '';
+				} else {
+					card.style.display = 'none';
+				}
+			});
+		});
+	});
+});

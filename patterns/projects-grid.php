@@ -7,14 +7,20 @@
  * Description: Filterable projects grid — WP post type "project"
  */
 
-$args = array(
+$query_args = array(
 	'post_type'      => 'project',
 	'post_status'    => 'publish',
-	'posts_per_page' => 12,
+	'posts_per_page' => 6,
 	'orderby'        => 'date',
-	'order'          => 'DESC',
+	'order'          => 'ASC',
+	'meta_query'     => array(
+		array(
+			'key'     => '_thumbnail_id',
+			'compare' => 'EXISTS',
+		),
+	),
 );
-$query = new WP_Query( $args );
+$query = new WP_Query( $query_args );
 
 // Build category map for tabs
 $all_cats = array();
@@ -32,11 +38,12 @@ if ( $query->have_posts() ) {
 			$all_cats[ $cat ] = $label;
 		}
 
+		$role = get_post_meta( $pid, '_g2f_project_role', true );
 		$projects[] = array(
 			'id'    => $pid,
 			'title' => get_the_title(),
 			'cat'   => $cat,
-			'type'  => $label,
+			'type'  => $role ? $role : $label,
 			'thumb' => get_the_post_thumbnail_url( $pid, 'large' ),
 			'url'   => get_permalink(),
 		);
@@ -47,8 +54,8 @@ if ( $query->have_posts() ) {
 // Tabs HTML
 $tabs_html = '<div class="g2f-projects-tabs">';
 $tabs_html .= '<button class="g2f-tab active" data-filter="all">All</button>';
-foreach ( $all_cats as $slug => $name ) {
-	$tabs_html .= '<button class="g2f-tab" data-filter="' . esc_attr( $slug ) . '">' . esc_html( $name ) . '</button>';
+foreach ( $all_cats as $cat_slug => $name ) {
+	$tabs_html .= '<button class="g2f-tab" data-filter="' . esc_attr( $cat_slug ) . '">' . esc_html( $name ) . '</button>';
 }
 $tabs_html .= '</div>';
 
@@ -65,9 +72,9 @@ foreach ( $projects as $p ) {
 	}
 	$cards_html .= '<div class="g2f-project-card__overlay"><span class="g2f-explore-link">Explore →</span></div>';
 	$cards_html .= '</div>';
-	$cards_html .= '<div class="g2f-project-info">';
-	$cards_html .= '<h5>' . esc_html( $p['title'] ) . '</h5>';
-	$cards_html .= '<p>' . esc_html( $p['type'] ) . '</p>';
+	$cards_html .= '<div class="g2f-project-card__info">';
+	$cards_html .= '<h5 class="g2f-project-card__title">' . esc_html( $p['title'] ) . '</h5>';
+	$cards_html .= '<span class="g2f-project-card__cat">' . esc_html( $p['type'] ) . '</span>';
 	$cards_html .= '</div>';
 	$cards_html .= '</a>';
 	$cards_html .= '</div>';
