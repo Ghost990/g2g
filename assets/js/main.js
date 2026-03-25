@@ -15,6 +15,12 @@
 	 * DOM Ready
 	 */
 	document.addEventListener('DOMContentLoaded', function () {
+		// Track first page load of this browser-tab session.
+		// sessionStorage resets when the tab is closed; persists across
+		// same-tab navigations so entrance animations play only once.
+		const isFirstVisit = !sessionStorage.getItem('g2f_entered');
+		if (isFirstVisit) sessionStorage.setItem('g2f_entered', '1');
+
 		initPageLoad();
 		initStickyHeader();
 		initMobileMenu();
@@ -25,9 +31,15 @@
 		initBackToTop();
 
 		if (!reducedMotion) {
-			initLogoAnimation();
-			initHeaderEntrance();
-			initHomeHeroEntrance();
+			// Entrance animations — first visit only (any page)
+			if (isFirstVisit) {
+				initLogoAnimation();
+				initHeaderEntrance();
+			}
+			// Hero section — homepage only, first visit only
+			if (isFirstVisit) {
+				initHomeHeroEntrance();
+			}
 			initHeroAnimations();
 			initScrollReveal();
 			initProjectCardHover();
@@ -490,9 +502,7 @@
 	// =========================================================
 	function initHeaderEntrance() {
 		if (typeof gsap === 'undefined') return;
-		if (window.innerWidth <= 768) return; // hidden on mobile, skip
-		// Only animate header on the homepage — inner pages skip this
-		if (!document.body.classList.contains('home')) return;
+		if (window.innerWidth <= 768) return; // nav/CTA hidden on mobile
 
 		const navItems = document.querySelectorAll('.g2f-header-nav .wp-block-navigation-item');
 		const cta      = document.querySelector('.g2f-header-cta');
