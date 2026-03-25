@@ -1,120 +1,140 @@
-# CLAUDE.md
+# CLAUDE.md — G2F Design Theme
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+WordPress 6.9 FSE block téma, kreatív ügynökség portfólió.
+**Live:** https://g2f.lumenpixl.com | **Local:** http://localhost:8080 (Docker)
+**Részletes AI handoff + session összefoglaló:** `SESSION-HANDOFF.md`
 
-## Theme Overview
+---
 
-G2F Design is a **WordPress Full Site Editing (FSE) block theme** for a creative agency portfolio. It uses WordPress's native block editor with pattern-based composition—no classic PHP template hierarchy.
+## Fejlesztői parancsok
 
-**Key Requirements:** WordPress 6.4+, PHP 8.0+
+Build system nincs — közvetlen fájlszerkesztés.
 
-## Development Commands
+```bash
+# Docker indítás
+docker compose up -d
 
-**No build system required.** All CSS and JavaScript are written directly without transpilation.
+# WP-CLI a containerben
+docker exec g2g-wordpress-1 wp [parancs] --path=/var/www/html --allow-root
 
-- **Edit styles:** `assets/css/custom.css`
-- **Edit scripts:** `assets/js/main.js`
-- **Edit design tokens:** `theme.json`
-- **Clear cache:** Changes to PHP files (functions.php, patterns/) require browser refresh; asset changes use version-based cache busting via theme version in style.css
-
-## Architecture
-
-### File Structure
-```
-├── functions.php          # Theme hooks, asset loading, custom features
-├── theme.json             # Design system (colors, typography, spacing, layout)
-├── assets/
-│   ├── css/custom.css     # Main stylesheet (1100+ lines)
-│   ├── js/main.js         # Vanilla JS interactivity (IIFE pattern)
-│   └── fonts/             # Self-hosted Roboto & Inter (woff2)
-├── templates/             # Block templates (HTML with block markup)
-├── patterns/              # Reusable block patterns (PHP with HTML)
-└── parts/                 # Template parts (header.html, footer.html)
+# Téma fájlok live mount-olva: ./ → /var/www/html/wp-content/themes/g2g/
 ```
 
-### Design System (theme.json)
+---
+
+## Architektúra
+
+| Réteg | Hol van |
+|-------|---------|
+| Stílusok | `assets/css/custom.css` (minden itt, nincs build) |
+| Animációk | `assets/js/main.js` + GSAP 3.12.5 CDN |
+| Design tokenek | `theme.json` |
+| Patterns | `patterns/*.php` — `register_block_pattern()`-rel regisztrálva |
+| Template parts | `parts/header.html`, `parts/footer.html` |
+| Oldalak | `templates/*.html` |
+
+**Custom Post Type:** `project` (portfólió munkák, functions.php-ban regisztrálva)
+**Téma slug:** `g2g` | **Text domain:** `g2f-theme`
+
+---
+
+## WP 6.9 — KRITIKUS: block validáció
+
+WP 6.9 a block editor JS-ben validálja a mentett HTML-t. Ha a layout osztályok hiányoznak → **"Block contains unexpected content"** hiba a Site Editorban.
+
+**Minden `wp-block-group` `<div>`-nek kötelező layout osztály:**
+
+```html
+<!-- flex -->
+<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center">
+
+<!-- constrained -->
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+
+<!-- flow (default) -->
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+```
+
+A JSON attribútumban lévő `layout.type` értéknek pontosan meg kell egyeznie az osztályokkal.
+
+---
+
+## Header navigation
+
+A header `wp:navigation {"ref":132}` — ez egy konkrét `wp_navigation` post a DB-ben (ID: 132).
+
+Ha DB reset vagy új szerver → újra kell létrehozni:
+```bash
+docker exec g2g-wordpress-1 wp eval '
+wp_update_post(["ID"=>132,"post_status"=>"publish","post_type"=>"wp_navigation",
+"post_content"=>"<!-- wp:navigation-link {\"label\":\"HOME\",\"url\":\"/\",\"kind\":\"custom\",\"isTopLevelLink\":true} /--><!-- wp:navigation-link {\"label\":\"ABOUT US\",\"url\":\"/about/\",\"kind\":\"custom\",\"isTopLevelLink\":true} /--><!-- wp:navigation-link {\"label\":\"SERVICES\",\"url\":\"/services/\",\"kind\":\"custom\",\"isTopLevelLink\":true} /--><!-- wp:navigation-link {\"label\":\"GALLERY\",\"url\":\"/gallery/\",\"kind\":\"custom\",\"isTopLevelLink\":true} /--><!-- wp:navigation-link {\"label\":\"CONTACT\",\"url\":\"/contact/\",\"kind\":\"custom\",\"isTopLevelLink\":true} /-->"
+]);
+' --path=/var/www/html --allow-root
+```
+
+**FONTOS:** `wp post create --post_content='<!-- wp:... -->'` escapeli a `<!--`-t `<\!--`-ra → üres tartalom! Mindig `wp eval` + `wp_update_post()` PHP-val.
+
+---
+
+## Button arrow (nyíl ikonok)
+
+Nincs SVG a DOM-ban — `::after` pseudo-element, SVG data URI-val (custom.css):
+- `.g2f-button-arrow` → fekete nyíl, hover fehér
+- `.g2f-button-arrow-light` → fehér nyíl, hover fekete
+
+**Soha ne adj hozzá `wp:html` SVG blokkot** a gomb pattern-ekhez — az mindig raw kódként jelenik meg a Site Editorban.
+
+---
+
+## GSAP animációk (main.js)
+
+Minden entrance animáció minden oldalbetöltésnél fut (nincs sessionStorage gate — WP full page reload, nem SPA).
+
+| Függvény | Mit animál |
+|----------|-----------|
+| `initLogoAnimation()` | SVG logo — blur → betűk → dekor elemek → kis szöveg |
+| `initHeaderEntrance()` | Nav itemek + CTA stagger felülről (desktop only, >768px) |
+| `initHomeHeroEntrance()` | Hero strip / eyebrow / separator / leírás (csak homepage) |
+| `initHeroAnimations()` | H1 szavak word-split reveal (minden oldal) |
+| `initScrollReveal()` | Scroll-triggered reveals (ScrollTrigger, `start: 'top bottom'`) |
+
+**Logo SVG path indexek — ha az SVG változik, ezeket frissíteni kell:**
+- `paths[0–19]` = "CREATIVE STUDIO" kis karakterek
+- `paths[20–22]` = G, 2, F fő betűformák
+- `paths[23+]` = dekoratív elemek
+
+---
+
+## Hero layout (főoldal)
+
+```
+[60px strip] [cover image — flex:1] [60px strip]
+```
+
+Kritikus CSS — ha ezek hiányoznak, sötét csíkok jelennek meg a kép oldalain:
+```css
+.g2f-hero .g2f-hero-wrapper { gap: 0 !important; }
+.g2f-hero .wp-block-cover { flex: 1; padding: 0 !important; }
+.g2f-hero .wp-block-cover__image-background { left: 0 !important; width: 100% !important; }
+```
+
+---
+
+## Design rendszer
 
 - **Layout:** contentSize 1218px, wideSize 1920px
-- **Colors:** 10-color monochromatic palette (black/white dominant)
-- **Typography:** Roboto (body), Inter (headings), 9 font sizes (14px–100px)
-- **Spacing:** 8 sizes (8px–100px), sectionPadding: 100px
+- **Breakpointok:** 1440px / 1024px / 768px / 480px
+- **Fontok:** Inter (folyószöveg), Roboto (heading)
+- **CSS prefix:** `--g2f-*` változók, `.g2f-*` komponens classok
+- **`useRootPaddingAwareAlignments: false`** a theme.json-ban — ne változtasd, ettől működik a full-width hero breakout
 
-### CSS Architecture
+---
 
-Custom properties prefix: `--g2f-*`
-Component prefix: `.g2f-*`
+## Deployment
 
-Key breakpoints in custom.css:
-- 1440px: Desktop adjustments
-- 1024px: Tablet (2-column grids)
-- 768px: Mobile (1-column, reduced padding)
-- 480px: Small mobile (font size reduction)
+Részletes leírás: `SETUP.md` — 3 opció (rsync, full DB migráció, All-in-One WP Migration plugin).
 
-### JavaScript Features (main.js)
-
-Vanilla JS using Intersection Observer API:
-- Scroll-triggered animations (`.g2f-fade-in`, `.g2f-slide-left`, `.g2f-slide-right` → `.is-visible`)
-- Sticky header (`.is-sticky` class when scroll > 100px)
-- Project filter tabs (data-category filtering)
-- Testimonial slider with autoplay
-- Client logo marquee animation
-
-### Block Patterns
-
-Patterns compose the front page (`front-page.html`):
-1. `hero-section.php` – Full-width cover with overlay
-2. `about-section.php` – Column layout with vertical text
-3. `services-section.php` – Zig-zag 3-service layout
-4. `portfolio-text.php` – Split text/CTA layout
-5. `projects-grid.php` – Filterable 3-column project grid
-6. `testimonials.php` – Slider with dot navigation
-7. `clients-section.php` – Logo marquee
-
-### Custom Image Sizes
-
-Registered in functions.php:
-- `g2f-hero`: 1688×868
-- `g2f-service`: 609×500
-- `g2f-about`: 490×601
-- `g2f-project`: 386×316
-- `g2f-avatar`: 64×64
-
-### Custom Block Styles
-
-Registered styles (usable in block editor):
-- Buttons: `g2f-outline`, `g2f-solid`
-- Images: `g2f-rounded`
-- Groups: `g2f-section`, `g2f-card`
-
-## Key Files Reference
-
-| File | Purpose |
-|------|---------|
-| `functions.php:16-61` | Theme setup, menus, supports |
-| `functions.php:66-95` | Asset enqueuing with cache busting |
-| `functions.php:130-174` | Custom block style registration |
-| `theme.json` | All design tokens and block settings |
-| `custom.css:1-50` | CSS custom properties |
-| `main.js:1-30` | Scroll animation setup |
-| `main.js:90-140` | Project filter functionality |
-
-## Naming Conventions
-
-- **PHP functions:** `g2f_theme_*` prefix
-- **CSS classes:** `.g2f-*` for custom components
-- **CSS properties:** `--g2f-*` for custom properties
-- **Text domain:** `g2f-theme` (all strings use `__()` or `_e()`)
-
-## Navigation Menus
-
-Three registered menus:
-- `primary` – Main header navigation
-- `footer` – Footer links
-- `social` – Social media icons
-
-## Performance Notes
-
-- Emoji scripts disabled (see `g2f_theme_disable_emojis`)
-- Self-hosted fonts eliminate Google Fonts blocking requests
-- JS uses passive event listeners and Intersection Observer
-- No jQuery dependency
+```bash
+# Gyors téma-only deploy SSH-val:
+rsync -avz --exclude='.git' /Users/nagyz/Private/DEV/gg2/ user@g2f.lumenpixl.com:/path/to/themes/g2g/
+```
