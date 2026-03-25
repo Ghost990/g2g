@@ -25,6 +25,7 @@
 		initBackToTop();
 
 		if (!reducedMotion) {
+			initLogoAnimation();
 			initHeroAnimations();
 			initScrollReveal();
 			initProjectCardHover();
@@ -399,6 +400,29 @@
 				gsap.to(btn, { letterSpacing: '0em', duration: 0.2, ease: 'power2.in' });
 			});
 		});
+	}
+
+	// =========================================================
+	// LOGO DRAW-ON ANIMATION
+	// =========================================================
+	function initLogoAnimation() {
+		if (typeof gsap === 'undefined') return;
+
+		const logoSvg = document.querySelector('.g2f-logo-link svg');
+		if (!logoSvg) return;
+
+		// Left-to-right wipe reveals the logo like a pen drawing it
+		gsap.fromTo(
+			logoSvg,
+			{ clipPath: 'inset(0 100% 0 0)' },
+			{
+				clipPath: 'inset(0 0% 0 0)',
+				duration: 1.2,
+				ease: 'power2.inOut',
+				delay: 0.25,
+				clearProps: 'clipPath',
+			}
+		);
 	}
 
 	// =========================================================
