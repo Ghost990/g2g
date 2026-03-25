@@ -184,7 +184,10 @@
 
 		gsap.registerPlugin(ScrollTrigger);
 
-		const triggerPoint = 'top 88%';
+		// 'top bottom' = fire as soon as element top enters the viewport bottom edge.
+		// This prevents GSAP's initial `from` state (opacity:0) from making
+		// elements permanently invisible when they are already in / near the viewport.
+		const triggerPoint = 'top bottom';
 
 		// About section columns
 		const aboutImageCol = document.querySelector('.g2f-about-image-col, .g2f-about-inner .g2f-about-image-col');
