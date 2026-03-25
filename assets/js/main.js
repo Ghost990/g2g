@@ -403,7 +403,7 @@
 	}
 
 	// =========================================================
-	// LOGO DRAW-ON ANIMATION
+	// LOGO ANIMATION — multi-phase GSAP timeline
 	// =========================================================
 	function initLogoAnimation() {
 		if (typeof gsap === 'undefined') return;
@@ -411,17 +411,69 @@
 		const logoSvg = document.querySelector('.g2f-logo-link svg');
 		if (!logoSvg) return;
 
-		// Left-to-right wipe reveals the logo like a pen drawing it
-		gsap.fromTo(
+		const paths = Array.from(logoSvg.querySelectorAll('path'));
+		if (paths.length < 25) return;
+
+		// Path groups (identified by SVG structure):
+		// [0-19]  CREATIVE STUDIO small text chars
+		// [20-22] G, 2, F main letterforms
+		// [23-29] decorative accent / overlap marks
+		const smallText  = paths.slice(0, 20);
+		const bigLetters = paths.slice(20, 23);
+		const marks      = paths.slice(23);
+
+		// ── Pre-set initial hidden state immediately — no flash ──
+		gsap.set(logoSvg,    { filter: 'blur(10px)' });
+		gsap.set(bigLetters, { opacity: 0, y: -18, scale: 0.75, transformOrigin: '50% 50%' });
+		gsap.set(marks,      { opacity: 0, scale: 0.05, transformOrigin: '50% 50%' });
+		gsap.set(smallText,  { opacity: 0, y: 9 });
+
+		const tl = gsap.timeline({
+			delay: 0.25,
+			onComplete: () => gsap.set(logoSvg, { clearProps: 'filter' }),
+		});
+
+		// ── Phase 1: SVG blooms out of blur while letters arrive ──
+		tl.to(logoSvg, {
+			filter: 'blur(0px)',
+			duration: 0.85,
+			ease: 'power3.out',
+		}, 0);
+
+		// ── Phase 2: G, 2, F drop in with weighted snap ──────────
+		tl.to(bigLetters, {
+			opacity: 1,
+			y: 0,
+			scale: 1,
+			duration: 0.68,
+			ease: 'back.out(1.7)',
+			stagger: 0.09,
+		}, 0.06);
+
+		// ── Phase 3: Accent marks pop in from random order ───────
+		tl.to(marks, {
+			opacity: 1,
+			scale: 1,
+			duration: 0.5,
+			ease: 'elastic.out(1, 0.5)',
+			stagger: { each: 0.055, from: 'random' },
+		}, '-=0.4');
+
+		// ── Phase 4: Small text ripples up left→right ────────────
+		tl.to(smallText, {
+			opacity: 1,
+			y: 0,
+			duration: 0.28,
+			ease: 'power3.out',
+			stagger: { each: 0.022, from: 'start' },
+		}, '-=0.32');
+
+		// ── Phase 5: Whole logo settles with elastic micro-bounce ─
+		tl.fromTo(
 			logoSvg,
-			{ clipPath: 'inset(0 100% 0 0)' },
-			{
-				clipPath: 'inset(0 0% 0 0)',
-				duration: 1.2,
-				ease: 'power2.inOut',
-				delay: 0.25,
-				clearProps: 'clipPath',
-			}
+			{ scale: 1.03, transformOrigin: 'left center' },
+			{ scale: 1, duration: 0.55, ease: 'elastic.out(1, 0.4)', clearProps: 'scale,transform' },
+			'-=0.1'
 		);
 	}
 
