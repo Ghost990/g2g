@@ -26,6 +26,8 @@
 
 		if (!reducedMotion) {
 			initLogoAnimation();
+			initHeaderEntrance();
+			initHomeHeroEntrance();
 			initHeroAnimations();
 			initScrollReveal();
 			initProjectCardHover();
@@ -131,13 +133,16 @@
 
 			const wordInners = heading.querySelectorAll('.g2f-word-inner');
 
+			// On the homepage the eyebrow runs first; inner pages keep a snappy delay
+			const headingDelay = document.querySelector('.g2f-hero .g2f-hero-cover') ? 0.65 : 0.15;
+
 			gsap.from(wordInners, {
 				y: '105%',
 				opacity: 0,
 				duration: 0.85,
 				ease: 'power3.out',
 				stagger: 0.07,
-				delay: 0.15,
+				delay: headingDelay,
 			});
 		});
 
@@ -475,6 +480,100 @@
 			{ scale: 1, duration: 0.55, ease: 'elastic.out(1, 0.4)', clearProps: 'scale,transform' },
 			'-=0.1'
 		);
+	}
+
+	// =========================================================
+	// HEADER ENTRANCE — nav items + CTA stagger in from above
+	// =========================================================
+	function initHeaderEntrance() {
+		if (typeof gsap === 'undefined') return;
+		if (window.innerWidth <= 768) return; // hidden on mobile, skip
+
+		const navItems = document.querySelectorAll('.g2f-header-nav .wp-block-navigation-item');
+		const cta      = document.querySelector('.g2f-header-cta');
+		if (!navItems.length) return;
+
+		const tl = gsap.timeline({ delay: 0.65 });
+
+		// Nav links drop in, one by one
+		tl.from(navItems, {
+			opacity: 0,
+			y: -12,
+			duration: 0.45,
+			ease: 'power3.out',
+			stagger: 0.07,
+		});
+
+		// CTA pill arrives after the last nav link
+		if (cta) {
+			tl.from(cta, {
+				opacity: 0,
+				y: -12,
+				x: 10,
+				duration: 0.45,
+				ease: 'back.out(1.5)',
+			}, '-=0.12');
+		}
+	}
+
+	// =========================================================
+	// HOME HERO ENTRANCE — timeline for all hero elements
+	// =========================================================
+	function initHomeHeroEntrance() {
+		if (typeof gsap === 'undefined') return;
+
+		const heroCover = document.querySelector('.g2f-hero .g2f-hero-cover');
+		if (!heroCover) return; // only runs on homepage
+
+		const verticalStrip = document.querySelector('.g2f-hero .g2f-vertical-text-strip');
+		const allParas       = heroCover.querySelectorAll('.wp-block-cover__inner-container p');
+		const eyebrow        = allParas[0] || null;
+		const description    = allParas.length > 1 ? allParas[allParas.length - 1] : null;
+		const separator      = heroCover.querySelector('.g2f-hero-separator, .wp-block-separator');
+
+		const tl = gsap.timeline({ delay: 0.35 });
+
+		// Left vertical text strip slides in from left edge
+		if (verticalStrip) {
+			tl.from(verticalStrip, {
+				x: -56,
+				opacity: 0,
+				duration: 0.8,
+				ease: 'power3.out',
+				clearProps: 'transform,opacity',
+			}, 0);
+		}
+
+		// ©2025 eyebrow floats up
+		if (eyebrow) {
+			tl.from(eyebrow, {
+				opacity: 0,
+				y: 14,
+				duration: 0.55,
+				ease: 'power3.out',
+			}, 0.18);
+		}
+
+		// Separator line draws from left
+		if (separator) {
+			tl.from(separator, {
+				scaleX: 0,
+				transformOrigin: 'left center',
+				duration: 0.7,
+				ease: 'power3.inOut',
+				clearProps: 'transform,transformOrigin',
+			}, 0.88);
+		}
+
+		// Description paragraph fades up last
+		if (description) {
+			tl.from(description, {
+				opacity: 0,
+				y: 14,
+				duration: 0.55,
+				ease: 'power3.out',
+			}, 1.0);
+		}
 	}
 
 	// =========================================================
