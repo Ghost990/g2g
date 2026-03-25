@@ -1,0 +1,43 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:latest
+    restart: unless-stopped
+    entrypoint: >
+      bash -c "
+        if [ ! -f /usr/local/bin/wp ]; then
+          curl -sO https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar &&
+          chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp;
+        fi &&
+        exec docker-entrypoint.sh apache2-foreground
+      "
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://100.127.212.31:8080');
+        define('WP_SITEURL', 'http://100.127.212.31:8080');
+    volumes:
+      - wp_data:/var/www/html
+      - ../g2g:/var/www/html/wp-content/themes/g2g
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+  wp_data:
