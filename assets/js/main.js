@@ -491,6 +491,8 @@
 	function initHeaderEntrance() {
 		if (typeof gsap === 'undefined') return;
 		if (window.innerWidth <= 768) return; // hidden on mobile, skip
+		// Only animate header on the homepage — inner pages skip this
+		if (!document.body.classList.contains('home')) return;
 
 		const navItems = document.querySelectorAll('.g2f-header-nav .wp-block-navigation-item');
 		const cta      = document.querySelector('.g2f-header-cta');

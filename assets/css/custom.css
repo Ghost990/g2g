@@ -562,6 +562,23 @@ main .g2f-hero {
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
+	/* Centering anchor for the absolutely positioned paragraph */
+	position: relative !important;
+	overflow: hidden;
+}
+
+/* Center the vertical text paragraph perfectly within the strip.
+   Using absolute positioning because WP's generated flex wrappers
+   don't reliably fill 100% height of the stretched parent. */
+.g2f-vertical-text-strip p.g2f-vertical-text,
+.g2f-vertical-text-strip .g2f-vertical-text {
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translateX(-50%) translateY(-50%) rotate(180deg) !important;
+	margin: 0 !important;
+	writing-mode: vertical-rl !important;
+	white-space: nowrap !important;
 }
 
 /* Vertical text strip on left - positioned absolutely */
