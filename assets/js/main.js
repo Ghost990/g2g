@@ -15,12 +15,6 @@
 	 * DOM Ready
 	 */
 	document.addEventListener('DOMContentLoaded', function () {
-		// Track first page load of this browser-tab session.
-		// sessionStorage resets when the tab is closed; persists across
-		// same-tab navigations so entrance animations play only once.
-		const isFirstVisit = !sessionStorage.getItem('g2f_entered');
-		if (isFirstVisit) sessionStorage.setItem('g2f_entered', '1');
-
 		initPageLoad();
 		initStickyHeader();
 		initMobileMenu();
@@ -31,15 +25,11 @@
 		initBackToTop();
 
 		if (!reducedMotion) {
-			// Entrance animations — first visit only (any page)
-			if (isFirstVisit) {
-				initLogoAnimation();
-				initHeaderEntrance();
-			}
-			// Hero section — homepage only, first visit only
-			if (isFirstVisit) {
-				initHomeHeroEntrance();
-			}
+			// Entrance animations — run on every page load
+			// (WordPress does full page reloads between pages, so this is safe)
+			initLogoAnimation();
+			initHeaderEntrance();
+			initHomeHeroEntrance();
 			initHeroAnimations();
 			initScrollReveal();
 			initProjectCardHover();

@@ -9,14 +9,14 @@
 ?>
 
 <!-- wp:group {"tagName":"section","anchor":"home","className":"g2f-hero","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<section id="home" class="wp-block-group g2f-hero" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
+<section id="home" class="wp-block-group g2f-hero is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
 
 	<!-- wp:group {"className":"g2f-hero-wrapper","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-	<div class="wp-block-group g2f-hero-wrapper" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+	<div class="wp-block-group g2f-hero-wrapper is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-left" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
 		<!-- LEFT STRIP -->
 		<!-- wp:group {"className":"g2f-vertical-text-strip","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+		<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background is-layout-flex wp-block-group-is-layout-flex is-vertical is-content-justification-center" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 			<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
 			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">WELCOME TO G2F DESIGN</p>
 			<!-- /wp:paragraph -->
@@ -31,10 +31,10 @@
 			<div class="wp-block-cover__inner-container">
 
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"250px","bottom":"100px","left":"80px","right":"80px"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->
-				<div class="wp-block-group" style="padding-top:250px;padding-bottom:100px;padding-left:80px;padding-right:80px">
+				<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:250px;padding-bottom:100px;padding-left:80px;padding-right:80px">
 
 					<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-					<div class="wp-block-group">
+					<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex is-vertical">
 
 						<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px","lineHeight":"1.375"}},"textColor":"white","fontFamily":"inter"} -->
 						<p class="has-white-color has-text-color has-inter-font-family" style="font-size:16px;line-height:1.375">©2025</p>
@@ -64,7 +64,7 @@
 
 		<!-- RIGHT STRIP -->
 		<!-- wp:group {"className":"g2f-vertical-text-strip g2f-vertical-text-strip--right","backgroundColor":"white","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-vertical-text-strip g2f-vertical-text-strip--right has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+		<div class="wp-block-group g2f-vertical-text-strip g2f-vertical-text-strip--right has-white-background-color has-background is-layout-flex wp-block-group-is-layout-flex is-vertical is-content-justification-center" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		</div>
 		<!-- /wp:group -->
 

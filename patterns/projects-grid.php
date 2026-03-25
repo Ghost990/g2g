@@ -81,16 +81,17 @@ foreach ( $projects as $p ) {
 }
 $cards_html .= '</div>';
 ?>
+<!-- wp:heading {"level":2,"className":"g2f-projects-heading","textAlign":"left"} -->
+<h2 class="wp-block-heading g2f-projects-heading"><strong>Explore</strong> Our Latest Projects.</h2>
+<!-- /wp:heading -->
 
+<!-- wp:html -->
 <section id="gallery" class="g2f-projects-grid-section">
-
-	<h2 class="g2f-projects-heading"><strong>Explore</strong> Our Latest Projects.</h2>
-
 	<?php echo $tabs_html; ?>
 	<?php echo $cards_html; ?>
 
 	<div class="g2f-see-more-wrap">
 		<a href="/gallery/" class="g2f-btn-arrow">SEE MORE WORK →</a>
 	</div>
-
 </section>
+<!-- /wp:html -->

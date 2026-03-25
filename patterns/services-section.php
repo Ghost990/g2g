@@ -12,7 +12,7 @@
      SERVICES WRAPPER
      ============================================================ -->
 <!-- wp:group {"tagName":"section","anchor":"services","className":"g2f-services-rows","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
-<section id="services" class="wp-block-group g2f-services-rows has-white-background-color has-background" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
+<section id="services" class="wp-block-group g2f-services-rows has-white-background-color has-background is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
 
 <div class="g2f-services-header">
 	<h2 class="g2f-services-title">Services <strong>Tailored For Your</strong> Business.</h2>
@@ -24,11 +24,11 @@
      ROW 1: Product Design — Image LEFT, Content RIGHT
      ============================================================ -->
 <!-- wp:group {"className":"g2f-service-row g2f-service-row--img-left","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group g2f-service-row g2f-service-row--img-left" style="margin-top:0;margin-bottom:0">
+<div class="wp-block-group g2f-service-row g2f-service-row--img-left is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-left" style="margin-top:0;margin-bottom:0">
 
 	<!-- Image — bleeds left edge -->
 	<!-- wp:group {"className":"g2f-service-row__image","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
-	<div class="wp-block-group g2f-service-row__image" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+	<div class="wp-block-group g2f-service-row__image is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
 			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-ux.jpg" alt="Product Design" />
@@ -39,7 +39,7 @@
 
 	<!-- Content — right side with padding -->
 	<!-- wp:group {"className":"g2f-service-row__content","style":{"spacing":{"padding":{"top":"60px","bottom":"60px","left":"60px","right":"60px"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-	<div class="wp-block-group g2f-service-row__content" style="padding-top:60px;padding-bottom:60px;padding-left:60px;padding-right:60px">
+	<div class="wp-block-group g2f-service-row__content is-layout-flex wp-block-group-is-layout-flex is-vertical is-content-justification-center" style="padding-top:60px;padding-bottom:60px;padding-left:60px;padding-right:60px">
 
 		<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"clamp(28px,3.5vw,44px)","fontWeight":"400","lineHeight":"1.1","letterSpacing":"-1px"}},"textColor":"black","fontFamily":"inter"} -->
 		<h2 class="wp-block-heading has-black-color has-text-color has-inter-font-family" style="font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-1px;line-height:1.1">Product Design</h2>
@@ -54,13 +54,10 @@
 		<!-- /wp:paragraph -->
 
 		<!-- wp:group {"className":"g2f-button-arrow g2f-button-arrow--sm","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"blockGap":"10px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-		<div class="wp-block-group g2f-button-arrow g2f-button-arrow--sm has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:10px;padding-right:20px;padding-bottom:10px;padding-left:20px">
+		<div class="wp-block-group g2f-button-arrow g2f-button-arrow--sm has-border-color has-black-border-color is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:10px;padding-right:20px;padding-bottom:10px;padding-left:20px">
 			<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2","fontSize":"13px"}},"fontFamily":"inter"} -->
 			<p class="has-inter-font-family" style="font-style:normal;font-weight:600;line-height:1.2;font-size:13px"><a href="/services/ux-design/">EXPLORE</a></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:html -->
-				<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				<!-- /wp:html -->
 		</div>
 		<!-- /wp:group -->
 
@@ -75,11 +72,11 @@
      ROW 2: Art Direction — Content LEFT, Image RIGHT
      ============================================================ -->
 <!-- wp:group {"className":"g2f-service-row g2f-service-row--img-right","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group g2f-service-row g2f-service-row--img-right" style="margin-top:0;margin-bottom:0">
+<div class="wp-block-group g2f-service-row g2f-service-row--img-right is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-left" style="margin-top:0;margin-bottom:0">
 
 	<!-- Content — left side with padding -->
 	<!-- wp:group {"className":"g2f-service-row__content","style":{"spacing":{"padding":{"top":"60px","bottom":"60px","left":"60px","right":"60px"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-	<div class="wp-block-group g2f-service-row__content" style="padding-top:60px;padding-bottom:60px;padding-left:60px;padding-right:60px">
+	<div class="wp-block-group g2f-service-row__content is-layout-flex wp-block-group-is-layout-flex is-vertical is-content-justification-center" style="padding-top:60px;padding-bottom:60px;padding-left:60px;padding-right:60px">
 
 		<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"clamp(28px,3.5vw,44px)","fontWeight":"400","lineHeight":"1.1","letterSpacing":"-1px"}},"textColor":"black","fontFamily":"inter"} -->
 		<h2 class="wp-block-heading has-black-color has-text-color has-inter-font-family" style="font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-1px;line-height:1.1">Art Direction</h2>
@@ -94,13 +91,10 @@
 		<!-- /wp:paragraph -->
 
 		<!-- wp:group {"className":"g2f-button-arrow g2f-button-arrow--sm","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"blockGap":"10px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-		<div class="wp-block-group g2f-button-arrow g2f-button-arrow--sm has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:10px;padding-right:20px;padding-bottom:10px;padding-left:20px">
+		<div class="wp-block-group g2f-button-arrow g2f-button-arrow--sm has-border-color has-black-border-color is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:10px;padding-right:20px;padding-bottom:10px;padding-left:20px">
 			<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2","fontSize":"13px"}},"fontFamily":"inter"} -->
 			<p class="has-inter-font-family" style="font-style:normal;font-weight:600;line-height:1.2;font-size:13px"><a href="/services/art-direction/">EXPLORE</a></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:html -->
-				<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				<!-- /wp:html -->
 		</div>
 		<!-- /wp:group -->
 
@@ -109,7 +103,7 @@
 
 	<!-- Image — bleeds right edge -->
 	<!-- wp:group {"className":"g2f-service-row__image","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
-	<div class="wp-block-group g2f-service-row__image" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+	<div class="wp-block-group g2f-service-row__image is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
 			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-art.jpg" alt="Art Direction" />
@@ -126,11 +120,11 @@
      ROW 3: Photography — Image LEFT, Content RIGHT
      ============================================================ -->
 <!-- wp:group {"className":"g2f-service-row g2f-service-row--img-left","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group g2f-service-row g2f-service-row--img-left" style="margin-top:0;margin-bottom:0">
+<div class="wp-block-group g2f-service-row g2f-service-row--img-left is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-left" style="margin-top:0;margin-bottom:0">
 
 	<!-- Image — bleeds left edge -->
 	<!-- wp:group {"className":"g2f-service-row__image","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
-	<div class="wp-block-group g2f-service-row__image" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+	<div class="wp-block-group g2f-service-row__image is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
 			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-photo.jpg" alt="Photography" />
@@ -141,7 +135,7 @@
 
 	<!-- Content — right side with padding -->
 	<!-- wp:group {"className":"g2f-service-row__content","style":{"spacing":{"padding":{"top":"60px","bottom":"60px","left":"60px","right":"60px"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-	<div class="wp-block-group g2f-service-row__content" style="padding-top:60px;padding-bottom:60px;padding-left:60px;padding-right:60px">
+	<div class="wp-block-group g2f-service-row__content is-layout-flex wp-block-group-is-layout-flex is-vertical is-content-justification-center" style="padding-top:60px;padding-bottom:60px;padding-left:60px;padding-right:60px">
 
 		<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"clamp(28px,3.5vw,44px)","fontWeight":"400","lineHeight":"1.1","letterSpacing":"-1px"}},"textColor":"black","fontFamily":"inter"} -->
 		<h2 class="wp-block-heading has-black-color has-text-color has-inter-font-family" style="font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-1px;line-height:1.1">Photography</h2>
@@ -156,13 +150,10 @@
 		<!-- /wp:paragraph -->
 
 		<!-- wp:group {"className":"g2f-button-arrow g2f-button-arrow--sm","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"blockGap":"10px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-		<div class="wp-block-group g2f-button-arrow g2f-button-arrow--sm has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:10px;padding-right:20px;padding-bottom:10px;padding-left:20px">
+		<div class="wp-block-group g2f-button-arrow g2f-button-arrow--sm has-border-color has-black-border-color is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:10px;padding-right:20px;padding-bottom:10px;padding-left:20px">
 			<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2","fontSize":"13px"}},"fontFamily":"inter"} -->
 			<p class="has-inter-font-family" style="font-style:normal;font-weight:600;line-height:1.2;font-size:13px"><a href="/services/photography/">EXPLORE</a></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:html -->
-				<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				<!-- /wp:html -->
 		</div>
 		<!-- /wp:group -->
 

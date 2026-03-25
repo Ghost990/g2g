@@ -1,12 +1,12 @@
 <!-- wp:group {"tagName":"header","className":"site-header","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"116px","right":"116px"}}},"backgroundColor":"white","layout":{"type":"constrained","contentSize":"100%"}} -->
-<header class="wp-block-group site-header has-white-background-color has-background" style="padding-top:0;padding-right:116px;padding-bottom:0;padding-left:116px">
+<header class="wp-block-group site-header has-white-background-color has-background is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:0;padding-right:116px;padding-bottom:0;padding-left:116px">
 
 	<!-- wp:group {"className":"g2f-header-inner","style":{"spacing":{"padding":{"top":"0px","bottom":"0px"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"space-between"}} -->
-	<div class="wp-block-group g2f-header-inner" style="padding-top:0px;padding-bottom:0px">
+	<div class="wp-block-group g2f-header-inner is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-space-between" style="padding-top:0px;padding-bottom:0px">
 
 		<!-- col 1: logo -->
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-		<div class="wp-block-group">
+		<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex is-nowrap">
 			<!-- wp:html -->
 			<a href="/" class="g2f-logo-link" aria-label="G2F Design — Home">
 				<svg width="106" height="40" viewBox="0 0 144 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,31 +48,22 @@
 
 		<!-- col 2: nav (center) -->
 		<!-- wp:group {"className":"g2f-header-nav","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-header-nav">
-			<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"32px"},"typography":{"fontStyle":"normal","fontWeight":"400","textTransform":"uppercase","letterSpacing":"0.5px"}},"fontSize":"regular","fontFamily":"roboto"} -->
-				<!-- wp:navigation-link {"label":"HOME","url":"/","kind":"custom","isTopLevelLink":true,"style":{"typography":{"fontWeight":"800"}}} /-->
-				<!-- wp:navigation-link {"label":"ABOUT US","url":"/about/","kind":"custom","isTopLevelLink":true} /-->
-				<!-- wp:navigation-link {"label":"SERVICES","url":"/services/","kind":"custom","isTopLevelLink":true} /-->
-				<!-- wp:navigation-link {"label":"GALLERY","url":"/gallery/","kind":"custom","isTopLevelLink":true} /-->
-				<!-- wp:navigation-link {"label":"CONTACT","url":"/contact/","kind":"custom","isTopLevelLink":true} /-->
-			<!-- /wp:navigation -->
+		<div class="wp-block-group g2f-header-nav is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center">
+			<!-- wp:navigation {"ref":132,"overlayMenu":"never","style":{"spacing":{"blockGap":"32px"},"typography":{"fontStyle":"normal","fontWeight":"400","textTransform":"uppercase","letterSpacing":"0.5px"}},"fontSize":"regular","fontFamily":"roboto"} /-->
 		</div>
 		<!-- /wp:group -->
 
 		<!-- col 3: CTA button (jobb szél) -->
 		<!-- wp:group {"className":"g2f-header-cta","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"right"}} -->
-		<div class="wp-block-group g2f-header-cta">
+		<div class="wp-block-group g2f-header-cta is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-right">
 
 			<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"22px","right":"22px"},"blockGap":"10px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-			<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:22px;padding-bottom:12px;padding-left:22px">
+			<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:22px;padding-bottom:12px;padding-left:22px">
 
 				<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2","fontSize":"14px"}}} -->
 				<p style="font-style:normal;font-weight:600;line-height:1.2;font-size:14px"><a href="/contact/">GET IN TOUCH</a></p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:html -->
-				<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				<!-- /wp:html -->
 
 			</div>
 			<!-- /wp:group -->

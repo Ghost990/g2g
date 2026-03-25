@@ -9,13 +9,13 @@
 ?>
 
 <!-- wp:group {"tagName":"section","anchor":"hero","className":"g2f-hero-banner","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<section id="hero" class="wp-block-group g2f-hero-banner" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
+<section id="hero" class="wp-block-group g2f-hero-banner is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;margin-top:0;margin-bottom:0">
 
 	<!-- wp:group {"className":"g2f-hero-wrapper","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-	<div class="wp-block-group g2f-hero-wrapper" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
+	<div class="wp-block-group g2f-hero-wrapper is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-left" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 
 		<!-- wp:group {"className":"g2f-vertical-text-strip","backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-		<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background">
+		<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background is-layout-flex wp-block-group-is-layout-flex is-vertical is-content-justification-center">
 
 			<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
 			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">G2F DESIGN</p>
@@ -30,10 +30,10 @@
 			<div class="wp-block-cover__inner-container">
 
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"120px","bottom":"80px","left":"80px","right":"80px"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->
-				<div class="wp-block-group" style="padding-top:120px;padding-bottom:80px;padding-left:80px;padding-right:80px">
+				<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:120px;padding-bottom:80px;padding-left:80px;padding-right:80px">
 
 					<!-- wp:group {"style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-					<div class="wp-block-group">
+					<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex is-vertical">
 
 						<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(40px,6vw,80px)","fontStyle":"normal","fontWeight":"400","lineHeight":"1","letterSpacing":"-2px"}},"textColor":"white","fontFamily":"inter"} -->
 						<h1 class="wp-block-heading has-white-color has-text-color has-inter-font-family" style="font-size:clamp(40px,6vw,80px);font-style:normal;font-weight:400;letter-spacing:-2px;line-height:1">Welcome To The<br><em>Creative World</em><br>Of G2F Design.</h1>

@@ -207,11 +207,14 @@ p strong {
 	opacity: 0.5 !important;
 }
 
-/* Button with Arrow Icon */
+/* ===================================
+   Button with Arrow — CSS-only icon
+   Arrow is a ::after pseudo-element; no wp:html block needed.
+   =================================== */
 .g2f-button-arrow {
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: 10px;
 	padding: 8px 24px;
 	border: 1px solid var(--wp--preset--color--black);
 	border-radius: 100px;
@@ -223,45 +226,37 @@ p strong {
 	transition: var(--g2f-transition);
 }
 
+/* Arrow icon via CSS — no wp:html block needed */
+.g2f-button-arrow::after {
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.125 10H16.875' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.25 4.375L16.875 10L11.25 15.625' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: transform 0.3s ease, background-image 0.3s ease;
+}
+
 .g2f-button-arrow:hover {
 	background: var(--wp--preset--color--black);
 	color: var(--wp--preset--color--white);
 }
 
-.g2f-button-arrow svg {
-	width: 20px;
-	height: 20px;
-	transition: transform 0.3s ease;
-}
-
-.g2f-button-arrow:hover svg {
+.g2f-button-arrow:hover::after {
 	transform: translateX(4px);
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.125 10H16.875' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.25 4.375L16.875 10L11.25 15.625' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-.g2f-button-arrow:hover svg path {
-	stroke: var(--wp--preset--color--white);
+/* Small variant used in service rows */
+.g2f-button-arrow--sm::after {
+	width: 16px;
+	height: 16px;
 }
 
-/* Icon Block fallback — ensure SVGs render even without the plugin */
-.wp-block-outermost-icon-block svg {
-	display: inline-block;
-	vertical-align: middle;
-}
-
-/* Arrow button icon sizing - flexible defaults */
-.g2f-button-arrow .wp-block-outermost-icon-block {
-	flex-shrink: 0;
-}
-
-/* Default icon size - can be overridden by block settings */
-.g2f-button-arrow .wp-block-outermost-icon-block svg {
-	width: 20px;
-	height: 20px;
-}
-
-/* ===== BUTTON LINK COLOR FIX =====
-   Ensure <a> tags inside g2f-button-arrow always inherit color.
-   Without this, browser default link color (blue) shows through. */
+/* Ensure <a> tags inside g2f-button-arrow always inherit color */
 .g2f-button-arrow a,
 .g2f-button-arrow p a {
 	color: inherit !important;
@@ -274,9 +269,10 @@ p strong {
 	color: var(--wp--preset--color--white) !important;
 }
 
-/* Fix SVG arrow stroke on hover (for inline icon blocks) */
-.g2f-button-arrow:hover .wp-block-outermost-icon-block svg path {
-	stroke: var(--wp--preset--color--white);
+/* Hide any leftover inline SVGs (from old wp:html blocks still in page content) */
+.g2f-button-arrow > svg,
+.g2f-button-arrow .wp-block-html svg {
+	display: none;
 }
 
 /* Light variant for dark backgrounds */
@@ -285,12 +281,12 @@ p strong {
 	color: var(--wp--preset--color--white);
 }
 
-.g2f-button-arrow-light a {
-	color: inherit;
+.g2f-button-arrow-light::after {
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.125 10H16.875' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.25 4.375L16.875 10L11.25 15.625' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-.g2f-button-arrow-light svg path {
-	stroke: var(--wp--preset--color--white);
+.g2f-button-arrow-light a {
+	color: inherit;
 }
 
 .g2f-button-arrow-light:hover {
@@ -298,12 +294,12 @@ p strong {
 	color: var(--wp--preset--color--black);
 }
 
-.g2f-button-arrow-light:hover a {
-	color: var(--wp--preset--color--black);
+.g2f-button-arrow-light:hover::after {
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.125 10H16.875' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.25 4.375L16.875 10L11.25 15.625' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-.g2f-button-arrow-light:hover svg path {
-	stroke: var(--wp--preset--color--black);
+.g2f-button-arrow-light:hover a {
+	color: var(--wp--preset--color--black);
 }
 
 /* ===================================
@@ -538,13 +534,14 @@ main .g2f-hero {
 	margin-right: -50vw !important;
 }
 
-/* Hero wrapper fills the hero */
+/* Hero wrapper fills the hero — gap:0 eliminates dark strips between strips and cover */
 .g2f-hero .g2f-hero-wrapper,
 .g2f-hero > .wp-block-group {
 	width: 100% !important;
 	max-width: 100% !important;
 	min-width: 100%;
 	flex: 1 1 auto !important;
+	gap: 0 !important;
 }
 
 /* Cover inside wrapper takes remaining space */
@@ -608,14 +605,11 @@ main .g2f-hero {
 	margin: 0;
 }
 
-/* Hero cover - add white strips on both sides */
+/* Hero cover fills its flex space — no side padding needed (strips are separate flex children) */
 .g2f-hero .wp-block-cover {
 	flex: 1;
 	min-height: 868px;
-	padding-left: 60px !important;
-	padding-right: 60px !important;
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
+	padding: 0 !important;
 	background-color: #1a1a1a !important;
 }
 
@@ -629,12 +623,12 @@ main .g2f-hero {
 	padding: 250px 80px 100px 80px !important;
 }
 
-/* Make the cover image and overlay not extend into the white padding areas */
+/* Cover image fills the full cover block — no offset needed */
 .g2f-hero .wp-block-cover__image-background,
 .g2f-hero .wp-block-cover__background {
-	left: 60px !important;
-	right: 60px !important;
-	width: calc(100% - 120px) !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
 }
 
 /* Hero separator line */
@@ -2701,11 +2695,11 @@ main .g2f-hero {
 	align-self: flex-start !important;
 }
 
-/* Hero right strip */
+/* Hero right strip — same width as left strip */
 .g2f-vertical-text-strip--right {
 	flex-shrink: 0;
-	width: 40px;
-	min-width: 40px;
+	width: 60px;
+	min-width: 60px;
 }
 
 /* ===================================================================

@@ -12,7 +12,7 @@
      UX/UI DESIGN — White bg, Image LEFT | Content RIGHT
      ============================================================ -->
 <!-- wp:group {"tagName":"section","anchor":"ux-design","className":"g2f-service-block","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
-<section id="ux-design" class="wp-block-group g2f-service-block has-white-background-color has-background" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
+<section id="ux-design" class="wp-block-group g2f-service-block has-white-background-color has-background is-layout-flow wp-block-group-is-layout-flow" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
 
 	<!-- wp:heading {"level":2,"className":"g2f-service-heading","style":{"typography":{"fontSize":"clamp(40px,5vw,72px)","fontWeight":"400","letterSpacing":"-2px","lineHeight":"1.05"}},"fontFamily":"inter"} -->
 	<h2 class="wp-block-heading g2f-service-heading has-inter-font-family" style="font-size:clamp(40px,5vw,72px);font-weight:400;letter-spacing:-2px;line-height:1.05">UX/UI <strong>Design.</strong></h2>
@@ -44,7 +44,7 @@
 		<!-- wp:column {"width":"50%","verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 			<!-- wp:group {"style":{"spacing":{"blockGap":"20px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-			<div class="wp-block-group">
+			<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex is-vertical">
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontWeight":"700","lineHeight":"1.4"}},"fontFamily":"inter"} -->
 				<p class="has-inter-font-family" style="font-size:18px;font-weight:700;line-height:1.4">Our UX/UI design services include:</p>
 				<!-- /wp:paragraph -->
@@ -62,13 +62,10 @@
 				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.65">We prioritize clarity, usability, and scalability — building design foundations that grow with your product.</p>
 				<!-- /wp:paragraph -->
 				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
+				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
 					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="/services/ux-design/">VIEW OUR STORIES</a></p>
 					<!-- /wp:paragraph -->
-					<!-- wp:html -->
-				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				<!-- /wp:html -->
 				</div>
 				<!-- /wp:group -->
 			</div>
@@ -87,7 +84,7 @@
      ART DIRECTION — Gray bg, Content LEFT | Image RIGHT
      ============================================================ -->
 <!-- wp:group {"tagName":"section","anchor":"art-direction","className":"g2f-service-block g2f-service-block--alt","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"gray-light","layout":{"type":"default"}} -->
-<section id="art-direction" class="wp-block-group g2f-service-block g2f-service-block--alt has-gray-light-background-color has-background" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
+<section id="art-direction" class="wp-block-group g2f-service-block g2f-service-block--alt has-gray-light-background-color has-background is-layout-flow wp-block-group-is-layout-flow" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
 
 	<!-- wp:heading {"level":2,"className":"g2f-service-heading","style":{"typography":{"fontSize":"clamp(40px,5vw,72px)","fontWeight":"400","letterSpacing":"-2px","lineHeight":"1.05"}},"fontFamily":"inter"} -->
 	<h2 class="wp-block-heading g2f-service-heading has-inter-font-family" style="font-size:clamp(40px,5vw,72px);font-weight:400;letter-spacing:-2px;line-height:1.05">Art <strong>Direction.</strong></h2>
@@ -108,7 +105,7 @@
 		<!-- wp:column {"width":"50%","verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 			<!-- wp:group {"style":{"spacing":{"blockGap":"20px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-			<div class="wp-block-group">
+			<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex is-vertical">
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontWeight":"700","lineHeight":"1.4"}},"fontFamily":"inter"} -->
 				<p class="has-inter-font-family" style="font-size:18px;font-weight:700;line-height:1.4">Our art direction services include:</p>
 				<!-- /wp:paragraph -->
@@ -126,13 +123,10 @@
 				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.65">We bring creative leadership that transforms vision into visual impact.</p>
 				<!-- /wp:paragraph -->
 				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
+				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
 					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="/services/art-direction/">VIEW OUR STORIES</a></p>
 					<!-- /wp:paragraph -->
-					<!-- wp:html -->
-				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				<!-- /wp:html -->
 				</div>
 				<!-- /wp:group -->
 			</div>
@@ -162,7 +156,7 @@
      PHOTOGRAPHY — White bg, Image LEFT | Content RIGHT
      ============================================================ -->
 <!-- wp:group {"tagName":"section","anchor":"photography","className":"g2f-service-block","style":{"spacing":{"padding":{"top":"100px","bottom":"100px","left":"151px","right":"151px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"white","layout":{"type":"default"}} -->
-<section id="photography" class="wp-block-group g2f-service-block has-white-background-color has-background" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
+<section id="photography" class="wp-block-group g2f-service-block has-white-background-color has-background is-layout-flow wp-block-group-is-layout-flow" style="padding-top:100px;padding-bottom:100px;padding-left:151px;padding-right:151px;margin-top:0;margin-bottom:0">
 
 	<!-- wp:heading {"level":2,"className":"g2f-service-heading","style":{"typography":{"fontSize":"clamp(40px,5vw,72px)","fontWeight":"400","letterSpacing":"-2px","lineHeight":"1.05"}},"fontFamily":"inter"} -->
 	<h2 class="wp-block-heading g2f-service-heading has-inter-font-family" style="font-size:clamp(40px,5vw,72px);font-weight:400;letter-spacing:-2px;line-height:1.05"><strong>Photography.</strong></h2>
@@ -194,7 +188,7 @@
 		<!-- wp:column {"width":"50%","verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 			<!-- wp:group {"style":{"spacing":{"blockGap":"20px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-			<div class="wp-block-group">
+			<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex is-vertical">
 				<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","fontWeight":"700","lineHeight":"1.4"}},"fontFamily":"inter"} -->
 				<p class="has-inter-font-family" style="font-size:18px;font-weight:700;line-height:1.4">Our photography services include:</p>
 				<!-- /wp:paragraph -->
@@ -211,13 +205,10 @@
 				<p class="has-text-muted-color has-text-color has-roboto-font-family" style="font-size:16px;line-height:1.65">We produce images that live beyond trends — rooted in authenticity and deeply aligned with your brand's voice.</p>
 				<!-- /wp:paragraph -->
 				<!-- wp:group {"className":"g2f-button-arrow","style":{"border":{"radius":"100px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"24px","right":"24px"},"blockGap":"12px"}},"borderColor":"black","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
+				<div class="wp-block-group g2f-button-arrow has-border-color has-black-border-color is-layout-flex wp-block-group-is-layout-flex is-nowrap is-content-justification-center" style="border-style:solid;border-width:1px;border-radius:100px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px">
 					<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":"1.2"}},"fontSize":"medium","fontFamily":"inter"} -->
 					<p class="has-inter-font-family has-medium-font-size" style="font-style:normal;font-weight:600;line-height:1.2"><a href="/services/photography/">VIEW OUR WORK</a></p>
 					<!-- /wp:paragraph -->
-					<!-- wp:html -->
-				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				<!-- /wp:html -->
 				</div>
 				<!-- /wp:group -->
 			</div>
