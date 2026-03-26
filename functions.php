@@ -93,13 +93,16 @@ function g2f_theme_enqueue_assets() {
 		true
 	);
 
-	// Frontend scripts
+	// Frontend scripts — defer strategy ensures GSAP loads before main.js
 	wp_enqueue_script(
 		'g2f-theme-main',
 		get_template_directory_uri() . '/assets/js/main.js',
 		array( 'gsap', 'gsap-scrolltrigger' ),
 		$theme_version,
-		true
+		array(
+			'in_footer' => true,
+			'strategy'  => 'defer',
+		)
 	);
 }
 add_action( 'wp_enqueue_scripts', 'g2f_theme_enqueue_assets' );
