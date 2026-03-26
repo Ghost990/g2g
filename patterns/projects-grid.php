@@ -81,8 +81,8 @@ foreach ( $projects as $p ) {
 }
 $cards_html .= '</div>';
 ?>
-<!-- wp:heading {"level":2,"className":"g2f-projects-heading","textAlign":"left"} -->
-<h2 class="wp-block-heading g2f-projects-heading"><strong>Explore</strong> Our Latest Projects.</h2>
+<!-- wp:heading {"level":2,"className":"g2f-projects-heading","textAlign":"center"} -->
+<h2 class="wp-block-heading g2f-projects-heading has-text-align-center"><strong>Explore</strong> Our Latest Projects.</h2>
 <!-- /wp:heading -->
 
 <!-- wp:html -->
