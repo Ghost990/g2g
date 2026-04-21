@@ -570,9 +570,9 @@ main .g2f-hero {
 .g2f-vertical-text-strip p.g2f-vertical-text,
 .g2f-vertical-text-strip .g2f-vertical-text {
 	position: absolute !important;
-	top: 50% !important;
+	bottom: 0 !important;
 	left: 50% !important;
-	transform: translateX(-50%) translateY(-50%) rotate(180deg) !important;
+	transform: translateX(-50%) rotate(180deg) !important;
 	margin: 0 !important;
 	writing-mode: vertical-rl !important;
 	white-space: nowrap !important;
@@ -1581,7 +1581,7 @@ main .g2f-hero {
 .g2f-about-section {
 	position: relative;
 	overflow: visible;
-	padding: 60px 116px 60px 116px !important;
+	padding: 100px 116px 100px 116px !important;
 	background: #fff;
 }
 
@@ -1630,7 +1630,7 @@ main .g2f-hero {
 
 .g2f-about-heading {
 	font-family: var(--wp--preset--font-family--roboto), sans-serif;
-	font-size: clamp(28px, 2.8vw, 38px);
+	font-size: clamp(28px, 4vw, 60px);
 	font-weight: 400;
 	line-height: 1.15;
 	margin: 0;
@@ -1649,7 +1649,7 @@ main .g2f-hero {
 
 .g2f-about-body p {
 	font-family: var(--wp--preset--font-family--roboto), sans-serif;
-	font-size: 15px;
+	font-size: 20px;
 	line-height: 1.75;
 	font-weight: 400;
 	color: #222;
@@ -2574,13 +2574,13 @@ main .g2f-hero {
 }
 
 .g2f-services-header {
-	padding: 80px 116px 48px;
+	padding: 100px 116px 100px;
 	text-align: center;
 }
 
 .g2f-services-title {
 	font-family: var(--wp--preset--font-family--roboto), sans-serif;
-	font-size: 48px;
+	font-size: 60px;
 	font-weight: 400;
 	line-height: 1.1;
 	color: #000;
@@ -3104,6 +3104,15 @@ main .g2f-hero {
 .g2f-btn-outline-white:hover {
 	background: #fff;
 	color: #000;
+}
+
+.g2f-btn-outline-white:hover span,
+.g2f-btn-outline-white:hover svg {
+	color: #000;
+}
+
+.g2f-btn-outline-white:hover svg path {
+	stroke: #000;
 }
 
 .g2f-cta-divider-line {

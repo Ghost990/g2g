@@ -17,8 +17,8 @@
 		<!-- LEFT STRIP -->
 		<!-- wp:group {"className":"g2f-vertical-text-strip","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 		<div class="wp-block-group g2f-vertical-text-strip has-white-background-color has-background is-layout-flex wp-block-group-is-layout-flex is-vertical is-content-justification-center" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
-			<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
-			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:14px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">WELCOME TO G2F DESIGN</p>
+			<!-- wp:paragraph {"className":"g2f-vertical-text","style":{"typography":{"fontSize":"24px","fontStyle":"normal","fontWeight":"700","letterSpacing":"3px","lineHeight":"1.2"}},"textColor":"black","fontFamily":"roboto"} -->
+			<p class="g2f-vertical-text has-black-color has-text-color has-roboto-font-family" style="font-size:24px;font-style:normal;font-weight:700;letter-spacing:3px;line-height:1.2">WELCOME TO G2F DESIGN</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
