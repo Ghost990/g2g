@@ -9,10 +9,10 @@
 	.g2f-hero-services-wrap { margin-top: calc(-1 * var(--g2f-header-height, 74px)); padding-top: var(--g2f-header-height, 74px); background: #fff; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
 	.g2f-hero-services-container { max-width: 100%; margin: 0; padding: 0 40px; display: flex; flex-direction: row; align-items: stretch; background: #fff; }
 	.g2f-hero-services__label { flex: 0 0 40px; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; transform: rotate(180deg); font-family: sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: #000; white-space: nowrap; background: #fff; }
-	.g2f-hero-services__image { flex: 1; min-height: 420px; position: relative; background-color: #1c1c1c; background-image: url('/wp-content/uploads/2026/03/services-hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: flex-start; }
-	.g2f-hero-services__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
-	.g2f-hero-services__content { position: relative; z-index: 2; padding: 80px 60px; }
-	.g2f-hero-services__heading { font-size: clamp(32px, 4.5vw, 68px) !important; font-weight: 400 !important; line-height: 1.1 !important; color: #ffffff !important; margin: 0 !important; letter-spacing: -1px !important; }
+	.g2f-hero-services__image { flex: 1; min-height: 620px; position: relative; background-color: #1c1c1c; background-image: url('/wp-content/uploads/2026/03/services-hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: flex-end; justify-content: flex-start; }
+	.g2f-hero-services__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+	.g2f-hero-services__content { position: relative; z-index: 2; padding: 80px 60px; text-align: left; }
+	.g2f-hero-services__heading { font-size: clamp(28px, 3.5vw, 48px) !important; font-weight: 300 !important; line-height: 1.1 !important; color: #ffffff !important; margin: 0 !important; letter-spacing: -1px !important; }
 	.g2f-hero-services__heading strong { font-weight: 700 !important; }
 	.g2f-hero-services__heading em { font-style: italic !important; font-weight: 300 !important; }
 	@media (max-width: 768px) { .g2f-hero-services-container { padding: 0 16px; } .g2f-hero-services__label { flex: 0 0 22px; } .g2f-hero-services__content { padding: 48px 24px; } .g2f-hero-services__image { min-height: 300px; } }
@@ -76,7 +76,7 @@
 		</div>
 	</section>
 	<style>
-	.g2f-cta-banner { background: #3a3a3a; padding: 80px 40px; text-align: center; }
+	.g2f-cta-banner { background: #111; padding: 80px 40px; text-align: center; }
 	.g2f-cta-banner__inner { max-width: 860px; margin: 0 auto; }
 	.g2f-cta-banner__heading { font-size: clamp(28px, 3.5vw, 48px); font-weight: 300; color: #fff; line-height: 1.2; margin: 0 0 24px 0; }
 	.g2f-cta-banner__heading strong { font-weight: 700; }
@@ -91,6 +91,8 @@
 	     CLIENTS
 	     =========================================================== -->
 	<!-- wp:pattern {"slug":"g2f-theme/clients-section"} /-->
+
+	<!-- wp:pattern {"slug":"g2f-theme/cta-divider"} /-->
 
 </main>
 <!-- /wp:group -->
