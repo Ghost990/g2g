@@ -2238,6 +2238,49 @@ main .g2f-hero {
 		flex-direction: column;
 		gap: 32px;
 	}
+
+	/* Project body content — stack columns on mobile */
+	.g2f-project-body {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+		padding-top: 48px !important;
+		padding-bottom: 48px !important;
+	}
+
+	.g2f-project-body .wp-block-columns {
+		flex-direction: column !important;
+		gap: 40px !important;
+	}
+
+	.g2f-project-body .wp-block-column {
+		flex-basis: 100% !important;
+		width: 100% !important;
+	}
+
+	/* Project navigation — mobile padding */
+	.g2f-project-nav {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+		flex-direction: column !important;
+		gap: 16px;
+	}
+
+	/* Related Projects section — mobile padding and single column */
+	.g2f-related-projects {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+		padding-top: 48px !important;
+		padding-bottom: 48px !important;
+	}
+
+	.g2f-related-projects .wp-block-query .wp-block-post-template {
+		grid-template-columns: 1fr !important;
+	}
+
+	/* Hero project — reduce padding on mobile */
+	.g2f-hero-project {
+		min-height: 300px !important;
+	}
 }
 
 /* ==========================================================================
