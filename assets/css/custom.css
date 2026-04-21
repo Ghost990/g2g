@@ -1315,6 +1315,13 @@ main .g2f-hero {
 
 	.g2f-footer {
 		padding: 40px 20px 16px;
+		text-align: center;
+	}
+
+	.g2f-footer-nav {
+		flex-direction: column;
+		gap: 12px;
+		justify-content: center;
 	}
 
 	.g2f-section {
@@ -1346,11 +1353,15 @@ main .g2f-hero {
 	}
 
 	.g2f-footer-social {
-		text-align: left;
+		text-align: center;
+		flex-direction: row;
+		justify-content: center;
+		gap: 20px;
 	}
 
 	.g2f-footer-contact {
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.wp-block-navigation-item__content {
@@ -4338,7 +4349,7 @@ a, button, [role="button"],
 /* Tablet portrait + mobile (≤768px) */
 @media (max-width: 768px) {
 	.g2f-hero .wp-block-cover {
-		min-height: 60vh !important;
+		min-height: 400px !important;
 	}
 
 	.g2f-hero .wp-block-cover__inner-container {
@@ -4374,7 +4385,7 @@ a, button, [role="button"],
 /* Small mobile (≤480px) */
 @media (max-width: 480px) {
 	.g2f-hero .wp-block-cover {
-		min-height: 55vh !important;
+		min-height: 380px !important;
 	}
 
 	.g2f-hero-title {
@@ -4530,9 +4541,27 @@ a, button, [role="button"],
    ============================================================ */
 @media (max-width: 768px) {
 	.g2f-project-tabs {
-		gap: 20px;
-		flex-wrap: wrap;
-		justify-content: flex-start;
+		flex-direction: column;
+		gap: 8px;
+		align-items: stretch;
+	}
+
+	.g2f-project-tab {
+		text-align: center;
+		padding: 10px 16px !important;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		font-size: 14px;
+	}
+
+	.g2f-project-tab.active {
+		background: #000 !important;
+		color: #fff !important;
+		border-color: #000;
+	}
+
+	.g2f-project-tab.active::after {
+		display: none;
 	}
 }
 
