@@ -8,22 +8,27 @@
  */
 
 $site_url = get_site_url();
+$about_image = g2f_theme_resolve_upload_asset(
+	'2026/03/about.jpg',
+	14,
+	'2026/02/about-image.png'
+);
 ?>
 <section id="about" class="g2f-about-section">
 	<div class="g2f-about-inner">
 
 		<div class="g2f-about-image-col">
-			<img src="<?php echo esc_url( $site_url ); ?>/wp-content/uploads/2026/03/about.jpg"
+			<img src="<?php echo esc_url( $about_image ); ?>"
 				alt="About G2F Design"
 				class="g2f-about-img" />
 		</div>
 
 		<div class="g2f-about-text-col">
-			<h2 class="g2f-about-heading">We Bring <strong>Creative Ideas</strong> To Life.</h2>
+			<h2 class="g2f-about-heading">We Bring <strong>Creative</strong><br>Ideas To Life.</h2>
 
 			<div class="g2f-about-body">
-				<p>Welcome to <strong>G2F Design</strong> — a culmination of two decades of experience, relentless creativity, and a passion for shaping extraordinary visual experiences.</p>
-				<p class="g2f-about-muted">At the heart of <strong>G2F Design</strong> is a commitment to fusing creative design and web technology into seamless visual experiences and functionality. We specialize in creating beautiful digital experiences that not only look stunning but also work flawlessly.</p>
+				<p>Welcome to <strong>G2F Design</strong> - a culmination of two decades of experience, relentless curiosity, and a passion for shaping extraordinary visual narratives.</p>
+				<p class="g2f-about-muted">At <strong>G2F Design</strong>, we bring creativity to life through UX/UI design, art direction, graphic design, and photography. Our mission is to craft visually striking and future-focused solutions that inspire, engage, and leave a lasting impact.</p>
 			</div>
 
 			<a href="/about/" class="g2f-btn-arrow">

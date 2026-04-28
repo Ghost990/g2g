@@ -8,6 +8,24 @@
  */
 ?>
 
+<?php
+$service_product_image = g2f_theme_resolve_upload_asset(
+	'2026/03/service-ux.jpg',
+	8,
+	'2026/02/project-1.png'
+);
+$service_art_image = g2f_theme_resolve_upload_asset(
+	'2026/03/service-art.jpg',
+	9,
+	'2026/02/project-2.png'
+);
+$service_photo_image = g2f_theme_resolve_upload_asset(
+	'2026/03/service-photo.jpg',
+	10,
+	'2026/02/project-3.png'
+);
+?>
+
 <!-- ============================================================
      SERVICES WRAPPER
      ============================================================ -->
@@ -31,7 +49,7 @@
 	<div class="wp-block-group g2f-service-row__image is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
-			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-ux.jpg" alt="Product Design" />
+			<img src="<?php echo esc_url( $service_product_image ); ?>" alt="Product Design" />
 		</figure>
 		<!-- /wp:image -->
 	</div>
@@ -106,7 +124,7 @@
 	<div class="wp-block-group g2f-service-row__image is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
-			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-art.jpg" alt="Art Direction" />
+			<img src="<?php echo esc_url( $service_art_image ); ?>" alt="Art Direction" />
 		</figure>
 		<!-- /wp:image -->
 	</div>
@@ -127,7 +145,7 @@
 	<div class="wp-block-group g2f-service-row__image is-layout-flow wp-block-group-is-layout-flow" style="padding-top:0;padding-bottom:0;padding-left:0;padding-right:0">
 		<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 		<figure class="wp-block-image size-large">
-			<img src="<?php echo esc_url(get_site_url()); ?>/wp-content/uploads/2026/03/service-photo.jpg" alt="Photography" />
+			<img src="<?php echo esc_url( $service_photo_image ); ?>" alt="Photography" />
 		</figure>
 		<!-- /wp:image -->
 	</div>

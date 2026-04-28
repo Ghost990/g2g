@@ -8,13 +8,13 @@
  */
 
 $clients = [
-	[ 'id' => 112, 'name' => 'Vodafone Business' ],
-	[ 'id' => 111, 'name' => 'dm' ],
-	[ 'id' => 110, 'name' => 'AsicMinerz' ],
-	[ 'id' => 109, 'name' => 'Alteo' ],
-	[ 'id' => 108, 'name' => 'Richmond' ],
-	[ 'id' => 114, 'name' => 'Macmillan' ],
-	[ 'id' => 113, 'name' => 'Shopper Park+' ],
+	[ 'id' => 0, 'name' => 'Vodafone Business' ],
+	[ 'id' => 0, 'name' => 'dm' ],
+	[ 'id' => 0, 'name' => 'AsicMinerz' ],
+	[ 'id' => 0, 'name' => 'Alteo' ],
+	[ 'id' => 0, 'name' => 'Richmond' ],
+	[ 'id' => 0, 'name' => 'Macmillan' ],
+	[ 'id' => 0, 'name' => 'Shopper Park+' ],
 ];
 ?>
 <section class="g2f-clients-section">
@@ -32,7 +32,11 @@ $clients = [
 						 alt="<?php echo esc_attr( $client['name'] ); ?>"
 						 loading="lazy" />
 				</div>
-			<?php endif; endforeach; ?>
+				<?php else : ?>
+				<div class="g2f-client-logo g2f-client-logo--text" aria-label="<?php echo esc_attr( $client['name'] ); ?>">
+					<span class="g2f-client-logo__text"><?php echo esc_html( $client['name'] ); ?></span>
+				</div>
+				<?php endif; endforeach; ?>
 		</div>
 
 	</div>

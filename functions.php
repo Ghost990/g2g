@@ -64,15 +64,18 @@ add_action( 'after_setup_theme', 'g2f_theme_setup' );
  * Enqueue styles and scripts
  */
 function g2f_theme_enqueue_assets() {
-	// Theme version for cache busting
 	$theme_version = wp_get_theme()->get( 'Version' );
+	$custom_css    = get_theme_file_path( 'assets/css/custom.css' );
+	$main_js       = get_theme_file_path( 'assets/js/main.js' );
+	$custom_ver    = file_exists( $custom_css ) ? filemtime( $custom_css ) : $theme_version;
+	$main_js_ver   = file_exists( $main_js ) ? filemtime( $main_js ) : $theme_version;
 
 	// Custom styles (style.css is auto-enqueued by WordPress FSE system — do not re-enqueue)
 	wp_enqueue_style(
 		'g2f-theme-custom',
 		get_template_directory_uri() . '/assets/css/custom.css',
 		array(),
-		$theme_version
+		$custom_ver
 	);
 
 	// GSAP core
@@ -98,7 +101,7 @@ function g2f_theme_enqueue_assets() {
 		'g2f-theme-main',
 		get_template_directory_uri() . '/assets/js/main.js',
 		array( 'gsap', 'gsap-scrolltrigger' ),
-		$theme_version,
+		$main_js_ver,
 		array(
 			'in_footer' => true,
 			'strategy'  => 'defer',
@@ -112,15 +115,55 @@ add_action( 'wp_enqueue_scripts', 'g2f_theme_enqueue_assets' );
  */
 function g2f_theme_enqueue_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
+	$editor_css    = get_theme_file_path( 'assets/css/editor-style.css' );
+	$editor_ver    = file_exists( $editor_css ) ? filemtime( $editor_css ) : $theme_version;
 
 	wp_enqueue_style(
 		'g2f-theme-editor',
 		get_template_directory_uri() . '/assets/css/editor-style.css',
 		array(),
-		$theme_version
+		$editor_ver
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'g2f_theme_enqueue_editor_assets' );
+
+/**
+ * Resolve homepage image assets across environments.
+ */
+function g2f_theme_resolve_upload_asset( $preferred_relative_path, $fallback_attachment_id = 0, $fallback_relative_path = '' ) {
+	$uploads = wp_upload_dir();
+
+	if ( ! empty( $preferred_relative_path ) ) {
+		$preferred_relative_path = ltrim( $preferred_relative_path, '/' );
+		$preferred_file          = trailingslashit( $uploads['basedir'] ) . $preferred_relative_path;
+
+		if ( file_exists( $preferred_file ) ) {
+			return trailingslashit( $uploads['baseurl'] ) . $preferred_relative_path;
+		}
+	}
+
+	if ( $fallback_attachment_id ) {
+		$attachment_url = wp_get_attachment_image_url( $fallback_attachment_id, 'full' );
+		if ( $attachment_url ) {
+			return $attachment_url;
+		}
+	}
+
+	if ( ! empty( $fallback_relative_path ) ) {
+		$fallback_relative_path = ltrim( $fallback_relative_path, '/' );
+		$fallback_file          = trailingslashit( $uploads['basedir'] ) . $fallback_relative_path;
+
+		if ( file_exists( $fallback_file ) ) {
+			return trailingslashit( $uploads['baseurl'] ) . $fallback_relative_path;
+		}
+	}
+
+	if ( ! empty( $preferred_relative_path ) ) {
+		return trailingslashit( $uploads['baseurl'] ) . ltrim( $preferred_relative_path, '/' );
+	}
+
+	return '';
+}
 
 /**
  * Register block patterns

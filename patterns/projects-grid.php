@@ -13,20 +13,17 @@ $query_args = array(
 	'posts_per_page' => 6,
 	'orderby'        => 'date',
 	'order'          => 'ASC',
-	'meta_query'     => array(
-		array(
-			'key'     => '_thumbnail_id',
-			'compare' => 'EXISTS',
-		),
-	),
 );
 $query = new WP_Query( $query_args );
+
+$fallback_project_images = array( 8, 9, 10 );
 
 // Build category map for tabs
 $all_cats = array();
 $projects  = array();
 
 if ( $query->have_posts() ) {
+	$index = 0;
 	while ( $query->have_posts() ) {
 		$query->the_post();
 		$pid   = get_the_ID();
@@ -39,14 +36,21 @@ if ( $query->have_posts() ) {
 		}
 
 		$role = get_post_meta( $pid, '_g2f_project_role', true );
+		$thumb = get_the_post_thumbnail_url( $pid, 'large' );
+		if ( ! $thumb && ! empty( $fallback_project_images ) ) {
+			$fallback_id = $fallback_project_images[ $index % count( $fallback_project_images ) ];
+			$thumb       = wp_get_attachment_image_url( $fallback_id, 'large' );
+		}
+
 		$projects[] = array(
 			'id'    => $pid,
 			'title' => get_the_title(),
 			'cat'   => $cat,
 			'type'  => $role ? $role : $label,
-			'thumb' => get_the_post_thumbnail_url( $pid, 'large' ),
-			'url'   => get_permalink(),
+			'thumb' => $thumb,
+			'url'   => get_permalink() ? get_permalink() : '#',
 		);
+		$index++;
 	}
 	wp_reset_postdata();
 }

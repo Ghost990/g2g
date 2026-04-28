@@ -227,24 +227,6 @@
 			});
 		});
 
-		// Project cards — stagger reveal
-		const projectCards = document.querySelectorAll('.g2f-project-card');
-		if (projectCards.length) {
-			gsap.from(projectCards, {
-				y: 50,
-				opacity: 0,
-				scale: 0.96,
-				duration: 0.7,
-				ease: 'power2.out',
-				stagger: { amount: 0.4 },
-				scrollTrigger: {
-					trigger: projectCards[0].closest('.g2f-projects-grid, .g2f-latest-projects') || projectCards[0],
-					start: triggerPoint,
-					once: true,
-				},
-			});
-		}
-
 		// Portfolio text section
 		const portfolioSection = document.querySelector('.g2f-portfolio-split');
 		if (portfolioSection) {
@@ -335,7 +317,7 @@
 
 		cards.forEach((card) => {
 			const img = card.querySelector('img');
-			const exploreBtn = card.querySelector('.g2f-project-explore, a');
+			const exploreBtn = card.querySelector('.g2f-explore-link');
 
 			if (img) {
 				card.addEventListener('mouseenter', () => {
@@ -721,82 +703,37 @@
 	// PROJECT FILTER
 	// =========================================================
 	function initProjectFilter() {
-		const tabs = document.querySelectorAll('.g2f-project-tab');
-		const projects = document.querySelectorAll('.g2f-project-card');
+		const tabs = document.querySelectorAll('.g2f-projects-grid-section .g2f-tab');
+		const projects = document.querySelectorAll('.g2f-projects-grid-section .g2f-project-card');
 
 		if (!tabs.length || !projects.length) return;
 
-		const tabCategoryMap = {
-			'all': 'all',
-			'ux/ui': 'ux-ui',
-			'art direction': 'art-direction',
-			'photography': 'photography',
-		};
-
-		tabs.forEach((tab) => {
-			const text = tab.textContent.trim().toLowerCase();
-			tab.dataset.category = tabCategoryMap[text] || 'all';
-			tab.style.removeProperty('opacity');
-		});
-
 		projects.forEach((project) => {
-			const desc = project.querySelector('.g2f-project-info p')?.textContent?.toLowerCase() || '';
-			if (desc.includes('ux/ui') || desc.includes('ux-ui') || desc.includes('website')) {
-				project.dataset.category = 'ux-ui';
-			} else if (desc.includes('branding') || desc.includes('visual identity') || desc.includes('brochure') || desc.includes('graphic design')) {
-				project.dataset.category = 'art-direction';
-			} else if (desc.includes('photography')) {
-				project.dataset.category = 'photography';
-			} else {
-				project.dataset.category = 'ux-ui';
-			}
-
-			const hasImage = project.querySelector('.g2f-project-image, .g2f-project-image-placeholder, figure img');
-			if (!hasImage) {
-				const placeholder = document.createElement('div');
-				placeholder.className = 'g2f-project-image-placeholder';
-				project.insertBefore(placeholder, project.firstChild);
-			}
+			project.style.display = '';
+			project.style.opacity = '1';
+			project.style.transform = 'none';
 		});
+
+		function applyFilter(category) {
+			projects.forEach((project) => {
+				const projectCategory = project.dataset.category || 'all';
+				const isVisible = category === 'all' || projectCategory === category;
+				project.style.display = isVisible ? '' : 'none';
+				project.style.opacity = '1';
+				project.style.transform = 'none';
+			});
+		}
+
+		applyFilter('all');
 
 		tabs.forEach((tab) => {
 			tab.style.cursor = 'pointer';
 
 			tab.addEventListener('click', function () {
-				const category = this.dataset.category;
+				const category = this.dataset.filter || 'all';
 				tabs.forEach((t) => t.classList.remove('active'));
 				this.classList.add('active');
-
-				// Animate tab indicator
-				if (!reducedMotion && typeof gsap !== 'undefined') {
-					gsap.from(this, { scaleX: 0.9, duration: 0.25, ease: 'back.out(2)', transformOrigin: 'center' });
-				}
-
-				projects.forEach((project) => {
-					const projectCategory = project.dataset.category;
-					if (category === 'all' || projectCategory === category) {
-						project.style.display = '';
-						if (!reducedMotion && typeof gsap !== 'undefined') {
-							gsap.fromTo(project, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
-						} else {
-							project.style.opacity = '1';
-							project.style.transform = 'translateY(0)';
-						}
-					} else {
-						if (!reducedMotion && typeof gsap !== 'undefined') {
-							gsap.to(project, {
-								opacity: 0,
-								y: 10,
-								duration: 0.25,
-								ease: 'power2.in',
-								onComplete: () => { project.style.display = 'none'; },
-							});
-						} else {
-							project.style.opacity = '0';
-							setTimeout(() => { project.style.display = 'none'; }, 300);
-						}
-					}
-				});
+				applyFilter(category);
 			});
 		});
 	}
@@ -878,38 +815,4 @@
 		});
 	}
 
-})();
-
-/* ==========================================================================
-   Projects Grid — Tab Filtering (self-contained, no GSAP dependency)
-   ========================================================================== */
-(function () {
-	'use strict';
-	function initTabFilter() {
-		var tabs = document.querySelectorAll('.g2f-tab');
-		var cards = document.querySelectorAll('.g2f-project-card');
-
-		if (!tabs.length || !cards.length) return;
-
-		tabs.forEach(function (tab) {
-			tab.addEventListener('click', function () {
-				tabs.forEach(function (t) { t.classList.remove('active'); });
-				tab.classList.add('active');
-
-				var filter = tab.getAttribute('data-filter');
-				cards.forEach(function (card) {
-					if (filter === 'all' || card.getAttribute('data-category') === filter) {
-						card.style.display = '';
-					} else {
-						card.style.display = 'none';
-					}
-				});
-			});
-		});
-	}
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initTabFilter);
-	} else {
-		initTabFilter();
-	}
 })();
